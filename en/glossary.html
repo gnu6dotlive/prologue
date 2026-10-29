@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary — the vocabulary, without jargon</title>
+<meta name="description" content="A plain-language glossary for reading an open-source repository: repository, commit, licence, compositor, quantisation, MoE, token.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/glossary.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/comprendre.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/glossary.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/comprendre.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="Glossary — the vocabulary, without jargon">
+<meta property="og:description" content="A plain-language glossary for reading an open-source repository: repository, commit, licence, compositor, quantisation, MoE, token.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/glossary.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="glossary.html" aria-current="page">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../comprendre.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Glossary</p>
+    <h1>Three words to defuse</h1>
+    <p class="lead">"Open source", "repository", "proof". Three words that come up everywhere and often mean less — or more — than you think.</p>
+  </div>
+
+  <section>
+    <h2>Open source: the recipe, not the dish</h2>
+    <div class="box analogy">
+      <span class="label">The analogy</span>
+      <p>A restaurant can publish its full recipe. That does not mean the dish is good, that the kitchen is open, or that anyone will serve you at a table. It means that <strong>you can make it yourself</strong>, fix it, and check what is in it.</p>
+      <p style="margin-bottom:0">That is exactly what a free licence does: it gives you the right to read, modify and redistribute. It promises neither quality, nor support, nor a user manual.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>A repository is a folder with a memory</h2>
+    <div class="prose">
+      <p>A "repository" is a folder of files whose history is kept. Each recorded change is called a <strong>commit</strong>: it keeps the date, the author and an explanation. So you can tell who changed what, when, and why.</p>
+      <p>The <code>README.md</code> file is the front door: what the author wants you to know first. The <code>docs/</code> folders hold the documentation, <code>evidence/</code> the evidence, <code>crates/</code> the code split into packages.</p>
+    </div>
+    <div class="grid three">
+      <div class="card"><h4>Commit</h4><p style="margin-bottom:0">A recorded change, with its message and its date. The unit of a project's history.</p></div>
+      <div class="card"><h4>Issue</h4><p style="margin-bottom:0">A problem or a request, discussed in public. A visible to-do list.</p></div>
+      <div class="card"><h4>Pull request</h4><p style="margin-bottom:0">A proposed change, which the author can review before accepting it.</p></div>
+      <div class="card"><h4>Licence</h4><p style="margin-bottom:0">The contract that says what you may do with the code. MIT is permissive; GPL requires you to share your modifications.</p></div>
+      <div class="card"><h4>CI</h4><p style="margin-bottom:0">"Continuous integration": automatic checks run on every change.</p></div>
+      <div class="card"><h4>Fork</h4><p style="margin-bottom:0">An independent copy of a project, developed separately.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>"It works" means nothing on its own</h2>
+    <div class="prose">
+      <p>This is the central lesson of the four projects. A feature can be described, written, tested, observed on its author's machine, or used by a third party. Those are five different things, and confusing them is the source of almost every disappointment.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/echelle-preuve.svg" alt="A five-level ladder, from a project on paper to a product usable by a third party, with the translation of gnosix's and gnostral.rs's vocabulary.">
+      <figcaption><b>The same ladder, two vocabularies.</b> gnosix speaks of PROVEN, QUALIFIED, SOURCE-QUALIFIED. gnostral.rs speaks of BOUNDED PASS, CONTRACT TESTED, SINGLE-SERVER PASS. Under the words, the same question: how far does the evidence go?</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The vocabulary, translated</h2>
+
+    <h3>The desktop</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="col-narrow">Term</th><th>In plain words</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Term"><strong>Compositor</strong></td><td data-label="In plain words">The program that puts the windows and the display together. On Linux, <a class="src" data-src="hyprland" href="https://github.com/hyprwm/Hyprland" data-title="Hyprland" data-desc="A Wayland compositor — the one gnosix draws its desktop on." data-meta="github.com/hyprwm/Hyprland">Hyprland</a> is one.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a></strong></td><td data-label="In plain words">The modern protocol through which a program talks to the display.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a></strong></td><td data-label="In plain words">The rendering library used by gnosix, coming from the Zed editor.</td></tr>
+          <tr><td data-label="Term"><strong>Surface</strong></td><td data-label="In plain words">An area drawn on screen: the bar, the deck, a window, a panel.</td></tr>
+          <tr><td data-label="Term"><strong>Crate</strong></td><td data-label="In plain words">A package of <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> code. gnosix has about forty, split by domain.</td></tr>
+          <tr><td data-label="Term"><strong>Rust</strong></td><td data-label="In plain words">A programming language known for its memory safety and performance.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="A compact systems language; Calix&#x27;s package engine is written in Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></strong></td><td data-label="In plain words">Another language, used by Calix's engine.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Local artificial intelligence</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="col-narrow">Term</th><th>In plain words</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Term"><strong>Model</strong></td><td data-label="In plain words">A very large set of numbers tuned to produce text. "30 billion parameters" gives an idea of its size.</td></tr>
+          <tr><td data-label="Term"><strong>Parameter</strong></td><td data-label="In plain words">One of the model's internal numbers. The more there are, the bigger the model and the costlier it is to run.</td></tr>
+          <tr><td data-label="Term"><strong>Quantisation</strong></td><td data-label="In plain words">Compressing the numbers onto fewer bits (Q2_K, Q3_K…). Less memory, slightly less precision.</td></tr>
+          <tr><td data-label="Term"><strong>MoE</strong></td><td data-label="In plain words">"Mixture of experts": the model activates only part of its networks for each word.</td></tr>
+          <tr><td data-label="Term"><strong>Token</strong></td><td data-label="In plain words">A fragment of a word. Throughput is measured in tokens per second (tok/s).</td></tr>
+          <tr><td data-label="Term"><strong>Inference</strong></td><td data-label="In plain words">Using a model that has already been trained, as opposed to training it.</td></tr>
+          <tr><td data-label="Term"><strong>GPU / VRAM</strong></td><td data-label="In plain words">The graphics card and its dedicated memory. Fast, but small on a personal machine.</td></tr>
+          <tr><td data-label="Term"><strong>Residency</strong></td><td data-label="In plain words">Where a piece of the model is actually loaded: graphics card or main memory.</td></tr>
+          <tr><td data-label="Term"><strong>Benchmark</strong></td><td data-label="In plain words">A comparative measurement, with a protocol. Without a protocol, a figure is just an anecdote.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="mistralrs" href="https://github.com/EricLBuehler/mistral.rs" data-title="mistral.rs" data-desc="A large-language-model inference engine written in Rust. gnostral.rs modifies it; it does not replace it." data-meta="github.com/EricLBuehler/mistral.rs">mistral.rs</a></strong></td><td data-label="In plain words">An inference engine written in Rust. Not to be confused with <em><a class="src" data-src="mistralai" href="https://github.com/mistralai" data-title="Mistral AI" data-desc="The company that designs the Mistral models. Unrelated to the mistral.rs engine." data-meta="github.com/mistralai">Mistral AI</a></em>, the company that makes models.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="A widely used inference engine in C/C++. It is the comparison reference in the gnostral dossier." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a></strong></td><td data-label="In plain words">A very widespread inference engine, often used as a performance reference.</td></tr>
+          <tr><td data-label="Term"><strong>Paired A/B</strong></td><td data-label="In plain words">Comparing two versions by alternating runs, on the same machine and the same inputs. It is what makes a "×2" credible.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Software and the scene</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="col-narrow">Term</th><th>In plain words</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Term"><strong>Package</strong></td><td data-label="In plain words">A piece of software ready to install, with its dependencies. On <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a>, it is installed with <code>pacman</code>.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Arch Linux&#x27;s package manager and its library (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a></strong></td><td data-label="In plain words">The library doing the real work behind <code>pacman</code>: resolving dependencies, writing the files.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a></strong></td><td data-label="In plain words">Arch's community repositories: build recipes, maintained by volunteers.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="An application format sandboxed from the system, shipped with its dependencies." data-meta="github.com/flatpak/flatpak">Flatpak</a> / <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="A whole application in a single executable file, with no installation." data-meta="github.com/AppImage">AppImage</a></strong></td><td data-label="In plain words">Two ways to carry an application with its dependencies, outside the system. Sandboxed for one, self-contained in a single file for the other.</td></tr>
+          <tr><td data-label="Term"><strong><a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a></strong></td><td data-label="In plain words">The mechanism that asks for authorisation at the moment of the action, for one precise operation — instead of handing out all rights in advance.</td></tr>
+          <tr><td data-label="Term"><strong>Provenance</strong></td><td data-label="In plain words">Where a piece of software comes from: which repository, which maintainer, and so whom you will be dealing with. It is not decoration.</td></tr>
+          <tr><td data-label="Term"><strong>Scene</strong></td><td data-label="In plain words">The set of objects, relations, positions and constraints that an engine holds to be true.</td></tr>
+          <tr><td data-label="Term"><strong>Projection / renderer</strong></td><td data-label="In plain words">The translation of a scene into pixels, done by a rendering program. The renderer observes; it does not decide what exists.</td></tr>
+          <tr><td data-label="Term"><strong>Topology</strong></td><td data-label="In plain words">The map of places and links — including when it changes. The common thread of the four repositories.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Four questions to ask any repository</h2>
+    <div class="grid two">
+      <div class="card">
+        <h4>1. What is the latest stable version?</h4>
+        <p style="margin-bottom:0">If the answer is "none", that is not a defect: it is information. An openly experimental project is better than an unstable one presenting itself as finished.</p>
+      </div>
+      <div class="card">
+        <h4>2. What does the status document say?</h4>
+        <p style="margin-bottom:0">Good projects have a file listing what works, what does not, and what is left to do. Look for it before believing the README.</p>
+      </div>
+      <div class="card">
+        <h4>3. Are the failures documented?</h4>
+        <p style="margin-bottom:0">A project that publishes only its successes is hiding something. The four repositories presented here keep their failed runs, with their cause.</p>
+      </div>
+      <div class="card">
+        <h4>4. Can I check for myself?</h4>
+        <p style="margin-bottom:0">Test commands, file fingerprints, measurement receipts: the evidence must be replayable, not just told.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why this insistence on evidence</h2>
+    <div class="box change">
+      <span class="label">What it changes</span>
+      <p>In a field where announcements move faster than results, the most useful thing a project can offer is not a promise: it is a <strong>clear boundary</strong> between what is demonstrated and what is not.</p>
+      <p style="margin-bottom:0">That boundary lets you read a repository without being fooled, try it without the wrong expectations, and fund it without buying an illusion.</p>
+    </div>
+    <div class="dossier-links">
+      <a class="btn" href="gnosix.html">Reread the gnosix dossier</a>
+      <a class="btn ghost" href="gnostral.html">Reread the gnostral.rs dossier</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Glossary written from the repositories <a class="src" data-src="repo-gnosix" href="https://github.com/gnu6dotlive/gnosix/tree/66d801b0069808e6a18120ac41477a20466b4d66" data-title="gnu6dotlive/gnosix" data-desc="A Linux desktop environment in Rust." data-meta="github.com/gnu6dotlive/gnosix · commit 66d801b · as of October 29, 2026"><code>gnu6dotlive/gnosix</code></a>, <a class="src" data-src="repo-gnostral.rs" href="https://github.com/gnu6dotlive/gnostral.rs/tree/38c4134a3a398b5b83d34326826362cf4dcc7336" data-title="gnu6dotlive/gnostral.rs" data-desc="A lab for local inference in Rust on a constrained GPU." data-meta="github.com/gnu6dotlive/gnostral.rs · commit 38c4134 · as of October 29, 2026"><code>gnu6dotlive/gnostral.rs</code></a>, <a class="src" data-src="repo-calix" href="https://github.com/gnu6dotlive/calix/tree/aa423254f89cd233f261fbf19f4705d1d9c94259" data-title="gnu6dotlive/calix" data-desc="Native package management for Arch Linux." data-meta="github.com/gnu6dotlive/calix · commit aa42325 · as of October 29, 2026"><code>calix</code></a> and <a class="src" data-src="repo-in.gnu6" href="https://github.com/gnu6dotlive/in.gnu6/tree/fec80a7ae19de4b5838fe9f84dd271d6924fa753" data-title="gnu6dotlive/in.gnu6" data-desc="A scene and topology engine." data-meta="github.com/gnu6dotlive/in.gnu6 · commit fec80a7 · as of October 29, 2026"><code>in.gnu6</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="t d">
+  <title id="t">The gnostral.rs evidence loop</title>
+  <desc id="d">Six steps: identify the source, write a bounded plan, run in isolation, check an exact answer, stop and recover the memory, have an independent program audit it.</desc>
+
+  <rect width="1200" height="700" fill="#F7F3ED"/>
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#667085">GNOSTRAL.RS · THE METHOD</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#111418">How a measurement becomes evidence</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#667085">Six steps, always the same. None can be skipped.</text>
+
+  <circle cx="600" cy="386" r="196" fill="none" stroke="#D7DADF" stroke-width="1.5" stroke-dasharray="4 5"/>
+
+  <!-- flèches tangentielles -->
+  <g fill="#4169E1">
+    <g transform="translate(675,256) rotate(30)"><path d="M-5 -5 L6 0 L-5 5 z"/></g>
+    <g transform="translate(750,386) rotate(90)"><path d="M-5 -5 L6 0 L-5 5 z"/></g>
+    <g transform="translate(675,516) rotate(150)"><path d="M-5 -5 L6 0 L-5 5 z"/></g>
+    <g transform="translate(525,516) rotate(210)"><path d="M-5 -5 L6 0 L-5 5 z"/></g>
+    <g transform="translate(450,386) rotate(270)"><path d="M-5 -5 L6 0 L-5 5 z"/></g>
+    <g transform="translate(525,256) rotate(330)"><path d="M-5 -5 L6 0 L-5 5 z"/></g>
+  </g>
+
+  <!-- noeuds -->
+  <g font-family="'Space Grotesk', sans-serif">
+    <!-- 1 -->
+    <rect x="504" y="158" width="192" height="64" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+    <text x="520" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#2446A8">01</text>
+    <text x="520" y="200" font-size="13.5" font-weight="600" fill="#111418">Source + fingerprint</text>
+    <text x="520" y="215" font-size="11" fill="#667085">exact code and model</text>
+
+    <!-- 2 -->
+    <rect x="704" y="258" width="192" height="64" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+    <text x="720" y="282" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#2446A8">02</text>
+    <text x="720" y="300" font-size="13.5" font-weight="600" fill="#111418">Bounded plan</text>
+    <text x="720" y="315" font-size="11" fill="#667085">what will run, nothing more</text>
+
+    <!-- 3 -->
+    <rect x="704" y="450" width="192" height="64" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+    <text x="720" y="474" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#2446A8">03</text>
+    <text x="720" y="492" font-size="13.5" font-weight="600" fill="#111418">Isolated run</text>
+    <text x="720" y="507" font-size="11" fill="#667085">one process, limits</text>
+
+    <!-- 4 -->
+    <rect x="504" y="550" width="192" height="64" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+    <text x="520" y="574" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#2446A8">04</text>
+    <text x="520" y="592" font-size="13.5" font-weight="600" fill="#111418">Exact answer</text>
+    <text x="520" y="607" font-size="11" fill="#667085">the expected result, checked</text>
+
+    <!-- 5 -->
+    <rect x="304" y="450" width="192" height="64" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+    <text x="320" y="474" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#2446A8">05</text>
+    <text x="320" y="492" font-size="13.5" font-weight="600" fill="#111418">Stop + recovery</text>
+    <text x="320" y="507" font-size="11" fill="#667085">the memory comes back</text>
+
+    <!-- 6 -->
+    <rect x="304" y="258" width="192" height="64" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+    <text x="320" y="282" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#2446A8">06</text>
+    <text x="320" y="300" font-size="13.5" font-weight="600" fill="#111418">Independent audit</text>
+    <text x="320" y="315" font-size="11" fill="#667085">another program checks</text>
+  </g>
+
+  <!-- centre -->
+  <text x="600" y="372" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="17" fill="#111418">A PASS only says</text>
+  <text x="600" y="394" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="17" fill="#111418">what it tested.</text>
+  <text x="600" y="420" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" fill="#667085">nothing more</text>
+
+  <!-- bandeau -->
+  <rect x="48" y="644" width="1104" height="34" rx="8" fill="#FFE5D2" stroke="#C95400"/>
+  <text x="68" y="666" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#C95400">A failure is never erased: it stays on record with its cause. The first Q-010 run failed on memory recovery; it is still part of the record.</text>
+</svg>

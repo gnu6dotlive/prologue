@@ -5,6 +5,11 @@ ce que font les projets de `gnu6dotlive`, ce qu'ils prouvent, et ce qu'ils ne pr
 
 **Lire en ligne : https://gnu6dotlive.github.io/prologue/** — ou les PDF de [`exports/`](exports/).
 
+> **In English — https://gnu6dotlive.github.io/prologue/en/** · Four public repositories
+> (a Linux desktop, a local-inference lab, a package manager, a scene engine) explained without
+> jargon: what they do, what is proven, what is still open. A dated snapshot of October 29, 2026,
+> in French and English, with PDFs in [`exports/en/`](exports/en/).
+
 - **[gnosix](https://github.com/gnu6dotlive/gnosix)** — environnement de bureau Linux, Rust + Wayland/GPUI, préversion `v26.11-rc1 « Ardoise »`, MIT.
 - **[gnostral.rs](https://github.com/gnu6dotlive/gnostral.rs)** — laboratoire d'inférence locale en Rust sur GPU contraint, `v0.8.0`, MIT.
 - **[Calix](https://github.com/gnu6dotlive/calix)** — interface native de gestion de paquets pour Arch Linux, Rust + GPUI / Zig, `v0.3.1`, GPL-3.0.
@@ -52,10 +57,12 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 ├── calix.html          dossier 3 : le compagnon
 ├── ingnu6.html         dossier 4 : la scène
 ├── comprendre.html     vocabulaire, open source, échelle de preuve, glossaire
+├── en/                 la version anglaise, page pour page (comprendre → glossary.html)
 ├── assets/
 │   ├── style.css       feuille de style commune (jetons gnosix_DS V3.4.1)
 │   ├── sources.js      fiche de source au survol des liens soulignés
 │   ├── fonts/          Space Grotesk (OFL-1.1), embarquée pour l'hors-ligne
+│   ├── og.png, og-en.png  images d'aperçu de partage (FR, EN)
 │   ├── diagrams/
 │   │   ├── ecosysteme.svg            les quatre dépôts et leurs liens
 │   │   ├── topologie.svg             le fil rouge commun aux quatre projets
@@ -72,11 +79,13 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   │   ├── calix-matrice.svg         six sources × quatre gestes
 │   │   ├── calix-privilege.svg       la frontière de privilège (polkit / pkexec)
 │   │   ├── gnu6-scene.svg            une scène, plusieurs projecteurs
-│   │   └── gnu6-gates.svg            protocole CUDA-05F : 10/10 portes de labo, publication refusée
+│   │   ├── gnu6-gates.svg            protocole CUDA-05F : 10/10 portes de labo, publication refusée
+│   │   └── en/                       les mêmes schémas en anglais (générés)
 │   ├── gif/            animations (+ image de repos *-still.png pour l'impression)
 │   │   ├── gnosix-appstack.gif       l'AppStack sort du deck, cherche, lance
 │   │   ├── gnostral-course.gif       même réponse, deux vitesses, en temps réel
-│   │   └── gnu6-scene-projection.gif la scène change, les projections suivent
+│   │   ├── gnu6-scene-projection.gif la scène change, les projections suivent
+│   │   └── en/                       les mêmes animations en anglais (générées)
 │   └── shots/          captures réelles
 │       ├── calix-browse.png          recherche « ripgrep » (29/10/2026, r5022)
 │       ├── calix-installed.png       inventaire, 1 803 paquets (29/10/2026, r5022)
@@ -84,8 +93,10 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 ├── tools/
 │   ├── make_gifs.py    génère les animations (SVG image par image → rsvg-convert → ffmpeg)
 │   ├── link_sources.py registre des sources : pose les liens et leurs fiches
-│   └── table_labels.py intitulés de colonnes recopiés sur les cellules (fiches sur mobile)
-├── exports/            les mêmes pages en PDF
+│   ├── table_labels.py intitulés de colonnes recopiés sur les cellules (fiches sur mobile)
+│   ├── translate_svgs.py schémas anglais, depuis une table de traduction par schéma
+│   └── i18n_head.py    sélecteur FR · EN, hreflang, aperçu de partage par langue
+├── exports/            les mêmes pages en PDF (exports/en/ pour l'anglais)
 ├── LICENSE             CC BY 4.0 (contenu) ; la fonte garde sa licence OFL-1.1
 └── README.md
 ```
@@ -137,6 +148,20 @@ Le registre du script est la seule liste des sources : projets externes (mistral
 llama.cpp, PixiJS, Hyprland, polkit…), documents des quatre dépôts et reçus de mesure
 (Q-010, CUDA-05F…). Le script lie la première mention de chaque source dans chaque section ;
 il peut être relancé sans doubler les liens.
+
+## Deux langues
+
+Chaque page existe en français et en anglais, avec un sélecteur FR · EN dans l'en-tête et les
+balises `hreflang` qui relient les deux. La version anglaise reprend le même instantané, les
+mêmes commits et les mêmes sources. Après une modification :
+
+```
+python3 tools/translate_svgs.py   # schémas anglais (échoue si un texte n'est pas traduit)
+python3 tools/make_gifs.py        # animations FR et EN
+python3 tools/link_sources.py     # liens de sources et fiches, dans la langue de la page
+python3 tools/table_labels.py     # intitulés de tableaux pour le mobile
+python3 tools/i18n_head.py        # sélecteur de langue et balises de partage
+```
 
 ## Sur téléphone
 

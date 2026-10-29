@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calix — one counter for all your software</title>
+<meta name="description" content="Calix: a single native window to install, update and inventory the software of an Arch Linux system, without hiding where each package comes from.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/calix.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/calix.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/calix.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/calix.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="Calix — one counter for all your software">
+<meta property="og:description" content="Calix: a single native window to install, update and inventory the software of an Arch Linux system, without hiding where each package comes from.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/calix.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html" aria-current="page">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="glossary.html">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../calix.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Dossier 3 · the companion</p>
+    <h1>Calix</h1>
+    <p class="lead">A single window to install, update and inventory the software of an <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a> system — without ever hiding where each package comes from.</p>
+    <p><span class="tag partial">Pre-1.0</span> <span class="tag">v0.3.1</span> <span class="tag">GPL-3.0 licence</span> <span class="tag info">Arch Linux x86_64</span></p>
+  </div>
+
+  <div class="grid four" style="margin-top:36px">
+    <div class="stat"><span class="value">6</span><span class="caption">package ecosystems brought together in a single list</span></div>
+    <div class="stat"><span class="value">1,803</span><span class="caption">installed packages in a single table, on the author's machine (October&nbsp;29,&nbsp;2026)</span></div>
+    <div class="stat"><span class="value">4</span><span class="caption">separate programs: interface, engine, inventory service, notifications</span></div>
+    <div class="stat"><span class="value">0</span><span class="caption">calls to <code>sudo</code>: elevation goes through a single <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a> path</span></div>
+  </div>
+
+  <section>
+    <h2>In one picture</h2>
+    <div class="box analogy">
+      <span class="label">The analogy</span>
+      <p>Imagine a single counter that accepts parcels from six different carriers. You now have one desk, one tracking number, one queue.</p>
+      <p style="margin-bottom:0">But every parcel keeps its original label: this one came by post, that one by private courier. The counter does not pretend all carriers are the same — it just saves you from running between six desks.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The problem, then the answer</h2>
+    <figure>
+      <img src="../assets/diagrams/en/calix-flux.svg" alt="Six software sources on the left, a versioned inventory in the middle, and on the right rows that keep each package's origin.">
+      <figcaption><b>Tidying is not mixing up.</b> Calix brings six ecosystems together in one document, but every entry says where it comes from. A reader that does not understand the document's version refuses it, instead of showing half of it.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>On <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a>, installing software means moving from one tool to another: <code>pacman</code> for the official repositories, a helper for the <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a>, <code>flatpak</code> for sandboxed packages, and "whatever is lying around" for <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="A whole application in a single executable file, with no installation." data-meta="github.com/AppImage">AppImages</a>. Each has its own output, its own idea of what is installed, and its own path to administrator rights.</p>
+      <p>Calix brings all of that into a single native application: no embedded web page, no hidden browser. The interface is written in <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> with <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> — the same foundation as <a href="gnosix.html">gnosix</a> — and package management in <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="A compact systems language; Calix&#x27;s package engine is written in Zig." data-meta="codeberg.org/ziglang/zig">Zig</a>.</p>
+    </div>
+    <div class="shot-pair">
+      <figure class="shot">
+        <img src="../assets/shots/calix-browse.png" alt="Calix screenshot: a search for “ripgrep”, eighteen results, three from the Arch repositories and fifteen from the AUR, each with its source shown.">
+      </figure>
+      <figure class="shot">
+        <img src="../assets/shots/calix-installed.png" alt="Calix screenshot: the inventory of installed packages, 1,803 packages split between official repositories, Cargo, NPM and tracked releases, with version, source, size and status.">
+      </figure>
+    </div>
+    <p class="caption-solo"><b>Two real views of Calix.</b> The first, a search, mixes Arch repositories and the AUR: every row keeps its source, and the AUR is flagged as "build recipes, not binaries". The second shows the inventory of the author's 1,803 packages, one tab per ecosystem; <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="The package manager and build tool of the Rust language." data-meta="github.com/rust-lang/cargo">Cargo</a> and <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="The package manager of the JavaScript ecosystem." data-meta="github.com/npm/cli">NPM</a> are "listed, not queried". Screenshots of October 29, 2026, installed version r5022.</p>
+  </section>
+
+  <section>
+    <h2>What works, what is still open</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Area</th><th>State published by the repository</th><th>What it does not say</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Area"><strong>Interface</strong></td>
+            <td data-label="State published by the repository">Primary interface, in active development</td>
+            <td data-label="What it does not say">Not a frozen design; the layout can still change.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Unified inventory</strong></td>
+            <td data-label="State published by the repository"><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Arch Linux&#x27;s package manager and its library (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a>, <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a>, <a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="An application format sandboxed from the system, shipped with its dependencies." data-meta="github.com/flatpak/flatpak">Flatpak</a>, <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="A whole application in a single executable file, with no installation." data-meta="github.com/AppImage">AppImage</a>, <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="The package manager and build tool of the Rust language." data-meta="github.com/rust-lang/cargo">Cargo</a>, <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="The package manager of the JavaScript ecosystem." data-meta="github.com/npm/cli">NPM</a> and tracked releases</td>
+            <td data-label="What it does not say">Listing is not knowing how to install: see the next row.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Actions from the interface</strong></td>
+            <td data-label="State published by the repository">ALPM, AUR and Flatpak only</td>
+            <td data-label="What it does not say">Cargo and NPM are listed, not yet modifiable from the interface.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Search</strong></td>
+            <td data-label="State published by the repository">ALPM, AUR, Flatpak and already-installed AppImages</td>
+            <td data-label="What it does not say">The other sources remain inventory-only.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Inventory service</strong></td>
+            <td data-label="State published by the repository">Answers on demand, sole writer of the state</td>
+            <td data-label="What it does not say">No scheduler yet: nothing updates on its own.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Release tracking</strong></td>
+            <td data-label="State published by the repository">Registry and provenance checks in <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="A compact systems language; Calix&#x27;s package engine is written in Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></td>
+            <td data-label="What it does not say">A frozen Python engine still writes the observation file.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Notifications</strong></td>
+            <td data-label="State published by the repository">Shipped and verified on a real session</td>
+            <td data-label="What it does not say">Installed, but not enabled by default.</td>
+          </tr>
+          <tr>
+            <td data-label="Area"><strong>Platform</strong></td>
+            <td data-label="State published by the repository"><a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a>, x86_64</td>
+            <td data-label="What it does not say">No other distribution is supported.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/calix-matrice.svg" alt="Table: ALPM, AUR and Flatpak allow inventory, search, install and update from the interface; AppImage is partial; Cargo and NPM are inventory-only.">
+      <figcaption><b>An inventory, not yet a full counter.</b> All six sources are inventoried; only three can be changed from the window. AppImage is handled by the engine, not yet by the interface.</figcaption>
+    </figure>
+    <div class="box note">
+      <span class="label">The repository's rule</span>
+      <p style="margin-bottom:0">The repository publishes a status table and states that, if another document in the tree contradicts it more optimistically, <strong>this table is the one to trust</strong>. It is a rare discipline, and it is what makes the reading useful.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The privilege boundary</h2>
+    <div class="prose">
+      <p>This is the most interesting point for anyone funding or evaluating the project. A package manager needs administrator rights: it changes the system. The question is not "are those rights needed?" but "how much code receives them?".</p>
+      <p>In Calix, the interface, the inventory service and the notification bridge run <strong>without privilege</strong>. Elevation goes through <strong>a single narrow, explicit path, via <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a></strong>. The project explicitly forbids <code>sudo</code>, <code>su</code> and <code>doas</code> — including in its installation documentation.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/calix-privilege.svg" alt="On the left, the interface, the inventory service and notifications, without privilege. In the middle, polkit, the only door. On the right, the Zig engine relaunched through pkexec for transactions.">
+      <figcaption><b>A single door.</b> The three everyday programs run under the user's account. Only the commands that change the system relaunch the <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="A compact systems language; Calix&#x27;s package engine is written in Zig." data-meta="codeberg.org/ziglang/zig">Zig</a> engine through <code>pkexec</code>, for one of the three declared polkit actions: install, remove, update.</figcaption>
+    </figure>
+    <div class="box change">
+      <span class="label">What it changes</span>
+      <p style="margin-bottom:0">A program that crashes without privilege does not break the system. A program that asks for rights at the last moment, for one precise operation, shrinks the surface of an incident. It is an architectural decision, not a decorative precaution.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why provenance is the real subject</h2>
+    <div class="prose">
+      <p>The common thread of these four repositories is <strong>topology</strong>: making explicit where each thing is, and what that position allows. Calix offers a very concrete version of it.</p>
+      <p>A package installed from the official repositories and the same name coming from the <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a> are not the same object. One is signed by the distribution, the other by a community maintainer. Mixing them in an unlabelled list would be a mistake, not a simplification. So Calix keeps the label, and even versions the document format: a consumer that does not know the version refuses to read it.</p>
+    </div>
+    <div class="box analogy">
+      <span class="label">The analogy</span>
+      <p style="margin-bottom:0">A parcel label does not tell you whether the contents are good. It tells you who sent it, and therefore whom you will be dealing with if something goes wrong. That is exactly what Calix does with a package.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it is not</h2>
+    <div class="box limit">
+      <span class="label">The limits, plainly</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Not finished.</strong> The project is explicitly pre-1.0; version 0.3.1 is a step, not an end point.</li>
+        <li><strong>Not universal.</strong> <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a> and x86_64 only. It is not a package manager for Debian, Fedora or macOS.</li>
+        <li><strong>Not automatic yet.</strong> The service answers on demand: there is no scheduler, so no background updates.</li>
+        <li><strong>Not everything is modifiable.</strong> <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="The package manager and build tool of the Rust language." data-meta="github.com/rust-lang/cargo">Cargo</a> and <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="The package manager of the JavaScript ecosystem." data-meta="github.com/npm/cli">NPM</a> appear in the inventory but cannot yet be installed from the interface.</li>
+        <li><strong>Not fully native.</strong> A frozen Python engine still writes the tracked-releases file; replacing it is one of the announced work items.</li>
+        <li><strong>Gestures not requalified.</strong> Requalifying the navigation remains open: the clicks could not be exercised by the synthetic pointer.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it changes, depending on who you are</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>Arch Linux user</h4>
+        <p style="margin-bottom:0">One window instead of four tools, and a list that does not lie to you about where a package comes from. Updates remain manual for now.</p>
+      </div>
+      <div class="card">
+        <h4>Developer</h4>
+        <p style="margin-bottom:0">A complete example of a native <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> interface, a <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="A compact systems language; Calix&#x27;s package engine is written in Zig." data-meta="codeberg.org/ziglang/zig">Zig</a> backend talking to <code>libalpm</code>, a versioned JSON-lines protocol over a Unix socket, and a <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a> boundary written down in black and white.</p>
+      </div>
+      <div class="card">
+        <h4>Decision-maker or funder</h4>
+        <p style="margin-bottom:0">The value is not "one more app store": it is a model of provenance and privilege, reusable wherever several sources must coexist without being confused.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Going further</h2>
+    <details class="deep">
+      <summary>Technical — the repository's words</summary>
+      <p><strong><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Arch Linux&#x27;s package manager and its library (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a>:</strong> the library behind <code>pacman</code>, Arch's package manager. <strong><a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a>:</strong> Arch's community repositories, where packages are recipes built locally. <strong><a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="An application format sandboxed from the system, shipped with its dependencies." data-meta="github.com/flatpak/flatpak">Flatpak</a>:</strong> applications packaged with their dependencies, isolated from the system. <strong><a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="A whole application in a single executable file, with no installation." data-meta="github.com/AppImage">AppImage</a>:</strong> a self-contained executable file. <strong><a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a>:</strong> the mechanism that asks the user for authorisation, at the moment of the action, for one precise operation.</p>
+      <p style="margin-bottom:0"><strong>Languages:</strong> <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> and <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> for the interface; <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="A compact systems language; Calix&#x27;s package engine is written in Zig." data-meta="codeberg.org/ziglang/zig">Zig</a> 0.16 for the engine, the service and the notifications. <strong>Licence:</strong> GPL-3.0-only — a licence that requires sharing modifications if the program is distributed.</p>
+    </details>
+    <details class="deep">
+      <summary>Checking for yourself</summary>
+      <p>Each published release provides an archive and its SHA-256 fingerprint: download both, check the fingerprint, then look at the contents. The archive is not an installer; it is a tree to inspect.</p>
+      <p style="margin-bottom:0">From source, you need Zig 0.16 and a stable Rust toolchain: <code>make zig</code> builds the three binaries, <code>make run</code> starts the interface against the repository's backend. The package is installed with <code>pkexec pacman -U</code>, never with <code>sudo</code>.</p>
+    </details>
+    <div class="dossier-links">
+      <a class="btn" href="https://github.com/gnu6dotlive/calix">See the repository on GitHub</a>
+      <a class="btn ghost" href="gnosix.html">The desktop that shares its foundation</a>
+      <a class="btn ghost" href="glossary.html">Understand the vocabulary</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Facts drawn from <a class="src" data-src="doc-README.md" href="https://github.com/gnu6dotlive/calix/blob/aa423254f89cd233f261fbf19f4705d1d9c94259/README.md" data-title="calix · README.md" data-desc="Overview of the Calix repository, with its status table." data-meta="github.com/gnu6dotlive/calix/README.md · commit aa42325 · as of October 29, 2026"><code>README.md</code></a>, <a class="src" data-src="doc-docs/calix-architecture.md" href="https://github.com/gnu6dotlive/calix/blob/aa423254f89cd233f261fbf19f4705d1d9c94259/docs/calix-architecture.md" data-title="calix · docs/calix-architecture.md" data-desc="Calix&#x27;s architecture: interface, engine, service, notifications." data-meta="github.com/gnu6dotlive/calix/docs/calix-architecture.md · commit aa42325 · as of October 29, 2026"><code>docs/calix-architecture.md</code></a> and <a class="src" data-src="doc-docs/brand.md" href="https://github.com/gnu6dotlive/calix/blob/aa423254f89cd233f261fbf19f4705d1d9c94259/docs/brand.md" data-title="calix · docs/brand.md" data-desc="Calix&#x27;s brand and visual tokens." data-meta="github.com/gnu6dotlive/calix/docs/brand.md · commit aa42325 · as of October 29, 2026"><code>docs/brand.md</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

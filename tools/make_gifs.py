@@ -16,6 +16,9 @@ Règles de mouvement : pas de fondu d'opacité ; les objets bougent entiers ; un
 mobile ne tranche jamais un contenu immobile ; une surface sort de son module comme
 une seule forme.
 
+Deux langues : les GIF français dans assets/gif/, les anglais dans assets/gif/en/.
+Tout texte passe par text(), qui le traduit via EN quand LANG vaut « en ».
+
 Usage : python3 tools/make_gifs.py            (dépend de rsvg-convert et ffmpeg)
 """
 
@@ -23,6 +26,7 @@ from __future__ import annotations
 
 import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -30,6 +34,67 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "gif"
 
 W, H = 1200, 675
+LANG = "fr"
+
+EN = {
+    # gnosix
+    "GNOSIX · LE DECK ET SON APPSTACK": "GNOSIX · THE DECK AND ITS APPSTACK",
+    "L'AppStack sort du deck — il ne se pose pas dessus": "The AppStack grows out of the deck — not on top of it",
+    "Ouvrir l'AppStack, dans le deck": "Open the AppStack, in the deck",
+    "Chercher dans le catalogue": "Search the catalogue",
+    "Lancer : l'autorité décide": "Launch: the authority decides",
+    "L'application rejoint le deck": "The application joins the deck",
+    "autorité de lancement · accordée": "launch authority · granted",
+    "Rechercher une application": "Search for an application",
+    "RÉCENTS": "RECENT",
+    "↵ Entrée": "↵ Enter",
+    "Fichiers": "Files", "Paramètres": "Settings", "Musique": "Music",
+    "Calculatrice": "Calculator", "Calendrier": "Calendar", "Capture d'écran": "Camera",
+    "Animation de principe, d'après gnosix/docs/status/STATUS.md (« The Deck and the AppStack », QUALIFIED). Ni capture, ni durées réelles.":
+        "An illustration of the principle, based on gnosix/docs/status/STATUS.md (“The Deck and the AppStack”, QUALIFIED). Not a capture, not real timings.",
+    # gnostral
+    "GNOSTRAL.RS · Q-010 · TEMPS RÉEL": "GNOSTRAL.RS · Q-010 · REAL TIME",
+    "Même question, même réponse, deux vitesses": "Same question, same answer, two speeds",
+    "SANS CORRECTIF": "WITHOUT THE PATCH",
+    "AVEC CORRECTIF": "WITH THE PATCH",
+    "lecture de la question": "reading the question",
+    "question lue": "question read",
+    "réponse complète": "answer complete",
+    "texte identique octet pour octet à celui du haut — 6 paires sur 6": "text identical byte for byte to the one above — 6 pairs out of 6",
+    "Rythmes médians mesurés, réponse de 512 jetons — gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json. Le décodage est lissé à son débit médian.":
+        "Measured median rates, 512-token answer — gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json. Decoding is smoothed to its median rate.",
+    # in.gnu6
+    "IN.GNU6 · UNE SCÈNE, DEUX PROJECTIONS": "IN.GNU6 · ONE SCENE, TWO PROJECTIONS",
+    "La scène change, les projections suivent — jamais l'inverse": "The scene changes, the projections follow — never the reverse",
+    "LA SCÈNE · CE QUI EXISTE": "THE SCENE · WHAT EXISTS",
+    "DERNIER FAIT": "LATEST FACT",
+    "aucun changement — requête de renderer refusée": "no change — renderer request refused",
+    "n2 · position modifiée par la scène": "n2 · position changed by the scene",
+    "relation n2 → n3 (était n2 → n1)": "relation n2 → n3 (was n2 → n1)",
+    "relation n2 → n1 rétablie": "relation n2 → n1 restored",
+    "n2 · position rétablie": "n2 · position restored",
+    "scène stable": "scene stable",
+    "PROJECTION 1 · NAVIGATEUR": "PROJECTION 1 · BROWSER",
+    "PixiJS : des cartes": "PixiJS: cards",
+    "PROJECTION 2 · AUTRE RENDERER": "PROJECTION 2 · ANOTHER RENDERER",
+    "même scène, autre dessin": "same scene, another drawing",
+    "✕ refusé": "✕ refused",
+    "déplacer un objet appartient à la scène": "moving an object belongs to the scene",
+    "Animation de principe, d'après in.gnu6/CONTRACT.md : un renderer observe et dessine ; il ne renomme, ne déplace, n'invente rien.":
+        "An illustration of the principle, based on in.gnu6/CONTRACT.md: a renderer observes and draws; it renames, moves and invents nothing.",
+}
+
+
+def tr(s: str) -> str:
+    return EN.get(s, s) if LANG == "en" else s
+
+
+def num(x: float, decimals: int) -> str:
+    """8,90 en français, 8.90 en anglais ; séparateur de milliers espace ou virgule."""
+    out = f"{x:,.{decimals}f}"
+    if LANG == "en":
+        return out
+    return out.replace(",", "\u202f").replace(".", ",").replace("\u202f", " ")
 FONT = "'Space Grotesk', sans-serif"
 
 SHELL = "#F7F3ED"
@@ -83,7 +148,7 @@ def lerp(a: float, b: float, p: float) -> float:
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", spacing=None, extra=""):
     ls = f' letter-spacing="{spacing}"' if spacing else ""
-    s = s.replace("&", "&amp;").replace("<", "&lt;")
+    s = tr(s).replace("&", "&amp;").replace("<", "&lt;")
     return (f'<text x="{x:.1f}" y="{y:.1f}" font-family="{FONT}" font-size="{size}" '
             f'font-weight="{weight}" fill="{fill}" text-anchor="{anchor}"{ls}{extra}>{s}</text>')
 
@@ -249,7 +314,9 @@ def gnosix_frame(t: float) -> str:
             qx = fx + 37
         if int(t * 4) % 2 == 0 or query:
             p.append(rect(qx + 1, fy + 10, 2, 18, ORANGE))
-        p.append(text(fx + 4, fy + 64, "RÉCENTS" if not query else f"{len(rows)} RÉSULTAT{'S' if len(rows) > 1 else ''}",
+        found = (f"{len(rows)} RESULT{'S' if len(rows) > 1 else ''}" if LANG == "en"
+                 else f"{len(rows)} RÉSULTAT{'S' if len(rows) > 1 else ''}")
+        p.append(text(fx + 4, fy + 64, "RÉCENTS" if not query else found,
                       10.5, 600, MUTED, spacing=1.6))
         enter = t >= 2.9
         for k, name in enumerate(rows):
@@ -335,10 +402,12 @@ def lane(p, y, key, label, color, tint, t):
     n = 0 if t < pre else min(TOKENS, int((t - pre) * tps))
     done = n >= TOKENS
     p.append(text(x0 + w - 28, y + 38, f"{n}", 30, 700, INK, "end"))
-    p.append(text(x0 + w - 28, y + 58, f"/ {TOKENS} jetons", 12, 500, SLATE, "end"))
-    rate = f"{tps:.2f}".replace(".", ",")
-    p.append(text(x0 + 28, y + 58, f"pré-remplissage {pre * 1000:,.0f} ms · puis {rate} jetons/s".replace(",", " ", 1),
-                  13, 400, SLATE))
+    p.append(text(x0 + w - 28, y + 58, f"/ {TOKENS} {'tokens' if LANG == 'en' else 'jetons'}", 12, 500, SLATE, "end"))
+    if LANG == "en":
+        line = f"prefill {num(pre * 1000, 0)} ms · then {num(tps, 2)} tokens/s"
+    else:
+        line = f"pré-remplissage {num(pre * 1000, 0)} ms · puis {num(tps, 2)} jetons/s"
+    p.append(text(x0 + 28, y + 58, line, 13, 400, SLATE))
     # barre de pré-remplissage : la question est lue avant le premier mot
     bx, by, bw = x0 + 28, y + 76, 520
     fill = clamp(t / pre)
@@ -372,7 +441,7 @@ def gnostral_frame(t: float) -> str:
     p = header("GNOSTRAL.RS · Q-010 · TEMPS RÉEL",
                "Même question, même réponse, deux vitesses")
     p.append(rect(W - 48 - 150, 56, 150, 34, INK, 17))
-    p.append(text(W - 48 - 75, 78, f"t = {min(t, GN_END + 2.2):4.1f} s".replace(".", ","), 14, 700, WHITE, "middle"))
+    p.append(text(W - 48 - 75, 78, f"t = {num(min(t, GN_END + 2.2), 1)} s", 14, 700, WHITE, "middle"))
     lane(p, 110, "base", "SANS CORRECTIF", SLATE, MUTED, t)
     lane(p, 374, "cand", "AVEC CORRECTIF", ORANGE700, ORANGE, t)
     if t >= GN_END:
@@ -529,23 +598,27 @@ def render(name, frame_fn, duration, fps, still_t):
         palette = work / "palette.png"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(fps), "-i", str(work / "f%04d.png"),
                         "-vf", "palettegen=max_colors=128:stats_mode=full", str(palette)], check=True)
+        out = OUT / "en" if LANG == "en" else OUT
+        out.mkdir(parents=True, exist_ok=True)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(fps), "-i", str(work / "f%04d.png"),
                         "-i", str(palette), "-lavfi", "paletteuse=dither=none", "-loop", "0",
-                        str(OUT / f"{name}.gif")], check=True)
+                        str(out / f"{name}.gif")], check=True)
         still = work / "still.svg"
         still.write_text(frame_fn(still_t), encoding="utf-8")
-        subprocess.run(["rsvg-convert", "-w", str(W), "-o", str(OUT / f"{name}-still.png"), str(still)], check=True)
-        size = (OUT / f"{name}.gif").stat().st_size
-        print(f"{name}.gif  {n} images à {fps} i/s  {size / 1024:.0f} Kio")
+        subprocess.run(["rsvg-convert", "-w", str(W), "-o", str(out / f"{name}-still.png"), str(still)], check=True)
+        size = (out / f"{name}.gif").stat().st_size
+        print(f"{LANG}/{name}.gif  {n} images à {fps} i/s  {size / 1024:.0f} Kio")
     finally:
         shutil.rmtree(work)
 
 
 def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    render("gnosix-appstack", gnosix_frame, 6.4, 25, still_t=2.8)
-    render("gnostral-course", gnostral_frame, GN_TOTAL, 20, still_t=GN_END + 1.0)
-    render("gnu6-scene-projection", gnu6_frame, 8.4, 25, still_t=4.3)
+    global LANG
+    langs = sys.argv[1:] or ["fr", "en"]
+    for LANG in langs:
+        render("gnosix-appstack", gnosix_frame, 6.4, 25, still_t=2.8)
+        render("gnostral-course", gnostral_frame, GN_TOTAL, 20, still_t=GN_END + 1.0)
+        render("gnu6-scene-projection", gnu6_frame, 8.4, 25, still_t=4.3)
 
 
 if __name__ == "__main__":

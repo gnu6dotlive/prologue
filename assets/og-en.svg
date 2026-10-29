@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F7F3ED"/>
+  <text x="72" y="96" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="18" letter-spacing="3.6" fill="#C95400">GNU6DOTLIVE · PROLOGUE</text>
+  <text x="72" y="172" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="60" fill="#111418">Four projects,</text>
+  <text x="72" y="240" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="60" fill="#111418">explained without jargon</text>
+  <text x="72" y="292" font-family="'Space Grotesk', sans-serif" font-size="24" fill="#667085">What exists, what is proven, and what is still open.</text>
+  <g font-family="'Space Grotesk', sans-serif">
+    <rect x="72" y="346" width="252" height="150" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="72" y="346" width="252" height="6" rx="3" fill="#C95400"/>
+    <text x="96" y="390" font-weight="600" font-size="13" letter-spacing="2" fill="#C95400">THE DESKTOP</text>
+    <text x="96" y="432" font-weight="700" font-size="32" fill="#111418">gnosix</text>
+    <text x="96" y="468" font-size="16" fill="#667085">Rust · Wayland · GPUI</text>
+
+    <rect x="344" y="346" width="252" height="150" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="344" y="346" width="252" height="6" rx="3" fill="#4169E1"/>
+    <text x="368" y="390" font-weight="600" font-size="13" letter-spacing="2" fill="#2446A8">THE ENGINE</text>
+    <text x="368" y="432" font-weight="700" font-size="32" fill="#111418">gnostral.rs</text>
+    <text x="368" y="468" font-size="16" fill="#667085">Local inference in Rust</text>
+
+    <rect x="616" y="346" width="252" height="150" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="616" y="346" width="252" height="6" rx="3" fill="#5F7F52"/>
+    <text x="640" y="390" font-weight="600" font-size="13" letter-spacing="2" fill="#455F3D">THE COMPANION</text>
+    <text x="640" y="432" font-weight="700" font-size="32" fill="#111418">Calix</text>
+    <text x="640" y="468" font-size="16" fill="#667085">Arch Linux packages</text>
+
+    <rect x="888" y="346" width="252" height="150" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="888" y="346" width="252" height="6" rx="3" fill="#111418"/>
+    <text x="912" y="390" font-weight="600" font-size="13" letter-spacing="2" fill="#667085">THE SCENE</text>
+    <text x="912" y="432" font-weight="700" font-size="32" fill="#111418">in.gnu6</text>
+    <text x="912" y="468" font-size="16" fill="#667085">Scenes and topologies</text>
+  </g>
+  <line x1="72" y1="546" x2="1128" y2="546" stroke="#D7DADF"/>
+  <text x="72" y="584" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="18" fill="#111418">Snapshot of October 29, 2026</text>
+  <text x="1128" y="584" font-family="'Space Grotesk', sans-serif" font-size="18" fill="#667085" text-anchor="end">gnu6dotlive.github.io/prologue/en</text>
+</svg>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four repositories, explained without jargon — gnu6dotlive</title>
+<meta name="description" content="A plain-language reading of four public projects: a Linux desktop, a local inference lab, a package manager and a scene engine.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="Four repositories, explained without jargon — gnu6dotlive">
+<meta property="og:description" content="A plain-language reading of four public projects: a Linux desktop, a local inference lab, a package manager and a scene engine.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="glossary.html">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../index.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Public documentation · gnu6dotlive</p>
+    <h1>Four projects, explained without jargon</h1>
+    <p class="lead">This dossier tells the story of four public repositories — three under a free licence, the fourth with no licence decided yet: a Linux desktop, a local artificial-intelligence lab, a package manager and a scene engine. No advertising, no promises: what exists, what is proven, and what is still open.</p>
+    <div class="dossier-links">
+      <a class="btn" href="gnosix.html">Discover gnosix</a>
+      <a class="btn ghost" href="gnostral.html">Discover gnostral.rs</a>
+    </div>
+  </div>
+
+  <section>
+    <div class="grid two">
+      <article class="card">
+        <p class="kicker">The desktop</p>
+        <h3 style="margin-top:0">gnosix</h3>
+        <p>A complete desktop environment, written in <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a>, that draws its own bar, its application deck, its settings and its lock screen. It runs on Linux, with the <a class="src" data-src="hyprland" href="https://github.com/hyprwm/Hyprland" data-title="Hyprland" data-desc="A Wayland compositor — the one gnosix draws its desktop on." data-meta="github.com/hyprwm/Hyprland">Hyprland</a> compositor.</p>
+        <p style="margin-bottom:0"><span class="tag partial">Experimental</span> <span class="tag">26.11-rc1 « Ardoise »</span></p>
+      </article>
+      <article class="card">
+        <p class="kicker cool">The engine</p>
+        <h3 style="margin-top:0">gnostral.rs</h3>
+        <p>A research lab trying to run large AI models on a modest graphics card — and publishing its measurements, including when they disappoint.</p>
+        <p style="margin-bottom:0"><span class="tag partial">Research</span> <span class="tag">v0.8.0</span></p>
+      </article>
+      <article class="card">
+        <p class="kicker neutral">The companion</p>
+        <h3 style="margin-top:0">Calix</h3>
+        <p>A single native window to install, update and inventory the software of an <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a> system — without hiding where each package comes from.</p>
+        <p style="margin-bottom:0"><span class="tag partial">Pre-1.0</span> <span class="tag">v0.3.1</span></p>
+      </article>
+      <article class="card">
+        <p class="kicker neutral">The scene</p>
+        <h3 style="margin-top:0">in.gnu6</h3>
+        <p>A scene and topology engine: it decides what exists; the displays only decide how to show it.</p>
+        <p style="margin-bottom:0"><span class="tag partial">Research</span> <span class="tag">2026.10.0</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Four repositories, four trades</h2>
+    <div class="prose">
+      <p>Four projects, four different trades, and one dossier for each: <strong>gnosix</strong> builds a visible desktop, <strong>gnostral.rs</strong> runs measurable research, <strong>Calix</strong> keeps an <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a> system's software in order, <strong>in.gnu6</strong> provides the scene engine that serves as common ground.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/ecosysteme.svg" alt="Map of the four repositories: gnosix, gnostral.rs, Calix and in.gnu6, with topology as the common thread.">
+      <figcaption><b>Reading the map.</b> Four trades, two links: Calix shares gnosix's interface foundation (<a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> and <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a>), and in.gnu6 carries the underlying question common to all four — topology. Each dossier has its own page.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The common thread: topology</h2>
+    <div class="prose">
+      <p>The word sounds learned. It names something simple: <strong>the map of places and links</strong>. Where a thing is, what it is connected to, and what that position allows.</p>
+      <p>In gnosix, the bar can live on any edge of the screen; its position changes the geometry, not the rules. In Calix, a piece of software can come from several repositories; its origin stays visible. In in.gnu6, a scene is a set of objects and relations that the display does not decide. In gnostral.rs, a piece of a model placed on the graphics card runs faster than a piece left in main memory.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/topologie.svg" alt="Four cards illustrating the same topology question in gnosix, Calix, in.gnu6 and gnostral.rs.">
+      <figcaption><b>One discipline.</b> Make the position explicit, check it, and refuse to guess. This kinship is the author's reading: each repository publishes its own evidence, separately.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Three principles for reading these repositories</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>1. Written is not proven</h4>
+        <p style="margin-bottom:0">A file describing a feature does not prove it works. These projects explicitly separate written code, a passing test and real use.</p>
+      </div>
+      <div class="card">
+        <h4>2. A repository is not a product</h4>
+        <p style="margin-bottom:0">A public repository is an open workshop. You can walk in, read, test — but nothing there is guaranteed installable, stable or supported.</p>
+      </div>
+      <div class="card">
+        <h4>3. Free does not mean finished</h4>
+        <p style="margin-bottom:0">Open source makes the recipe visible and reusable. It promises neither quality, nor maintenance, nor a user manual for the general public.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What you will not find here</h2>
+    <div class="box limit">
+      <span class="label">Good to know</span>
+      <p><strong>No promise of stability.</strong> All four projects are explicitly experimental or research. gnosix is not yet a desktop ready for others; gnostral.rs is not a server ready to deploy; Calix is pre-1.0; in.gnu6 has neither an OSS licence nor a stable API.</p>
+      <p style="margin-bottom:0"><strong>No marketing figures.</strong> The published numbers come from local measurements, with their protocol and their limits. When a claim has not been proven, it is withdrawn or flagged as such.</p>
+    </div>
+    <p class="prose">That is precisely what makes these repositories worth reading: they also document what did not work.</p>
+  </section>
+
+  <section>
+    <h2>Where to go next</h2>
+    <div class="grid two">
+      <a class="card" href="gnosix.html" style="text-decoration:none;color:inherit">
+        <p class="kicker">Dossier 1</p>
+        <h3 style="margin-top:0">gnosix, the desktop</h3>
+        <p style="margin-bottom:0">How a desktop draws itself, remembers, and never acts without permission.</p>
+      </a>
+      <a class="card" href="gnostral.html" style="text-decoration:none;color:inherit">
+        <p class="kicker cool">Dossier 2</p>
+        <h3 style="margin-top:0">gnostral.rs, the engine</h3>
+        <p style="margin-bottom:0">How a large model is made to fit on a small card, and how that is proven.</p>
+      </a>
+      <a class="card" href="calix.html" style="text-decoration:none;color:inherit">
+        <p class="kicker neutral">Dossier 3</p>
+        <h3 style="margin-top:0">Calix, the companion</h3>
+        <p style="margin-bottom:0">How six sources of software become a single list, without erasing where they come from.</p>
+      </a>
+      <a class="card" href="ingnu6.html" style="text-decoration:none;color:inherit">
+        <p class="kicker neutral">Dossier 4</p>
+        <h3 style="margin-top:0">in.gnu6, the scene</h3>
+        <p style="margin-bottom:0">How an engine decides what exists, and lets the projectors decide the rest.</p>
+      </a>
+    </div>
+    <p class="prose" style="margin-top:24px">The technical words are translated in <a href="glossary.html">Glossary: the vocabulary</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Sources: public repositories <a class="src" data-src="repo-gnosix" href="https://github.com/gnu6dotlive/gnosix/tree/66d801b0069808e6a18120ac41477a20466b4d66" data-title="gnu6dotlive/gnosix" data-desc="A Linux desktop environment in Rust." data-meta="github.com/gnu6dotlive/gnosix · commit 66d801b · as of October 29, 2026"><code>gnosix</code></a>, <a class="src" data-src="repo-gnostral.rs" href="https://github.com/gnu6dotlive/gnostral.rs/tree/38c4134a3a398b5b83d34326826362cf4dcc7336" data-title="gnu6dotlive/gnostral.rs" data-desc="A lab for local inference in Rust on a constrained GPU." data-meta="github.com/gnu6dotlive/gnostral.rs · commit 38c4134 · as of October 29, 2026"><code>gnostral.rs</code></a>, <a class="src" data-src="repo-calix" href="https://github.com/gnu6dotlive/calix/tree/aa423254f89cd233f261fbf19f4705d1d9c94259" data-title="gnu6dotlive/calix" data-desc="Native package management for Arch Linux." data-meta="github.com/gnu6dotlive/calix · commit aa42325 · as of October 29, 2026"><code>calix</code></a> and <a class="src" data-src="repo-in.gnu6" href="https://github.com/gnu6dotlive/in.gnu6/tree/fec80a7ae19de4b5838fe9f84dd271d6924fa753" data-title="gnu6dotlive/in.gnu6" data-desc="A scene and topology engine." data-meta="github.com/gnu6dotlive/in.gnu6 · commit fec80a7 · as of October 29, 2026"><code>in.gnu6</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

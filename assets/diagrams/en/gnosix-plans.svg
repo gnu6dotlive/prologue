@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="t d">
+  <title id="t">The four planes of gnosix</title>
+  <desc id="d">gnosix separates observing the desktop, durable state, display and the right to act. Data flows between the planes, but authority does not follow automatically.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#A1A6AD"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" fill="#F7F3ED"/>
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#667085">GNOSIX · ARCHITECTURE</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#111418">Four planes, four responsibilities</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#667085">Each plane does one thing. None owns the other three.</text>
+
+  <!-- 1 observation -->
+  <g>
+    <rect x="48" y="152" width="250" height="214" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="48" y="152" width="250" height="5" rx="2.5" fill="#4169E1"/>
+    <text x="72" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#2446A8">PLANE 1</text>
+    <text x="72" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#111418">Observe</text>
+    <text x="72" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">The compositor describes what</text>
+    <text x="72" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">exists: screens, windows,</text>
+    <text x="72" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">workspaces, focus.</text>
+    <text x="72" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">Translated into typed facts,</text>
+    <text x="72" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">never into guesses.</text>
+  </g>
+
+  <!-- 2 durable -->
+  <g>
+    <rect x="328" y="152" width="250" height="214" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="328" y="152" width="250" height="5" rx="2.5" fill="#5F7F52"/>
+    <text x="352" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#455F3D">PLANE 2</text>
+    <text x="352" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#111418">Remember</text>
+    <text x="352" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">Durable identities, profiles,</text>
+    <text x="352" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">settings. What survives</text>
+    <text x="352" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">a shutdown.</text>
+    <text x="352" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">A plugged-in screen is not</text>
+    <text x="352" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">a “known” screen.</text>
+  </g>
+
+  <!-- 3 presentation -->
+  <g>
+    <rect x="608" y="152" width="250" height="214" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="608" y="152" width="250" height="5" rx="2.5" fill="#C95400"/>
+    <text x="632" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#C95400">PLANE 3</text>
+    <text x="632" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#111418">Show</text>
+    <text x="632" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">Bar, deck, windows:</text>
+    <text x="632" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">geometry is product data,</text>
+    <text x="632" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">not decoration.</text>
+    <text x="632" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">The same computation serves</text>
+    <text x="632" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">drawing and clicks.</text>
+  </g>
+
+  <!-- 4 authority -->
+  <g>
+    <rect x="888" y="152" width="250" height="214" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>
+    <rect x="888" y="152" width="250" height="5" rx="2.5" fill="#111418"/>
+    <text x="912" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#111418">PLANE 4</text>
+    <text x="912" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#111418">Act</text>
+    <text x="912" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">Lock, launch, switch</text>
+    <text x="912" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">workspace: rare,</text>
+    <text x="912" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#111418">supervised gestures.</text>
+    <text x="912" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">Each request is</text>
+    <text x="912" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">checked, then traced.</text>
+  </g>
+
+  <!-- arrows -->
+  <line x1="302" y1="258" x2="324" y2="258" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="582" y1="258" x2="604" y2="258" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="862" y1="258" x2="884" y2="258" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- band -->
+  <g>
+    <rect x="48" y="406" width="545" height="140" rx="14" fill="#E8EFE5" stroke="#5F7F52"/>
+    <text x="74" y="438" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#455F3D">WHAT FLOWS</text>
+    <text x="74" y="470" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#455F3D">Facts, identities, intentions.</text>
+    <text x="74" y="494" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#455F3D">A plane may read another's work</text>
+    <text x="74" y="518" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#455F3D">without inheriting its power to act.</text>
+  </g>
+
+  <g>
+    <rect x="613" y="406" width="525" height="140" rx="14" fill="#FFE5D2" stroke="#C95400"/>
+    <text x="639" y="438" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#C95400">WHAT DOES NOT FLOW</text>
+    <text x="639" y="470" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#C95400">The right to change the desktop.</text>
+    <text x="639" y="494" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#C95400">A name, a path, a running process</text>
+    <text x="639" y="518" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#C95400">never prove a permission.</text>
+  </g>
+
+  <text x="48" y="590" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">If the state is unknown or stale, gnosix refuses the action rather than inventing normal behaviour.</text>
+</svg>

@@ -14,7 +14,8 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ["index.html", "gnosix.html", "gnostral.html", "calix.html", "ingnu6.html", "comprendre.html"]
+PAGES = ["index.html", "gnosix.html", "gnostral.html", "calix.html", "ingnu6.html", "comprendre.html",
+         "en/index.html", "en/gnosix.html", "en/gnostral.html", "en/calix.html", "en/ingnu6.html", "en/glossary.html"]
 
 
 def label_table(table: str) -> str:

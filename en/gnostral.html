@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gnostral.rs — the engine, explained</title>
+<meta name="description" content="gnostral.rs: a lab for local inference in Rust on a constrained GPU. What was measured, how, and what is not yet proven.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/gnostral.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/gnostral.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/gnostral.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/gnostral.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="gnostral.rs — the engine, explained">
+<meta property="og:description" content="gnostral.rs: a lab for local inference in Rust on a constrained GPU. What was measured, how, and what is not yet proven.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/gnostral.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html" aria-current="page">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="glossary.html">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../gnostral.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker cool">Dossier 2 · the engine</p>
+    <h1>gnostral.rs</h1>
+    <p class="lead">An open lab trying to run large artificial-intelligence models on a modest graphics card — and publishing its measurements, including the disappointing ones.</p>
+    <p><span class="tag partial">Research</span> <span class="tag">v0.8.0</span> <span class="tag">MIT licence</span></p>
+  </div>
+
+  <div class="grid four" style="margin-top:36px">
+    <div class="stat"><span class="value">2.12<span class="unit">×</span></span><span class="caption">faster than the previous version of the <b>same engine</b></span></div>
+    <div class="stat"><span class="value">20.18</span><span class="caption">tokens per second, against 9.51 at the start</span></div>
+    <div class="stat"><span class="value">22 → 13</span><span class="caption">layers placed on the card depending on free memory</span></div>
+    <div class="stat"><span class="value">3/3</span><span class="caption">model families served by the same executable</span></div>
+  </div>
+
+  <section>
+    <h2>In one picture</h2>
+    <div class="box analogy">
+      <span class="label">The analogy</span>
+      <p>Picture a warehouse and a small counter. The <strong>counter</strong> is the graphics card: narrow, but very fast. The <strong>warehouse</strong> is main memory: huge, but slow to serve from.</p>
+      <p style="margin-bottom:0">A 30-billion-parameter model does not fit on the counter. The trick is to put only the three billion pieces needed right now on it, and fetch the others from the warehouse only when they are used. That is what gnostral.rs is about.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The problem, then the trick</h2>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-probleme.svg" alt="On the left, a 30-billion-parameter model does not fit in 8 GB of graphics memory. On the right, only three experts stay on the card; the others wait in main memory.">
+      <figcaption><b>A storage problem.</b> A "mixture of experts" model activates only a small part of its networks for each word. That imbalance is what makes splitting it possible.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>The reference machine is not a datacenter server: an RTX 3070 with 8 GB of graphics memory and 32 GB of main memory. It is a personal-workstation configuration — and that is exactly what makes the research interesting.</p>
+      <p>The headline result: by keeping the always-used parts on the card and borrowing the quantised experts from main memory, throughput goes from <strong>9.51 to 20.18 tokens per second</strong>, or 2.12 times faster. Measured locally, three repetitions per condition, responses identical byte for byte.</p>
+    </div>
+    <figure>
+      <img class="motion-live" src="../assets/gif/en/gnostral-course.gif" alt="Real-time animation: two lanes receive the same answer. With the patch, the question is read in 2.7 seconds and the 209 tokens arrive in 13 seconds; without it, reading takes 7.2 seconds and the text has only 68 tokens at the end.">
+      <img class="motion-still" src="../assets/gif/en/gnostral-course-still.png" alt="">
+      <figcaption><b>The same answer, at the measured pace.</b> Both lanes write exactly the same text — verified byte for byte. Without the patch, reading the question takes 7.2 s, then 9.5 tokens per second; with it, 2.7 s, then 20.2 tokens per second. The time shown is real time.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>What was measured — and within what frame</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Milestone</th><th>Result</th><th>What it does not say</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Milestone"><strong>Borrowed experts</strong><br><span class="tag"><a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a></span></td>
+            <td data-label="Result">9.51 → 20.18 tokens/s on a 512-token answer, median of three repetitions, 2.12×</td>
+            <td data-label="What it does not say">Not faster than <a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="A widely used inference engine in C/C++. It is the comparison reference in the gnostral dossier." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a> (34.54 tokens/s on the same machine); not valid for every architecture.</td>
+          </tr>
+          <tr>
+            <td data-label="Milestone"><strong>Placement at load time</strong><br><span class="tag"><a class="src" data-src="ms-Q-011" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q011-rtx3070-placement-observation-20261010.json" data-title="gnostral.rs · Q-011" data-desc="Q-011 receipt: layer placement under memory pressure." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q011-rtx3070-placement-observation-20261010.json · commit 38c4134 · as of October 29, 2026">Q-011</a></span></td>
+            <td data-label="Result">22/21/21 layers on the card → 13/12/13 under a memory reservation</td>
+            <td data-label="What it does not say">Initial placement only; no migration while serving.</td>
+          </tr>
+          <tr>
+            <td data-label="Milestone"><strong>One engine, three families</strong><br><span class="tag"><a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Q-012 receipt: one engine, three model families." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · as of October 29, 2026">Q-012</a></span></td>
+            <td data-label="Result">3/3: dense model, embeddings, quantised MoE</td>
+            <td data-label="What it does not say">Three successive servers; no co-residence, no production stability.</td>
+          </tr>
+          <tr>
+            <td data-label="Milestone"><strong>A real dense process</strong><br><span class="tag"><a class="src" data-src="ms-Q-013-C" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json" data-title="gnostral.rs · Q-013-C" data-desc="Q-013-C receipt: the lifecycle of a real dense process." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json · commit 38c4134 · as of October 29, 2026">Q-013-C</a></span></td>
+            <td data-label="Result">Exact semantic answer "GNOSTRAL"; +8 MiB of GPU memory after shutdown</td>
+            <td data-label="What it does not say">A single model, a short-lived server, not a public API.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-ab.svg" alt="Bars: at 128 tokens, 8.90 against 21.93 tokens per second; at 512 tokens, 9.51 against 20.18. On the right, the first word goes from 3,818 to 1,422 ms, graphics memory from 2,344 to 2,351 MiB.">
+      <figcaption><b>The gain, and its price.</b> Same machine, same model, same binary except for the patch: throughput doubles, the first word arrives 2.7 times sooner, and graphics memory moves by only 7 MiB. The reference remains the same engine without the patch — not llama.cpp.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-placement.svg" alt="Two rows of 48 layers: 22 on the card in the control run, 13 under memory pressure. Throughput 20.88 then 20.15 tokens per second.">
+      <figcaption><b>Placement, observed.</b> When graphics memory is taken up before start-up, the engine puts fewer layers on the card (22 → 13 in these two runs) and throughput drops by only 3.5%. Moving layers while running, however, is not demonstrated.</figcaption>
+    </figure>
+    <div class="box note">
+      <span class="label">Remember</span>
+      <p style="margin-bottom:0">Every figure has its report, its protocol and its limits. The repository explicitly refuses to publish a figure without the evidence that goes with it — including when the evidence contradicts a more flattering claim.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Compared with what, exactly?</h2>
+    <div class="prose">
+      <p>A "2.12× faster" means nothing without its point of comparison. Here, the reference is not another piece of software: it is <strong>the same engine, one version earlier</strong>.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-comparaisons.svg" alt="Three questions: the patch speeds the engine up 2.12 times relative to itself; gnostral reaches 58% of llama.cpp's throughput; against mistral.rs there is no comparison — it is the same engine.">
+      <figcaption><b>Three references, three answers.</b> The 2.12× gain is a paired A/B on the same engine. The comparison with <a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="A widely used inference engine in C/C++. It is the comparison reference in the gnostral dossier." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a> is unfavourable. The comparison with <a class="src" data-src="mistralrs" href="https://github.com/EricLBuehler/mistral.rs" data-title="mistral.rs" data-desc="A large-language-model inference engine written in Rust. gnostral.rs modifies it; it does not replace it." data-meta="github.com/EricLBuehler/mistral.rs">mistral.rs</a> makes no sense: it is the engine the patch modifies.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Concretely, "Strata" is the revision of mistral.rs used in the lab: public version 0.9.3, plus an expert-residency integration. The 9.51 tokens/s measure that engine <em>before</em> the patch; the 20.18 measure the same binary, rebuilt with a single function changed — the quantised expert weights are borrowed instead of being copied on every call.</p>
+      <p>Against llama.cpp, on the other hand, the comparison exists and it is unfavourable: <strong>34.54 tokens/s for llama.cpp against 20.18 for gnostral</strong>, on the same model and the same card. The repository's report says so explicitly: these gains do not establish superiority over llama.cpp's CPU-MoE options.</p>
+      <p>As for mistral.rs, it is not an opponent: it is the engine <em>in which</em> the patch is applied. gnostral is not a competing engine — it is a set of patches, typed contracts and measurement tools around mistral.rs. Comparing against it would be like comparing a car with its own engine.</p>
+    </div>
+
+    <div class="box note">
+      <span class="label">Mind the words</span>
+      <p><strong>mistral.rs</strong> is an inference engine written in <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a>. <strong><a class="src" data-src="mistralai" href="https://github.com/mistralai" data-title="Mistral AI" data-desc="The company that designs the Mistral models. Unrelated to the mistral.rs engine." data-meta="github.com/mistralai">Mistral AI</a></strong> is a company that makes models. The two are unrelated, and the models measured here are <strong><a class="src" data-src="qwen" href="https://github.com/QwenLM" data-title="Qwen" data-desc="A family of open language models from the Qwen team (Alibaba). The models measured in the dossier belong to it." data-meta="github.com/QwenLM">Qwen</a></strong> models, not Mistral models.</p>
+      <p style="margin-bottom:0">Saying "faster than Mistral" therefore makes no sense until you say which one you mean — and, if it is the engine, which version serves as the reference.</p>
+    </div>
+
+    <div class="box change">
+      <span class="label">What it changes</span>
+      <p style="margin-bottom:0">The exact wording is: "2.12× faster than the same mistral.rs revision without the patch, and still 58% of llama.cpp's throughput on this model". It is less spectacular, but it is true, dated and verifiable.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How a measurement becomes evidence</h2>
+    <div class="prose">
+      <p>The project's most solid contribution may not be the speed gain, but the <strong>method</strong>. Six steps, always the same, and none can be skipped.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-boucle.svg" alt="A six-step loop: source and fingerprint, bounded plan, isolated run, exact answer, stop and recovery, independent audit.">
+      <figcaption><b>The qualification loop.</b> A "PASS" only says what the test tested. It says nothing about stability, security or performance on another machine.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Concretely: the code and the model are identified by a fingerprint (SHA), a plan describes exactly what will run, a single process is started within limits, a precise answer is checked, the process is stopped, the memory is checked to have come back, and then an independent program redoes the checks.</p>
+      <p>Order matters. A server can answer a health check while its weights are not yet loaded. gnostral.rs therefore distinguishes eight states, from the mere fact of being "declared in the documentation" up to "qualified by an independent audit".</p>
+    </div>
+
+    <details class="deep">
+      <summary>The eight states of truth, plainly</summary>
+      <ol style="margin-bottom:0">
+        <li><strong>Declared</strong> — the source or the provider says the operation exists.</li>
+        <li><strong>Planned</strong> — a request matches a precise capability and piece of evidence; no right to execute is granted.</li>
+        <li><strong>HTTP-ready</strong> — the health endpoint answers. That is not inference yet.</li>
+        <li><strong>Semantically ready</strong> — an independent test passes on the exact engine and model.</li>
+        <li><strong>Serving</strong> — only the admitted, bounded operation continues.</li>
+        <li><strong>Stopped / unloaded</strong> — processes and requests are cancelled or finished, the unload is acknowledged.</li>
+        <li><strong>Memory returned</strong> — system observations show the return to the announced envelope.</li>
+        <li><strong>Qualified</strong> — an independent auditor checks the identities, the negative checks and the non-claims.</li>
+      </ol>
+    </details>
+  </section>
+
+  <section>
+    <h2>What it is not</h2>
+    <div class="box limit">
+      <span class="label">The limits, plainly</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Not a server ready to deploy.</strong> It is not a standalone replacement for <a class="src" data-src="mistralrs" href="https://github.com/EricLBuehler/mistral.rs" data-title="mistral.rs" data-desc="A large-language-model inference engine written in Rust. gnostral.rs modifies it; it does not replace it." data-meta="github.com/EricLBuehler/mistral.rs">mistral.rs</a>, <a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="A widely used inference engine in C/C++. It is the comparison reference in the gnostral dossier." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a>, <a class="src" data-src="candle" href="https://github.com/huggingface/candle" data-title="Candle" data-desc="A minimalist machine-learning framework in Rust, by Hugging Face." data-meta="github.com/huggingface/candle">Candle</a> or <a class="src" data-src="vllm" href="https://github.com/vllm-project/vllm" data-title="vLLM" data-desc="A high-throughput inference serving engine, designed for datacenters." data-meta="github.com/vllm-project/vllm">vLLM</a>.</li>
+        <li><strong>No hot model switching.</strong> The sequence A → B → A under a single supervisor has not been demonstrated.</li>
+        <li><strong>No secured public API.</strong> The driver talks to localhost on a fixed port, without authenticating a hostile peer.</li>
+        <li><strong>No multi-user service.</strong> No control plane or availability commitment has been ratified.</li>
+        <li><strong>No guarantee on your hardware.</strong> The figures come from one precise configuration and are explicitly not portable.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why the failures are public</h2>
+    <div class="prose">
+      <p>The first <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a> run failed: graphics memory did not come back within the expected margin (+196 MiB against a ±128 MiB tolerance). The first <a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Q-012 receipt: one engine, three model families." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · as of October 29, 2026">Q-012</a> run failed too: a compile-time feature was missing, and the MoE model timed out.</p>
+      <p>Both failures are still on the record. It is a methodological choice, not an affectation: a result whose misses you do not know is not reusable. And a figure that cannot be contradicted is not a measurement; it is a claim.</p>
+      <p>The same principle applies to the Bonsai benchmark: the reference kept is 35.2 tokens per second, not the more flattering claim of 40 — for lack of sufficient evidence.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it changes, depending on who you are</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>Curious about local AI</h4>
+        <p style="margin-bottom:0">You understand why a model does not "fit", and what each placement choice costs. The dossier's analogies are enough; the repository provides the details.</p>
+      </div>
+      <div class="card">
+        <h4>Developer</h4>
+        <p style="margin-bottom:0">The repository contains a typed engine contract, a bounded process harness, plans tied to a fingerprint and measurement receipts in JSON. Much of it can be tested without a GPU.</p>
+      </div>
+      <div class="card">
+        <h4>Decision-maker or funder</h4>
+        <p style="margin-bottom:0">The asset is not a finished product: it is a discipline of evidence, applied to a problem most teams prefer to work around by buying hardware.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Going further</h2>
+    <details class="deep">
+      <summary>Technical — the repository's words</summary>
+      <p><strong>MoE ("mixture of experts"):</strong> an architecture where each token activates only a subset of the networks. <strong>Q2_K / Q3_K quantisation:</strong> compressing the weights to 2–3 bits, which cuts memory sharply at the cost of a little quality. <strong>Token:</strong> a fragment of a word; throughput is measured in tokens per second. <strong>Residency:</strong> where a piece of the model is actually loaded.</p>
+      <p style="margin-bottom:0"><strong>Language:</strong> <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> for the contracts, kernels and harness; Python for the experiment driver and the auditor. <strong>Licence:</strong> MIT for the original material; upstream projects keep their licences and attribution.</p>
+    </details>
+    <details class="deep">
+      <summary>Checking without a graphics card</summary>
+      <p>The repository provides a thirty-second evaluation: engine-contract tests, expert-residency tests, Python unit tests, then two scripts checking public hygiene and version identity. None of these checks needs a GPU.</p>
+      <p style="margin-bottom:0">A real experiment, on the other hand, requires exact weights and executable, plus an isolated, qualified workstation. The reproduction contract says so explicitly.</p>
+    </details>
+    <div class="dossier-links">
+      <a class="btn" href="https://github.com/gnu6dotlive/gnostral.rs">See the repository on GitHub</a>
+      <a class="btn ghost" href="glossary.html">Understand the vocabulary</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Facts drawn from <a class="src" data-src="doc-README.md" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/README.md" data-title="gnostral.rs · README.md" data-desc="Overview of the gnostral.rs repository and its measured figures." data-meta="github.com/gnu6dotlive/gnostral.rs/README.md · commit 38c4134 · as of October 29, 2026"><code>README.md</code></a>, <a class="src" data-src="doc-docs/ARCHITECTURE.md" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/docs/ARCHITECTURE.md" data-title="gnostral.rs · docs/ARCHITECTURE.md" data-desc="Architecture and method: the eight states of truth." data-meta="github.com/gnu6dotlive/gnostral.rs/docs/ARCHITECTURE.md · commit 38c4134 · as of October 29, 2026"><code>docs/ARCHITECTURE.md</code></a> and <a class="src" data-src="doc-docs/CAPABILITY_MATRIX.md" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/docs/CAPABILITY_MATRIX.md" data-title="gnostral.rs · docs/CAPABILITY_MATRIX.md" data-desc="The public capability matrix, with its limits." data-meta="github.com/gnu6dotlive/gnostral.rs/docs/CAPABILITY_MATRIX.md · commit 38c4134 · as of October 29, 2026"><code>docs/CAPABILITY_MATRIX.md</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

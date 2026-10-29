@@ -498,6 +498,23 @@ figure.shot img { padding: 0; background: #0E0F12; }
 .site-footer a { color: var(--ds-slate); }
 .site-footer a:hover { color: var(--ds-signal-orange-700); }
 
+/* ---------- Sélecteur de langue ---------- */
+
+.lang-switch {
+  flex: none;
+  margin-left: .75rem;
+  padding: .3rem .6rem;
+  border: 1px solid var(--ds-hairline);
+  border-radius: var(--ds-radius-sm);
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ds-anthracite);
+  text-decoration: none;
+  background: var(--ds-pure-white);
+}
+.lang-switch:hover, .lang-switch:focus-visible { border-color: var(--ds-signal-orange-700); color: var(--ds-signal-orange-700); }
+
 /* ---------- Bandeau d'instantané daté ---------- */
 
 .snapshot {
@@ -562,7 +579,7 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
   figure, .box, .card, .stat, table, tr, details.deep { page-break-inside: avoid; }
   details.deep { border-color: #D7DADF; }
   .motion-live { display: none; }
-  .src-card { display: none !important; }
+  .src-card, .lang-switch { display: none !important; }
   a.src { text-decoration-color: #C95400; }
   .motion-still { display: block; }
   a { color: inherit; text-decoration: none; }
@@ -572,6 +589,8 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
 @media (max-width: 640px) {
   main { padding: 0 1.125rem 4rem; }
   .site-header .inner { padding: .75rem 1.125rem; gap: .75rem; }
+  .lang-switch { order: 2; margin-left: auto; }
+  .site-nav { order: 3; }
   .card, .box { padding: 1.25rem; }
   .hero { padding-top: 2.75rem; }
   .site-nav {
@@ -599,6 +618,8 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
     color: var(--ds-slate);
   }
   figure:has(> img.motion-live)::before { content: "Faites glisser l'animation →"; }
+  html[lang="en"] figure:has(> img[src$=".svg"])::before { content: "Swipe to see the whole diagram →"; }
+  html[lang="en"] figure:has(> img.motion-live)::before { content: "Swipe to see the whole animation →"; }
   figure > img[src$=".svg"], figure > img.motion-live { min-width: 760px; }
   figure:has(> img[src$=".svg"]) figcaption, figure:has(> img.motion-live) figcaption {
     position: sticky;

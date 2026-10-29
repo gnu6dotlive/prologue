@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="t d">
+  <title id="t">Calix's privilege boundary</title>
+  <desc id="d">The interface, the inventory service and notifications run without privilege. A single door, polkit through pkexec, elevates the Zig engine for the commands that change the system.</desc>
+
+  <rect width="1200" height="540" fill="#F7F3ED"/>
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#667085">CALIX · PRIVILEGE BOUNDARY</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#111418">Rights arrive at the last moment</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#667085">The question is not “are rights needed?” but “how much code receives them, and for how long?”.</text>
+
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#A1A6AD"/>
+    </marker>
+  </defs>
+
+  <!-- zone sans privilege -->
+  <rect x="48" y="152" width="540" height="286" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+  <text x="72" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#455F3D">WITHOUT PRIVILEGE</text>
+
+  <g>
+    <rect x="72" y="198" width="492" height="62" rx="8" fill="#F7F3ED" stroke="#D7DADF"/>
+    <text x="90" y="222" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13.5" fill="#111418">calix-gpui</text>
+    <text x="90" y="244" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">The interface: search, inspection, operation console.</text>
+
+    <rect x="72" y="270" width="492" height="62" rx="8" fill="#F7F3ED" stroke="#D7DADF"/>
+    <text x="90" y="294" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13.5" fill="#111418">calix-daemon</text>
+    <text x="90" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">The inventory: the state's sole writer, over a Unix socket.</text>
+
+    <rect x="72" y="342" width="492" height="62" rx="8" fill="#F7F3ED" stroke="#D7DADF"/>
+    <text x="90" y="366" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13.5" fill="#111418">calix-notify</text>
+    <text x="90" y="388" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">Notifications: one bus signal, one notification.</text>
+  </g>
+
+  <line x1="588" y1="295" x2="644" y2="295" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- porte polkit -->
+  <rect x="656" y="196" width="152" height="198" rx="12" fill="#FFE5D2" stroke="#C95400" stroke-width="1.5"/>
+  <text x="732" y="228" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#C95400" text-anchor="middle">polkit</text>
+  <text x="732" y="256" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#111418" text-anchor="middle">three declared actions:</text>
+  <text x="732" y="274" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#111418" text-anchor="middle">install, remove,</text>
+  <text x="732" y="292" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#111418" text-anchor="middle">update.</text>
+  <text x="732" y="330" font-family="'Space Grotesk', sans-serif" font-size="10.5" fill="#C95400" text-anchor="middle">A SINGLE DOOR</text>
+  <text x="732" y="348" font-family="'Space Grotesk', sans-serif" font-size="10.5" fill="#C95400" text-anchor="middle">NARROW AND EXPLICIT</text>
+
+  <line x1="812" y1="295" x2="868" y2="295" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- zone privilegiee -->
+  <rect x="880" y="152" width="272" height="286" rx="12" fill="#111418"/>
+  <text x="904" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#A1A6AD">RIGHTS, FOR ONE ACTION</text>
+  <rect x="904" y="204" width="224" height="86" rx="8" fill="#FFFFFF"/>
+  <text x="922" y="234" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="14" fill="#111418">calix · Zig engine</text>
+  <text x="922" y="256" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">relaunched through pkexec: ALPM</text>
+  <text x="922" y="274" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">transactions, AUR builds, keyring.</text>
+
+  <text x="904" y="326" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">Only the commands that change</text>
+  <text x="904" y="344" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">the system go through this door;</text>
+  <text x="904" y="362" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">the rest runs as the user.</text>
+  <text x="904" y="404" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#5F7F52">A crash without rights</text>
+  <text x="904" y="420" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#5F7F52">does not break the system.</text>
+
+  <!-- bandeau interdits -->
+  <rect x="48" y="462" width="1104" height="40" rx="8" fill="#FFFFFF" stroke="#D7DADF"/>
+  <text x="68" y="487" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#667085">Forbidden by the project, including in the installation documentation:</text>
+  <text x="540" y="488" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#A1A6AD" text-decoration="line-through">sudo</text>
+  <text x="592" y="488" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#A1A6AD" text-decoration="line-through">su</text>
+  <text x="624" y="488" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#A1A6AD" text-decoration="line-through">doas</text>
+  <text x="688" y="487" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#667085">— a single elevation path, traceable and revocable.</text>
+
+  <text x="48" y="528" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#A1A6AD">Plain-language diagram. Based on calix/README.md and docs/calix-architecture.md.</text>
+</svg>

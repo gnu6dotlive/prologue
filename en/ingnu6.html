@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>in.gnu6 — one scene, several projectors</title>
+<meta name="description" content="in.gnu6: a scene and topology engine. It decides what exists; renderers only decide how to show it. What is ratified, what is still open.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/ingnu6.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/ingnu6.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/ingnu6.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/ingnu6.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="in.gnu6 — one scene, several projectors">
+<meta property="og:description" content="in.gnu6: a scene and topology engine. It decides what exists; renderers only decide how to show it. What is ratified, what is still open.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/ingnu6.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html" aria-current="page">in.gnu6</a>
+      <a href="glossary.html">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../ingnu6.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker neutral">Dossier 4 · the scene</p>
+    <h1>in.gnu6</h1>
+    <p class="lead">An engine that decides what exists in a scene — positions, relations, time, constraints — and lets each display decide only <em>how</em> to show it.</p>
+    <p><span class="tag partial">Research</span> <span class="tag">2026.10.0-research</span> <span class="tag no">No OSS licence</span></p>
+  </div>
+
+  <div class="grid four" style="margin-top:36px">
+    <div class="stat"><span class="value">16</span><span class="caption">ratified milestones, MQ-00 to MQ-15, for the documented mandate</span></div>
+    <div class="stat"><span class="value">9,370</span><span class="caption">frames presented in 125 s, none discarded — one local session</span></div>
+    <div class="stat"><span class="value">40</span><span class="caption">real <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> events exchanged between <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> and the <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> engine</span></div>
+    <div class="stat"><span class="value">0</span><span class="caption">stable public APIs, no package published on <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="The package manager of the JavaScript ecosystem." data-meta="github.com/npm/cli">npm</a></span></div>
+  </div>
+
+  <section>
+    <h2>In one picture</h2>
+    <div class="box analogy">
+      <span class="label">The analogy</span>
+      <p>Think of a theatre. The <strong>stage</strong> knows where the actors, the sets and the passages are: it decides what exists and what is possible. The <strong>projectors</strong> light that stage with their own technique — one projects an image, another lights it at a grazing angle.</p>
+      <p style="margin-bottom:0">Changing projectors does not move the actors. That is the whole separation in.gnu6 stands for: the rendering is replaceable; the scene is not.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The principle</h2>
+    <figure>
+      <img src="../assets/diagrams/en/gnu6-scene.svg" alt="The scene holds identities, relations, time and constraints. Three different projectors show it without being able to redefine it.">
+      <figcaption><b>A single semantic authority.</b> A renderer may observe and draw the scene; it may not rename, move or invent what exists. That is the central rule of the repository's contract.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Most graphics engines mix two questions: "what exists?" and "how do we draw it?". The mix holds until the day you want to change rendering engines, export a scene, or run two products on the same model — and then everything has to be rewritten.</p>
+      <p>in.gnu6 separates the two. A <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> core maintains the scene: identities, relations, hierarchy, spatial constraints, deterministic time, dynamics, topology, deformations, queries and reproducible observations. The renderers — a browser with <a class="src" data-src="pixijs" href="https://github.com/pixijs/pixijs" data-title="PixiJS" data-desc="A 2D rendering engine for the browser (WebGL). It is in.gnu6&#x27;s reference renderer." data-meta="github.com/pixijs/pixijs">PixiJS</a>, a native <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="An open graphics and compute API, maintained by the Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a> engine, or a consuming product — only project that state.</p>
+    </div>
+    <figure>
+      <img class="motion-live" src="../assets/gif/en/gnu6-scene-projection.gif" alt="Animation: on the left the scene, five connected objects; on the right two projections, one as cards, the other as dots. When the scene moves n2 or changes its relation, both projections follow. When someone tries to move n4 from the second projection, the request is refused and nothing moves.">
+      <img class="motion-still" src="../assets/gif/en/gnu6-scene-projection-still.png" alt="">
+      <figcaption><b>One way only.</b> The scene changes an object or a relation: both projections follow, each with its own drawing. A projection that tries to move an object is refused — moving belongs to the scene. An illustration of the principle, based on <a class="src" data-src="doc-CONTRACT.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/CONTRACT.md" data-title="in.gnu6 · CONTRACT.md" data-desc="in.gnu6&#x27;s contract: what the scene owns, what renderers are not allowed to do." data-meta="github.com/gnu6dotlive/in.gnu6/CONTRACT.md · commit fec80a7 · as of October 29, 2026"><code>CONTRACT.md</code></a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>What the engine owns — and what it ignores</h2>
+    <div class="grid two">
+      <div class="card">
+        <h4>It owns</h4>
+        <ul style="margin-bottom:0">
+          <li>the identity of a scene and of its objects;</li>
+          <li>the relations and hierarchy between them;</li>
+          <li>spatial and admissibility constraints;</li>
+          <li>deterministic time and dynamics;</li>
+          <li>topology and its changes;</li>
+          <li>reproducible observations.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>It ignores</h4>
+        <ul style="margin-bottom:0">
+          <li>what a desktop, a dock or a workspace is;</li>
+          <li>what a product, a shop or a basket is;</li>
+          <li>what a piece of jewellery or a business action is;</li>
+          <li>which commercial intent justifies a screen.</li>
+        </ul>
+        <p style="margin-top:1rem;margin-bottom:0;color:var(--ds-slate);font-size:.9375rem">Those meanings belong to the products that consume the engine — not to the engine.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Three surfaces, three levels of truth</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Surface</th><th>What it is</th><th>Evidence currently admissible</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Surface"><strong><a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> core</strong></td>
+            <td data-label="What it is">The display-free model: scene, topology, space, time, interaction</td>
+            <td data-label="Evidence currently admissible">16 ratified milestones; full gate at 29 files / 119 tests, Pixi build and 2 browser tests</td>
+          </tr>
+          <tr>
+            <td data-label="Surface"><strong><a class="src" data-src="pixijs" href="https://github.com/pixijs/pixijs" data-title="PixiJS" data-desc="A 2D rendering engine for the browser (WebGL). It is in.gnu6&#x27;s reference renderer." data-meta="github.com/pixijs/pixijs">PixiJS</a> / WebGL</strong></td>
+            <td data-label="What it is">The reference projection in a browser, replaceable</td>
+            <td data-label="Evidence currently admissible">Qualified by milestones MQ-11 (contract) and <a class="src" data-src="ms-MQ-12" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/evidence/mq-12-pixi-browser-2026-10-07.md" data-title="in.gnu6 · MQ-12" data-desc="MQ-12 qualification record: the reference browser renderer." data-meta="github.com/gnu6dotlive/in.gnu6/docs/evidence/mq-12-pixi-browser-2026-10-07.md · commit fec80a7 · as of October 29, 2026">MQ-12</a> (browser)</td>
+          </tr>
+          <tr>
+            <td data-label="Surface"><strong>Native <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="An open graphics and compute API, maintained by the Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a></strong></td>
+            <td data-label="What it is">Research into fast native rendering, outside the browser</td>
+            <td data-label="Evidence currently admissible">Partial local evidence; the overall acceptance contract CP03 remains <strong>open</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="shot">
+      <img src="../assets/shots/gnu6-pixi.png" alt="MQ-12 qualification screenshot: the PixiJS reference renderer draws a ten-entity scene in a browser, light cards on a dark background.">
+      <figcaption><b>The reference projection, on screen.</b> Screenshot from milestone MQ-12: the PixiJS renderer draws a ten-entity scene in a browser. The image shows the drawing; it is the core's contract, not the image, that settles what exists. Source: <a class="src" data-src="doc-docs/evidence/assets/" href="https://github.com/gnu6dotlive/in.gnu6/tree/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/evidence/assets" data-title="in.gnu6 · docs/evidence/assets/" data-desc="Screenshots and exhibits from the qualification records." data-meta="github.com/gnu6dotlive/in.gnu6/docs/evidence/assets · commit fec80a7 · as of October 29, 2026"><code>docs/evidence/assets/</code></a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The figures, and what they do not prove</h2>
+    <div class="prose">
+      <p>Two observations recur in the repository's documents, and they are interesting precisely because they are bounded.</p>
+      <p><strong>Endurance:</strong> 9,370 frames presented in 124.994 seconds, without a single discarded frame — about 75 frames per second on average, with a p95 of 13.478 ms. Measured locally, through the <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> compositor's presentation timestamps.</p>
+      <p><strong>Real exchange:</strong> a <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> program and the <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> semantic projector exchanged 40 real Wayland events over a private Unix socket, with an exact sequence match and 1,497 frames presented in 20 seconds, without loss.</p>
+    </div>
+    <div class="box limit">
+      <span class="label">The limits, plainly</span>
+      <ul style="margin-bottom:0">
+        <li><strong>A single configuration.</strong> These measurements come from one NVIDIA reference machine. They guarantee nothing on another card, or on several.</li>
+        <li><strong>No input-to-photon.</strong> The delay between a click and the displayed pixel is not measured; the runs that came close did not observe a real click.</li>
+        <li><strong>An unexplained anomaly.</strong> An earlier run showed a 413 ms stall that was never explained. It stays on the record.</li>
+        <li><strong>CP03 remains open.</strong> The overall acceptance contract — sixty frames per second sustained, independent latency, audit — is not closed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the licence does not say</h2>
+    <div class="box limit">
+      <span class="label">Good to know before reusing</span>
+      <p>The repository has been public since October 10, 2026, but <strong>its licence has not been decided</strong>. The package file explicitly declares "UNLICENSED". A visible repository therefore does not grant a general right to copy or modify the code.</p>
+      <p style="margin-bottom:0">Two deliberate absences come on top: no stable public API, and nothing published on <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="The package manager of the JavaScript ecosystem." data-meta="github.com/npm/cli">npm</a>. Today the engine is to be assessed as a documented research programme, not as a dependency you install.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why it is a programme of evidence</h2>
+    <div class="prose">
+      <p>The repository does not present a list of features: it presents a list of <strong>milestones to ratify</strong>. Each must rest on a law, a falsification test, an execution observation — or remain explicitly open. A milestone can be rejected by a failing test, and the rejection stays written down.</p>
+      <p>A side experiment in the repository shows the method at work. A <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> supervisor hands a graphics computation to a separate process, under a distinct system account, and eleven gates are written <em>before</em> the run. Three acquisitions failed; they are kept. The fourth passes the ten lab gates — and the eleventh, the authorisation to publish, remains refused for lack of an independent human review.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnu6-gates.svg" alt="A grid of eleven gates: ten lab gates marked PASS, the release-authority gate marked not qualified. Summary: 10 out of 10 lab gates, production refused.">
+      <figcaption><b>Passing your tests does not authorise publishing.</b> Protocol <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="CUDA-05F report: protocol, gates, negative runs kept, limits." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · as of October 29, 2026">CUDA-05F</a>: account isolation, binary integrity, GPU/CPU parity, recovery after a crash. Release authority is a separate gate: no automated test can pass it.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Two consuming products act as pressure: Docklab and a harness for a jewellery shop. Their role is not to validate the engine out of politeness, but to break it: if a product needs a second scene to work, the separation is wrong.</p>
+      <p>This discipline explains the figures at the top of the page: 16 ratified milestones do not mean "ready", and 9,370 frames without loss do not mean "smooth for you". Every number carries its frame.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it changes, depending on who you are</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>Curious</h4>
+        <p style="margin-bottom:0">You understand why an application can change its look without changing its content — and why "redoing the rendering" does not mean redoing the model.</p>
+      </div>
+      <div class="card">
+        <h4>Developer</h4>
+        <p style="margin-bottom:0">A tested <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> core, a written renderer contract, a reference browser renderer, and a <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="An open graphics and compute API, maintained by the Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a> experiment documented with its failures. Much of it can be checked without a graphics card.</p>
+      </div>
+      <div class="card">
+        <h4>Decision-maker or funder</h4>
+        <p style="margin-bottom:0">The question is an industrial one: what does it cost on the day you must change rendering engines or plug in a second product? The answer here is an architecture, not a promise.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Going further</h2>
+    <details class="deep">
+      <summary>Technical — the repository's words</summary>
+      <p><strong>Scene:</strong> the set of objects, relations, positions and constraints the engine holds to be true. <strong>Projection:</strong> the translation of that scene into pixels, done by a renderer. <strong>Renderer:</strong> the program that draws — browser, <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="An open graphics and compute API, maintained by the Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a>, or any other to come. <strong>Topology:</strong> the map of places and links, including when it changes. <strong><a class="src" data-src="wppresentation" href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time" data-title="wp_presentation" data-desc="A Wayland protocol that tells when a frame was actually presented on screen." data-meta="gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time">wp_presentation</a>:</strong> the <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> mechanism that tells when a frame was actually presented on screen.</p>
+      <p style="margin-bottom:0"><strong>Languages:</strong> <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> for the core and the reference renderer; <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> for the native experiment. <strong>Status:</strong> research, without an OSS licence or a stable API.</p>
+    </details>
+    <details class="deep">
+      <summary>Reproducing without amplifying authority</summary>
+      <p>The core is checked with <a class="src" data-src="nodejs" href="https://github.com/nodejs/node" data-title="Node.js" data-desc="A JavaScript runtime outside the browser." data-meta="github.com/nodejs/node">Node.js</a> 24 or later: <code>npm ci</code>, then type checks, law tests and the browser walkthrough. These commands cover three different things — and none of them amounts to a graphics qualification.</p>
+      <p style="margin-bottom:0">Heavy GPU experiments go through a dedicated runner, with resource limits and documented refusals. The repository explicitly asks not to run a Vulkan or <a class="src" data-src="cuda" href="https://developer.nvidia.com/cuda-toolkit" data-title="CUDA" data-desc="NVIDIA&#x27;s parallel computing platform for its graphics cards." data-meta="developer.nvidia.com/cuda-toolkit">CUDA</a> benchmark by bypassing that control.</p>
+    </details>
+    <div class="dossier-links">
+      <a class="btn" href="https://github.com/gnu6dotlive/in.gnu6">See the repository on GitHub</a>
+      <a class="btn ghost" href="index.html">Back to the map of the four repositories</a>
+      <a class="btn ghost" href="glossary.html">Understand the vocabulary</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Facts drawn from <a class="src" data-src="doc-README.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/README.md" data-title="in.gnu6 · README.md" data-desc="Overview of the in.gnu6 repository." data-meta="github.com/gnu6dotlive/in.gnu6/README.md · commit fec80a7 · as of October 29, 2026"><code>README.md</code></a>, <a class="src" data-src="doc-CONTRACT.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/CONTRACT.md" data-title="in.gnu6 · CONTRACT.md" data-desc="in.gnu6&#x27;s contract: what the scene owns, what renderers are not allowed to do." data-meta="github.com/gnu6dotlive/in.gnu6/CONTRACT.md · commit fec80a7 · as of October 29, 2026"><code>CONTRACT.md</code></a>, <a class="src" data-src="doc-QUESTLOG.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/QUESTLOG.md" data-title="in.gnu6 · QUESTLOG.md" data-desc="The milestone log, ratified or open." data-meta="github.com/gnu6dotlive/in.gnu6/QUESTLOG.md · commit fec80a7 · as of October 29, 2026"><code>QUESTLOG.md</code></a> and <a class="src" data-src="doc-docs/public/PUBLICATION-READINESS.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/public/PUBLICATION-READINESS.md" data-title="in.gnu6 · docs/public/PUBLICATION-READINESS.md" data-desc="What publishing in.gnu6 allows, and what it does not." data-meta="github.com/gnu6dotlive/in.gnu6/docs/public/PUBLICATION-READINESS.md · commit fec80a7 · as of October 29, 2026"><code>docs/public/PUBLICATION-READINESS.md</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>
