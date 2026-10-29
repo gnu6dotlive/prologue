@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprendre — le vocabulaire, sans jargon</title>
+<meta name="description" content="Un glossaire accessible pour lire un dépôt open source : dépôt, commit, licence, compositeur, quantisation, MoE, jeton.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="comprendre.html" aria-current="page">Comprendre</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Comprendre</p>
+    <h1>Trois mots à désarmer</h1>
+    <p class="lead">« Open source », « dépôt », « preuve ». Trois expressions qui reviennent partout et qui veulent souvent dire moins — ou plus — que ce qu'on croit.</p>
+  </div>
+
+  <section>
+    <h2>Open source : la recette, pas le plat</h2>
+    <div class="box analogy">
+      <span class="label">L'analogie</span>
+      <p>Un restaurant peut publier sa recette complète. Cela ne veut pas dire que le plat est bon, que la cuisine est ouverte, ni que quelqu'un vous servira à table. Cela veut dire que <strong>vous pouvez la refaire vous-même</strong>, la corriger, et vérifier ce qu'il y a dedans.</p>
+      <p style="margin-bottom:0">C'est exactement ce que fait une licence libre : elle vous donne le droit de lire, modifier et redistribuer. Elle ne promet ni qualité, ni support, ni mode d'emploi.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Un dépôt, c'est un dossier avec une mémoire</h2>
+    <div class="prose">
+      <p>Un « dépôt » (en anglais <em>repository</em>) est un dossier de fichiers dont l'historique est conservé. Chaque modification enregistrée s'appelle un <strong>commit</strong> : elle garde la date, l'auteur et une explication. On peut donc savoir qui a changé quoi, quand, et pourquoi.</p>
+      <p>Le fichier <code>README.md</code> est la porte d'entrée : ce que l'auteur veut que vous sachiez d'abord. Les dossiers <code>docs/</code> contiennent la documentation, <code>evidence/</code> les preuves, <code>crates/</code> le code découpé en paquets.</p>
+    </div>
+    <div class="grid three">
+      <div class="card"><h4>Commit</h4><p style="margin-bottom:0">Une modification enregistrée, avec son message et sa date. L'unité de l'histoire du projet.</p></div>
+      <div class="card"><h4>Issue</h4><p style="margin-bottom:0">Un problème ou une demande, discuté publiquement. Une todo-list visible.</p></div>
+      <div class="card"><h4>Pull request</h4><p style="margin-bottom:0">Une proposition de modification, que l'auteur peut relire avant de l'accepter.</p></div>
+      <div class="card"><h4>Licence</h4><p style="margin-bottom:0">Le contrat qui dit ce que vous pouvez faire du code. MIT est permissive ; GPL impose de partager vos modifications.</p></div>
+      <div class="card"><h4>CI</h4><p style="margin-bottom:0">« Intégration continue » : des contrôles automatiques lancés à chaque changement.</p></div>
+      <div class="card"><h4>Fork</h4><p style="margin-bottom:0">Une copie indépendante d'un projet, que l'on fait évoluer de son côté.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>« Ça marche » ne veut rien dire tout seul</h2>
+    <div class="prose">
+      <p>C'est la leçon centrale des quatre projets. Une fonctionnalité peut être décrite, écrite, testée, observée chez son auteur, ou utilisée par un tiers. Ce sont cinq choses différentes, et les confondre est la source de presque toutes les déceptions.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/echelle-preuve.svg" alt="Échelle à cinq niveaux, du simple projet sur le papier au produit utilisable par un tiers, avec la traduction du vocabulaire de gnosix et de gnostral.rs.">
+      <figcaption><b>La même échelle, deux vocabulaires.</b> gnosix parle de PROVEN, QUALIFIED, SOURCE-QUALIFIED. gnostral.rs parle de BOUNDED PASS, CONTRACT TESTED, SINGLE-SERVER PASS. Sous les mots, la même question : jusqu'où la preuve va-t-elle ?</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Le vocabulaire, traduit</h2>
+
+    <h3>Le bureau</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="col-narrow">Terme</th><th>Traduction</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Compositeur</strong></td><td>Le programme qui assemble les fenêtres et l'affichage. Sous Linux, <a class="src" data-src="hyprland" href="https://github.com/hyprwm/Hyprland" data-title="Hyprland" data-desc="Compositeur Wayland, celui sur lequel gnosix dessine son bureau." data-meta="github.com/hyprwm/Hyprland">Hyprland</a> en est un.</td></tr>
+          <tr><td><strong><a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a></strong></td><td>Le protocole moderne par lequel un programme parle à l'affichage.</td></tr>
+          <tr><td><strong><a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a></strong></td><td>La bibliothèque de rendu utilisée par gnosix, issue de l'éditeur Zed.</td></tr>
+          <tr><td><strong>Surface</strong></td><td>Une zone dessinée à l'écran : la barre, le deck, une fenêtre, un panneau.</td></tr>
+          <tr><td><strong>Crate</strong></td><td>Un paquet de code <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>. gnosix en compte une quarantaine, séparés par domaine.</td></tr>
+          <tr><td><strong>Rust</strong></td><td>Un langage de programmation réputé pour sa sûreté mémoire et sa performance.</td></tr>
+          <tr><td><strong><a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></strong></td><td>Un autre langage, utilisé par le moteur de Calix.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>L'intelligence artificielle locale</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="col-narrow">Terme</th><th>Traduction</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Modèle</strong></td><td>Un très gros ensemble de nombres ajustés pour produire du texte. « 30 milliards de paramètres » donne une idée de sa taille.</td></tr>
+          <tr><td><strong>Paramètre</strong></td><td>Un nombre interne du modèle. Plus il y en a, plus le modèle est volumineux et coûteux à faire tourner.</td></tr>
+          <tr><td><strong>Quantisation</strong></td><td>Compresser les nombres sur moins de bits (Q2_K, Q3_K…). Moins de mémoire, un peu moins de précision.</td></tr>
+          <tr><td><strong>MoE</strong></td><td>« Mixture of experts » : le modèle n'active qu'une partie de ses réseaux pour chaque mot.</td></tr>
+          <tr><td><strong>Jeton</strong></td><td>Un fragment de mot. Les débits se mesurent en jetons par seconde (tok/s).</td></tr>
+          <tr><td><strong>Inférence</strong></td><td>Le fait d'utiliser un modèle déjà entraîné, par opposition à son entraînement.</td></tr>
+          <tr><td><strong>GPU / VRAM</strong></td><td>La carte graphique et sa mémoire dédiée. Rapide, mais petite sur une machine personnelle.</td></tr>
+          <tr><td><strong>Résidence</strong></td><td>L'endroit où un morceau de modèle est réellement chargé : carte graphique ou mémoire centrale.</td></tr>
+          <tr><td><strong>Benchmark</strong></td><td>Une mesure comparative, avec un protocole. Sans protocole, un chiffre n'est qu'une anecdote.</td></tr>
+          <tr><td><strong><a class="src" data-src="mistralrs" href="https://github.com/EricLBuehler/mistral.rs" data-title="mistral.rs" data-desc="Moteur d&#x27;inférence de grands modèles de langage, écrit en Rust. gnostral.rs le modifie ; il ne le remplace pas." data-meta="github.com/EricLBuehler/mistral.rs">mistral.rs</a></strong></td><td>Un moteur d'inférence écrit en Rust. À ne pas confondre avec <em><a class="src" data-src="mistralai" href="https://github.com/mistralai" data-title="Mistral AI" data-desc="Entreprise qui conçoit les modèles Mistral. Aucun lien avec le moteur mistral.rs." data-meta="github.com/mistralai">Mistral AI</a></em>, l'entreprise qui produit des modèles.</td></tr>
+          <tr><td><strong><a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="Moteur d&#x27;inférence en C/C++, très répandu. C&#x27;est la référence de comparaison du dossier gnostral." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a></strong></td><td>Un moteur d'inférence très répandu, souvent utilisé comme référence de performance.</td></tr>
+          <tr><td><strong>A/B apparié</strong></td><td>Comparer deux versions en alternant les exécutions, sur la même machine et les mêmes entrées. C'est ce qui rend un « ×2 » crédible.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Les logiciels et la scène</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="col-narrow">Terme</th><th>Traduction</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Paquet</strong></td><td>Un logiciel prêt à installer, avec ses dépendances. Sur <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a>, il s'installe avec <code>pacman</code>.</td></tr>
+          <tr><td><strong><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Le gestionnaire de paquets d&#x27;Arch Linux et sa bibliothèque (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a></strong></td><td>La bibliothèque qui fait le vrai travail derrière <code>pacman</code> : résoudre les dépendances, écrire les fichiers.</td></tr>
+          <tr><td><strong><a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a></strong></td><td>Les dépôts communautaires d'Arch : des recettes de compilation, maintenues par des bénévoles.</td></tr>
+          <tr><td><strong><a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a> / <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a></strong></td><td>Deux façons d'emporter une application avec ses dépendances, hors du système. Isolée pour l'une, autonome en un seul fichier pour l'autre.</td></tr>
+          <tr><td><strong><a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a></strong></td><td>Le mécanisme qui demande l'autorisation au moment de l'action, pour une opération précise — au lieu de donner tous les droits d'avance.</td></tr>
+          <tr><td><strong>Provenance</strong></td><td>L'origine d'un logiciel : quel dépôt, quel mainteneur, donc à qui vous aurez affaire. Ce n'est pas une décoration.</td></tr>
+          <tr><td><strong>Scène</strong></td><td>L'ensemble des objets, relations, positions et contraintes qu'un moteur considère comme vrais.</td></tr>
+          <tr><td><strong>Projection / renderer</strong></td><td>La traduction d'une scène en pixels, faite par un programme de rendu. Le renderer observe ; il ne décide pas de ce qui existe.</td></tr>
+          <tr><td><strong>Topologie</strong></td><td>La carte des places et des liens — y compris quand elle change. Le fil rouge des quatre dépôts.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quatre questions à poser à n'importe quel dépôt</h2>
+    <div class="grid two">
+      <div class="card">
+        <h4>1. Quelle est la dernière version stable ?</h4>
+        <p style="margin-bottom:0">Si la réponse est « aucune », ce n'est pas un défaut : c'est une information. Un projet expérimental assumé vaut mieux qu'un projet instable qui se présente comme fini.</p>
+      </div>
+      <div class="card">
+        <h4>2. Que dit le document de statut ?</h4>
+        <p style="margin-bottom:0">Les bons projets ont un fichier qui liste ce qui marche, ce qui ne marche pas, et ce qui reste à faire. Cherchez-le avant de croire le README.</p>
+      </div>
+      <div class="card">
+        <h4>3. Les échecs sont-ils documentés ?</h4>
+        <p style="margin-bottom:0">Un projet qui ne publie que ses réussites cache quelque chose. Les quatre dépôts présentés ici gardent leurs essais ratés, avec leur cause.</p>
+      </div>
+      <div class="card">
+        <h4>4. Puis-je vérifier moi-même ?</h4>
+        <p style="margin-bottom:0">Commandes de test, empreintes de fichiers, reçus de mesure : la preuve doit être rejouable, pas seulement racontée.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pourquoi cette insistance sur la preuve</h2>
+    <div class="box change">
+      <span class="label">Ce que ça change</span>
+      <p>Dans un domaine où les annonces vont plus vite que les résultats, la chose la plus utile qu'un projet puisse offrir n'est pas une promesse : c'est une <strong>frontière claire</strong> entre ce qui est démontré et ce qui ne l'est pas.</p>
+      <p style="margin-bottom:0">Cette frontière permet de lire un dépôt sans être dupe, de l'essayer sans se tromper d'attente, et de le financer sans acheter une illusion.</p>
+    </div>
+    <div class="dossier-links">
+      <a class="btn" href="gnosix.html">Relire le dossier gnosix</a>
+      <a class="btn ghost" href="gnostral.html">Relire le dossier gnostral.rs</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Document de vulgarisation · instantané du 29 octobre 2026 · CC BY 4.0.</span>
+    <span>Glossaire rédigé à partir des dépôts <a class="src" data-src="repo-gnosix" href="https://github.com/gnu6dotlive/gnosix/tree/66d801b0069808e6a18120ac41477a20466b4d66" data-title="gnu6dotlive/gnosix" data-desc="Environnement de bureau Linux en Rust." data-meta="github.com/gnu6dotlive/gnosix · commit 66d801b · état au 29 octobre 2026"><code>gnu6dotlive/gnosix</code></a>, <a class="src" data-src="repo-gnostral.rs" href="https://github.com/gnu6dotlive/gnostral.rs/tree/38c4134a3a398b5b83d34326826362cf4dcc7336" data-title="gnu6dotlive/gnostral.rs" data-desc="Laboratoire d&#x27;inférence locale en Rust sur GPU contraint." data-meta="github.com/gnu6dotlive/gnostral.rs · commit 38c4134 · état au 29 octobre 2026"><code>gnu6dotlive/gnostral.rs</code></a>, <a class="src" data-src="repo-calix" href="https://github.com/gnu6dotlive/calix/tree/aa423254f89cd233f261fbf19f4705d1d9c94259" data-title="gnu6dotlive/calix" data-desc="Gestion de paquets native pour Arch Linux." data-meta="github.com/gnu6dotlive/calix · commit aa42325 · état au 29 octobre 2026"><code>calix</code></a> et <a class="src" data-src="repo-in.gnu6" href="https://github.com/gnu6dotlive/in.gnu6/tree/fec80a7ae19de4b5838fe9f84dd271d6924fa753" data-title="gnu6dotlive/in.gnu6" data-desc="Moteur de scènes et de topologies." data-meta="github.com/gnu6dotlive/in.gnu6 · commit fec80a7 · état au 29 octobre 2026"><code>in.gnu6</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

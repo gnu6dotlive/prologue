@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="t d">
+  <title id="t">La frontière de privilège de Calix</title>
+  <desc id="d">L'interface, le service d'inventaire et les notifications tournent sans privilège. Une seule porte, polkit via pkexec, élève le moteur Zig pour les commandes qui modifient le système.</desc>
+
+  <rect width="1200" height="540" fill="#F7F3ED"/>
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#667085">CALIX · FRONTIÈRE DE PRIVILÈGE</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#111418">Les droits arrivent au dernier moment</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#667085">La question n'est pas « faut-il des droits ? » mais « combien de code les reçoit, et pendant combien de temps ? ».</text>
+
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#A1A6AD"/>
+    </marker>
+  </defs>
+
+  <!-- zone sans privilege -->
+  <rect x="48" y="152" width="540" height="286" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+  <text x="72" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#455F3D">SANS PRIVILÈGE</text>
+
+  <g>
+    <rect x="72" y="198" width="492" height="62" rx="8" fill="#F7F3ED" stroke="#D7DADF"/>
+    <text x="90" y="222" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13.5" fill="#111418">calix-gpui</text>
+    <text x="90" y="244" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">L'interface : recherche, inspection, console d'opération.</text>
+
+    <rect x="72" y="270" width="492" height="62" rx="8" fill="#F7F3ED" stroke="#D7DADF"/>
+    <text x="90" y="294" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13.5" fill="#111418">calix-daemon</text>
+    <text x="90" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">L'inventaire : le seul écrivain de l'état, sur socket Unix.</text>
+
+    <rect x="72" y="342" width="492" height="62" rx="8" fill="#F7F3ED" stroke="#D7DADF"/>
+    <text x="90" y="366" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13.5" fill="#111418">calix-notify</text>
+    <text x="90" y="388" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">Les notifications : un signal du bus, une notification.</text>
+  </g>
+
+  <line x1="588" y1="295" x2="644" y2="295" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- porte polkit -->
+  <rect x="656" y="196" width="152" height="198" rx="12" fill="#FFE5D2" stroke="#C95400" stroke-width="1.5"/>
+  <text x="732" y="228" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#C95400" text-anchor="middle">polkit</text>
+  <text x="732" y="256" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#111418" text-anchor="middle">trois actions déclarées :</text>
+  <text x="732" y="274" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#111418" text-anchor="middle">installer, retirer,</text>
+  <text x="732" y="292" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#111418" text-anchor="middle">mettre à jour.</text>
+  <text x="732" y="330" font-family="'Space Grotesk', sans-serif" font-size="10.5" fill="#C95400" text-anchor="middle">UNE SEULE PORTE</text>
+  <text x="732" y="348" font-family="'Space Grotesk', sans-serif" font-size="10.5" fill="#C95400" text-anchor="middle">ÉTROITE ET EXPLICITE</text>
+
+  <line x1="812" y1="295" x2="868" y2="295" stroke="#A1A6AD" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- zone privilegiee -->
+  <rect x="880" y="152" width="272" height="286" rx="12" fill="#111418"/>
+  <text x="904" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#A1A6AD">LES DROITS, POUR UNE ACTION</text>
+  <rect x="904" y="204" width="224" height="86" rx="8" fill="#FFFFFF"/>
+  <text x="922" y="234" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="14" fill="#111418">calix · moteur Zig</text>
+  <text x="922" y="256" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">relancé via pkexec : transactions</text>
+  <text x="922" y="274" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">ALPM, builds AUR, trousseau de clés.</text>
+
+  <text x="904" y="326" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">Seules les commandes qui modifient</text>
+  <text x="904" y="344" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">le système passent par cette porte ;</text>
+  <text x="904" y="362" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">le reste tourne en utilisateur.</text>
+  <text x="904" y="404" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#5F7F52">Un plantage sans droit</text>
+  <text x="904" y="420" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#5F7F52">ne casse pas le système.</text>
+
+  <!-- bandeau interdits -->
+  <rect x="48" y="462" width="1104" height="40" rx="8" fill="#FFFFFF" stroke="#D7DADF"/>
+  <text x="68" y="487" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#667085">Interdits par le projet, y compris dans la documentation d'installation :</text>
+  <text x="540" y="488" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#A1A6AD" text-decoration="line-through">sudo</text>
+  <text x="592" y="488" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#A1A6AD" text-decoration="line-through">su</text>
+  <text x="624" y="488" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#A1A6AD" text-decoration="line-through">doas</text>
+  <text x="688" y="487" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#667085">— une seule voie d'élévation, traçable et révocable.</text>
+
+  <text x="48" y="528" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#A1A6AD">Schéma de vulgarisation. D'après calix/README.md et docs/calix-architecture.md.</text>
+</svg>

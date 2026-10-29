@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>in.gnu6 — une scène, plusieurs projecteurs</title>
+<meta name="description" content="in.gnu6 : un moteur de scènes et de topologies. Il décide de ce qui existe ; les renderers décident seulement comment le montrer. Ce qui est ratifié, ce qui reste ouvert.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html" aria-current="page">in.gnu6</a>
+      <a href="comprendre.html">Comprendre</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
+
+  <div class="hero prose">
+    <p class="kicker neutral">Dossier 4 · la scène</p>
+    <h1>in.gnu6</h1>
+    <p class="lead">Un moteur qui décide de ce qui existe dans une scène — positions, relations, temps, contraintes — et laisse chaque affichage décider seulement <em>comment</em> le montrer.</p>
+    <p><span class="tag partial">Recherche</span> <span class="tag">2026.10.0-research</span> <span class="tag no">Pas de licence OSS</span></p>
+  </div>
+
+  <div class="grid four" style="margin-top:36px">
+    <div class="stat"><span class="value">16</span><span class="caption">jalons ratifiés, de MQ-00 à MQ-15, pour le mandat documenté</span></div>
+    <div class="stat"><span class="value">9&nbsp;370</span><span class="caption">images présentées en 125 s, zéro écartée — une session locale</span></div>
+    <div class="stat"><span class="value">40</span><span class="caption">événements <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> réels échangés entre <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et le moteur <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a></span></div>
+    <div class="stat"><span class="value">0</span><span class="caption">API publique stable, aucun paquet publié sur <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">npm</a></span></div>
+  </div>
+
+  <section>
+    <h2>En une image</h2>
+    <div class="box analogy">
+      <span class="label">L'analogie</span>
+      <p>Pensez à un théâtre. La <strong>scène</strong> sait où sont les acteurs, les décors et les passages : c'est elle qui décide de ce qui existe et de ce qui est possible. Les <strong>projecteurs</strong> éclairent cette scène selon leur propre technique — l'un projette une image, l'autre éclaire en lumière rasante.</p>
+      <p style="margin-bottom:0">Changer de projecteur ne déplace pas les acteurs. C'est toute la séparation que défend in.gnu6 : le rendu est remplaçable, la scène ne l'est pas.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le principe</h2>
+    <figure>
+      <img src="assets/diagrams/gnu6-scene.svg" alt="La scène détient les identités, relations, temps et contraintes. Trois projecteurs différents la montrent sans pouvoir la redéfinir.">
+      <figcaption><b>Une seule autorité sémantique.</b> Un renderer peut observer et dessiner la scène ; il ne peut ni renommer, ni déplacer, ni inventer ce qui existe. C'est la règle centrale du contrat du dépôt.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>La plupart des moteurs graphiques mélangent deux questions : « qu'est-ce qui existe ? » et « comment le dessine-t-on ? ». Le mélange tient jusqu'au jour où l'on veut changer de moteur de rendu, exporter une scène, ou faire tourner deux produits sur le même modèle — et là, il faut tout réécrire.</p>
+      <p>in.gnu6 sépare les deux. Un noyau <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> maintient la scène : identités, relations, hiérarchie, contraintes d'espace, temps déterministe, dynamique, topologie, déformations, requêtes et observations reproductibles. Les renderers — un navigateur avec <a class="src" data-src="pixijs" href="https://github.com/pixijs/pixijs" data-title="PixiJS" data-desc="Moteur de rendu 2D pour le navigateur (WebGL). C&#x27;est le renderer de référence d&#x27;in.gnu6." data-meta="github.com/pixijs/pixijs">PixiJS</a>, un moteur <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="API graphique et de calcul ouverte, maintenue par le Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a> natif, ou un produit consommateur — ne font que projeter cet état.</p>
+    </div>
+    <figure>
+      <img class="motion-live" src="assets/gif/gnu6-scene-projection.gif" alt="Animation : à gauche la scène, cinq objets reliés ; à droite deux projections, l'une en cartes, l'autre en points. Quand la scène déplace n2 ou change sa relation, les deux projections suivent. Quand on tente de déplacer n4 depuis la deuxième projection, la demande est refusée et rien ne bouge.">
+      <img class="motion-still" src="assets/gif/gnu6-scene-projection-still.png" alt="">
+      <figcaption><b>Le sens unique.</b> La scène modifie un objet ou une relation : les deux projections suivent, chacune avec son propre dessin. Une projection qui tente de déplacer un objet est refusée — déplacer appartient à la scène. Animation de principe, d'après <a class="src" data-src="doc-CONTRACT.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/CONTRACT.md" data-title="in.gnu6 · CONTRACT.md" data-desc="Le contrat d&#x27;in.gnu6 : ce que la scène possède, ce que les renderers n&#x27;ont pas le droit de faire." data-meta="github.com/gnu6dotlive/in.gnu6/CONTRACT.md · commit fec80a7 · état au 29 octobre 2026"><code>CONTRACT.md</code></a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Ce que le moteur possède — et ce qu'il ignore</h2>
+    <div class="grid two">
+      <div class="card">
+        <h4>Il possède</h4>
+        <ul style="margin-bottom:0">
+          <li>l'identité d'une scène et de ses objets ;</li>
+          <li>les relations et la hiérarchie entre eux ;</li>
+          <li>les contraintes d'espace et d'admissibilité ;</li>
+          <li>un temps déterministe et une dynamique ;</li>
+          <li>la topologie et ses changements ;</li>
+          <li>des observations reproductibles.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Il ignore</h4>
+        <ul style="margin-bottom:0">
+          <li>ce qu'est un bureau, un dock ou un espace de travail ;</li>
+          <li>ce qu'est un produit, une boutique, un panier ;</li>
+          <li>ce qu'est un bijou ou une action métier ;</li>
+          <li>quelle intention commerciale justifie un écran.</li>
+        </ul>
+        <p style="margin-top:1rem;margin-bottom:0;color:var(--ds-slate);font-size:.9375rem">Ces significations appartiennent aux produits qui consomment le moteur — pas au moteur.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Trois surfaces, trois statuts de vérité</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Surface</th><th>Ce que c'est</th><th>Preuve actuellement admissible</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Noyau <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a></strong></td>
+            <td>Le modèle sans affichage : scène, topologie, espace, temps, interaction</td>
+            <td>16 jalons ratifiés ; porte complète à 29 fichiers / 119 tests, build Pixi et 2 tests navigateur</td>
+          </tr>
+          <tr>
+            <td><strong><a class="src" data-src="pixijs" href="https://github.com/pixijs/pixijs" data-title="PixiJS" data-desc="Moteur de rendu 2D pour le navigateur (WebGL). C&#x27;est le renderer de référence d&#x27;in.gnu6." data-meta="github.com/pixijs/pixijs">PixiJS</a> / WebGL</strong></td>
+            <td>La projection de référence dans un navigateur, remplaçable</td>
+            <td>Qualifiée par les jalons MQ-11 (contrat) et <a class="src" data-src="ms-MQ-12" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/evidence/mq-12-pixi-browser-2026-10-07.md" data-title="in.gnu6 · MQ-12" data-desc="Dossier de qualification MQ-12 : le renderer navigateur de référence." data-meta="github.com/gnu6dotlive/in.gnu6/docs/evidence/mq-12-pixi-browser-2026-10-07.md · commit fec80a7 · état au 29 octobre 2026">MQ-12</a> (navigateur)</td>
+          </tr>
+          <tr>
+            <td><strong><a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="API graphique et de calcul ouverte, maintenue par le Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a> natif</strong></td>
+            <td>La recherche d'un rendu natif rapide, hors navigateur</td>
+            <td>Preuves locales partielles ; le contrat d'acceptation global CP03 reste <strong>ouvert</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="shot">
+      <img src="assets/shots/gnu6-pixi.png" alt="Capture de qualification MQ-12 : le renderer PixiJS de référence dessine dans un navigateur une scène de dix entités, des cartes claires sur fond sombre.">
+      <figcaption><b>La projection de référence, à l'écran.</b> Capture du jalon MQ-12 : le renderer PixiJS dessine dans un navigateur une scène de dix entités. L'image montre le dessin ; c'est le contrat du noyau, pas l'image, qui fixe ce qui existe. Source : <a class="src" data-src="doc-docs/evidence/assets/" href="https://github.com/gnu6dotlive/in.gnu6/tree/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/evidence/assets" data-title="in.gnu6 · docs/evidence/assets/" data-desc="Captures et pièces des dossiers de qualification." data-meta="github.com/gnu6dotlive/in.gnu6/docs/evidence/assets · commit fec80a7 · état au 29 octobre 2026"><code>docs/evidence/assets/</code></a>.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Les chiffres, et ce qu'ils ne prouvent pas</h2>
+    <div class="prose">
+      <p>Deux observations reviennent dans les documents du dépôt, et elles sont intéressantes précisément parce qu'elles sont bornées.</p>
+      <p><strong>Endurance :</strong> 9 370 images présentées en 124,994 secondes, sans une seule image écartée, soit environ 75 images par seconde en moyenne, avec un p95 de 13,478 ms. Mesuré localement, via l'horodatage de présentation du compositeur <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a>.</p>
+      <p><strong>Échange réel :</strong> un programme <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et le projecteur sémantique <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> ont échangé 40 événements Wayland réels sur une socket Unix privée, avec une correspondance de séquence exacte et 1 497 images présentées en 20 secondes, sans perte.</p>
+    </div>
+    <div class="box limit">
+      <span class="label">Les limites, sans détour</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Une seule configuration.</strong> Ces mesures viennent d'une machine NVIDIA de référence. Elles ne garantissent rien sur une autre carte, ni sur plusieurs.</li>
+        <li><strong>Pas d'entrée-à-photon.</strong> Le délai entre un clic et le pixel affiché n'est pas mesuré ; les essais qui s'en approchaient n'ont pas observé de clic réel.</li>
+        <li><strong>Une anomalie non expliquée.</strong> Un essai antérieur a montré une interruption de 413 ms, jamais élucidée. Elle reste au dossier.</li>
+        <li><strong>CP03 reste ouvert.</strong> Le contrat d'acceptation global — soixante images par seconde tenues, latence indépendante, audit — n'est pas clos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que la licence ne dit pas</h2>
+    <div class="box limit">
+      <span class="label">À savoir avant de réutiliser</span>
+      <p>Le dépôt est public depuis le 10 octobre 2026, mais <strong>la licence n'est pas décidée</strong>. Le fichier de paquet déclare explicitement « UNLICENSED ». Un dépôt visible n'accorde donc pas le droit général de copier ou de modifier le code.</p>
+      <p style="margin-bottom:0">S'y ajoutent deux absences assumées : pas d'API publique stable, et aucune publication sur <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">npm</a>. Le moteur s'évalue aujourd'hui comme un programme de recherche documenté, pas comme une dépendance que l'on installe.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pourquoi c'est un programme de preuve</h2>
+    <div class="prose">
+      <p>Le dépôt ne présente pas une liste de fonctionnalités : il présente une liste de <strong>jalons à ratifier</strong>. Chacun doit être adossé à une loi, un test de falsification, une observation d'exécution — ou rester explicitement ouvert. Un jalon peut être refusé par un test qui échoue, et le refus reste écrit.</p>
+      <p>Une expérience annexe du dépôt montre la méthode à l'œuvre. Un superviseur <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> confie un calcul graphique à un processus séparé, sous un compte système distinct, et onze portes sont écrites <em>avant</em> l'essai. Trois acquisitions ont échoué ; elles sont conservées. La quatrième passe les dix portes de laboratoire — et la onzième, l'autorisation de publier, reste refusée faute de revue humaine indépendante.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnu6-gates.svg" alt="Grille de onze portes : dix portes de laboratoire marquées PASS, la porte d'autorité de publication marquée non qualifiée. Bilan : 10 sur 10 portes de labo, mise en production refusée.">
+      <figcaption><b>Passer ses tests n'autorise pas à publier.</b> Protocole <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="Rapport CUDA-05F : protocole, portes, essais négatifs conservés, limites." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · état au 29 octobre 2026">CUDA-05F</a> : isolement des comptes, intégrité des binaires, parité GPU/processeur, reprise après plantage. L'autorité de publication est une porte à part : aucun test automatique ne peut la franchir.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Deux produits consommateurs servent de pression : Docklab et un harnais pour une bijouterie. Leur rôle n'est pas de valider le moteur par politesse, mais de le casser : si un produit a besoin d'une seconde scène pour fonctionner, c'est la séparation qui est fausse.</p>
+      <p>Cette discipline explique les chiffres du haut de page : 16 jalons ratifiés ne veulent pas dire « prêt », et 9 370 images sans perte ne veulent pas dire « fluide pour vous ». Chaque nombre porte son cadre.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>Curieux</h4>
+        <p style="margin-bottom:0">Vous comprenez pourquoi une application peut changer d'apparence sans changer de contenu — et pourquoi « refaire le rendu » n'oblige pas à refaire le modèle.</p>
+      </div>
+      <div class="card">
+        <h4>Développeur</h4>
+        <p style="margin-bottom:0">Un noyau <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> testé, un contrat de renderer écrit, un renderer navigateur de référence, et une expérimentation <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="API graphique et de calcul ouverte, maintenue par le Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a> documentée avec ses échecs. Beaucoup se vérifie sans carte graphique.</p>
+      </div>
+      <div class="card">
+        <h4>Décideur ou financeur</h4>
+        <p style="margin-bottom:0">La question posée est industrielle : combien coûte le jour où il faut changer de moteur de rendu ou brancher un deuxième produit ? La réponse est ici une architecture, pas une promesse.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pour aller plus loin</h2>
+    <details class="deep">
+      <summary>Technique — les mots du dépôt</summary>
+      <p><strong>Scène :</strong> l'ensemble des objets, relations, positions et contraintes que le moteur considère comme vrais. <strong>Projection :</strong> la traduction de cette scène en pixels, faite par un renderer. <strong>Renderer :</strong> le programme qui dessine — navigateur, <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="API graphique et de calcul ouverte, maintenue par le Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a>, ou tout autre à venir. <strong>Topologie :</strong> la carte des places et des liens, y compris quand elle change. <strong><a class="src" data-src="wppresentation" href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time" data-title="wp_presentation" data-desc="Protocole Wayland qui indique quand une image a réellement été présentée à l&#x27;écran." data-meta="gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time">wp_presentation</a> :</strong> le mécanisme <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> qui indique quand une image a réellement été présentée à l'écran.</p>
+      <p style="margin-bottom:0"><strong>Langages :</strong> <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> pour le noyau et le renderer de référence ; <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> pour l'expérimentation native. <strong>Statut :</strong> recherche, sans licence OSS ni API stable.</p>
+    </details>
+    <details class="deep">
+      <summary>Reproduire sans amplifier l'autorité</summary>
+      <p>Le noyau se vérifie avec <a class="src" data-src="nodejs" href="https://github.com/nodejs/node" data-title="Node.js" data-desc="Environnement d&#x27;exécution JavaScript hors navigateur." data-meta="github.com/nodejs/node">Node.js</a> 24 ou plus : <code>npm ci</code>, puis les contrôles de types, les tests de lois et le parcours navigateur. Ces commandes couvrent trois choses différentes — et aucune ne constitue une qualification graphique.</p>
+      <p style="margin-bottom:0">Les expériences GPU lourdes passent par un lanceur dédié, avec limites de ressources et refus documentés. Le dépôt demande explicitement de ne pas lancer un benchmark Vulkan ou <a class="src" data-src="cuda" href="https://developer.nvidia.com/cuda-toolkit" data-title="CUDA" data-desc="Plateforme de calcul parallèle de NVIDIA pour ses cartes graphiques." data-meta="developer.nvidia.com/cuda-toolkit">CUDA</a> en contournant ce contrôle.</p>
+    </details>
+    <div class="dossier-links">
+      <a class="btn" href="https://github.com/gnu6dotlive/in.gnu6">Voir le dépôt sur GitHub</a>
+      <a class="btn ghost" href="index.html">Revenir à la carte des quatre dépôts</a>
+      <a class="btn ghost" href="comprendre.html">Comprendre le vocabulaire</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Document de vulgarisation · instantané du 29 octobre 2026 · CC BY 4.0.</span>
+    <span>Faits issus de <a class="src" data-src="doc-README.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/README.md" data-title="in.gnu6 · README.md" data-desc="Présentation du dépôt in.gnu6." data-meta="github.com/gnu6dotlive/in.gnu6/README.md · commit fec80a7 · état au 29 octobre 2026"><code>README.md</code></a>, <a class="src" data-src="doc-CONTRACT.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/CONTRACT.md" data-title="in.gnu6 · CONTRACT.md" data-desc="Le contrat d&#x27;in.gnu6 : ce que la scène possède, ce que les renderers n&#x27;ont pas le droit de faire." data-meta="github.com/gnu6dotlive/in.gnu6/CONTRACT.md · commit fec80a7 · état au 29 octobre 2026"><code>CONTRACT.md</code></a>, <a class="src" data-src="doc-QUESTLOG.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/QUESTLOG.md" data-title="in.gnu6 · QUESTLOG.md" data-desc="Le journal des jalons, ratifiés ou ouverts." data-meta="github.com/gnu6dotlive/in.gnu6/QUESTLOG.md · commit fec80a7 · état au 29 octobre 2026"><code>QUESTLOG.md</code></a> et <a class="src" data-src="doc-docs/public/PUBLICATION-READINESS.md" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/public/PUBLICATION-READINESS.md" data-title="in.gnu6 · docs/public/PUBLICATION-READINESS.md" data-desc="Ce que la publication d&#x27;in.gnu6 autorise, et ce qu&#x27;elle n&#x27;autorise pas." data-meta="github.com/gnu6dotlive/in.gnu6/docs/public/PUBLICATION-READINESS.md · commit fec80a7 · état au 29 octobre 2026"><code>docs/public/PUBLICATION-READINESS.md</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

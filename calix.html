@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calix — un seul guichet pour tous les logiciels</title>
+<meta name="description" content="Calix : une seule fenêtre native pour installer, mettre à jour et inventorier les logiciels d'un Arch Linux, sans cacher d'où vient chaque paquet.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html" aria-current="page">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="comprendre.html">Comprendre</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Dossier 3 · le compagnon</p>
+    <h1>Calix</h1>
+    <p class="lead">Une seule fenêtre pour installer, mettre à jour et inventorier les logiciels d'un <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> — sans jamais cacher d'où vient chaque paquet.</p>
+    <p><span class="tag partial">Pre-1.0</span> <span class="tag">v0.3.1</span> <span class="tag">Licence GPL-3.0</span> <span class="tag info">Arch Linux x86_64</span></p>
+  </div>
+
+  <div class="grid four" style="margin-top:36px">
+    <div class="stat"><span class="value">6</span><span class="caption">écosystèmes de paquets réunis dans une seule liste</span></div>
+    <div class="stat"><span class="value">1&nbsp;803</span><span class="caption">paquets installés dans un seul tableau, sur la machine de l'auteur (29&nbsp;octobre&nbsp;2026)</span></div>
+    <div class="stat"><span class="value">4</span><span class="caption">programmes distincts : interface, moteur, service d'inventaire, notifications</span></div>
+    <div class="stat"><span class="value">0</span><span class="caption">appel à <code>sudo</code> : l'élévation passe par un seul chemin <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a></span></div>
+  </div>
+
+  <section>
+    <h2>En une image</h2>
+    <div class="box analogy">
+      <span class="label">L'analogie</span>
+      <p>Imaginez un guichet unique qui accepte les colis de six transporteurs différents. Vous n'avez plus qu'un seul comptoir, un seul suivi, une seule file d'attente.</p>
+      <p style="margin-bottom:0">Mais chaque colis garde son étiquette d'origine : untel vient de la poste, untel d'un coursier privé. Le guichet ne prétend pas que tous les transporteurs sont identiques — il vous évite seulement de courir après six comptoirs.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le problème, puis la réponse</h2>
+    <figure>
+      <img src="assets/diagrams/calix-flux.svg" alt="Six sources de logiciels à gauche, un inventaire versionné au centre, et à droite des lignes qui gardent la provenance de chaque logiciel.">
+      <figcaption><b>Ranger n'est pas confondre.</b> Calix réunit six écosystèmes dans un même document, mais chaque entrée dit d'où elle vient. Un lecteur qui ne comprend pas la version du document le refuse, au lieu de l'afficher à moitié.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Sur <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a>, installer un logiciel veut dire passer d'un outil à l'autre : <code>pacman</code> pour les dépôts officiels, un assistant pour l'<a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a>, <code>flatpak</code> pour les paquets isolés, et « ce qui traîne » pour les <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImages</a>. Chacun a sa sortie, sa propre idée de ce qui est installé, et son propre chemin vers les droits d'administrateur.</p>
+      <p>Calix réunit tout cela dans une seule application native : pas de page web embarquée, pas de navigateur caché. L'interface est écrite en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> avec <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> — le même socle que <a href="gnosix.html">gnosix</a> — et la gestion des paquets en <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a>.</p>
+    </div>
+    <div class="shot-pair">
+      <figure class="shot">
+        <img src="assets/shots/calix-browse.png" alt="Capture de Calix : recherche « ripgrep », dix-huit résultats, trois des dépôts Arch et quinze de l'AUR, chacun avec sa source affichée.">
+      </figure>
+      <figure class="shot">
+        <img src="assets/shots/calix-installed.png" alt="Capture de Calix : inventaire des paquets installés, 1 803 paquets répartis entre dépôts officiels, Cargo, NPM et versions suivies, avec version, source, taille et statut.">
+      </figure>
+    </div>
+    <p class="caption-solo"><b>Deux vues réelles de Calix.</b> À gauche, une recherche mêle dépôts Arch et AUR : chaque ligne garde sa source, et l'AUR est signalé comme « recettes à compiler, pas des binaires ». À droite, l'inventaire des 1 803 paquets de la machine de l'auteur, onglet par écosystème ; <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> sont « listés, non interrogés ». Captures du 29 octobre 2026, version installée r5022.</p>
+  </section>
+
+  <section>
+    <h2>Ce qui marche, ce qui reste ouvert</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Domaine</th><th>État publié par le dépôt</th><th>Ce que cela ne dit pas</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Interface</strong></td>
+            <td>Interface principale, en développement actif</td>
+            <td>Pas un design figé ; la mise en page peut encore changer.</td>
+          </tr>
+          <tr>
+            <td><strong>Inventaire unifié</strong></td>
+            <td><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Le gestionnaire de paquets d&#x27;Arch Linux et sa bibliothèque (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a>, <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a>, <a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a>, <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a>, <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a>, <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> et versions suivies</td>
+            <td>Inventorier n'est pas savoir installer : voir la ligne suivante.</td>
+          </tr>
+          <tr>
+            <td><strong>Actions depuis l'interface</strong></td>
+            <td>ALPM, AUR et Flatpak seulement</td>
+            <td>Cargo et NPM sont listés, pas encore modifiables depuis l'interface.</td>
+          </tr>
+          <tr>
+            <td><strong>Recherche</strong></td>
+            <td>ALPM, AUR, Flatpak et AppImages déjà installées</td>
+            <td>Les autres sources restent en inventaire seul.</td>
+          </tr>
+          <tr>
+            <td><strong>Service d'inventaire</strong></td>
+            <td>Répond à la demande, seul écrivain de l'état</td>
+            <td>Pas encore d'ordonnanceur : rien ne se met à jour tout seul.</td>
+          </tr>
+          <tr>
+            <td><strong>Suivi des versions</strong></td>
+            <td>Registre et contrôles de provenance en <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></td>
+            <td>Un moteur Python gelé écrit encore le fichier d'observation.</td>
+          </tr>
+          <tr>
+            <td><strong>Notifications</strong></td>
+            <td>Livrées et vérifiées sur une session réelle</td>
+            <td>Installées, mais pas activées par défaut.</td>
+          </tr>
+          <tr>
+            <td><strong>Plateforme</strong></td>
+            <td><a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a>, x86_64</td>
+            <td>Aucune autre distribution n'est prise en charge.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figure>
+      <img src="assets/diagrams/calix-matrice.svg" alt="Tableau : ALPM, AUR et Flatpak permettent inventaire, recherche, installation et mise à jour depuis l'interface ; AppImage est partiel ; Cargo et NPM sont seulement inventoriés.">
+      <figcaption><b>Un inventaire, pas encore un guichet complet.</b> Les six sources sont inventoriées ; trois seulement se modifient depuis la fenêtre. AppImage est géré par le moteur, pas encore par l'interface.</figcaption>
+    </figure>
+    <div class="box note">
+      <span class="label">La règle du dépôt</span>
+      <p style="margin-bottom:0">Le dépôt publie un tableau d'état et précise que, si un autre document de l'arbre le contredit de façon plus optimiste, <strong>c'est ce tableau qu'il faut croire</strong>. C'est une discipline rare, et c'est ce qui rend la lecture utile.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>La frontière de privilège</h2>
+    <div class="prose">
+      <p>C'est le point le plus intéressant pour qui finance ou évalue le projet. Un gestionnaire de paquets a besoin des droits d'administrateur : il modifie le système. La question n'est pas « faut-il ces droits ? » mais « combien de code les reçoit ? ».</p>
+      <p>Chez Calix, l'interface, le service d'inventaire et le pont de notifications tournent <strong>sans privilège</strong>. L'élévation passe par <strong>un seul chemin étroit, explicite, via <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a></strong>. Le projet interdit explicitement <code>sudo</code>, <code>su</code> et <code>doas</code> — y compris dans sa documentation d'installation.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/calix-privilege.svg" alt="À gauche, l'interface, le service d'inventaire et les notifications, sans privilège. Au centre, polkit, seule porte. À droite, le moteur Zig relancé via pkexec pour les transactions.">
+      <figcaption><b>Une seule porte.</b> Les trois programmes du quotidien tournent sous le compte de l'utilisateur. Seules les commandes qui modifient le système relancent le moteur <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a> via <code>pkexec</code>, pour l'une des trois actions polkit déclarées : installer, retirer, mettre à jour.</figcaption>
+    </figure>
+    <div class="box change">
+      <span class="label">Ce que ça change</span>
+      <p style="margin-bottom:0">Un programme qui plante sans privilège ne casse pas le système. Un programme qui demande les droits au dernier moment, pour une opération précise, réduit la surface d'un incident. C'est une décision d'architecture, pas une précaution décorative.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pourquoi la provenance est le vrai sujet</h2>
+    <div class="prose">
+      <p>Le fil rouge de ces quatre dépôts, c'est la <strong>topologie</strong> : rendre explicite où se trouve chaque chose, et ce que cette position autorise. Calix en donne une version très concrète.</p>
+      <p>Un logiciel installé depuis les dépôts officiels et le même nom venu de l'<a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a> ne sont pas le même objet. L'un est signé par la distribution, l'autre par un mainteneur communautaire. Les confondre dans une liste sans étiquette serait une faute, pas une simplification. Calix garde donc l'étiquette, et va jusqu'à versionner le format du document : un consommateur qui ne connaît pas la version refuse de lire.</p>
+    </div>
+    <div class="box analogy">
+      <span class="label">L'analogie</span>
+      <p style="margin-bottom:0">Une étiquette de colis ne dit pas si le contenu est bon. Elle dit qui l'a envoyé, et donc à qui vous aurez affaire si quelque chose ne va pas. C'est exactement ce que fait Calix avec un paquet.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que ce n'est pas</h2>
+    <div class="box limit">
+      <span class="label">Les limites, sans détour</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Pas fini.</strong> Le projet est explicitement pre-1.0 ; la version 0.3.1 est une étape, pas un aboutissement.</li>
+        <li><strong>Pas universel.</strong> <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> et x86_64 uniquement. Ce n'est pas un gestionnaire de paquets pour Debian, Fedora ou macOS.</li>
+        <li><strong>Pas encore automatique.</strong> Le service répond à la demande : il n'y a pas d'ordonnanceur, donc pas de mise à jour de fond.</li>
+        <li><strong>Pas tout modifiable.</strong> <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> apparaissent dans l'inventaire mais ne s'installent pas encore depuis l'interface.</li>
+        <li><strong>Pas entièrement natif.</strong> Un moteur Python gelé écrit encore le fichier des versions suivies ; le remplacer fait partie des chantiers annoncés.</li>
+        <li><strong>Pas requalifié sur les gestes.</strong> La requalification de la navigation reste ouverte : les clics n'ont pas pu être exercés par le pointeur synthétique.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>Utilisateur d'Arch Linux</h4>
+        <p style="margin-bottom:0">Une seule fenêtre au lieu de quatre outils, et une liste qui ne vous ment pas sur l'origine d'un paquet. Les mises à jour restent manuelles pour l'instant.</p>
+      </div>
+      <div class="card">
+        <h4>Développeur</h4>
+        <p style="margin-bottom:0">Un exemple complet d'interface <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> native, un backend <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a> qui parle à <code>libalpm</code>, un protocole JSON-lines versionné sur socket Unix, et une frontière <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a> écrite noir sur blanc.</p>
+      </div>
+      <div class="card">
+        <h4>Décideur ou financeur</h4>
+        <p style="margin-bottom:0">La valeur n'est pas « un magasin d'applications de plus » : c'est un modèle de provenance et de privilège, réutilisable partout où plusieurs sources doivent cohabiter sans se confondre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pour aller plus loin</h2>
+    <details class="deep">
+      <summary>Technique — les mots du dépôt</summary>
+      <p><strong><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Le gestionnaire de paquets d&#x27;Arch Linux et sa bibliothèque (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a> :</strong> la bibliothèque derrière <code>pacman</code>, le gestionnaire de paquets d'Arch. <strong><a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a> :</strong> les dépôts communautaires d'Arch, où les paquets sont des recettes compilées localement. <strong><a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a> :</strong> des applications empaquetées avec leurs dépendances, isolées du système. <strong><a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a> :</strong> un fichier exécutable autonome. <strong><a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a> :</strong> le mécanisme qui demande l'autorisation à l'utilisateur, au moment de l'action, pour une opération précise.</p>
+      <p style="margin-bottom:0"><strong>Langages :</strong> <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> pour l'interface ; <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a> 0.16 pour le moteur, le service et les notifications. <strong>Licence :</strong> GPL-3.0-only — une licence qui impose de partager les modifications si le programme est distribué.</p>
+    </details>
+    <details class="deep">
+      <summary>Vérifier par soi-même</summary>
+      <p>Chaque version publiée fournit une archive et son empreinte SHA-256 : on télécharge les deux, on vérifie l'empreinte, puis on regarde le contenu. L'archive n'est pas un installeur, c'est une arborescence à inspecter.</p>
+      <p style="margin-bottom:0">Depuis les sources, il faut Zig 0.16 et une chaîne Rust stable : <code>make zig</code> construit les trois binaires, <code>make run</code> lance l'interface contre le backend du dépôt. L'installation du paquet passe par <code>pkexec pacman -U</code>, jamais par <code>sudo</code>.</p>
+    </details>
+    <div class="dossier-links">
+      <a class="btn" href="https://github.com/gnu6dotlive/calix">Voir le dépôt sur GitHub</a>
+      <a class="btn ghost" href="gnosix.html">Le bureau qui partage son socle</a>
+      <a class="btn ghost" href="comprendre.html">Comprendre le vocabulaire</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Document de vulgarisation · instantané du 29 octobre 2026 · CC BY 4.0.</span>
+    <span>Faits issus de <a class="src" data-src="doc-README.md" href="https://github.com/gnu6dotlive/calix/blob/aa423254f89cd233f261fbf19f4705d1d9c94259/README.md" data-title="calix · README.md" data-desc="Présentation du dépôt Calix, avec son tableau d&#x27;état." data-meta="github.com/gnu6dotlive/calix/README.md · commit aa42325 · état au 29 octobre 2026"><code>README.md</code></a>, <a class="src" data-src="doc-docs/calix-architecture.md" href="https://github.com/gnu6dotlive/calix/blob/aa423254f89cd233f261fbf19f4705d1d9c94259/docs/calix-architecture.md" data-title="calix · docs/calix-architecture.md" data-desc="Architecture de Calix : interface, moteur, service, notifications." data-meta="github.com/gnu6dotlive/calix/docs/calix-architecture.md · commit aa42325 · état au 29 octobre 2026"><code>docs/calix-architecture.md</code></a> et <a class="src" data-src="doc-docs/brand.md" href="https://github.com/gnu6dotlive/calix/blob/aa423254f89cd233f261fbf19f4705d1d9c94259/docs/brand.md" data-title="calix · docs/brand.md" data-desc="Marque et jetons visuels de Calix." data-meta="github.com/gnu6dotlive/calix/docs/brand.md · commit aa42325 · état au 29 octobre 2026"><code>docs/brand.md</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>

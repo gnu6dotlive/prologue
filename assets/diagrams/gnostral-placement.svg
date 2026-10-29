@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Répartition des 48 couches du modèle entre carte graphique et processeur</title>
+  <desc id="d">En contrôle, 22 couches tiennent sur la carte et 26 sur le processeur. Sous pression mémoire, 13 couches restent sur la carte et 35 passent sur le processeur, pour un débit presque identique.</desc>
+
+  <rect width="1200" height="560" fill="#F7F3ED"/>
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#667085">GNOSTRAL.RS · PLACEMENT SOUS PRESSION</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#111418">Quand la mémoire se remplit, le modèle se replie</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#667085">Le moteur place chaque couche sur la carte ou sur le processeur, selon la mémoire qu'on lui laisse.</text>
+
+  <!-- carte gauche -->
+  <rect x="48" y="146" width="728" height="250" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+
+  <text x="76" y="180" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.6" fill="#667085">48 COUCHES · CONTRÔLE</text>
+  <g>
+    <rect x="76" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="87" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="98" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="109" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="120" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="131" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="142" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="153" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="164" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="175" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="186" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="197" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="208" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="219" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="230" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="241" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="252" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="263" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="274" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="285" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="296" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="307" y="194" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="318" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="329" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="340" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="351" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="362" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="373" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="384" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="395" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="406" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="417" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="428" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="439" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="450" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="461" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="472" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="483" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="494" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="505" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="516" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="527" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="538" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="549" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="560" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="571" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="582" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="593" y="194" width="9" height="26" rx="2" fill="#E6E8EB"/>
+  </g>
+  <text x="620" y="213" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#C95400">22 sur la carte</text>
+  <text x="620" y="234" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#667085">26 sur le processeur</text>
+
+  <text x="76" y="282" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.6" fill="#667085">48 COUCHES · SOUS PRESSION MÉMOIRE</text>
+  <g>
+    <rect x="76" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="87" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="98" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="109" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="120" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="131" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="142" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="153" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="164" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="175" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="186" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="197" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="208" y="296" width="9" height="26" rx="2" fill="#C95400"/>
+    <rect x="219" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="230" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="241" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="252" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="263" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="274" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="285" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="296" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="307" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="318" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="329" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="340" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="351" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="362" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="373" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="384" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="395" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="406" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="417" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="428" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="439" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="450" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="461" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="472" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="483" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="494" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="505" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="516" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="527" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="538" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="549" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="560" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="571" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="582" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+    <rect x="593" y="296" width="9" height="26" rx="2" fill="#E6E8EB"/>
+  </g>
+  <text x="620" y="315" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#C95400">13 sur la carte</text>
+  <text x="620" y="336" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#667085">35 sur le processeur</text>
+
+  <text x="76" y="372" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#667085">Débit de décodage : <tspan font-weight="700" fill="#111418">20,88</tspan> → <tspan font-weight="700" fill="#111418">20,15</tspan> jetons/s (−3,5 %)</text>
+
+  <!-- carte droite -->
+  <rect x="800" y="146" width="352" height="250" rx="12" fill="#FFFFFF" stroke="#D7DADF"/>
+  <text x="824" y="180" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.6" fill="#667085">MÉMOIRE GPU TOTALE, AU PIC</text>
+
+  <text x="824" y="212" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#667085">Contrôle</text>
+  <rect x="960" y="201" width="75" height="14" rx="3" fill="#A1A6AD"/>
+  <text x="1045" y="213" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#111418">2 346</text>
+
+  <text x="824" y="246" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#667085">Réservé (demandé)</text>
+  <rect x="960" y="235" width="66" height="14" rx="3" fill="#4169E1"/>
+  <text x="1036" y="247" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#2446A8">2 048</text>
+
+  <text x="824" y="280" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#667085">Réservé (observé)</text>
+  <rect x="960" y="269" width="69" height="14" rx="3" fill="#4169E1"/>
+  <text x="1039" y="281" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#2446A8">2 162</text>
+
+  <text x="824" y="314" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#667085">Sous pression</text>
+  <rect x="960" y="303" width="142" height="14" rx="3" fill="#C95400"/>
+  <text x="1112" y="315" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#C95400">4 436</text>
+
+  <text x="824" y="348" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">Mio · échelle 0 – 5 000</text>
+  <text x="824" y="374" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#A1A6AD">La mémoire « totale » inclut le bureau.</text>
+
+  <!-- bandeau -->
+  <rect x="48" y="428" width="1104" height="88" rx="10" fill="#E8EDFF" stroke="#4169E1"/>
+  <text x="72" y="456" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#2446A8">CE QUI EST QUALIFIÉ — ET CE QUI NE L'EST PAS</text>
+  <text x="72" y="478" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#111418">Le placement initial selon la mémoire disponible est observé. Le rééquilibrage en cours</text>
+  <text x="72" y="498" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#111418">d'exécution, lui, reste non qualifié : le moteur ne déplace pas les couches après le démarrage.</text>
+
+  <text x="48" y="540" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#A1A6AD">Données : gnostral.rs/evidence/runs/q011-rtx3070-placement-observation-20261010.json — 3 répétitions par condition, RTX 3070 8 Gio.</text>
+</svg>

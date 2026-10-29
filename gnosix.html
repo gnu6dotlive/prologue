@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gnosix — le bureau, expliqué</title>
+<meta name="description" content="gnosix : un environnement de bureau Linux écrit en Rust. Ce qu'il fait, comment il est construit, et ce qui reste à prouver.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="gnosix.html" aria-current="page">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="comprendre.html">Comprendre</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Dossier 1 · le bureau</p>
+    <h1>gnosix</h1>
+    <p class="lead">Un environnement de bureau pour Linux, écrit en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, qui dessine lui-même tout ce que vous voyez : la barre, le deck et son AppStack, les fenêtres, les réglages, l'écran de verrouillage.</p>
+    <p><span class="tag partial">Expérimental</span> <span class="tag">26.11-rc1 « Ardoise »</span> <span class="tag">Licence MIT</span></p>
+  </div>
+
+  <div class="grid four" style="margin-top:36px">
+    <div class="stat"><span class="value">8</span><span class="caption">surfaces <b>prouvées</b> dans la session réelle de l'auteur</span></div>
+    <div class="stat"><span class="value">9</span><span class="caption">surfaces <b>qualifiées</b> en session isolée, en attente de revue</span></div>
+    <div class="stat"><span class="value">2</span><span class="caption">surfaces <b>vérifiées en source</b> seulement</span></div>
+    <div class="stat"><span class="value">1</span><span class="caption">moteur encore <b>expérimental</b> : le rendu d'arrière-plan</span></div>
+  </div>
+
+  <section>
+    <h2>En une image</h2>
+    <div class="box analogy">
+      <span class="label">L'analogie</span>
+      <p>Pensez à un atelier bien rangé. Il y a le <strong>plan de travail</strong> sur lequel on agit, les <strong>tiroirs</strong> où l'on range ce qui doit survivre à la nuit, l'<strong>étagère</strong> où sont posés les outils, et le <strong>règlement</strong> qui dit qui a le droit d'ouvrir quoi.</p>
+      <p style="margin-bottom:0">Un bureau informatique, c'est exactement cela. La plupart des bureaux fondent les quatre en un seul programme. gnosix les sépare, et nomme chacun.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que ça fait, concrètement</h2>
+    <div class="prose">
+      <p>Une fois lancé, gnosix remplace l'habillage graphique de la session. Il ne s'agit pas d'une décoration posée sur un bureau existant : c'est le bureau lui-même, dessiné en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et affiché nativement.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnosix-surfaces.svg" alt="Schéma d'un écran gnosix : barre en haut, fenêtres au centre, AppStack ouvert au-dessus du deck, deck en bas, avec des annotations.">
+      <figcaption><b>Les quatre surfaces principales.</b> La barre peut voyager d'un bord à l'autre ; le deck rassemble les applications ; l'AppStack, logé dans le deck, sert à chercher et ouvrir ; le bureau porte les fenêtres et les modules.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/diagrams/gnosix-wireframe.svg" alt="Croquis d'un écran gnosix : barre en haut, deux fenêtres, deck en bas, notification et affichage à l'écran à droite.">
+      <figcaption><b>Croquis de principe.</b> Les repères numérotés (1 à 5) nomment les surfaces : barre, fenêtres, deck, notification, affichage. C'est une proposition de mise en page, pas une capture d'écran — les formes suggèrent, elles ne reproduisent pas.</figcaption>
+    </figure>
+
+    <div class="grid two">
+      <div class="card">
+        <h4>La barre</h4>
+        <p style="margin-bottom:0">Persistante, sur n'importe quel bord de n'importe quel écran. Elle se déplace le long du cadre, ses modules la suivent et pivotent avec elle. On peut les réordonner à la souris. Bord, densité, épaisseur et visibilité sont mémorisés.</p>
+      </div>
+      <div class="card">
+        <h4>Le deck et l'appstack</h4>
+        <p style="margin-bottom:0">Un dock de cartes d'applications, avec magnification. L'appstack y cherche dans le catalogue (récent, A–Z, catégories, recherche) et lance via l'autorité de lancement. Les épingles sont durables.</p>
+      </div>
+      <div class="card">
+        <h4>Les utilitaires</h4>
+        <p style="margin-bottom:0">Basculements rapides (ne pas déranger, garder éveillé, micro, Wi-Fi, Bluetooth), luminosité (rétroéclairage et DDC/CI), volume, avec affichage à l'écran.</p>
+      </div>
+      <div class="card">
+        <h4>La session</h4>
+        <p style="margin-bottom:0">Verrouiller, suspendre, se déconnecter, redémarrer, éteindre — via <a class="src" data-src="logind" href="https://github.com/systemd/systemd" data-title="systemd-logind" data-desc="Le service de systemd qui gère les sessions : verrouiller, suspendre, éteindre." data-meta="github.com/systemd/systemd">logind</a>. Les actions lourdes sont retenues, les blocages sont montrés.</p>
+      </div>
+      <div class="card">
+        <h4>Le tableau de bord</h4>
+        <p style="margin-bottom:0">Calendrier, commandes média (<a class="src" data-src="mpris" href="https://specifications.freedesktop.org/mpris-spec/latest/" data-title="MPRIS" data-desc="Spécification freedesktop pour piloter les lecteurs multimédias." data-meta="specifications.freedesktop.org/mpris-spec/latest">MPRIS</a>) et ressources système, extrudés depuis l'horloge de la barre.</p>
+      </div>
+      <div class="card">
+        <h4>Les bureaux virtuels</h4>
+        <p style="margin-bottom:0">Un gestionnaire de bureaux avec vignettes vivantes des fenêtres — en mémoire seulement, jamais quand la session est verrouillée, avec une liste d'applications exclues.</p>
+      </div>
+      <div class="card">
+        <h4>Les notifications</h4>
+        <p style="margin-bottom:0">gnosix <em>est</em> le service de notifications de la session. Règles par application, mode « ne pas déranger ».</p>
+      </div>
+      <div class="card">
+        <h4>Le verrouillage</h4>
+        <p style="margin-bottom:0">Écran de verrouillage avec <a class="src" data-src="pam" href="https://github.com/linux-pam/linux-pam" data-title="Linux PAM" data-desc="Modules d&#x27;authentification de Linux ; l&#x27;écran de verrouillage s&#x27;en sert." data-meta="github.com/linux-pam/linux-pam">PAM</a>, verrouillage automatique par inactivité et ses réglages.</p>
+      </div>
+      <div class="card">
+        <h4>Les réglages</h4>
+        <p style="margin-bottom:0">Une seule surface : barre, deck, surfaces, écrans (résolution, fréquence, échelle, rotation, position, avec conservation ou retour arrière), applications par défaut, notifications, langue, fond d'écran.</p>
+      </div>
+      <div class="card">
+        <h4>La langue et les icônes</h4>
+        <p style="margin-bottom:0">Anglais et français partout, choisis dans les réglages, avec un contrôle de couverture. Icônes <a class="src" data-src="tabler" href="https://github.com/tabler/tabler-icons" data-title="Tabler Icons" data-desc="Jeu d&#x27;icônes libre (MIT), dessinées au trait." data-meta="github.com/tabler/tabler-icons">Tabler</a> dessinées nativement.</p>
+      </div>
+    </div>
+
+    <figure>
+      <img class="motion-live" src="assets/gif/gnosix-appstack.gif" alt="Animation : on presse la carte AppStack du deck ; le deck s'étire vers le haut en un seul panneau, on tape « cali », Calix ressort, Entrée ; le panneau se replie, la barre affiche « autorité de lancement accordée » et Calix rejoint le deck.">
+      <img class="motion-still" src="assets/gif/gnosix-appstack-still.png" alt="">
+      <figcaption><b>L'AppStack sort du deck.</b> Une seule forme s'étire depuis le deck, au lieu d'une fenêtre posée par-dessus ; la recherche y vit, puis tout se replie. Le lancement passe par l'autorité de lancement, qui accorde ou refuse. Animation de principe : ni capture, ni durées réelles.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Sous le capot : quatre plans</h2>
+    <div class="prose">
+      <p>C'est la décision d'architecture la plus importante du projet, et la plus facile à expliquer : <strong>observer, se souvenir, montrer et agir sont quatre métiers différents</strong>. gnosix leur donne quatre plans distincts.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnosix-plans.svg" alt="Quatre plans : observer, se souvenir, montrer, agir. Les données circulent entre eux, mais le droit d'agir ne suit pas.">
+      <figcaption><b>La règle centrale.</b> Faire passer une donnée d'un plan à l'autre ne transfère jamais le droit d'agir. Un nom, un chemin ou un processus qui tourne ne prouvent pas une permission.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Le plan d'observation traduit les faits du compositeur en un modèle typé et déterministe : écrans, bureaux, fenêtres, focus, visibilité. Ce modèle ne décide de rien ; il décrit.</p>
+      <p>Le plan durable garde les identités et les profils. Un écran branché n'est pas automatiquement « l'écran connu » : l'association entre l'identité de session et l'identité durable est explicite, et peut échouer volontairement.</p>
+      <p>Le plan de présentation projette l'état courant à l'écran. La géométrie y est une donnée du produit, pas un décor : la même géométrie sert à peindre et à décider si un clic touche la cible.</p>
+      <p>Le plan d'autorité, enfin, exécute les gestes rares : verrouiller, lancer une application, changer de bureau. Chaque demande porte une cible typée et une frontière de fraîcheur. Si l'état est inconnu ou périmé, le système refuse plutôt que d'inventer un comportement normal.</p>
+    </div>
+
+    <h3>Deux façons de construire un bureau</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Question</th><th>Bureau « monolithique »</th><th>Bureau séparé (gnosix)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Qui connaît l'état ?</td><td>Le programme principal, un peu partout</td><td>Un modèle unique, explicite</td></tr>
+          <tr><td>Qui a le droit d'agir ?</td><td>Souvent le même programme</td><td>Des services étroits, authentifiés</td></tr>
+          <tr><td>Que se passe-t-il si l'état est flou ?</td><td>On suppose un état plausible</td><td>On refuse l'action</td></tr>
+          <tr><td>Comment prouver qu'une fonction marche ?</td><td>« Ça a l'air de marcher »</td><td>Un niveau de preuve nommé, publié</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose">Aucune des deux approches n'est « la bonne » dans l'absolu. La seconde coûte plus de travail, mais rend les pannes explicables et les permissions vérifiables.</p>
+  </section>
+
+  <section>
+    <h2>Ce que « prouvé » veut dire ici</h2>
+    <div class="prose">
+      <p>Le dépôt distingue cinq états, et les publie surface par surface. Ce n'est pas de la rhétorique : c'est ce qui empêche une démonstration réussie de devenir une promesse générale.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>État</th><th>Ce qu'il veut dire</th><th>Exemple</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag ok">PROVEN</span></td><td>Qualifié en source, observé dans la session réelle, confirmé par l'auteur.</td><td>Les notifications, le français et l'anglais, la fluidité.</td></tr>
+          <tr><td><span class="tag partial">QUALIFIED</span></td><td>Qualifié en source et en session <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> isolée ; déployé chez l'auteur, confirmation en attente.</td><td>La barre, le deck, les réglages, le verrouillage.</td></tr>
+          <tr><td><span class="tag">SOURCE-QUALIFIED</span></td><td>Les contrats et invariants sont exercés en source ; le comportement réel plus large n'est pas impliqué.</td><td>L'identité durable des écrans, les mécanismes d'accessibilité.</td></tr>
+          <tr><td><span class="tag">EXPERIMENTAL</span></td><td>Travail actif, revendication limitée.</td><td>Le moteur de rendu de fond d'écran.</td></tr>
+          <tr><td><span class="tag no">OPEN</span></td><td>Une obligation nommée reste non résolue.</td><td>L'acceptation produit complète.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <div class="grid three">
+      <div class="card">
+        <h4>Utilisateur Linux curieux</h4>
+        <p style="margin-bottom:0">Vous pouvez essayer un bureau qui ne ressemble pas aux autres, sur <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> avec <a class="src" data-src="hyprland" href="https://github.com/hyprwm/Hyprland" data-title="Hyprland" data-desc="Compositeur Wayland, celui sur lequel gnosix dessine son bureau." data-meta="github.com/hyprwm/Hyprland">Hyprland</a>. Prévoyez du temps : ce n'est pas encore une installation « clé en main » pour le grand public.</p>
+      </div>
+      <div class="card">
+        <h4>Développeur ou intégrateur</h4>
+        <p style="margin-bottom:0">Le dépôt est une référence rare sur la séparation entre observation, état durable, présentation et autorité. Les contrats typés et les invariants sont documentés et testables.</p>
+      </div>
+      <div class="card">
+        <h4>Décideur ou financeur</h4>
+        <p style="margin-bottom:0">La valeur n'est pas « un bureau de plus ». C'est une méthode : un produit visible, dont chaque affirmation est bornée, datée et vérifiable. Le risque est assumé et affiché.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce qui reste ouvert</h2>
+    <div class="box limit">
+      <span class="label">Les limites, sans détour</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Pas encore un bureau pour autrui.</strong> 26.11-rc1 est une préversion publique expérimentale, utilisée au quotidien par son auteur — pas un produit stable.</li>
+        <li><strong>L'accessibilité lecteur d'écran n'est pas revendiquée.</strong> La navigation clavier et le focus existent ; l'usage réel par une personne non voyante n'a pas été revu.</li>
+        <li><strong>Le clavier sur la barre est conçu, pas construit.</strong></li>
+        <li><strong>Les modules tiers sont conçus, pas construits.</strong> Un modèle de menace doit venir avant.</li>
+        <li><strong>Le fond d'écran natif reste expérimental.</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pour aller plus loin</h2>
+    <details class="deep">
+      <summary>Technique — langages, briques, licence</summary>
+      <p><strong>Langage :</strong> <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, avec une chaîne d'outils épinglée dans le dépôt. <strong>Affichage :</strong> <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> et <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> ; le compositeur visé est <a class="src" data-src="hyprland" href="https://github.com/hyprwm/Hyprland" data-title="Hyprland" data-desc="Compositeur Wayland, celui sur lequel gnosix dessine son bureau." data-meta="github.com/hyprwm/Hyprland">Hyprland</a>. <strong>Taille :</strong> une quarantaine de paquets internes, séparés par domaine (modèle de bureau, intégration Hyprland, présentation, autorités système).</p>
+      <p style="margin-bottom:0"><strong>Licence :</strong> MIT pour le code et la documentation d'origine depuis le 10 octobre 2026 ; les versions GPL déjà distribuées conservent leurs permissions. Les composants tiers gardent leurs propres termes.</p>
+    </details>
+    <details class="deep">
+      <summary>Vérifier par soi-même</summary>
+      <p>Le dépôt expose trois commandes de qualification. <code>cargo xtask ci</code> est le contrat reproductible à lancer avant toute publication ; <code>cargo xtask verify</code> ajoute des vérifications liées à la machine hôte, à n'utiliser que dans un environnement autorisé.</p>
+      <p style="margin-bottom:0">Le statut courant, surface par surface, est publié dans <a class="src" data-src="doc-docs/status/STATUS.md" href="https://github.com/gnu6dotlive/gnosix/blob/66d801b0069808e6a18120ac41477a20466b4d66/docs/status/STATUS.md" data-title="gnosix · docs/status/STATUS.md" data-desc="État publié de gnosix : chaque surface et son niveau de preuve." data-meta="github.com/gnu6dotlive/gnosix/docs/status/STATUS.md · commit 66d801b · état au 29 octobre 2026"><code>docs/status/STATUS.md</code></a>. C'est le document à lire avant de répéter une affirmation.</p>
+    </details>
+    <div class="dossier-links">
+      <a class="btn" href="https://github.com/gnu6dotlive/gnosix">Voir le dépôt sur GitHub</a>
+      <a class="btn ghost" href="gnostral.html">Dossier suivant : gnostral.rs</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Document de vulgarisation · instantané du 29 octobre 2026 · CC BY 4.0.</span>
+    <span>Faits issus de <a class="src" data-src="doc-README.md" href="https://github.com/gnu6dotlive/gnosix/blob/66d801b0069808e6a18120ac41477a20466b4d66/README.md" data-title="gnosix · README.md" data-desc="Présentation du dépôt gnosix." data-meta="github.com/gnu6dotlive/gnosix/README.md · commit 66d801b · état au 29 octobre 2026"><code>README.md</code></a>, <a class="src" data-src="doc-ARCHITECTURE.md" href="https://github.com/gnu6dotlive/gnosix/blob/66d801b0069808e6a18120ac41477a20466b4d66/ARCHITECTURE.md" data-title="gnosix · ARCHITECTURE.md" data-desc="Architecture de gnosix : les quatre plans et leurs frontières." data-meta="github.com/gnu6dotlive/gnosix/ARCHITECTURE.md · commit 66d801b · état au 29 octobre 2026"><code>ARCHITECTURE.md</code></a> et <a class="src" data-src="doc-docs/status/STATUS.md" href="https://github.com/gnu6dotlive/gnosix/blob/66d801b0069808e6a18120ac41477a20466b4d66/docs/status/STATUS.md" data-title="gnosix · docs/status/STATUS.md" data-desc="État publié de gnosix : chaque surface et son niveau de preuve." data-meta="github.com/gnu6dotlive/gnosix/docs/status/STATUS.md · commit 66d801b · état au 29 octobre 2026"><code>docs/status/STATUS.md</code></a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>
