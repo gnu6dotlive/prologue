@@ -122,6 +122,40 @@
       <img src="assets/diagrams/gnostral-placement.svg" alt="Deux rangées de 48 couches : 22 sur la carte en contrôle, 13 sous pression mémoire. Débit 20,88 puis 20,15 jetons par seconde.">
       <figcaption><b>Le placement, observé.</b> Quand on occupe de la mémoire graphique avant le démarrage, le moteur pose moins de couches sur la carte (22 → 13 dans ces deux essais) et le débit ne recule que de 3,5 %. Déplacer des couches en cours de route, en revanche, n'est pas démontré.</figcaption>
     </figure>
+    <h3>Douze réponses, pas une moyenne</h3>
+    <div class="prose">
+      <p>Un « 2,12× » est une médiane. Derrière, il y a douze réponses mesurées : trois processus sans correctif et trois avec, chacun interrogé avec une réponse de 128 puis de 512 jetons. Les deux nuages ne se touchent jamais : la plus lente des réponses corrigées (19,48 jetons/s) reste deux fois plus rapide que la plus rapide des autres (10,12).</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnostral-dispersion.svg" alt="Nuage de points : sans correctif, les réponses vont de 8,49 à 10,12 jetons par seconde ; avec correctif, de 19,48 à 22,02 ; médianes 8,90 et 21,93 à 128 jetons, 9,51 et 20,18 à 512 jetons.">
+      <figcaption><b>L'écart ne tient pas à une réponse chanceuse.</b> Les textes produits sont identiques octet pour octet dans les six paires : le correctif accélère sans rien changer à ce qui est écrit.</figcaption>
+    </figure>
+    <details class="deep">
+      <summary>Les données, réponse par réponse</summary>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Réponse</th><th>Sans correctif (jetons/s)</th><th>Avec correctif (jetons/s)</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Réponse">128 jetons, processus 1</td><td data-label="Sans correctif (jetons/s)">8,90</td><td data-label="Avec correctif (jetons/s)">21,55</td></tr>
+            <tr><td data-label="Réponse">128 jetons, processus 2</td><td data-label="Sans correctif (jetons/s)">8,49</td><td data-label="Avec correctif (jetons/s)">21,93</td></tr>
+            <tr><td data-label="Réponse">128 jetons, processus 3</td><td data-label="Sans correctif (jetons/s)">9,88</td><td data-label="Avec correctif (jetons/s)">22,02</td></tr>
+            <tr><td data-label="Réponse">512 jetons, processus 1</td><td data-label="Sans correctif (jetons/s)">10,12</td><td data-label="Avec correctif (jetons/s)">20,18</td></tr>
+            <tr><td data-label="Réponse">512 jetons, processus 2</td><td data-label="Sans correctif (jetons/s)">9,51</td><td data-label="Avec correctif (jetons/s)">20,21</td></tr>
+            <tr><td data-label="Réponse">512 jetons, processus 3</td><td data-label="Sans correctif (jetons/s)">9,51</td><td data-label="Avec correctif (jetons/s)">19,48</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <h3>Un exécutable, trois familles de modèles</h3>
+    <div class="prose">
+      <p>Le jalon Q-012 pose une autre question : le même exécutable sait-il servir des modèles de natures différentes ? Trois familles, l'une après l'autre : un modèle dense qui écrit du texte, un modèle d'<em>embeddings</em> qui transforme des phrases en vecteurs, et le gros MoE quantifié. Les trois répondent juste — le modèle d'embeddings, par exemple, juge deux phrases liées bien plus proches (0,78) que deux phrases sans rapport (0,17).</p>
+      <p>Le graphique montre surtout <strong>où chaque modèle pose ses poids</strong>. Le MoE de 30 milliards de paramètres occupe 2,4 Go sur la carte et 19 Go en mémoire centrale : c'est l'astuce du dossier, mesurée. Le premier essai, compilé sans la fonction de résidence d'experts, montait à 6,8 Go sur la carte et a dépassé son délai ; il reste au dossier, et un garde refuse désormais un binaire qui l'oublie.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnostral-familles.svg" alt="Barres par famille : dense 5 025 Mio sur la carte et 3 556 côté hôte ; embeddings 2 783 et 1 533 ; MoE 2 427 sur la carte et 19 282 côté hôte, avec le premier essai à 6 772 Mio sur la carte.">
+      <figcaption><b>Deux mémoires, deux usages.</b> La mémoire de la carte est mesurée pour la carte entière, bureau compris ; la mémoire hôte est celle du seul processus serveur. Une sonde fonctionnelle par famille : ce n'est pas un banc de qualité.</figcaption>
+    </figure>
     <div class="box note">
       <span class="label">À retenir</span>
       <p style="margin-bottom:0">Chaque chiffre a son rapport, son protocole et ses limites. Le dépôt refuse explicitement de publier un chiffre sans la preuve qui va avec — y compris quand la preuve contredit une affirmation plus flatteuse.</p>
@@ -182,6 +216,15 @@
         <li><strong>Qualifié</strong> — un auditeur indépendant vérifie les identités, les contrôles négatifs et les non-revendications.</li>
       </ol>
     </details>
+
+    <h3>La mémoire revient-elle ?</h3>
+    <div class="prose">
+      <p>La sixième étape de la boucle — l'arrêt et la récupération — est celle qui fait échouer le plus d'essais. Après chaque arrêt, on mesure ce qui reste occupé sur la carte graphique. La porte est fixée <em>avant</em> l'essai : <strong>±128 Mio</strong>. Un essai rapide qui laisse de la mémoire derrière lui est refusé.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnostral-reclaim.svg" alt="Points par processus : tous les essais retenus restent entre −82 et +26 Mio, dans la porte de ±128 Mio ; le premier essai avec correctif de Q-010, à +196 Mio, échoue et reste au dossier.">
+      <figcaption><b>Un échec visible au milieu des réussites.</b> Le premier essai corrigé de <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a> laissait 196 Mio sur la carte — cause non déterminée, peut-être le trafic du bureau. Il est marqué NOT QUALIFIED et conservé ; la mesure publiée vient d'une nouvelle session complète, aux mêmes seuils.</figcaption>
+    </figure>
   </section>
 
   <section>
@@ -204,6 +247,62 @@
       <p>Le premier essai de <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a> a échoué : la mémoire graphique n'était pas revenue dans la marge attendue (+196 Mio contre une tolérance de ±128 Mio). Le premier essai de <a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Reçu Q-012 : un moteur, trois familles de modèles." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-012</a> a échoué aussi : une fonctionnalité de compilation manquait, et le modèle MoE a dépassé le délai.</p>
       <p>Les deux échecs sont toujours dans le dossier. C'est un choix méthodologique, pas une coquetterie : un résultat dont on ne connaît pas les ratés n'est pas réutilisable. Et un chiffre qui ne peut pas être contredit n'est pas une mesure, c'est une affirmation.</p>
       <p>Le même principe s'applique au benchmark Bonsai : la référence retenue est 35,2 jetons par seconde, pas la revendication plus flatteuse de 40 — faute de preuve suffisante.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Historique : quinze quêtes en quinze jours</h2>
+    <div class="prose">
+      <p>gnostral.rs avance par <strong>quêtes</strong> : chacune ouvre une question précise et se ferme par une décision écrite, y compris quand la décision est « non qualifié ». Le journal public en compte quinze entre le 7 et le 21 octobre 2026.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnostral-histoire.svg" alt="Commits publics par jour : 20 le 7 octobre, 8 le 10, 2 le 21 ; huit quêtes fondatrices et huit versions le 7, la piste partielle Q-009 le 9, la chaîne Q-010 à Q-013-C le 10, une veille amont le 21.">
+      <figcaption><b>Deux journées font l'essentiel.</b> Le 7 octobre ferme la recherche fondatrice et publie les versions 0.1 à 0.8 ; le 10, la chaîne de preuve native, de l'A/B jusqu'au vrai serveur supervisé.</figcaption>
+    </figure>
+
+    <h3>Les projets étudiés, et refusés</h3>
+    <div class="prose">
+      <p>Une part du travail consiste à examiner d'autres moteurs avant d'y toucher. Le dépôt garde les refus aussi soigneusement que les adoptions :</p>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <h4>xInfer — non qualifié</h4>
+        <p style="margin-bottom:0">Échec de compilation propre contre <a class="src" data-src="cuda" href="https://developer.nvidia.com/cuda-toolkit" data-title="CUDA" data-desc="Plateforme de calcul parallèle de NVIDIA pour ses cartes graphiques." data-meta="developer.nvidia.com/cuda-toolkit">CUDA</a> 13.4, chargements de modèles à court de mémoire. Adoption refusée : le laboratoire ne devient pas un atelier de réparation d'un projet amont.</p>
+      </div>
+      <div class="card">
+        <h4>zLLM — bloqué</h4>
+        <p style="margin-bottom:0">Un modèle Gemma servi correctement, mais la promesse de placement adaptatif n'a pas pu être testée : le téléchargement de 17 à 19 Go aurait mangé près de la moitié de la marge disque.</p>
+      </div>
+      <div class="card">
+        <h4>UniLLM — étudié</h4>
+        <p style="margin-bottom:0">Ses idées de registre et de cycle de vie sont reprises ; sa télémétrie simulée est rejetée. Règle qui en sort : écrire « inconnu » plutôt qu'une valeur plausible.</p>
+      </div>
+    </div>
+
+    <h3>Une affirmation corrigée</h3>
+    <div class="prose">
+      <p>La toute première quête, Q-001, n'a rien mesuré de nouveau : elle a <strong>retiré</strong> un chiffre. Un banc Bonsai annonçait 40 jetons par seconde ; faute de preuve suffisante, le dépôt a conservé 35,2 et n'a jamais publié le 40. Le projet commence donc par une correction — c'est un choix de méthode.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projections : la feuille de route</h2>
+    <div class="prose">
+      <p>La cible est écrite en une phrase : un plan de contrôle d'inférence <strong>locale</strong>, inspectable et écrit d'abord en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, pour du matériel contraint — choisir le bon moteur pour chaque modèle, borner les ressources, prouver qu'il est prêt, l'arrêter proprement, rendre compte de sa performance. Les noyaux de calcul et le placement des experts restent l'affaire de chaque moteur.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnostral-feuille-de-route.svg" alt="Six jalons : M0 socle prouvé, clos ; M1 identité pendant le service, suivant ; M2 séquence A vers B vers A, M3 admission des ressources, M4 qualité de service, proposés ; M5 service multi-modèle, conditionnel ; cinq pistes de recherche en dessous.">
+      <figcaption><b>Une condition de sortie par jalon.</b> M1 doit prouver qu'on parle bien au bon processus pendant tout le service ; M2, qu'on peut charger un modèle, le décharger, en charger un autre et revenir sans fuite de mémoire. Le service multi-modèle n'arrive qu'au bout, et seulement si tout le reste tient.</figcaption>
+    </figure>
+    <div class="grid two">
+      <div class="card">
+        <h4>La recherche, en parallèle</h4>
+        <p style="margin-bottom:0">Une veille à cinq pistes — transport de tenseurs quantifiés (Burn), métriques de latence côté client (Ferrum), cache KV réversible (WakeKV), plusieurs cartes (CubeCL), noyaux basse précision (Bonsai). Chacune a sa première expérience falsifiable ; aucune n'est une dépendance, et aucune n'a le droit de modifier en silence le moteur épinglé.</p>
+      </div>
+      <div class="card">
+        <h4>Ce qui ne sera pas promis</h4>
+        <p style="margin-bottom:0">Pas d'API hébergée publique, pas d'affirmation de performance de production, pas de portabilité générale tant que la porte correspondante n'est pas passée. Un essai raté reste une preuve de premier rang, même quand un nouvel essai réussit.</p>
+      </div>
     </div>
   </section>
 

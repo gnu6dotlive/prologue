@@ -130,6 +130,22 @@
       <img class="motion-still" src="../assets/gif/en/gnosix-appstack-still.png" alt="">
       <figcaption><b>The AppStack comes out of the deck.</b> A single shape stretches out of the deck, instead of a window laid on top; the search lives inside it, then everything folds back. Launching goes through the launch authority, which grants or refuses. An illustration of the principle: neither a screen capture nor real timings.</figcaption>
     </figure>
+
+    <h3>Frugal at rest, precise in motion</h3>
+    <div class="prose">
+      <p>A desktop spends most of its time doing nothing. gnosix takes that into account: <strong>no redraw at rest</strong>. Nothing is repainted while nothing changes, which spares the graphics card and the battery.</p>
+      <p>When something moves — the bar changing edge, the deck stretching — motion follows <strong>4-millisecond</strong> deadlines, set to the screen's real refresh rate. The repository measured it at 75 and 165 frames per second. At 165 Hz a frame lasts about 6 ms: a 4 ms deadline leaves room never to skip one.</p>
+    </div>
+
+    <h3>Privacy by construction</h3>
+    <div class="prose">
+      <p>The workspace manager shows live window thumbnails. The repository sets their bounds: thumbnails live <strong>in memory only</strong>, are <strong>never captured while the session is locked</strong>, and a list of excluded applications keeps sensitive windows out. Notifications have per-application rules and a "do not disturb" mode.</p>
+    </div>
+
+    <h3>One text editor, everywhere</h3>
+    <div class="prose">
+      <p>Every input field on the desktop — search, settings, lock screen — goes through <strong>the same editor</strong>, which splits text by grapheme (a character as you see it, accents and emoji included) and accepts input methods. French and English cover the whole shell, lock screen included, and a coverage check refuses a forgotten string.</p>
+    </div>
   </section>
 
   <section>
@@ -163,6 +179,15 @@
       </table>
     </div>
     <p class="prose">Neither approach is "the right one" in absolute terms. The second costs more work, but makes failures explainable and permissions verifiable.</p>
+
+    <h3>Where the code lives</h3>
+    <div class="prose">
+      <p>At the snapshot commit, gnosix holds <strong>182,325 lines of <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a></strong> written by the project, spread over 38 packages ("crates") and a checking tool. The presentation layer, <code>gnos-ux-gpui</code>, carries 58% of it on its own: drawing a desktop that responds well takes more code than observing or governing it.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnosix-code.svg" alt="Horizontal bars: gnos-ux-gpui 105,902 lines, gnos-ux-surface 17,670, gnosix-hyprland 6,407, xtask 5,944, then the other crates; vendored GPUI 111,519 upstream lines.">
+      <figcaption><b>Presentation outweighs everything else.</b> The other planes — observe, remember, act — fit in narrow crates of a few thousand lines each. <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a>, vendored as is, is upstream code: it is not counted as the project's work.</figcaption>
+    </figure>
   </section>
 
   <section>
@@ -181,6 +206,61 @@
           <tr><td data-label="State"><span class="tag no">OPEN</span></td><td data-label="What it means">A named obligation remains unresolved.</td><td data-label="Example">Full product acceptance.</td></tr>
         </tbody>
       </table>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnosix-statuts.svg" alt="Stacked bar of 20 capabilities: 8 PROVEN, 9 QUALIFIED, 2 SOURCE-QUALIFIED, 1 EXPERIMENTAL, with the list of each.">
+      <figcaption><b>The picture on October 29.</b> Nine capabilities wait for the same thing: the author's review, which will move them to PROVEN or reopen them. None is declared "finished" without it.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>History: three weeks of public repository</h2>
+    <div class="prose">
+      <p>gnosix's public repository does not tell the whole story, and says so. Development happens in a private repository; the public one receives <strong>projections</strong> of it at each release. What is visible starts on October 5, 2026.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnosix-histoire.svg" alt="Public commits per day from October 5 to 27: 3, 1, 16, 6, 3 and 4, with the milestones: first source cut, MIT licence, Wayland qualification, 26.11-rc1 pre-release, CI 38 out of 38.">
+      <figcaption><b>33 public commits.</b> October 10 holds nearly half of the visible activity, with the switch to the MIT licence. On the 21st, the first public pre-release; on the 27th, its merge and a green CI contract.</figcaption>
+    </figure>
+
+    <h3>The milestones, in order</h3>
+    <ul class="prose">
+      <li><strong>October 5</strong> — first public cut of the code, with a CI contract from day one.</li>
+      <li><strong>October 10</strong> — from the GPL to the MIT licence: "everyone's property", says the pull request. Versions already distributed keep their permissions.</li>
+      <li><strong>October 12</strong> — <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> envelope tests: delayed click, two screens, local drag and drop; the remaining blockers are written down, not hidden.</li>
+      <li><strong>October 21</strong> — <strong>v26.11-rc1 « Ardoise »</strong>, published as a pre-release, with a research watch on upstream systems.</li>
+      <li><strong>October 27</strong> — the pre-release merged, the CI contract at <strong>38/38</strong> in 26 seconds, and bootstrapping of a default desktop profile on first start.</li>
+    </ul>
+
+    <h3>How a release is born</h3>
+    <div class="prose">
+      <p>The release policy, ratified on October 21, fits in a few rules. <strong>The private repository is the truth</strong>; the public repository is a projection written one way, by a script, with a whitelist of paths and a manifest of fingerprints. A public contribution is reviewed, integrated on the private side, and comes back with the next release.</p>
+      <p>The product is named by the <strong>year and month</strong> it ships, plus a mineral name, in alphabetical order: 26.11 « Ardoise » (slate). The crates keep semantic versioning: a crate whose interface changes must change its version, or the release check refuses it. Three channels: <em>edge</em> (the development branch, deployed on the author's machine), <em>stable</em> (the latest release), and a possible <em>LTS</em>, decided later.</p>
+    </div>
+    <div class="box note">
+      <span class="label">The CI contract, in figures</span>
+      <p style="margin-bottom:0">On October 27, after merging the pre-release: <strong>38 checks out of 38</strong>, in 25.9 seconds. The check set was reorganised with the pre-release (it had 48 before): the two figures do not compare, and the receipt says so.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projections: what comes after « Ardoise »</h2>
+    <div class="prose">
+      <p>gnosix's roadmap is <strong>driven by evidence</strong>: a work item moves when its evidence is complete and, where required, accepted by the author. Releases, on the other hand, have fixed dates — two a year, in May and November — and carry whatever is ready.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnosix-feuille-de-route.svg" alt="Timeline: 26.11-rc1 published on October 21, 2026, 26.11 announced, 27.05 and 27.11 windows; seven undated work items, including the threat model that precedes mods; and what gnosix will not do.">
+      <figcaption><b>Fixed windows, undated work.</b> The 27.05 and 27.11 windows follow from the announced cadence; no work item is promised for them. The threat model comes before mods: the desktop is not opened to third-party modules before writing down what it defends against.</figcaption>
+    </figure>
+    <div class="grid two">
+      <div class="card">
+        <h4>The announced work</h4>
+        <p style="margin-bottom:0">A review of every QUALIFIED surface; "cards" so each bar module keeps its material when moved; a scene built in layers; keyboard control of the bar; a single mathematical shape for the whole shell; a threat model; then confined mods, each in its own process, with declared permissions.</p>
+      </div>
+      <div class="card">
+        <h4>What will not be done</h4>
+        <p style="margin-bottom:0">No generic shell-command executor, no monolithic settings daemon, no screen identity guessed from its geometry, and no silent adoption of a donor project's authority. A stable release for others is not claimed before an accessibility review.</p>
+      </div>
     </div>
   </section>
 

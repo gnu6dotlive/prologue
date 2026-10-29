@@ -130,6 +130,22 @@
       <img class="motion-still" src="assets/gif/gnosix-appstack-still.png" alt="">
       <figcaption><b>L'AppStack sort du deck.</b> Une seule forme s'étire depuis le deck, au lieu d'une fenêtre posée par-dessus ; la recherche y vit, puis tout se replie. Le lancement passe par l'autorité de lancement, qui accorde ou refuse. Animation de principe : ni capture, ni durées réelles.</figcaption>
     </figure>
+
+    <h3>Sobre au repos, précis en mouvement</h3>
+    <div class="prose">
+      <p>Un bureau passe l'essentiel de son temps à ne rien faire. gnosix en tient compte : <strong>aucun redessin au repos</strong>. Rien ne se repeint tant que rien ne change, ce qui épargne la carte graphique et la batterie.</p>
+      <p>Quand quelque chose bouge — la barre qui change de bord, le deck qui s'étire — le mouvement suit des échéances de <strong>4 millisecondes</strong>, calées sur la fréquence réelle de l'écran. Le dépôt l'a mesuré à 75 et à 165 images par seconde. À 165 Hz, une image dure environ 6 ms : une échéance de 4 ms laisse de la marge pour ne jamais en sauter une.</p>
+    </div>
+
+    <h3>La vie privée par construction</h3>
+    <div class="prose">
+      <p>Le gestionnaire de bureaux montre des vignettes vivantes des fenêtres. Le dépôt en fixe les bornes : les vignettes vivent <strong>en mémoire seulement</strong>, ne sont <strong>jamais capturées quand la session est verrouillée</strong>, et une liste d'applications exclues les empêche pour les fenêtres sensibles. Les notifications ont des règles par application et un mode « ne pas déranger ».</p>
+    </div>
+
+    <h3>Un seul éditeur de texte, partout</h3>
+    <div class="prose">
+      <p>Chaque champ de saisie du bureau — recherche, réglages, verrouillage — passe par <strong>le même éditeur</strong>, qui découpe le texte par graphème (un caractère tel qu'on le voit, accents et émojis compris) et accepte les méthodes de saisie. Le français et l'anglais couvrent tout le shell, écran de verrouillage compris, et un contrôle de couverture refuse une chaîne oubliée.</p>
+    </div>
   </section>
 
   <section>
@@ -163,6 +179,15 @@
       </table>
     </div>
     <p class="prose">Aucune des deux approches n'est « la bonne » dans l'absolu. La seconde coûte plus de travail, mais rend les pannes explicables et les permissions vérifiables.</p>
+
+    <h3>Où vit le code</h3>
+    <div class="prose">
+      <p>Au commit de l'instantané, gnosix compte <strong>182 325 lignes de <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a></strong> écrites par le projet, réparties en 38 paquets (« crates ») et un outil de vérification. La couche de présentation, <code>gnos-ux-gpui</code>, en porte à elle seule 58 % : dessiner un bureau qui réagit bien demande plus de code que l'observer ou le gouverner.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnosix-code.svg" alt="Barres horizontales : gnos-ux-gpui 105 902 lignes, gnos-ux-surface 17 670, gnosix-hyprland 6 407, xtask 5 944, puis les autres crates ; GPUI embarqué 111 519 lignes d'amont.">
+      <figcaption><b>La présentation pèse plus que tout le reste.</b> Les autres plans — observer, se souvenir, agir — tiennent dans des crates étroites, de quelques milliers de lignes chacune. <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a>, embarqué tel quel, est du code amont : il n'est pas compté dans le travail du projet.</figcaption>
+    </figure>
   </section>
 
   <section>
@@ -181,6 +206,61 @@
           <tr><td data-label="État"><span class="tag no">OPEN</span></td><td data-label="Ce qu&#x27;il veut dire">Une obligation nommée reste non résolue.</td><td data-label="Exemple">L'acceptation produit complète.</td></tr>
         </tbody>
       </table>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnosix-statuts.svg" alt="Barre empilée de 20 capacités : 8 PROVEN, 9 QUALIFIED, 2 SOURCE-QUALIFIED, 1 EXPERIMENTAL, avec la liste de chacune.">
+      <figcaption><b>La photographie du 29 octobre.</b> Neuf capacités attendent la même chose : la revue de l'auteur, qui les fera passer à PROVEN ou les rouvrira. Aucune n'est déclarée « finie » sans elle.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Historique : trois semaines de dépôt public</h2>
+    <div class="prose">
+      <p>Le dépôt public de gnosix ne raconte pas toute l'histoire, et le dit. Le développement a lieu dans un dépôt privé ; le dépôt public en reçoit des <strong>projections</strong> à chaque version. Ce qui est visible commence le 5 octobre 2026.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnosix-histoire.svg" alt="Commits publics par jour du 5 au 27 octobre : 3, 1, 16, 6, 3 et 4, avec les jalons : premier dépôt, licence MIT, qualification Wayland, préversion 26.11-rc1, CI 38 sur 38.">
+      <figcaption><b>33 commits publics.</b> Le 10 octobre concentre près de la moitié de l'activité visible, avec le passage à la licence MIT. Le 21, la première préversion publique ; le 27, sa fusion et un contrat CI vert.</figcaption>
+    </figure>
+
+    <h3>Les jalons, dans l'ordre</h3>
+    <ul class="prose">
+      <li><strong>5 octobre</strong> — première coupe publique du code, et un contrat CI dès le départ.</li>
+      <li><strong>10 octobre</strong> — passage de la GPL à la licence MIT : « le bien de tout le monde », dit la demande de fusion. Les versions déjà distribuées gardent leurs permissions.</li>
+      <li><strong>12 octobre</strong> — tests d'enveloppe <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> : clic différé, deux écrans, glisser-déposer local ; les blocages restants sont écrits, pas cachés.</li>
+      <li><strong>21 octobre</strong> — <strong>v26.11-rc1 « Ardoise »</strong>, publiée comme préversion, avec une veille de recherche sur les systèmes amont.</li>
+      <li><strong>27 octobre</strong> — fusion de la préversion, contrat CI à <strong>38/38</strong> en 26 secondes, et l'amorçage d'un profil de bureau par défaut au premier démarrage.</li>
+    </ul>
+
+    <h3>Comment une version naît</h3>
+    <div class="prose">
+      <p>La politique de publication, ratifiée le 21 octobre, tient en quelques règles. <strong>Le dépôt privé est la vérité</strong> ; le dépôt public est une projection écrite dans un seul sens, par un script, avec une liste de chemins autorisés et un manifeste d'empreintes. Une contribution publique est relue, intégrée côté privé, et revient avec la version suivante.</p>
+      <p>Le produit se nomme par <strong>l'année et le mois</strong> de sa sortie, plus un nom de minéral, dans l'ordre alphabétique : 26.11 « Ardoise ». Les crates, elles, gardent un versionnage sémantique : une crate dont l'interface change doit changer de version, sinon la vérification de publication la refuse. Trois canaux : <em>edge</em> (la branche de développement, déployée chez l'auteur), <em>stable</em> (la dernière version), et un éventuel <em>LTS</em>, décidé plus tard.</p>
+    </div>
+    <div class="box note">
+      <span class="label">Le contrat CI, en chiffres</span>
+      <p style="margin-bottom:0">Le 27 octobre, après la fusion de la préversion : <strong>38 contrôles sur 38</strong>, en 25,9 secondes. Le jeu de contrôles a été réorganisé avec la préversion (il en comptait 48 avant) : les deux chiffres ne se comparent pas, et le reçu le précise.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projections : ce qui vient après « Ardoise »</h2>
+    <div class="prose">
+      <p>La feuille de route de gnosix est <strong>pilotée par les preuves</strong> : un chantier avance quand ses preuves sont complètes et, si nécessaire, acceptées par l'auteur. Les versions, elles, ont des dates fixes — deux par an, en mai et en novembre — et emportent ce qui est prêt.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/gnosix-feuille-de-route.svg" alt="Frise : 26.11-rc1 publiée le 21 octobre 2026, 26.11 annoncée, fenêtres 27.05 et 27.11 ; sept chantiers sans date, dont le modèle de menace qui précède les mods ; et ce que gnosix ne fera pas.">
+      <figcaption><b>Des fenêtres fixes, des chantiers sans date.</b> Les fenêtres 27.05 et 27.11 découlent de la cadence annoncée ; aucun chantier n'y est promis. Le modèle de menace passe avant les mods : on n'ouvre pas le bureau à des modules tiers avant d'avoir écrit contre quoi il se défend.</figcaption>
+    </figure>
+    <div class="grid two">
+      <div class="card">
+        <h4>Les chantiers annoncés</h4>
+        <p style="margin-bottom:0">La revue de chaque surface QUALIFIED ; des « cartes » pour que chaque module de la barre garde sa matière quand on le déplace ; une scène construite en couches ; le clavier sur la barre ; une seule forme mathématique pour tout le shell ; un modèle de menace ; puis des mods confinés, chacun dans son processus, avec des permissions déclarées.</p>
+      </div>
+      <div class="card">
+        <h4>Ce qui ne sera pas fait</h4>
+        <p style="margin-bottom:0">Pas d'exécuteur de commandes générique, pas de démon de réglages monolithique, pas d'identité d'écran devinée à partir de sa géométrie, et pas d'adoption silencieuse de l'autorité d'un projet donneur. Une version stable pour autrui n'est pas revendiquée avant une revue d'accessibilité.</p>
+      </div>
     </div>
   </section>
 

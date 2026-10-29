@@ -122,6 +122,40 @@
       <img src="../assets/diagrams/en/gnostral-placement.svg" alt="Two rows of 48 layers: 22 on the card in the control run, 13 under memory pressure. Throughput 20.88 then 20.15 tokens per second.">
       <figcaption><b>Placement, observed.</b> When graphics memory is taken up before start-up, the engine puts fewer layers on the card (22 → 13 in these two runs) and throughput drops by only 3.5%. Moving layers while running, however, is not demonstrated.</figcaption>
     </figure>
+    <h3>Twelve answers, not an average</h3>
+    <div class="prose">
+      <p>A "2.12×" is a median. Behind it are twelve measured answers: three processes without the patch and three with it, each asked for a 128-token then a 512-token answer. The two clouds never touch: the slowest patched answer (19.48 tokens/s) is still twice as fast as the fastest unpatched one (10.12).</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-dispersion.svg" alt="Dot plot: without the patch, answers range from 8.49 to 10.12 tokens per second; with it, from 19.48 to 22.02; medians 8.90 and 21.93 at 128 tokens, 9.51 and 20.18 at 512 tokens.">
+      <figcaption><b>The gap does not hinge on one lucky answer.</b> The texts produced are identical byte for byte in all six pairs: the patch speeds things up without changing anything that is written.</figcaption>
+    </figure>
+    <details class="deep">
+      <summary>The data, answer by answer</summary>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Answer</th><th>Without the patch (tokens/s)</th><th>With the patch (tokens/s)</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Answer">128 tokens, process 1</td><td data-label="Without the patch (tokens/s)">8.90</td><td data-label="With the patch (tokens/s)">21.55</td></tr>
+            <tr><td data-label="Answer">128 tokens, process 2</td><td data-label="Without the patch (tokens/s)">8.49</td><td data-label="With the patch (tokens/s)">21.93</td></tr>
+            <tr><td data-label="Answer">128 tokens, process 3</td><td data-label="Without the patch (tokens/s)">9.88</td><td data-label="With the patch (tokens/s)">22.02</td></tr>
+            <tr><td data-label="Answer">512 tokens, process 1</td><td data-label="Without the patch (tokens/s)">10.12</td><td data-label="With the patch (tokens/s)">20.18</td></tr>
+            <tr><td data-label="Answer">512 tokens, process 2</td><td data-label="Without the patch (tokens/s)">9.51</td><td data-label="With the patch (tokens/s)">20.21</td></tr>
+            <tr><td data-label="Answer">512 tokens, process 3</td><td data-label="Without the patch (tokens/s)">9.51</td><td data-label="With the patch (tokens/s)">19.48</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <h3>One executable, three model families</h3>
+    <div class="prose">
+      <p>Milestone Q-012 asks another question: can the same executable serve models of different kinds? Three families, one after another: a dense model that writes text, an <em>embeddings</em> model that turns sentences into vectors, and the large quantised MoE. All three answer correctly — the embeddings model, for instance, rates two related sentences much closer (0.78) than two unrelated ones (0.17).</p>
+      <p>Above all, the chart shows <strong>where each model puts its weights</strong>. The 30-billion-parameter MoE takes 2.4 GB on the card and 19 GB in main memory: that is the dossier's trick, measured. The first run, built without the expert-residency feature, climbed to 6.8 GB on the card and timed out; it stays on record, and a guard now refuses a binary that forgets it.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-familles.svg" alt="Bars per family: dense 5,025 MiB on the card and 3,556 on the host; embeddings 2,783 and 1,533; MoE 2,427 on the card and 19,282 on the host, with the first run at 6,772 MiB on the card.">
+      <figcaption><b>Two memories, two uses.</b> Card memory is measured for the whole card, desktop included; host memory is that of the server process alone. One functional probe per family: this is not a quality benchmark.</figcaption>
+    </figure>
     <div class="box note">
       <span class="label">Remember</span>
       <p style="margin-bottom:0">Every figure has its report, its protocol and its limits. The repository explicitly refuses to publish a figure without the evidence that goes with it — including when the evidence contradicts a more flattering claim.</p>
@@ -182,6 +216,15 @@
         <li><strong>Qualified</strong> — an independent auditor checks the identities, the negative checks and the non-claims.</li>
       </ol>
     </details>
+
+    <h3>Does the memory come back?</h3>
+    <div class="prose">
+      <p>The loop's sixth step — stopping and recovery — is the one that fails the most runs. After each shutdown, what is still occupied on the graphics card is measured. The gate is set <em>before</em> the run: <strong>±128 MiB</strong>. A fast run that leaves memory behind is refused.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-reclaim.svg" alt="Dots per process: every retained run stays between −82 and +26 MiB, inside the ±128 MiB gate; the first patched Q-010 run, at +196 MiB, fails and stays on record.">
+      <figcaption><b>A visible failure among the successes.</b> The first patched <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a> run left 196 MiB on the card — cause undetermined, possibly desktop GPU traffic. It is marked NOT QUALIFIED and kept; the published measurement comes from a new full session, with the same thresholds.</figcaption>
+    </figure>
   </section>
 
   <section>
@@ -204,6 +247,62 @@
       <p>The first <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a> run failed: graphics memory did not come back within the expected margin (+196 MiB against a ±128 MiB tolerance). The first <a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Q-012 receipt: one engine, three model families." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · as of October 29, 2026">Q-012</a> run failed too: a compile-time feature was missing, and the MoE model timed out.</p>
       <p>Both failures are still on the record. It is a methodological choice, not an affectation: a result whose misses you do not know is not reusable. And a figure that cannot be contradicted is not a measurement; it is a claim.</p>
       <p>The same principle applies to the Bonsai benchmark: the reference kept is 35.2 tokens per second, not the more flattering claim of 40 — for lack of sufficient evidence.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>History: fifteen quests in fifteen days</h2>
+    <div class="prose">
+      <p>gnostral.rs moves forward by <strong>quests</strong>: each opens a precise question and closes with a written decision, including when the decision is "not qualified". The public log counts fifteen between October 7 and 21, 2026.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-histoire.svg" alt="Public commits per day: 20 on October 7, 8 on the 10th, 2 on the 21st; eight foundational quests and eight versions on the 7th, the partial Q-009 track on the 9th, the Q-010 to Q-013-C chain on the 10th, an upstream watch on the 21st.">
+      <figcaption><b>Two days do most of the work.</b> October 7 closes the foundational research and publishes versions 0.1 to 0.8; the 10th, the native proof chain, from the A/B to the real supervised server.</figcaption>
+    </figure>
+
+    <h3>Projects studied, and turned down</h3>
+    <div class="prose">
+      <p>Part of the work is examining other engines before touching them. The repository keeps its refusals as carefully as its adoptions:</p>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <h4>xInfer — not qualified</h4>
+        <p style="margin-bottom:0">A clean build failure against <a class="src" data-src="cuda" href="https://developer.nvidia.com/cuda-toolkit" data-title="CUDA" data-desc="NVIDIA&#x27;s parallel computing platform for its graphics cards." data-meta="developer.nvidia.com/cuda-toolkit">CUDA</a> 13.4, model loads running out of memory. Adoption refused: the lab does not turn into a repair shop for an upstream project.</p>
+      </div>
+      <div class="card">
+        <h4>zLLM — blocked</h4>
+        <p style="margin-bottom:0">A Gemma model served correctly, but the adaptive-placement promise could not be tested: the 17 to 19 GB download would have eaten nearly half of the free disk margin.</p>
+      </div>
+      <div class="card">
+        <h4>UniLLM — studied</h4>
+        <p style="margin-bottom:0">Its registry and lifecycle ideas are adapted; its mocked telemetry is rejected. The rule that came out of it: write "unknown" rather than a plausible value.</p>
+      </div>
+    </div>
+
+    <h3>A corrected claim</h3>
+    <div class="prose">
+      <p>The very first quest, Q-001, measured nothing new: it <strong>withdrew</strong> a figure. A Bonsai benchmark claimed 40 tokens per second; for lack of sufficient evidence, the repository kept 35.2 and never published the 40. So the project starts with a correction — a choice of method.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projections: the roadmap</h2>
+    <div class="prose">
+      <p>The target fits in one sentence: an inspectable, Rust-first, <strong>local</strong> inference control plane for constrained hardware — choosing the right engine for each model, bounding resources, proving readiness, stopping cleanly, accounting for performance. Compute kernels and expert placement stay the business of each engine.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/gnostral-feuille-de-route.svg" alt="Six milestones: M0 proven baseline, closed; M1 identity while serving, next; M2 sequence A to B to A, M3 resource admission, M4 quality of service, proposed; M5 multi-model service, conditional; five research leads below.">
+      <figcaption><b>One exit condition per milestone.</b> M1 must prove it is talking to the right process for the whole time it serves; M2, that a model can be loaded, unloaded, another loaded and the first brought back without leaking memory. The multi-model service only comes at the end, and only if everything else holds.</figcaption>
+    </figure>
+    <div class="grid two">
+      <div class="card">
+        <h4>Research, in parallel</h4>
+        <p style="margin-bottom:0">A watch on five leads — quantised tensor transport (Burn), client-side latency metrics (Ferrum), a reversible KV cache (WakeKV), several cards (CubeCL), low-bit kernels (Bonsai). Each has its first falsifiable experiment; none is a dependency, and none may silently change the pinned engine.</p>
+      </div>
+      <div class="card">
+        <h4>What will not be promised</h4>
+        <p style="margin-bottom:0">No public hosted API, no production-performance claim, no broad portability until the matching gate has passed. A failed run remains first-class evidence, even when a later run succeeds.</p>
+      </div>
     </div>
   </section>
 
