@@ -68,6 +68,26 @@
     if (link) show(link);
     else if (!(card && card.contains(e.target))) hide();
   });
+  // Au toucher, pas de survol : le premier toucher montre la fiche, le second
+  // (ou « Ouvrir » dans la fiche) suit le lien. Toucher ailleurs la referme.
+  var touchArmed = null, lastTouch = 0;
+  document.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "touch" && e.pointerType !== "pen") return;
+    var link = e.target.closest && e.target.closest("a.src");
+    lastTouch = Date.now();
+    touchArmed = link && current === link && card && !card.hidden ? link : null;
+    if (!link && !(card && card.contains(e.target))) hide();
+  });
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest("a.src");
+    if (!link || Date.now() - lastTouch > 800) return;   // souris et clavier : lien direct
+    if (touchArmed !== link) {
+      e.preventDefault();
+      clearTimeout(hideTimer);
+      show(link);
+    }
+    touchArmed = null;
+  });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") hide(); });
   window.addEventListener("scroll", function () { if (current) place(current); }, { passive: true });
   window.addEventListener("resize", function () { if (current) place(current); });

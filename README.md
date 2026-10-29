@@ -83,7 +83,8 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │       └── gnu6-pixi.png             qualification MQ-12, renderer PixiJS
 ├── tools/
 │   ├── make_gifs.py    génère les animations (SVG image par image → rsvg-convert → ffmpeg)
-│   └── link_sources.py registre des sources : pose les liens et leurs fiches
+│   ├── link_sources.py registre des sources : pose les liens et leurs fiches
+│   └── table_labels.py intitulés de colonnes recopiés sur les cellules (fiches sur mobile)
 ├── exports/            les mêmes pages en PDF
 ├── LICENSE             CC BY 4.0 (contenu) ; la fonte garde sa licence OFL-1.1
 └── README.md
@@ -136,6 +137,13 @@ Le registre du script est la seule liste des sources : projets externes (mistral
 llama.cpp, PixiJS, Hyprland, polkit…), documents des quatre dépôts et reçus de mesure
 (Q-010, CUDA-05F…). Le script lie la première mention de chaque source dans chaque section ;
 il peut être relancé sans doubler les liens.
+
+## Sur téléphone
+
+Sous 640 px, le menu passe sur deux lignes, chaque ligne de tableau devient une fiche
+(intitulés posés par `python3 tools/table_labels.py`), les schémas et animations gardent une
+taille lisible et se font glisser, et la fiche de source s'ouvre au premier toucher — le second
+suit le lien.
 
 ## Régénérer les animations
 

@@ -84,24 +84,24 @@
         <thead><tr><th>Jalon</th><th>Résultat</th><th>Ce que cela ne dit pas</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>Experts empruntés</strong><br><span class="tag"><a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a></span></td>
-            <td>9,51 → 20,18 jetons/s sur une réponse de 512 jetons, médiane de trois répétitions, 2,12×</td>
-            <td>Pas plus rapide que <a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="Moteur d&#x27;inférence en C/C++, très répandu. C&#x27;est la référence de comparaison du dossier gnostral." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a> (34,54 jetons/s sur la même machine) ; pas valable pour toutes les architectures.</td>
+            <td data-label="Jalon"><strong>Experts empruntés</strong><br><span class="tag"><a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a></span></td>
+            <td data-label="Résultat">9,51 → 20,18 jetons/s sur une réponse de 512 jetons, médiane de trois répétitions, 2,12×</td>
+            <td data-label="Ce que cela ne dit pas">Pas plus rapide que <a class="src" data-src="llamacpp" href="https://github.com/ggml-org/llama.cpp" data-title="llama.cpp" data-desc="Moteur d&#x27;inférence en C/C++, très répandu. C&#x27;est la référence de comparaison du dossier gnostral." data-meta="github.com/ggml-org/llama.cpp">llama.cpp</a> (34,54 jetons/s sur la même machine) ; pas valable pour toutes les architectures.</td>
           </tr>
           <tr>
-            <td><strong>Placement au chargement</strong><br><span class="tag"><a class="src" data-src="ms-Q-011" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q011-rtx3070-placement-observation-20261010.json" data-title="gnostral.rs · Q-011" data-desc="Reçu Q-011 : placement des couches sous pression mémoire." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q011-rtx3070-placement-observation-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-011</a></span></td>
-            <td>22/21/21 couches sur la carte → 13/12/13 sous réservation de mémoire</td>
-            <td>Placement initial seulement ; aucune migration pendant le service.</td>
+            <td data-label="Jalon"><strong>Placement au chargement</strong><br><span class="tag"><a class="src" data-src="ms-Q-011" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q011-rtx3070-placement-observation-20261010.json" data-title="gnostral.rs · Q-011" data-desc="Reçu Q-011 : placement des couches sous pression mémoire." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q011-rtx3070-placement-observation-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-011</a></span></td>
+            <td data-label="Résultat">22/21/21 couches sur la carte → 13/12/13 sous réservation de mémoire</td>
+            <td data-label="Ce que cela ne dit pas">Placement initial seulement ; aucune migration pendant le service.</td>
           </tr>
           <tr>
-            <td><strong>Un moteur, trois familles</strong><br><span class="tag"><a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Reçu Q-012 : un moteur, trois familles de modèles." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-012</a></span></td>
-            <td>3/3 : modèle dense, embeddings, MoE quantifié</td>
-            <td>Trois serveurs successifs ; pas de co-résidence, pas de stabilité de production.</td>
+            <td data-label="Jalon"><strong>Un moteur, trois familles</strong><br><span class="tag"><a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Reçu Q-012 : un moteur, trois familles de modèles." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-012</a></span></td>
+            <td data-label="Résultat">3/3 : modèle dense, embeddings, MoE quantifié</td>
+            <td data-label="Ce que cela ne dit pas">Trois serveurs successifs ; pas de co-résidence, pas de stabilité de production.</td>
           </tr>
           <tr>
-            <td><strong>Vrai processus dense</strong><br><span class="tag"><a class="src" data-src="ms-Q-013-C" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json" data-title="gnostral.rs · Q-013-C" data-desc="Reçu Q-013-C : le cycle de vie d&#x27;un vrai processus dense." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-013-C</a></span></td>
-            <td>Réponse sémantique exacte « GNOSTRAL » ; +8 Mio de mémoire GPU après arrêt</td>
-            <td>Un seul modèle, un serveur de courte durée, pas une API publique.</td>
+            <td data-label="Jalon"><strong>Vrai processus dense</strong><br><span class="tag"><a class="src" data-src="ms-Q-013-C" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json" data-title="gnostral.rs · Q-013-C" data-desc="Reçu Q-013-C : le cycle de vie d&#x27;un vrai processus dense." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-013-C</a></span></td>
+            <td data-label="Résultat">Réponse sémantique exacte « GNOSTRAL » ; +8 Mio de mémoire GPU après arrêt</td>
+            <td data-label="Ce que cela ne dit pas">Un seul modèle, un serveur de courte durée, pas une API publique.</td>
           </tr>
         </tbody>
       </table>

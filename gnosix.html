@@ -147,10 +147,10 @@
           <tr><th>Question</th><th>Bureau « monolithique »</th><th>Bureau séparé (gnosix)</th></tr>
         </thead>
         <tbody>
-          <tr><td>Qui connaît l'état ?</td><td>Le programme principal, un peu partout</td><td>Un modèle unique, explicite</td></tr>
-          <tr><td>Qui a le droit d'agir ?</td><td>Souvent le même programme</td><td>Des services étroits, authentifiés</td></tr>
-          <tr><td>Que se passe-t-il si l'état est flou ?</td><td>On suppose un état plausible</td><td>On refuse l'action</td></tr>
-          <tr><td>Comment prouver qu'une fonction marche ?</td><td>« Ça a l'air de marcher »</td><td>Un niveau de preuve nommé, publié</td></tr>
+          <tr><td data-label="Question">Qui connaît l'état ?</td><td data-label="Bureau « monolithique »">Le programme principal, un peu partout</td><td data-label="Bureau séparé (gnosix)">Un modèle unique, explicite</td></tr>
+          <tr><td data-label="Question">Qui a le droit d'agir ?</td><td data-label="Bureau « monolithique »">Souvent le même programme</td><td data-label="Bureau séparé (gnosix)">Des services étroits, authentifiés</td></tr>
+          <tr><td data-label="Question">Que se passe-t-il si l'état est flou ?</td><td data-label="Bureau « monolithique »">On suppose un état plausible</td><td data-label="Bureau séparé (gnosix)">On refuse l'action</td></tr>
+          <tr><td data-label="Question">Comment prouver qu'une fonction marche ?</td><td data-label="Bureau « monolithique »">« Ça a l'air de marcher »</td><td data-label="Bureau séparé (gnosix)">Un niveau de preuve nommé, publié</td></tr>
         </tbody>
       </table>
     </div>
@@ -166,11 +166,11 @@
       <table>
         <thead><tr><th>État</th><th>Ce qu'il veut dire</th><th>Exemple</th></tr></thead>
         <tbody>
-          <tr><td><span class="tag ok">PROVEN</span></td><td>Qualifié en source, observé dans la session réelle, confirmé par l'auteur.</td><td>Les notifications, le français et l'anglais, la fluidité.</td></tr>
-          <tr><td><span class="tag partial">QUALIFIED</span></td><td>Qualifié en source et en session <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> isolée ; déployé chez l'auteur, confirmation en attente.</td><td>La barre, le deck, les réglages, le verrouillage.</td></tr>
-          <tr><td><span class="tag">SOURCE-QUALIFIED</span></td><td>Les contrats et invariants sont exercés en source ; le comportement réel plus large n'est pas impliqué.</td><td>L'identité durable des écrans, les mécanismes d'accessibilité.</td></tr>
-          <tr><td><span class="tag">EXPERIMENTAL</span></td><td>Travail actif, revendication limitée.</td><td>Le moteur de rendu de fond d'écran.</td></tr>
-          <tr><td><span class="tag no">OPEN</span></td><td>Une obligation nommée reste non résolue.</td><td>L'acceptation produit complète.</td></tr>
+          <tr><td data-label="État"><span class="tag ok">PROVEN</span></td><td data-label="Ce qu&#x27;il veut dire">Qualifié en source, observé dans la session réelle, confirmé par l'auteur.</td><td data-label="Exemple">Les notifications, le français et l'anglais, la fluidité.</td></tr>
+          <tr><td data-label="État"><span class="tag partial">QUALIFIED</span></td><td data-label="Ce qu&#x27;il veut dire">Qualifié en source et en session <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> isolée ; déployé chez l'auteur, confirmation en attente.</td><td data-label="Exemple">La barre, le deck, les réglages, le verrouillage.</td></tr>
+          <tr><td data-label="État"><span class="tag">SOURCE-QUALIFIED</span></td><td data-label="Ce qu&#x27;il veut dire">Les contrats et invariants sont exercés en source ; le comportement réel plus large n'est pas impliqué.</td><td data-label="Exemple">L'identité durable des écrans, les mécanismes d'accessibilité.</td></tr>
+          <tr><td data-label="État"><span class="tag">EXPERIMENTAL</span></td><td data-label="Ce qu&#x27;il veut dire">Travail actif, revendication limitée.</td><td data-label="Exemple">Le moteur de rendu de fond d'écran.</td></tr>
+          <tr><td data-label="État"><span class="tag no">OPEN</span></td><td data-label="Ce qu&#x27;il veut dire">Une obligation nommée reste non résolue.</td><td data-label="Exemple">L'acceptation produit complète.</td></tr>
         </tbody>
       </table>
     </div>

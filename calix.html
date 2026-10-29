@@ -78,7 +78,7 @@
         <img src="assets/shots/calix-installed.png" alt="Capture de Calix : inventaire des paquets installés, 1 803 paquets répartis entre dépôts officiels, Cargo, NPM et versions suivies, avec version, source, taille et statut.">
       </figure>
     </div>
-    <p class="caption-solo"><b>Deux vues réelles de Calix.</b> À gauche, une recherche mêle dépôts Arch et AUR : chaque ligne garde sa source, et l'AUR est signalé comme « recettes à compiler, pas des binaires ». À droite, l'inventaire des 1 803 paquets de la machine de l'auteur, onglet par écosystème ; <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> sont « listés, non interrogés ». Captures du 29 octobre 2026, version installée r5022.</p>
+    <p class="caption-solo"><b>Deux vues réelles de Calix.</b> La première, une recherche, mêle dépôts Arch et AUR : chaque ligne garde sa source, et l'AUR est signalé comme « recettes à compiler, pas des binaires ». La seconde montre l'inventaire des 1 803 paquets de la machine de l'auteur, onglet par écosystème ; <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> sont « listés, non interrogés ». Captures du 29 octobre 2026, version installée r5022.</p>
   </section>
 
   <section>
@@ -88,44 +88,44 @@
         <thead><tr><th>Domaine</th><th>État publié par le dépôt</th><th>Ce que cela ne dit pas</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>Interface</strong></td>
-            <td>Interface principale, en développement actif</td>
-            <td>Pas un design figé ; la mise en page peut encore changer.</td>
+            <td data-label="Domaine"><strong>Interface</strong></td>
+            <td data-label="État publié par le dépôt">Interface principale, en développement actif</td>
+            <td data-label="Ce que cela ne dit pas">Pas un design figé ; la mise en page peut encore changer.</td>
           </tr>
           <tr>
-            <td><strong>Inventaire unifié</strong></td>
-            <td><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Le gestionnaire de paquets d&#x27;Arch Linux et sa bibliothèque (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a>, <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a>, <a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a>, <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a>, <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a>, <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> et versions suivies</td>
-            <td>Inventorier n'est pas savoir installer : voir la ligne suivante.</td>
+            <td data-label="Domaine"><strong>Inventaire unifié</strong></td>
+            <td data-label="État publié par le dépôt"><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Le gestionnaire de paquets d&#x27;Arch Linux et sa bibliothèque (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a>, <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a>, <a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a>, <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a>, <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a>, <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> et versions suivies</td>
+            <td data-label="Ce que cela ne dit pas">Inventorier n'est pas savoir installer : voir la ligne suivante.</td>
           </tr>
           <tr>
-            <td><strong>Actions depuis l'interface</strong></td>
-            <td>ALPM, AUR et Flatpak seulement</td>
-            <td>Cargo et NPM sont listés, pas encore modifiables depuis l'interface.</td>
+            <td data-label="Domaine"><strong>Actions depuis l'interface</strong></td>
+            <td data-label="État publié par le dépôt">ALPM, AUR et Flatpak seulement</td>
+            <td data-label="Ce que cela ne dit pas">Cargo et NPM sont listés, pas encore modifiables depuis l'interface.</td>
           </tr>
           <tr>
-            <td><strong>Recherche</strong></td>
-            <td>ALPM, AUR, Flatpak et AppImages déjà installées</td>
-            <td>Les autres sources restent en inventaire seul.</td>
+            <td data-label="Domaine"><strong>Recherche</strong></td>
+            <td data-label="État publié par le dépôt">ALPM, AUR, Flatpak et AppImages déjà installées</td>
+            <td data-label="Ce que cela ne dit pas">Les autres sources restent en inventaire seul.</td>
           </tr>
           <tr>
-            <td><strong>Service d'inventaire</strong></td>
-            <td>Répond à la demande, seul écrivain de l'état</td>
-            <td>Pas encore d'ordonnanceur : rien ne se met à jour tout seul.</td>
+            <td data-label="Domaine"><strong>Service d'inventaire</strong></td>
+            <td data-label="État publié par le dépôt">Répond à la demande, seul écrivain de l'état</td>
+            <td data-label="Ce que cela ne dit pas">Pas encore d'ordonnanceur : rien ne se met à jour tout seul.</td>
           </tr>
           <tr>
-            <td><strong>Suivi des versions</strong></td>
-            <td>Registre et contrôles de provenance en <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></td>
-            <td>Un moteur Python gelé écrit encore le fichier d'observation.</td>
+            <td data-label="Domaine"><strong>Suivi des versions</strong></td>
+            <td data-label="État publié par le dépôt">Registre et contrôles de provenance en <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></td>
+            <td data-label="Ce que cela ne dit pas">Un moteur Python gelé écrit encore le fichier d'observation.</td>
           </tr>
           <tr>
-            <td><strong>Notifications</strong></td>
-            <td>Livrées et vérifiées sur une session réelle</td>
-            <td>Installées, mais pas activées par défaut.</td>
+            <td data-label="Domaine"><strong>Notifications</strong></td>
+            <td data-label="État publié par le dépôt">Livrées et vérifiées sur une session réelle</td>
+            <td data-label="Ce que cela ne dit pas">Installées, mais pas activées par défaut.</td>
           </tr>
           <tr>
-            <td><strong>Plateforme</strong></td>
-            <td><a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a>, x86_64</td>
-            <td>Aucune autre distribution n'est prise en charge.</td>
+            <td data-label="Domaine"><strong>Plateforme</strong></td>
+            <td data-label="État publié par le dépôt"><a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a>, x86_64</td>
+            <td data-label="Ce que cela ne dit pas">Aucune autre distribution n'est prise en charge.</td>
           </tr>
         </tbody>
       </table>

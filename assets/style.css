@@ -577,13 +577,54 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
   .site-nav {
     margin-left: 0;
     width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
+    flex-wrap: wrap;
+    gap: .125rem .25rem;
     border-bottom: 0;
   }
-  .site-nav::-webkit-scrollbar { display: none; }
   .site-nav a { padding: .4rem .625rem; font-size: .875rem; white-space: nowrap; }
+
+  /* Schémas et animations : lisibles à taille utile, on les fait glisser. */
+  figure:has(> img[src$=".svg"]), figure:has(> img.motion-live) {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+  figure:has(> img[src$=".svg"])::before, figure:has(> img.motion-live)::before {
+    content: "Faites glisser le schéma →";
+    position: sticky;
+    left: 0;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--ds-slate);
+  }
+  figure:has(> img.motion-live)::before { content: "Faites glisser l'animation →"; }
+  figure > img[src$=".svg"], figure > img.motion-live { min-width: 760px; }
+  figure:has(> img[src$=".svg"]) figcaption, figure:has(> img.motion-live) figcaption {
+    position: sticky;
+    left: 0;
+    width: 100%;
+    max-width: calc(100vw - 2.25rem);
+  }
+
+  /* Tableaux : une fiche par ligne, chaque valeur avec son intitulé. */
+  .table-wrap { overflow: visible; }
+  .table-wrap table, .table-wrap tbody, .table-wrap tr, .table-wrap td { display: block; width: auto; }
+  .table-wrap thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .table-wrap tr { padding: .875rem 1rem; border-bottom: 1px solid var(--ds-quiet-divider); }
+  .table-wrap tr:last-child { border-bottom: 0; }
+  .table-wrap td { padding: .25rem 0; border-bottom: 0; }
+  .table-wrap td:first-child { padding-top: 0; font-size: 1rem; }
+  .table-wrap td[data-label]:not(:first-child)::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: .125rem;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ds-slate);
+  }
   .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
   .stat { padding: 1rem; }
   .stat .value { font-size: 2rem; }
