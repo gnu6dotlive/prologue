@@ -713,12 +713,118 @@ def calix_inventaire():
                    "Source: screenshot of Calix's “Installed” view (installed version r5022), October 29, 2026."))
 
 
+# ---------------------------------------------------------------- in.gnu6
+
+# Intervalles entre images présentées, regroupés par tranches de 0,04 ms (centre de tranche, nombre).
+# Dérivés de presentations.jsonl de GPU05-ENDURANCE-01 (fichier non publié), dont l'empreinte
+# SHA-256 d23020138222…f8f1 est publiée dans le rapport public de l'essai.
+ENDURANCE_BINS = [(12.92, 4), (12.96, 3), (13.0, 7), (13.04, 28), (13.08, 51), (13.12, 100), (13.16, 175),
+                  (13.2, 253), (13.24, 370), (13.28, 838), (13.32, 2747), (13.36, 2981), (13.4, 813),
+                  (13.44, 408), (13.48, 223), (13.52, 180), (13.56, 94), (13.6, 60), (13.64, 23),
+                  (13.68, 5), (13.72, 3), (13.76, 1), (13.8, 1)]
+
+
+def ingnu6_endurance():
+    x0, x1, base, top = 110, 900, 470, 170
+    lo, hi = 12.84, 13.92
+    sx = (x1 - x0) / (hi - lo)
+    X = lambda v: x0 + (v - lo) * sx
+    ymax = 3000
+    sy = (base - top) / ymax
+    body = []
+    for v in (0, 1000, 2000, 3000):
+        y = base - v * sy
+        body.append(line(x0, y, x1, y, QUIET))
+        body.append(t(x0 - 10, y + 4, n(v), 10.5, 400, MUTED, "end"))
+    body.append(t(x0, top - 18, L("nombre d'intervalles, par tranche de 0,04 ms", "number of intervals, per 0.04 ms bin"), 11, 500, SLATE))
+    bw = 0.04 * sx - 2
+    for c, k in ENDURANCE_BINS:
+        h = max(k * sy, 1.5)
+        body.append(r(X(c) - bw / 2, base - h, bw, h, BLUE, 2))
+    for v in (13.0, 13.2, 13.4, 13.6, 13.8):
+        body.append(line(X(v), base, X(v), base + 5, HAIR))
+        body.append(t(X(v), base + 20, n(v, 1) + " ms", 11, 500, SLATE, "middle"))
+    xr = X(13.339736)
+    body.append(line(xr, top - 30, xr, base, ORANGE7, 1.5, "4 4"))
+    body.append(t(xr + 8, top - 20, L("période de l'écran : 13,34 ms (74,96 Hz)", "screen period: 13.34 ms (74.96 Hz)"), 12, 700, INK))
+    for v, lab in ((13.478, "p95"), (13.58, "p99")):
+        body.append(line(X(v), base + 26, X(v), base + 36, INK, 1.5))
+        body.append(t(X(v), base + 50, f"{lab} {n(v, 2 if v == 13.58 else 3)}", 11, 700, INK, "middle"))
+    # l'intervalle isolé, hors échelle
+    ox = 1010
+    body.append(line(930, base, 960, base, HAIR, 1, "3 3"))
+    body.append(t(945, base + 20, "//", 12, 700, MUTED, "middle"))
+    body.append(r(ox - 6, base - 12, 12, 12, ORANGE7, 2))
+    body.append(t(ox, base + 20, "26,65 ms" if LANG == "fr" else "26.65 ms", 11, 700, ORANGE7, "middle"))
+    body.append(t(ox, base - 44, L("1 intervalle", "1 interval"), 12, 700, INK, "middle"))
+    body.append(t(ox, base - 28, L("le tout premier, au démarrage", "the very first, at start-up"), 11, 400, SLATE, "middle"))
+    body.append(t(48, 560, L("9 370 images · 9 368 intervalles entre 12,9 et 14,0 ms · portes fixées avant l'essai : p95 ≤ 17 ms, p99 ≤ 20 ms, maximum ≤ 33,4 ms — toutes passées.",
+                             "9,370 frames · 9,368 intervals between 12.9 and 14.0 ms · gates set before the run: p95 ≤ 17 ms, p99 ≤ 20 ms, maximum ≤ 33.4 ms — all passed."), 12.5, 600, INK))
+    return frame(620,
+                 L("125 secondes d'endurance d'in.gnu6, image par image", "125 seconds of in.gnu6 endurance, frame by frame"),
+                 L("Histogramme des 9 369 intervalles entre images présentées : presque tous autour de 13,34 ms, la période de l'écran ; un seul intervalle isolé à 26,65 ms, le premier.",
+                   "Histogram of the 9,369 intervals between presented frames: almost all around 13.34 ms, the screen period; a single isolated interval at 26.65 ms, the first one."),
+                 L("IN.GNU6 · GPU05-ENDURANCE-01", "IN.GNU6 · GPU05-ENDURANCE-01"),
+                 L("125 secondes, image par image", "125 seconds, frame by frame"),
+                 L("Chaque barre compte les intervalles entre deux images réellement présentées par le compositeur Wayland.",
+                   "Each bar counts the intervals between two frames actually presented by the Wayland compositor."),
+                 body,
+                 L("Données : presentations.jsonl de l'essai du 10 octobre (non publié), SHA-256 d23020138222…f8f1, empreinte publiée dans in.gnu6 au commit fec80a7.",
+                   "Data: presentations.jsonl from the October 10 run (not published), SHA-256 d23020138222…f8f1, fingerprint published in in.gnu6 at commit fec80a7."))
+
+
+def ingnu6_histoire():
+    x0, x1, base = 140, 1060, 470
+    step = (x1 - x0) / 4
+    per = 3.4
+    body = [line(x0 - 60, base, x1 + 60, base, HAIR)]
+    commits = [27, 28, 20, 17, 51]
+    for d, c in enumerate(commits):
+        x = x0 + d * step
+        body.append(r(x - 16, base - c * per, 32, c * per, BLUE, 4))
+        body.append(t(x + 24, base - c * per + 12, str(c), 12, 700, INK))
+        body.append(t(x, base + 22, L(f"{6 + d} oct.", f"Oct {6 + d}"), 11.5, 500, SLATE, "middle"))
+
+    def chips(x, y, labels, fill, ink, cols=2):
+        out = []
+        for i, lab in enumerate(labels):
+            r_, c_ = divmod(i, cols)
+            w = 58
+            out += [r(x + c_ * (w + 6), y + r_ * 26, w, 22, fill, 6), t(x + c_ * (w + 6) + w / 2, y + r_ * 26 + 15, lab, 11, 700, ink, "middle")]
+        return out
+    body += chips(x0 - 60, 148, ["MQ-00", "MQ-02", "MQ-03", "MQ-04", "MQ-06", "MQ-07", "MQ-08", "MQ-09", "MQ-10", "MQ-11"], GREEN1, GREEN7)
+    body += chips(x0 + step - 60, 148, ["MQ-01", "MQ-05", "MQ-12", "MQ-13", "MQ-14", "MQ-15"], GREEN1, GREEN7)
+    body.append(t(x0 - 60, 292, L("10 jalons ratifiés", "10 milestones ratified"), 11.5, 700, INK))
+    body.append(t(x0 + step - 60, 240, L("6 jalons ratifiés", "6 milestones ratified"), 11.5, 700, INK))
+    body.append(t(x0 + step - 60, 256, L("mandat complet le 7", "mandate complete on the 7th"), 11, 400, SLATE))
+    body += chips(x0 + 2 * step - 60, 200, ["GPU-05"], BLUE1, BLUE7, 1)
+    body.append(t(x0 + 2 * step - 60, 244, L("recherche de rendu natif", "native rendering research"), 11, 400, SLATE))
+    body += chips(x0 + 4 * step - 92, 148, ["CUDA-05F", L("public", "public")], ORANGE1, ORANGE7, 1)
+    body.append(t(x0 + 4 * step - 92, 216, L("CUDA-05F : 4 acquisitions", "CUDA-05F: 4 acquisitions"), 11, 400, SLATE))
+    body.append(t(x0 + 4 * step - 92, 232, L("endurance de 125 s", "125 s endurance run"), 11, 400, SLATE))
+    body.append(t(x0 + 4 * step - 92, 248, L("dépôt rendu public", "repository made public"), 11, 400, SLATE))
+    body.append(t(1120, 540, L("143 commits · barres : commits par jour · pastilles vertes : jalons ratifiés ce jour-là",
+                               "143 commits · bars: commits per day · green chips: milestones ratified that day"), 11.5, 500, SLATE, "end"))
+    return frame(600,
+                 L("Historique d'in.gnu6, du 6 au 10 octobre 2026", "in.gnu6 history, October 6 to 10, 2026"),
+                 L("Commits par jour : 27, 28, 20, 17 et 51 ; dix jalons ratifiés le 6 octobre, six le 7, la recherche GPU-05 ensuite, le protocole CUDA-05F et la publication le 10.",
+                   "Commits per day: 27, 28, 20, 17 and 51; ten milestones ratified on October 6, six on the 7th, GPU-05 research afterwards, the CUDA-05F protocol and publication on the 10th."),
+                 L("IN.GNU6 · HISTORIQUE", "IN.GNU6 · HISTORY"),
+                 L("Cinq jours, seize jalons, un dépôt public", "Five days, sixteen milestones, one public repository"),
+                 L("La quête principale est ratifiée en deux jours ; les trois suivants vont à la recherche sur le rendu natif.",
+                   "The main questline is ratified in two days; the next three go to native-rendering research."),
+                 body,
+                 L("Source : QUESTLOG.md (dates des reçus de ratification) et historique Git de gnu6dotlive/in.gnu6 au commit fec80a7.",
+                   "Source: QUESTLOG.md (dates of the ratification receipts) and Git history of gnu6dotlive/in.gnu6 at commit fec80a7."))
+
+
 CHARTS = {
     "gnosix-statuts": gnosix_statuts, "gnosix-code": gnosix_code, "gnosix-histoire": gnosix_histoire,
     "gnosix-feuille-de-route": gnosix_feuille, "gnostral-histoire": gnostral_histoire,
     "gnostral-dispersion": gnostral_dispersion, "gnostral-familles": gnostral_familles,
     "gnostral-reclaim": gnostral_reclaim, "gnostral-feuille-de-route": gnostral_feuille,
     "calix-versions": calix_versions, "calix-espace": calix_espace, "calix-inventaire": calix_inventaire,
+    "ingnu6-endurance": ingnu6_endurance, "ingnu6-histoire": ingnu6_histoire,
 }
 
 

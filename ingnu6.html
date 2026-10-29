@@ -113,6 +113,25 @@
   </section>
 
   <section>
+    <h2>Deux produits pour essayer de casser le moteur</h2>
+    <div class="prose">
+      <p>Docklab, un dock aux cartes imbriquées, et un harnais pour une bijouterie, un éventail de cartes de tarot : deux métiers que tout oppose. Ils doivent tourner sur le même noyau, sans qu'aucun ne fasse bifurquer ses lois.</p>
+      <p>C'est le jalon MQ-10. Les deux produits cohabitent dans une seule scène de test, avec une seule horloge, un seul espace et un seul registre des topologies. Ils n'ont droit qu'à des adaptateurs et à de la configuration : aucun nom de produit, aucune branche particulière dans le code du moteur.</p>
+      <p>L'essai a d'ailleurs trouvé une faute : une hypothèse codée en dur sur le sens dans lequel une carte se soulève. Elle a été réparée, et la remettre fait échouer un test de bout en bout ; une fois corrigé, le noyau passe 96 tests sur 24 fichiers.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h4>Docklab</h4>
+        <p style="margin-bottom:0">Un repère attaché au bord de l'écran, des cartes imbriquées, un champ de voisinage, le réordonnancement, et un bord qui change en cours de route.</p>
+      </div>
+      <div class="card">
+        <h4>Le harnais de la bijouterie</h4>
+        <p style="margin-bottom:0">Un éventail centré dans la vue, des mesures qui s'adaptent à l'écran, une zone de jeu, le glisser-déposer et le comportement des cartes de tarot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Trois surfaces, trois statuts de vérité</h2>
     <div class="table-wrap">
       <table>
@@ -149,6 +168,14 @@
       <p><strong>Endurance :</strong> 9 370 images présentées en 124,994 secondes, sans une seule image écartée, soit environ 75 images par seconde en moyenne, avec un p95 de 13,478 ms. Mesuré localement, via l'horodatage de présentation du compositeur <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a>.</p>
       <p><strong>Échange réel :</strong> un programme <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et le projecteur sémantique <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="JavaScript typé, par Microsoft. Le noyau d&#x27;in.gnu6 est écrit en TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> ont échangé 40 événements Wayland réels sur une socket Unix privée, avec une correspondance de séquence exacte et 1 497 images présentées en 20 secondes, sans perte.</p>
     </div>
+    <h3>125 secondes, image par image</h3>
+    <div class="prose">
+      <p>9 370 images présentées par le compositeur, aucune écartée. 9 368 intervalles tiennent entre 12,9 et 14 ms, autour de la période de l'écran (13,34 ms). Le seul au-delà de 20 ms est le tout premier, au démarrage : 26,65 ms.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/ingnu6-endurance.svg" alt="Histogramme des 9 369 intervalles entre images : presque tous entre 13,2 et 13,5 ms, autour de la période de l'écran ; un seul intervalle isolé à 26,65 ms, le premier.">
+      <figcaption><b>Les portes avant les chiffres.</b> Les seuils sont écrits avant l'essai. Les données brutes restent chez l'auteur, mais leur empreinte publiée permet de vérifier qu'elles n'ont pas changé. Ce test ne mesure pas le délai entre un clic et l'image : c'est l'une des raisons pour lesquelles CP03 reste ouvert.</figcaption>
+    </figure>
     <div class="box limit">
       <span class="label">Les limites, sans détour</span>
       <ul style="margin-bottom:0">
@@ -180,8 +207,39 @@
       <figcaption><b>Passer ses tests n'autorise pas à publier.</b> Protocole <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="Rapport CUDA-05F : protocole, portes, essais négatifs conservés, limites." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · état au 29 octobre 2026">CUDA-05F</a> : isolement des comptes, intégrité des binaires, parité GPU/processeur, reprise après plantage. L'autorité de publication est une porte à part : aucun test automatique ne peut la franchir.</figcaption>
     </figure>
     <div class="prose">
-      <p>Deux produits consommateurs servent de pression : Docklab et un harnais pour une bijouterie. Leur rôle n'est pas de valider le moteur par politesse, mais de le casser : si un produit a besoin d'une seconde scène pour fonctionner, c'est la séparation qui est fausse.</p>
+      <p>Les deux produits consommateurs présentés plus haut jouent ici leur rôle : si l'un d'eux avait besoin d'une seconde scène, c'est la séparation qui serait fausse.</p>
       <p>Cette discipline explique les chiffres du haut de page : 16 jalons ratifiés ne veulent pas dire « prêt », et 9 370 images sans perte ne veulent pas dire « fluide pour vous ». Chaque nombre porte son cadre.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Historique : un journal de quêtes, pas une liste de tâches</h2>
+    <div class="prose">
+      <p>Le dépôt ne tient pas un carnet de tâches : il tient un journal de quêtes. La quête principale définit ce que « complet » veut dire ; les quêtes annexes gardent ce qu'on a appris en chemin.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/ingnu6-histoire.svg" alt="Commits par jour du 6 au 10 octobre : 27, 28, 20, 17 et 51 ; dix jalons ratifiés le 6, six le 7, la recherche GPU-05 ensuite, le protocole CUDA-05F, l'endurance et la publication le 10.">
+      <figcaption><b>Cinq jours visibles.</b> Le journal est ratifié le 6 octobre ; le mandat est complet le 7, avec ses seize jalons. Le 10, le protocole <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="Rapport CUDA-05F : protocole, portes, essais négatifs conservés, limites." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · état au 29 octobre 2026">CUDA-05F</a>, l'essai d'endurance et l'ouverture du dépôt au public.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Une quête a quinze états possibles, de <code>UNKNOWN</code> à <code>CLOSED</code>, et ils ne forment pas une échelle : « vert en local » n'implique pas « observé », et « observé » n'implique pas « ratifié ». Les quêtes annexes peuvent être urgentes ou précieuses ; elles ne deviennent pas obligatoires pour autant. <strong>Leur priorité appartient à l'opérateur humain</strong>, et le journal l'écrit en toutes lettres.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projections : de la recherche au produit</h2>
+    <div class="prose">
+      <p>in.gnu6 est un programme de preuve. Pour devenir une dépendance qu'on installe, il lui faut un rendu natif accepté, une licence, une API stable et une publication — quatre choses qu'il ne revendique pas aujourd'hui.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h4>Ce qui fermerait CP03</h4>
+        <p style="margin-bottom:0">Le contrat d'acceptation du rendu natif liste ce qui manque : des mesures indépendantes du délai entre une entrée et l'image affichée, un auditeur technique extérieur, et un essai de l'entrée supervisée de production. L'endurance passe ; l'ensemble, non.</p>
+      </div>
+      <div class="card">
+        <h4>La licence et la publication</h4>
+        <p style="margin-bottom:0">Le dépôt est public depuis le 10 octobre, mais déclaré « UNLICENSED » : aucune licence n'est décidée, aucune API n'est stable, rien n'est publié sur <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">npm</a>. Ce sont des portes à part, et aucune n'est datée.</p>
+      </div>
     </div>
   </section>
 

@@ -113,6 +113,25 @@
   </section>
 
   <section>
+    <h2>Two products to try to break the engine</h2>
+    <div class="prose">
+      <p>Docklab, a dock of nested cards, and a harness for a jewellery shop, a fan of tarot cards: two trades with nothing in common. They must run on the same core, without either one forking its laws.</p>
+      <p>This is milestone MQ-10. The two products share a single test scene, with one clock, one space and one topology registry. They are allowed only adapters and configuration: no product name, no special branch in the engine's code.</p>
+      <p>The run also found a fault: a hard-coded assumption about the direction in which a card lifts. It was repaired, and putting it back makes an end-to-end test fail; once fixed, the core passes 96 tests across 24 files.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h4>Docklab</h4>
+        <p style="margin-bottom:0">A frame attached to the screen edge, nested cards, a neighbour field, reordering, and an edge that changes along the way.</p>
+      </div>
+      <div class="card">
+        <h4>The jewellery-shop harness</h4>
+        <p style="margin-bottom:0">A fan centred in the view, measurements that adapt to the screen, a play zone, drag and drop, and the behaviour of tarot cards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Three surfaces, three levels of truth</h2>
     <div class="table-wrap">
       <table>
@@ -149,6 +168,14 @@
       <p><strong>Endurance:</strong> 9,370 frames presented in 124.994 seconds, without a single discarded frame — about 75 frames per second on average, with a p95 of 13.478 ms. Measured locally, through the <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> compositor's presentation timestamps.</p>
       <p><strong>Real exchange:</strong> a <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> program and the <a class="src" data-src="typescript" href="https://github.com/microsoft/TypeScript" data-title="TypeScript" data-desc="Typed JavaScript, by Microsoft. in.gnu6&#x27;s core is written in TypeScript." data-meta="github.com/microsoft/TypeScript">TypeScript</a> semantic projector exchanged 40 real Wayland events over a private Unix socket, with an exact sequence match and 1,497 frames presented in 20 seconds, without loss.</p>
     </div>
+    <h3>125 seconds, frame by frame</h3>
+    <div class="prose">
+      <p>9,370 frames presented by the compositor, none discarded. 9,368 intervals fall between 12.9 and 14 ms, around the screen period (13.34 ms). The only one above 20 ms is the very first, at start-up: 26.65 ms.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/ingnu6-endurance.svg" alt="Histogram of the 9,369 intervals between frames: almost all between 13.2 and 13.5 ms, around the screen period; a single isolated interval at 26.65 ms, the first one.">
+      <figcaption><b>Gates before figures.</b> The thresholds are written before the run. The raw data stays with the author, but its published fingerprint lets anyone check it has not changed. This test does not measure the delay between a click and the frame: that is one reason CP03 remains open.</figcaption>
+    </figure>
     <div class="box limit">
       <span class="label">The limits, plainly</span>
       <ul style="margin-bottom:0">
@@ -180,8 +207,39 @@
       <figcaption><b>Passing your tests does not authorise publishing.</b> Protocol <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="CUDA-05F report: protocol, gates, negative runs kept, limits." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · as of October 29, 2026">CUDA-05F</a>: account isolation, binary integrity, GPU/CPU parity, recovery after a crash. Release authority is a separate gate: no automated test can pass it.</figcaption>
     </figure>
     <div class="prose">
-      <p>Two consuming products act as pressure: Docklab and a harness for a jewellery shop. Their role is not to validate the engine out of politeness, but to break it: if a product needs a second scene to work, the separation is wrong.</p>
+      <p>The two consuming products presented above play their part here: if either needed a second scene, the separation would be wrong.</p>
       <p>This discipline explains the figures at the top of the page: 16 ratified milestones do not mean "ready", and 9,370 frames without loss do not mean "smooth for you". Every number carries its frame.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>History: a quest log, not a task list</h2>
+    <div class="prose">
+      <p>The repository does not keep a task list: it keeps a quest log. The main questline defines what "complete" means; side quests keep what was learned along the way.</p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/ingnu6-histoire.svg" alt="Commits per day from October 6 to 10: 27, 28, 20, 17 and 51; ten milestones ratified on the 6th, six on the 7th, GPU-05 research afterwards, the CUDA-05F protocol, the endurance run and publication on the 10th.">
+      <figcaption><b>Five visible days.</b> The log is ratified on October 6; the mandate is complete on the 7th, with its sixteen milestones. On the 10th, the <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="CUDA-05F report: protocol, gates, negative runs kept, limits." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · as of October 29, 2026">CUDA-05F</a> protocol, the endurance run and the repository opened to the public.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>A quest has fifteen possible states, from <code>UNKNOWN</code> to <code>CLOSED</code>, and they do not form a ladder: "green locally" does not imply "observed", and "observed" does not imply "ratified". Side quests may be urgent or valuable; that does not make them mandatory. <strong>Their priority belongs to the human operator</strong>, and the log says so in plain words.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projections: from research to product</h2>
+    <div class="prose">
+      <p>in.gnu6 is a programme of evidence. To become a dependency you install, it needs an accepted native renderer, a licence, a stable API and a publication — four things it does not claim today.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h4>What would close CP03</h4>
+        <p style="margin-bottom:0">The native renderer's acceptance contract lists what is missing: independent measurements of the delay between an input and the displayed frame, an external technical auditor, and a test of the supervised production ingress. Endurance passes; the whole does not.</p>
+      </div>
+      <div class="card">
+        <h4>Licence and publication</h4>
+        <p style="margin-bottom:0">The repository has been public since October 10, but declared "UNLICENSED": no licence decided, no stable API, nothing published on <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="The package manager of the JavaScript ecosystem." data-meta="github.com/npm/cli">npm</a>. These are separate gates, and none is dated.</p>
+      </div>
     </div>
   </section>
 

@@ -92,6 +92,8 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   │   ├── calix-versions.svg        graphique : les neuf versions de Calix
 │   │   ├── calix-espace.svg          graphique : la version spatiale, l'espace mesuré
 │   │   ├── calix-inventaire.svg      graphique : 1 803 paquets par écosystème
+│   │   ├── ingnu6-endurance.svg      graphique : 9 369 intervalles d'images, 125 s d'endurance
+│   │   ├── ingnu6-histoire.svg       graphique : cinq jours, seize jalons
 │   │   └── en/                       les mêmes schémas en anglais (générés)
 │   ├── gif/            animations (+ image de repos *-still.png pour l'impression)
 │   │   ├── gnosix-appstack.gif       l'AppStack sort du deck, cherche, lance
@@ -171,7 +173,7 @@ balises `hreflang` qui relient les deux. La version anglaise reprend le même in
 mêmes commits et les mêmes sources. Après une modification :
 
 ```
-python3 tools/make_charts.py      # graphiques de données (gnosix, gnostral.rs, Calix), FR et EN
+python3 tools/make_charts.py      # graphiques de données des quatre dossiers, FR et EN
 python3 tools/translate_svgs.py   # schémas anglais (échoue si un texte n'est pas traduit)
 python3 tools/make_gifs.py        # animations FR et EN
 python3 tools/link_sources.py     # liens de sources et fiches, dans la langue de la page
