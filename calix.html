@@ -177,6 +177,64 @@
   </section>
 
   <section>
+    <h2>Une vraie machine, pas une démonstration</h2>
+    <div class="prose">
+      <p>Le graphique vient d'une capture de Calix sur la station de travail de l'auteur : 1 803 paquets, presque tous des dépôts officiels. C'est à quoi ressemble un <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> ordinaire, vu en une fois.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/calix-inventaire.svg" alt="Barres : 1 773 paquets des dépôts officiels, 20 Cargo, 9 NPM, 1 version suivie ; zéro pour l'AUR, Flatpak et AppImage.">
+      <figcaption><b>Les zéros sont des informations.</b> Ni <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a>, ni <a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a>, ni <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a> dans l'inventaire ce jour-là ; <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> sont listés sans être interrogés. Un inventaire honnête n'invente pas de diversité.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Historique : la version qui a mesuré l'espace</h2>
+    <div class="prose">
+      <p>Avant la v0.3.0, avec le journal ouvert, la liste des paquets tombait à 6,5 pixels de haut pendant que sa propre légende en gardait 260. La v0.3.0 a écrit qui a droit à l'espace — et l'a mesuré : 170,5 pixels dans la même bande.</p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/calix-espace.svg" alt="À gauche, la liste des paquets passe de 6,5 à 170,5 pixels dans une bande de 372 pixels. À droite, la largeur minimale additionnée : 495 + 22 + 143 + 56 = 716, arrondie à 720.">
+      <figcaption><b>L'essentiel d'abord.</b> Trois couches dans l'ordre : la navigation et les actions, puis la liste des paquets, puis les surfaces de contexte. Avant cette version, l'ordre était inversé, et c'était mesurable.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>La même version a remplacé une taille de fenêtre minimale que personne n'avait justifiée (1024 × 680) par une taille <strong>calculée</strong> : les cinq colonnes fixes d'une ligne, l'icône, la place du nom pour 90 % des paquets d'une vraie machine et la barre repliée font 716 pixels, arrondis à 720. Le cas qui échouait à 560 pixels est gardé dans les tests. Mesurée sur la machine de l'auteur le 29 octobre, la fenêtre minimale fait 720 × 520 ; la note de version annonce 480 de haut.</p>
+    </div>
+
+    <h3>Neuf versions, une chose chacune</h3>
+    <figure>
+      <img src="assets/diagrams/calix-versions.svg" alt="Frise : v0.1.0 le 20 septembre sous le nom Shelly ; six versions de v0.2.0 à v0.2.5 le 20 octobre ; v0.3.0 le 21 ; v0.3.1 le 22.">
+      <figcaption><b>Six versions en un jour.</b> Le 20 octobre, le projet change de nom (de Shelly à Calix, sans couche de compatibilité), puis enchaîne les notifications, deux séries de correctifs, la marque et la navigation. Chaque note dit ce qui était cassé avant.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>La dernière, v0.3.1, est « la version qui tourne sur la machine » : l'interface passe à la génération actuelle de sa bibliothèque graphique — vingt-quatre erreurs de compilation ramenées à zéro, et <strong>aucune mesure de mise en page n'a bougé</strong>. Là où les documents et le code divergeaient, ce sont les documents qui ont été corrigés.</p>
+    </div>
+    <div class="shot-pair">
+      <figure class="shot">
+        <img src="assets/shots/calix-settings.png" alt="Capture des réglages de Calix : sources de paquets, gestion des paquets, apparence, avec le choix de la couleur de la marque entre orange et bleu.">
+      </figure>
+      <figure class="shot">
+        <img src="assets/shots/calix-narrow.png" alt="Capture de Calix à sa taille minimale : la barre de navigation repliée en icônes, la liste des paquets toujours lisible.">
+      </figure>
+    </div>
+    <p class="caption-solo"><b>Deux vues de plus.</b> Les réglages, avec la couleur de la marque au choix, orange ou bleu (v0.2.4) ; la fenêtre à sa taille minimale, où la barre de navigation se replie pour laisser la place à la liste (v0.3.0). Cette seconde capture a été prise après des mises à jour, dans un état où l'inventaire officiel ne s'affichait pas : elle montre la mise en page, pas les chiffres. Captures du 29 octobre 2026.</p>
+  </section>
+
+  <section>
+    <h2>Projections : une porte encore plus étroite</h2>
+    <div class="prose">
+      <p>Le chantier le plus parlant touche au privilège : un assistant root dédié et des actions <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a> plus fines, pour que l'interface demande exactement l'opération dont elle a besoin — et rien de plus.</p>
+      <p>Le dépôt classe cinq chantiers par valeur, sans date :</p>
+    </div>
+    <ol class="prose">
+      <li><strong>Finir la requalification de la navigation</strong> : les clics que le pointeur synthétique n'a pas pu exercer, et le focus qui doit suivre un changement de lieu.</li>
+      <li><strong>Porter le reste en <a class="src" data-src="zig" href="https://codeberg.org/ziglang/zig" data-title="Zig" data-desc="Langage système compact ; le moteur de paquets de Calix est écrit en Zig." data-meta="codeberg.org/ziglang/zig">Zig</a></strong> : quatre commandes du suivi des versions sont encore en Python.</li>
+      <li><strong>Brancher le flux applicatif</strong> : un assistant root dédié et des actions polkit plus étroites — la porte ci-dessus.</li>
+      <li><strong>Combler le trou des mutations</strong> : installer et retirer des paquets <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> depuis l'interface, chercher dans les sources aujourd'hui seulement inventoriées.</li>
+      <li><strong>Couper le moteur Python gelé</strong>, une fois le suivi des versions entièrement natif.</li>
+    </ol>
+  </section>
+
+  <section>
     <h2>Ce que ce n'est pas</h2>
     <div class="box limit">
       <span class="label">Les limites, sans détour</span>

@@ -572,11 +572,153 @@ def gnostral_feuille():
                    "Source: gnostral.rs/docs/ROADMAP.md (as of October 10, 2026) at commit 38c4134."))
 
 
+# ---------------------------------------------------------------- Calix
+
+def calix_versions():
+    rel = [  # (jour depuis le 20 sept., version, nom FR, nom EN)
+        (0, "v0.1.0", L("première version (sous le nom Shelly)", "first release (as Shelly)"), None),
+        (30, "v0.2.0", L("renommage en Calix, coupure nette", "renamed Calix, hard cut"), None),
+        (30, "v0.2.1", L("notifications de bureau", "desktop notifications"), None),
+        (30, "v0.2.2", L("correctifs : utilisable sur un Arch normal", "fixes: usable on a normal Arch"), None),
+        (30, "v0.2.3", L("la vue Mises à jour se charge enfin", "the Updates view finally loads"), None),
+        (30, "v0.2.4", L("la marque et sa couleur", "the mark and its colour"), None),
+        (30, "v0.2.5", L("la navigation dit où l'on est", "navigation says where you are"), None),
+        (31, "v0.3.0", L("l'espace, écrit et mesuré", "space, written down and measured"), None),
+        (32, "v0.3.1", L("tourne sur la machine", "runs on the machine"), None),
+    ]
+    x0, x1, y = 90, 960, 470
+    sx = (x1 - x0) / 34
+    body = [line(x0 - 20, y, x1 + 20, y, HAIR, 2)]
+    for d, lab in ((0, L("20 sept.", "Sep 20")), (11, L("1er oct.", "Oct 1")), (21, L("11 oct.", "Oct 11")),
+                   (30, L("20 oct.", "Oct 20")), (32, L("22 oct.", "Oct 22"))):
+        body.append(line(x0 + d * sx, y - 4, x0 + d * sx, y + 4, HAIR))
+        body.append(t(x0 + d * sx, y + 24, lab, 11.5, 500, SLATE, "middle"))
+    body.append(f'<circle cx="{x0:.1f}" cy="{y}" r="8" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
+    body.append(t(x0 + 14, y - 16, "v0.1.0", 13, 700, INK))
+    body.append(t(x0 + 14, y - 34, L("première version, sous le nom Shelly", "first release, as Shelly"), 11.5, 400, SLATE))
+    # six versions le 20 octobre, empilées
+    xs = x0 + 30 * sx
+    for i, (_, v, name, _) in enumerate(rel[1:7]):
+        cy = y - 22 - i * 34
+        body.append(f'<circle cx="{xs:.1f}" cy="{cy:.1f}" r="7" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
+        body.append(t(xs - 16, cy + 4, v, 12.5, 700, INK, "end"))
+        body.append(t(xs - 76, cy + 4, name, 11.5, 400, SLATE, "end"))
+    for k, (d, v, name, _) in enumerate(rel[7:]):
+        cx = x0 + d * sx
+        cy = y - 40 - k * 50
+        body.append(f'<circle cx="{cx:.1f}" cy="{y}" r="7" fill="{ORANGE7}" stroke="{SHELL}" stroke-width="2"/>')
+        body.append(line(cx, y - 8, cx, cy + 4, MUTED, 1, "3 3"))
+        body.append(line(cx, cy + 4, cx + 10, cy + 4, MUTED, 1, "3 3"))
+        body.append(t(cx + 14, cy, v, 12.5, 700, INK))
+        body.append(t(cx + 14, cy + 15, name, 11.5, 400, SLATE))
+    body.append(t(xs, y - 22 - 6 * 34 - 4, L("six versions le 20 octobre", "six releases on October 20"), 12, 700, BLUE7, "middle"))
+    return frame(560,
+                 L("Les neuf versions de Calix, du 20 septembre au 22 octobre 2026", "Calix's nine releases, September 20 to October 22, 2026"),
+                 L("Frise : v0.1.0 le 20 septembre, six versions de v0.2.0 à v0.2.5 le 20 octobre, v0.3.0 le 21, v0.3.1 le 22, chacune avec son sujet.",
+                   "Timeline: v0.1.0 on September 20, six releases from v0.2.0 to v0.2.5 on October 20, v0.3.0 on the 21st, v0.3.1 on the 22nd, each with its subject."),
+                 L("CALIX · HISTORIQUE", "CALIX · HISTORY"),
+                 L("Neuf versions, une chose chacune", "Nine releases, one thing each"),
+                 L("Chaque version annonce un sujet et le prouve dans ses notes ; les correctifs disent ce qui était cassé.",
+                   "Each release announces one subject and proves it in its notes; the fixes say what was broken."),
+                 body,
+                 L("Source : pages des versions de gnu6dotlive/calix sur GitHub (v0.1.0 à v0.3.1).",
+                   "Source: release pages of gnu6dotlive/calix on GitHub (v0.1.0 to v0.3.1)."))
+
+
+def calix_espace():
+    body = []
+    # gauche : la bande de 372 px, avant / après
+    bx, by, bh = 110, 170, 300
+    s = bh / 372
+    body.append(t(48, 156, L("UNE BANDE DE 372 PX, JOURNAL OUVERT", "A 372 PX BAND, LOG OPEN"), 11, 700, SLATE, spacing=1.4))
+    for i, (lab, cat, cap) in enumerate(((L("avant v0.3.0", "before v0.3.0"), 6.5, 260), (L("depuis v0.3.0", "since v0.3.0"), 170.5, None))):
+        x = bx + i * 170
+        body.append(r(x, by, 110, bh, WHITE, 6, HAIR))
+        if cap:
+            body.append(r(x + 4, by + 4, 102, cap * s, QUIET, 4))
+            body.append(t(x + 55, by + 4 + cap * s / 2, L("légende", "caption"), 11, 500, SLATE, "middle"))
+            body.append(t(x + 55, by + 18 + cap * s / 2, "260 px", 11, 700, INK, "middle"))
+        body.append(r(x + 4, by + bh - 4 - max(cat * s, 2), 102, max(cat * s, 2), ORANGE7, 3))
+        body.append(t(x + 55, by + bh - 10 - cat * s - 6, (n(cat, 1) + " px"), 13, 700, INK, "middle"))
+        body.append(t(x + 55, by + bh + 22, lab, 12, 600, INK, "middle"))
+    body.append(t(110, by + bh + 46, L("orange : la liste des paquets", "orange: the package list"), 11.5, 500, SLATE))
+    # droite : le plancher de la fenêtre, additionné
+    rx, ry, rw = 520, 196, 600
+    sc = rw / 720
+    body.append(t(rx, 156, L("LA FENÊTRE MINIMALE, CALCULÉE", "THE MINIMUM WINDOW, COMPUTED"), 11, 700, SLATE, spacing=1.4))
+    parts = [(495, L("cinq colonnes fixes de la ligne", "the row's five fixed columns"), BLUE),
+             (22, L("icône", "glyph"), BLUE7),
+             (143, L("le nom, pour 90 % des paquets réels", "the name, for 90% of real packages"), ORANGE7),
+             (56, L("barre de navigation repliée", "folded navigation spine"), MUTED)]
+    x = rx
+    for v, lab, col in parts:
+        body.append(r(x, ry, v * sc - 2, 34, col, 4))
+        x += v * sc
+    x = rx
+    for k, (v, lab, col) in enumerate(parts):
+        ly = ry + 64 + k * 26
+        body.append(swatch(rx, ly, col))
+        body.append(t(rx + 20, ly, f"{v} px — {lab}", 12, 500, INK))
+    body.append(t(rx, ry + 186, L("= 716 → 720 px de large", "= 716 → 720 px wide"), 15, 700, INK))
+    body.append(t(rx, ry + 210, L("Avant : 1024 × 680, un nombre que personne n'avait justifié. Annoncé : 720 × 480.",
+                                  "Before: 1024 × 680, a number nobody had justified. Announced: 720 × 480."), 12, 400, SLATE))
+    body.append(t(rx, ry + 230, L("Mesuré sur la machine de l'auteur le 29 octobre : 720 × 520.",
+                                  "Measured on the author's machine on October 29: 720 × 520."), 12, 600, ORANGE7))
+    return frame(600,
+                 L("La version spatiale de Calix : l'espace mesuré", "Calix's spatial release: space, measured"),
+                 L("À gauche, dans une bande de 372 pixels avec le journal ouvert, la liste des paquets passe de 6,5 à 170,5 pixels. À droite, la largeur minimale additionnée : 495 + 22 + 143 + 56 = 716, arrondie à 720.",
+                   "On the left, in a 372-pixel band with the log open, the package list goes from 6.5 to 170.5 pixels. On the right, the minimum width added up: 495 + 22 + 143 + 56 = 716, rounded to 720."),
+                 L("CALIX · v0.3.0", "CALIX · v0.3.0"),
+                 L("La version qui a mesuré l'espace", "The release that measured space"),
+                 L("L'essentiel d'abord : la liste des paquets ne doit plus céder la place à sa propre légende.",
+                   "The essential first: the package list must no longer give way to its own caption."),
+                 body,
+                 L("Source : notes de version v0.3.0 de gnu6dotlive/calix et docs/gpui/CONTRACT-01-SPACE-AUDIT.md ; mesure de fenêtre faite le 29 octobre 2026.",
+                   "Source: v0.3.0 release notes of gnu6dotlive/calix and docs/gpui/CONTRACT-01-SPACE-AUDIT.md; window measured on October 29, 2026."))
+
+
+def calix_inventaire():
+    rows = [("ALPM", L("dépôts officiels", "official repositories"), 1773), ("Cargo", L("bibliothèques Rust", "Rust libraries"), 20),
+            ("NPM", L("bibliothèques JavaScript", "JavaScript libraries"), 9), (L("Suivies", "Tracked"), L("versions suivies", "tracked releases"), 1),
+            ("AUR", L("dépôts communautaires", "community repositories"), 0), ("Flatpak", L("paquets isolés", "sandboxed packages"), 0),
+            ("AppImage", L("fichiers autonomes", "self-contained files"), 0)]
+    x0, x1, top, step = 330, 1060, 176, 44
+    sx = (x1 - x0) / 1800
+    body = []
+    for v in (0, 500, 1000, 1500):
+        x = x0 + v * sx
+        body.append(line(x, top - 12, x, top + 7 * step - 10, QUIET))
+        body.append(t(x, top - 18, n(v), 10.5, 400, MUTED, "middle"))
+    for i, (name, gloss, v) in enumerate(rows):
+        y = top + i * step
+        body.append(t(48, y + 16, name, 14, 700, INK))
+        body.append(t(48, y + 32, gloss, 11, 400, SLATE))
+        if v:
+            body.append(r(x0, y + 4, max(v * sx, 3), 22, BLUE, 4))
+            body.append(t(x0 + max(v * sx, 3) + 8, y + 20, n(v), 12.5, 700, INK))
+        else:
+            body.append(t(x0, y + 20, L("0 — rien de cette source sur cette machine", "0 — nothing from this source on this machine"), 12, 500, MUTED))
+    body.append(t(48, top + 7 * step + 22, L("1 803 paquets dans un seul tableau. Les zéros sont affichés comme des zéros : l'inventaire ne gonfle rien.",
+                                             "1,803 packages in a single table. Zeros are shown as zeros: the inventory inflates nothing."), 13, 700, INK))
+    return frame(560,
+                 L("L'inventaire Calix d'une vraie machine, par écosystème", "Calix's inventory of a real machine, by ecosystem"),
+                 L("Barres : 1 773 paquets des dépôts officiels, 20 Cargo, 9 NPM, 1 version suivie, et zéro pour l'AUR, Flatpak et AppImage.",
+                   "Bars: 1,773 packages from the official repositories, 20 Cargo, 9 NPM, 1 tracked release, and zero for the AUR, Flatpak and AppImage."),
+                 L("CALIX · INVENTAIRE", "CALIX · INVENTORY"),
+                 L("Une vraie machine, pas une démonstration", "A real machine, not a demo"),
+                 L("La station de travail de l'auteur, vue par Calix le 29 octobre 2026 au matin.",
+                   "The author's workstation, as seen by Calix on the morning of October 29, 2026."),
+                 body,
+                 L("Source : capture de la vue « Installed » de Calix (version installée r5022), le 29 octobre 2026.",
+                   "Source: screenshot of Calix's “Installed” view (installed version r5022), October 29, 2026."))
+
+
 CHARTS = {
     "gnosix-statuts": gnosix_statuts, "gnosix-code": gnosix_code, "gnosix-histoire": gnosix_histoire,
     "gnosix-feuille-de-route": gnosix_feuille, "gnostral-histoire": gnostral_histoire,
     "gnostral-dispersion": gnostral_dispersion, "gnostral-familles": gnostral_familles,
     "gnostral-reclaim": gnostral_reclaim, "gnostral-feuille-de-route": gnostral_feuille,
+    "calix-versions": calix_versions, "calix-espace": calix_espace, "calix-inventaire": calix_inventaire,
 }
 
 

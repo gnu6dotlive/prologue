@@ -89,6 +89,9 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   │   ├── gnostral-familles.svg     graphique : mémoire carte / hôte des trois familles (Q-012)
 │   │   ├── gnostral-reclaim.svg      graphique : mémoire récupérée face à la porte de ±128 Mio
 │   │   ├── gnostral-feuille-de-route.svg  jalons M0 → M5 et veille de recherche
+│   │   ├── calix-versions.svg        graphique : les neuf versions de Calix
+│   │   ├── calix-espace.svg          graphique : la version spatiale, l'espace mesuré
+│   │   ├── calix-inventaire.svg      graphique : 1 803 paquets par écosystème
 │   │   └── en/                       les mêmes schémas en anglais (générés)
 │   ├── gif/            animations (+ image de repos *-still.png pour l'impression)
 │   │   ├── gnosix-appstack.gif       l'AppStack sort du deck, cherche, lance
@@ -98,13 +101,15 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   └── shots/          captures réelles
 │       ├── calix-browse.png          recherche « ripgrep » (29/10/2026, r5022)
 │       ├── calix-installed.png       inventaire, 1 803 paquets (29/10/2026, r5022)
+│       ├── calix-settings.png        réglages, couleur de la marque (29/10/2026)
+│       ├── calix-narrow.png          fenêtre à sa taille minimale (29/10/2026)
 │       └── gnu6-pixi.png             qualification MQ-12, renderer PixiJS
 ├── tools/
 │   ├── make_gifs.py    génère les animations (SVG image par image → rsvg-convert → ffmpeg)
 │   ├── link_sources.py registre des sources : pose les liens et leurs fiches
 │   ├── table_labels.py intitulés de colonnes recopiés sur les cellules (fiches sur mobile)
 │   ├── translate_svgs.py schémas anglais, depuis une table de traduction par schéma
-│   ├── make_charts.py  les neuf graphiques de données, FR et EN, depuis les reçus publiés
+│   ├── make_charts.py  les graphiques de données, FR et EN, depuis les reçus et versions publiés
 │   └── i18n_head.py    sélecteur FR · EN, hreflang, aperçu de partage par langue
 ├── exports/            les mêmes pages en PDF (exports/en/ pour l'anglais)
 ├── LICENSE             CC BY 4.0 (contenu) ; la fonte garde sa licence OFL-1.1
@@ -166,7 +171,7 @@ balises `hreflang` qui relient les deux. La version anglaise reprend le même in
 mêmes commits et les mêmes sources. Après une modification :
 
 ```
-python3 tools/make_charts.py      # graphiques de données, FR et EN
+python3 tools/make_charts.py      # graphiques de données (gnosix, gnostral.rs, Calix), FR et EN
 python3 tools/translate_svgs.py   # schémas anglais (échoue si un texte n'est pas traduit)
 python3 tools/make_gifs.py        # animations FR et EN
 python3 tools/link_sources.py     # liens de sources et fiches, dans la langue de la page
