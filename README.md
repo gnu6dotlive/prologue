@@ -118,6 +118,7 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   ├── table_labels.py intitulés de colonnes recopiés sur les cellules (fiches sur mobile)
 │   ├── translate_svgs.py schémas anglais, depuis une table de traduction par schéma
 │   ├── make_charts.py  les graphiques de données, FR et EN, depuis les reçus et versions publiés
+│   ├── inline_charts.py les insère dans les pages, en SVG : fiche au survol, bascules (assets/charts.js)
 │   ├── i18n_head.py    sélecteur FR · EN, hreflang, aperçu de partage par langue
 │   └── navigation.py   ancres des sections, sommaires des dossiers, précédent / suivant
 ├── exports/            les mêmes pages en PDF (exports/en/ pour l'anglais)
@@ -181,6 +182,7 @@ mêmes commits et les mêmes sources. Après une modification :
 
 ```
 python3 tools/make_charts.py      # graphiques de données des quatre dossiers, FR et EN
+python3 tools/inline_charts.py    # les insère dans les pages (fiches au survol, bascules)
 python3 tools/translate_svgs.py   # schémas anglais (échoue si un texte n'est pas traduit)
 python3 tools/make_gifs.py        # animations FR et EN
 python3 tools/link_sources.py     # liens de sources et fiches, dans la langue de la page

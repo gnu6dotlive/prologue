@@ -19,32 +19,41 @@
 <line x1="908.8" y1="466.0" x2="908.8" y2="474.0" stroke="#D7DADF" stroke-width="1"/>
 <text x="908.8" y="494.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">22 oct.</text>
 <circle cx="90.0" cy="470" r="8" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="80.0" y="460.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 septembre · v0.1.0, première version, sous le nom Shelly"/>
 <text x="104.0" y="454.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">v0.1.0</text>
 <text x="104.0" y="436.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">première version, sous le nom Shelly</text>
 <circle cx="857.6" cy="448.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
 <text x="841.6" y="452.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.0</text>
 <text x="781.6" y="452.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">renommage en Calix, coupure nette</text>
+<rect class="hit" x="847.6" y="438.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.0 — renommage en Calix, coupure nette"/>
 <circle cx="857.6" cy="414.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
 <text x="841.6" y="418.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.1</text>
 <text x="781.6" y="418.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">notifications de bureau</text>
+<rect class="hit" x="847.6" y="404.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.1 — notifications de bureau"/>
 <circle cx="857.6" cy="380.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
 <text x="841.6" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.2</text>
 <text x="781.6" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">correctifs : utilisable sur un Arch normal</text>
+<rect class="hit" x="847.6" y="370.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.2 — correctifs : utilisable sur un Arch normal"/>
 <circle cx="857.6" cy="346.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
 <text x="841.6" y="350.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.3</text>
 <text x="781.6" y="350.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">la vue Mises à jour se charge enfin</text>
+<rect class="hit" x="847.6" y="336.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.3 — la vue Mises à jour se charge enfin"/>
 <circle cx="857.6" cy="312.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
 <text x="841.6" y="316.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.4</text>
 <text x="781.6" y="316.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">la marque et sa couleur</text>
+<rect class="hit" x="847.6" y="302.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.4 — la marque et sa couleur"/>
 <circle cx="857.6" cy="278.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
 <text x="841.6" y="282.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.5</text>
 <text x="781.6" y="282.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">la navigation dit où l'on est</text>
+<rect class="hit" x="847.6" y="268.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.5 — la navigation dit où l&#x27;on est"/>
 <circle cx="883.2" cy="470" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="873.2" y="460.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="21 octobre · v0.3.0 — l&#x27;espace, écrit et mesuré"/>
 <line x1="883.2" y1="462.0" x2="883.2" y2="434.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="883.2" y1="434.0" x2="893.2" y2="434.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="897.2" y="430.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">v0.3.0</text>
 <text x="897.2" y="445.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">l'espace, écrit et mesuré</text>
 <circle cx="908.8" cy="470" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="898.8" y="460.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="22 octobre · v0.3.1 — tourne sur la machine"/>
 <line x1="908.8" y1="462.0" x2="908.8" y2="384.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="908.8" y1="384.0" x2="918.8" y2="384.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="922.8" y="380.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">v0.3.1</text>

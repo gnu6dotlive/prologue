@@ -69,9 +69,11 @@ HATCH = ('<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpace
          '</pattern></defs>')
 
 
-def frame(h, title, desc, eyebrow, heading, sub, body, source):
+def frame(h, title, desc, eyebrow, heading, sub, body, source, toggles=None):
+    import json as _json
+    tg = (f' data-toggles="{html.escape(_json.dumps(toggles, ensure_ascii=False), quote=True)}"' if toggles else "")
     return "\n".join([
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 {h}" width="1200" height="{h}" role="img" aria-labelledby="t d">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 {h}" width="1200" height="{h}" role="img" aria-labelledby="t d"{tg}>',
         MARK,
         f'<title id="t">{esc(title)}</title>',
         f'<desc id="d">{esc(desc)}</desc>',
@@ -83,6 +85,18 @@ def frame(h, title, desc, eyebrow, heading, sub, body, source):
         *body,
         t(48, h - 22, source, 11, 400, MUTED),
         "</svg>", ""])
+
+
+def hit(x, y, w, h, tip):
+    """Une zone de survol invisible : la fiche affiche « tip » (assets/charts.js)."""
+    return (f'<rect class="hit" x="{x:.1f}" y="{y:.1f}" width="{max(w, 8):.1f}" height="{max(h, 8):.1f}" '
+            f'fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" '
+            f'data-tip="{html.escape(tip, quote=True)}"/>')
+
+
+def group(key, items):
+    """Un groupe que les bascules du graphique montrent ou cachent."""
+    return [f'<g data-series="{key}">', *items, "</g>"]
 
 
 def swatch(x, y, fill):
@@ -108,9 +122,10 @@ def gnosix_statuts():
     unit = w / 20
     body = [t(48, 158, L("20 CAPACITÉS PUBLIÉES, PAR NIVEAU DE PREUVE", "20 PUBLISHED CAPABILITIES, BY LEVEL OF PROOF"), 11, 600, SLATE, spacing=1.6)]
     x = x0
-    for name, k, fill, _, _ in states:
+    for name, k, fill, _, items in states:
         ww = k * unit - 2
         body.append(r(x, y, ww, h, fill, 6))
+        body.append(hit(x, y, ww, h, f"{name} · {k} — " + ", ".join(items.split("|"))))
         if k > 1:
             body.append(t(x + 14, y + 35, str(k), 22, 700, WHITE if fill != "url(#hatch)" else INK))
         else:
@@ -166,14 +181,18 @@ def gnosix_code():
         body.append(t(48, y + 13, name, 13, 600, INK))
         body.append(t(48, y + 27, role, 10.5, 400, SLATE))
         body.append(r(x0, y + 2, v * scale, 20, BLUE if i < 9 else MUTED, 4))
+        body.append(hit(48, y, x0 + v * scale - 48 + 70, 32, f"{name} · {n(v)} " + L("lignes de Rust", "lines of Rust") + f" — {role}"))
         body.append(t(x0 + v * scale + 8, y + 17, n(v), 12, 600, INK))
     body.append(t(x0 + 105902 * scale - 8, top + 17, L("58 % du Rust maison", "58% of first-party Rust"), 12, 700, WHITE, "end"))
     yv = top + 10 * step + 20
     body.append(line(48, yv - 8, 1152, yv - 8, HAIR))
-    body.append(t(48, yv + 13, L("GPUI embarqué", "Vendored GPUI"), 13, 600, INK))
-    body.append(t(48, yv + 27, L("vendor/ — code amont, pas écrit par le projet", "vendor/ — upstream code, not written by the project"), 10.5, 400, SLATE))
-    body.append(r(x0, yv + 2, vendor * scale, 20, "url(#hatch)", 4))
-    body.append(t(x0 + vendor * scale + 8, yv + 17, n(vendor), 12, 600, INK))
+    body += group("vendor", [
+        t(48, yv + 13, L("GPUI embarqué", "Vendored GPUI"), 13, 600, INK),
+        t(48, yv + 27, L("vendor/ — code amont, pas écrit par le projet", "vendor/ — upstream code, not written by the project"), 10.5, 400, SLATE),
+        r(x0, yv + 2, vendor * scale, 20, "url(#hatch)", 4),
+        t(x0 + vendor * scale + 8, yv + 17, n(vendor), 12, 600, INK),
+        hit(48, yv, x0 + vendor * scale, 32, L("GPUI embarqué · 111 519 lignes de code amont, non comptées dans le travail du projet",
+                                               "Vendored GPUI · 111,519 lines of upstream code, not counted as the project's work"))])
     body.append(t(48, 610, L("Rust maison : 182 325 lignes dans 38 crates et xtask · Python 9 295 · HTML 5 825 · JSON de preuves 30 478 · 325 icônes SVG",
                              "First-party Rust: 182,325 lines in 38 crates and xtask · Python 9,295 · HTML 5,825 · evidence JSON 30,478 · 325 SVG icons"), 12.5, 500, INK))
     return frame(680,
@@ -186,7 +205,8 @@ def gnosix_code():
                    "Lines of Rust per crate, at the snapshot commit. Presentation outweighs everything else combined."),
                  body,
                  L("Décompte de lignes (commentaires et vides compris) sur gnosix au commit 66d801b. Une ligne n'est pas une mesure de qualité.",
-                   "Line count (comments and blanks included) on gnosix at commit 66d801b. A line is not a measure of quality."))
+                   "Line count (comments and blanks included) on gnosix at commit 66d801b. A line is not a measure of quality."),
+                 toggles=[{"key": "vendor", "label": L("Montrer GPUI embarqué", "Show vendored GPUI"), "on": True}])
 
 
 def day_axis(x0, x1, days, labels):
@@ -204,6 +224,7 @@ def gnosix_histoire():
     for d, c in commits.items():
         x = x0 + d * step
         body.append(r(x - 12, base - c * per, 24, c * per, BLUE, 4))
+        body.append(hit(x - 16, base - c * per - 20, 32, c * per + 20, L(f"{5 + d} octobre · {c} commit{'s' if c > 1 else ''} publics", f"October {5 + d} · {c} public commit{'s' if c > 1 else ''}")))
         body.append(t(x, base - c * per - 8, str(c), 12, 700, INK, "middle"))
     for d in range(days):
         x = x0 + d * step
@@ -226,6 +247,7 @@ def gnosix_histoire():
         body.append(f'<circle cx="{x:.1f}" cy="{y + 8:.1f}" r="4" fill="{ORANGE7}"/>')
         body.append(t(x + dx, y + 4, a, 13, 700, INK, anchor))
         body.append(t(x + dx, y + 21, b, 11.5, 400, SLATE, anchor))
+        body.append(hit(x - 10, y, 20, 20, L(f"{5 + d} octobre · ", f"October {5 + d} · ") + a + " — " + b))
     body.append(t(x1 + 20, 540, L("33 commits publics · barres : commits par jour", "33 public commits · bars: commits per day"), 11.5, 500, SLATE, "end"))
     return frame(600,
                  L("Historique public de gnosix, du 5 au 27 octobre 2026", "gnosix's public history, October 5 to 27, 2026"),
@@ -260,6 +282,7 @@ def gnosix_feuille():
     for i, (m, col, done, a, b) in enumerate(marks):
         x = x0 + m * mstep
         body.append(f'<circle cx="{x:.1f}" cy="{y}" r="8" fill="{col if done else WHITE}" stroke="{col}" stroke-width="2.5"/>')
+        body.append(hit(x - 12, y - 12, 24, 24, f"{a} — {b}"))
         ty = y - 34 if i % 2 == 0 else y - 72
         body.append(line(x, ty + 14, x, y - 10, MUTED, 1, "3 3"))
         body.append(t(x, ty - 6, a, 13, 700, INK, "middle"))
@@ -284,6 +307,7 @@ def gnosix_feuille():
         body.append(r(x, yy, cw, ch, WHITE, 10, ORANGE7 if dashed else HAIR, 1.5 if dashed else 1, "5 4" if dashed else None))
         body.append(t(x + 16, yy + 28, a, 14, 700, INK))
         body.append(t(x + 16, yy + 48, b, 11.5, 400, SLATE))
+        body.append(hit(x, yy, cw, ch, f"{a} — {b} · " + L("sans date, avance quand sa preuve est complète", "undated, moves when its evidence is complete")))
     # le modèle de menace vient avant les mods
     xa = 48 + 1 * (cw + gx) + (cw + gx) / 2 + cw
     xb = 48 + 2 * (cw + gx) + (cw + gx) / 2
@@ -318,6 +342,7 @@ def gnostral_histoire():
     for d, c in ((0, 20), (3, 8), (14, 2)):
         x = x0 + d * step
         body.append(r(x - 14, base - c * per, 28, c * per, BLUE, 4))
+        body.append(hit(x - 18, base - c * per - 4, 36, c * per + 4, L(f"{7 + d} octobre · {c} commits publics", f"October {7 + d} · {c} public commits")))
         body.append(t(x + 22, base - c * per + 12, str(c), 12, 700, INK))
     for d in range(days):
         body.append(line(x0 + d * step, base, x0 + d * step, base + 5, HAIR))
@@ -382,16 +407,22 @@ def gnostral_dispersion():
     body.append(t(110, top - 14, L("jetons par seconde, chaque point est une réponse", "tokens per second, each dot is one answer"), 11, 500, SLATE))
     groups = [(128, 330), (512, 830)]
     for budget, cx in groups:
-        body.append(t(cx, bot + 30, L(f"RÉPONSE DE {budget} JETONS", f"{budget}-TOKEN ANSWER"), 11, 700, SLATE, "middle", 1.4))
+        g = []
+        g.append(t(cx, bot + 30, L(f"RÉPONSE DE {budget} JETONS", f"{budget}-TOKEN ANSWER"), 11, 700, SLATE, "middle", 1.4))
         for k, (lane, dx, fill) in enumerate((("base", -110, MUTED), ("cand", 110, ORANGE7))):
             xs = cx + dx
             vals = Q010[(lane, budget)]
             med = sorted(vals)[1]
-            body.append(line(xs - 46, bot - med * sy, xs + 46, bot - med * sy, INK, 2))
+            g.append(line(xs - 46, bot - med * sy, xs + 46, bot - med * sy, INK, 2))
             for j, v in enumerate(vals):
-                body.append(f'<circle cx="{xs - 22 + j * 22:.1f}" cy="{bot - v * sy:.1f}" r="7" fill="{fill}" stroke="{SHELL}" stroke-width="2"/>')
-            body.append(t(xs + 54, bot - med * sy + 4, L("médiane ", "median ") + n(med, 2), 12, 700, INK))
-            body.append(t(xs, bot + 12, L("sans correctif", "without patch") if lane == "base" else L("avec correctif", "with patch"), 11.5, 500, SLATE, "middle"))
+                g.append(f'<circle cx="{xs - 22 + j * 22:.1f}" cy="{bot - v * sy:.1f}" r="7" fill="{fill}" stroke="{SHELL}" stroke-width="2"/>')
+                g.append(hit(xs - 22 + j * 22 - 9, bot - v * sy - 9, 18, 18,
+                             (L("Sans correctif", "Without the patch") if lane == "base" else L("Avec correctif", "With the patch"))
+                             + L(f" · réponse de {budget} jetons · processus {j + 1} : ", f" · {budget}-token answer · process {j + 1}: ")
+                             + n(v, 2) + L(" jetons/s", " tokens/s")))
+            g.append(t(xs + 54, bot - med * sy + 4, L("médiane ", "median ") + n(med, 2), 12, 700, INK))
+            g.append(t(xs, bot + 12, L("sans correctif", "without patch") if lane == "base" else L("avec correctif", "with patch"), 11.5, 500, SLATE, "middle"))
+        body += group(f"b{budget}", g)
     body.append(swatch(110, 556, MUTED))
     body.append(t(128, 556, L("sans correctif", "without the patch"), 12, 500, INK))
     body.append(swatch(260, 556, ORANGE7))
@@ -408,7 +439,8 @@ def gnostral_dispersion():
                    "Three processes per condition, two answer lengths. The texts produced are identical byte for byte in all six pairs."),
                  body,
                  L("Données : gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json, champ per_request, au commit 38c4134.",
-                   "Data: gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json, per_request field, at commit 38c4134."))
+                   "Data: gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json, per_request field, at commit 38c4134."),
+                 toggles=[{"key": "b128", "label": L("Réponses de 128 jetons", "128-token answers"), "on": True}, {"key": "b512", "label": L("Réponses de 512 jetons", "512-token answers"), "on": True}])
 
 
 def gnostral_familles():
@@ -430,13 +462,13 @@ def gnostral_familles():
         body.append(t(48, y + 20, fam, 15, 700, INK))
         body.append(t(48, y + 40, model, 11.5, 400, SLATE))
         body.append(t(48, y + 58, "PASS_FUNCTIONAL", 10, 700, GREEN7, spacing=0.8))
-        body.append(r(x0, y + 4, gpu * sx, 22, BLUE, 4))
-        body.append(t(x0 + gpu * sx + 8, y + 20, n(gpu) + L(" Mio", " MiB"), 12, 600, INK))
-        body.append(r(x0, y + 32, host * sx, 22, ORANGE7, 4))
-        body.append(t(x0 + host * sx + 8, y + 48, n(host) + L(" Mio", " MiB"), 12, 600, INK))
+        body += group("gpu", [r(x0, y + 4, gpu * sx, 22, BLUE, 4), t(x0 + gpu * sx + 8, y + 20, n(gpu) + L(" Mio", " MiB"), 12, 600, INK),
+                              hit(x0, y + 2, gpu * sx + 70, 26, f"{fam} · {model} · " + L("carte graphique au pic : ", "graphics card at peak: ") + n(gpu) + L(" Mio", " MiB"))])
+        body += group("host", [r(x0, y + 32, host * sx, 22, ORANGE7, 4), t(x0 + host * sx + 8, y + 48, n(host) + L(" Mio", " MiB"), 12, 600, INK),
+                               hit(x0, y + 30, host * sx + 70, 26, f"{fam} · {model} · " + L("processus hôte au pic : ", "host process at peak: ") + n(host) + L(" Mio", " MiB"))])
     ym = top + 2 * 104
-    body.append(r(x0, ym + 4, 6772 * sx, 22, "none", 4, BLUE7, 1.5, "5 4"))
-    body.append(t(x0 + 6772 * sx + 8, ym + 18, L("6 772 Mio au premier essai, sans la fonction de résidence", "6,772 MiB on the first run, without the residency feature"), 11, 600, BLUE7))
+    body += group("gpu", [r(x0, ym + 4, 6772 * sx, 22, "none", 4, BLUE7, 1.5, "5 4"),
+                          t(x0 + 6772 * sx + 8, ym + 18, L("6 772 Mio au premier essai, sans la fonction de résidence", "6,772 MiB on the first run, without the residency feature"), 11, 600, BLUE7)])
     body.append(swatch(48, 520, BLUE))
     body.append(t(66, 520, L("carte graphique, au pic (toute la carte, bureau compris)", "graphics card, at peak (whole card, desktop included)"), 12, 500, INK))
     body.append(swatch(560, 520, ORANGE7))
@@ -453,7 +485,8 @@ def gnostral_familles():
                    "The same binary serves all three, one after another. What changes is where each model puts its weights."),
                  body,
                  L("Données : gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json, au commit 38c4134. Une sonde fonctionnelle par famille.",
-                   "Data: gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json, at commit 38c4134. One functional probe per family."))
+                   "Data: gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json, at commit 38c4134. One functional probe per family."),
+                 toggles=[{"key": "gpu", "label": L("Carte graphique", "Graphics card"), "on": True}, {"key": "host", "label": L("Mémoire hôte", "Host memory"), "on": True}])
 
 
 def gnostral_reclaim():
@@ -482,9 +515,13 @@ def gnostral_reclaim():
         for v in vals:
             if kind == "ok":
                 body.append(f'<circle cx="{X(v):.1f}" cy="{y:.1f}" r="7" fill="{GREEN}" stroke="{WHITE}" stroke-width="2"/>')
+                body.append(hit(X(v) - 9, y - 9, 18, 18, f"{q} · {lab} : " + ("+" if v > 0 else "") + n(v) + L(" Mio après l'arrêt — dans la porte", " MiB after shutdown — inside the gate")))
             else:
-                body.append(f'<path d="M{X(v) - 7:.1f} {y - 7:.1f} L{X(v) + 7:.1f} {y + 7:.1f} M{X(v) + 7:.1f} {y - 7:.1f} L{X(v) - 7:.1f} {y + 7:.1f}" stroke="{ORANGE7}" stroke-width="3" stroke-linecap="round"/>')
-                body.append(t(X(v) - 14, y - 12, L("+196 Mio · NOT QUALIFIED, conservé", "+196 MiB · NOT QUALIFIED, kept"), 11.5, 700, ORANGE7, "end"))
+                body += group("fail", [
+                    f'<path d="M{X(v) - 7:.1f} {y - 7:.1f} L{X(v) + 7:.1f} {y + 7:.1f} M{X(v) + 7:.1f} {y - 7:.1f} L{X(v) - 7:.1f} {y + 7:.1f}" stroke="{ORANGE7}" stroke-width="3" stroke-linecap="round"/>',
+                    t(X(v) - 14, y - 12, L("+196 Mio · NOT QUALIFIED, conservé", "+196 MiB · NOT QUALIFIED, kept"), 11.5, 700, ORANGE7, "end"),
+                    hit(X(v) - 9, y - 9, 18, 18, L("Q-010 · premier essai avec correctif : +196 Mio après l'arrêt — hors porte, non qualifié, conservé au dossier",
+                                                   "Q-010 · first run with patch: +196 MiB after shutdown — outside the gate, not qualified, kept on record"))])
     body.append(t(48, top + len(rows) * step + 46, L("écart de mémoire graphique ambiante après l'arrêt, en Mio (négatif : il en reste moins qu'avant)",
                                                      "ambient graphics-memory difference after shutdown, in MiB (negative: less than before)"), 11.5, 500, SLATE))
     body.append(f'<circle cx="54" cy="{top + len(rows) * step + 72}" r="6" fill="{GREEN}"/>')
@@ -503,7 +540,8 @@ def gnostral_reclaim():
                    "After each shutdown, what is still occupied on the card is measured. Beyond 128 MiB, the run is refused — even if it was fast."),
                  body,
                  L("Données : reçus Q-010 (audit et premier essai), Q-012 et Q-013-C dans gnostral.rs/evidence/runs/, au commit 38c4134.",
-                   "Data: Q-010 (audit and first run), Q-012 and Q-013-C receipts in gnostral.rs/evidence/runs/, at commit 38c4134."))
+                   "Data: Q-010 (audit and first run), Q-012 and Q-013-C receipts in gnostral.rs/evidence/runs/, at commit 38c4134."),
+                 toggles=[{"key": "fail", "label": L("Montrer l'essai raté", "Show the failed run"), "on": True}])
 
 
 def gnostral_feuille():
@@ -523,6 +561,7 @@ def gnostral_feuille():
         xs.append(x)
         stroke = {"closed": GREEN, "next": ORANGE7, "prop": HAIR, "future": MUTED}[kind]
         body.append(r(x, y, w, 112, WHITE, 10, stroke, 2 if kind in ("closed", "next") else 1, "5 4" if kind == "future" else None))
+        body.append(hit(x, y, w, 112, f"{m} · {name} · {q} · {state}"))
         body.append(t(x + 14, y + 26, m, 13, 700, {"closed": GREEN7, "next": ORANGE7}.get(kind, SLATE)))
         tf, ti = {"closed": (GREEN1, GREEN7), "next": (ORANGE1, ORANGE7)}.get(kind, (QUIET, SLATE))
         tw = 10 + len(state) * 7
@@ -545,6 +584,7 @@ def gnostral_feuille():
     for i, (p, name, gloss, target) in enumerate(radar):
         x = 48 + i * (w + gap)
         body.append(r(x, 360, w, 78, BLUE1, 10))
+        body.append(hit(x, 360, w, 78, f"{p} · {name} — {gloss} · " + L("piste de recherche, pas une dépendance", "research lead, not a dependency")))
         body.append(t(x + 14, 384, p, 11, 700, BLUE7))
         body.append(t(x + 14, 406, name, 14, 700, INK))
         body.append(t(x + 14, 426, gloss, 11, 400, SLATE))
@@ -594,6 +634,7 @@ def calix_versions():
         body.append(line(x0 + d * sx, y - 4, x0 + d * sx, y + 4, HAIR))
         body.append(t(x0 + d * sx, y + 24, lab, 11.5, 500, SLATE, "middle"))
     body.append(f'<circle cx="{x0:.1f}" cy="{y}" r="8" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
+    body.append(hit(x0 - 10, y - 10, 20, 20, L("20 septembre · v0.1.0, première version, sous le nom Shelly", "September 20 · v0.1.0, first release, as Shelly")))
     body.append(t(x0 + 14, y - 16, "v0.1.0", 13, 700, INK))
     body.append(t(x0 + 14, y - 34, L("première version, sous le nom Shelly", "first release, as Shelly"), 11.5, 400, SLATE))
     # six versions le 20 octobre, empilées
@@ -603,10 +644,12 @@ def calix_versions():
         body.append(f'<circle cx="{xs:.1f}" cy="{cy:.1f}" r="7" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
         body.append(t(xs - 16, cy + 4, v, 12.5, 700, INK, "end"))
         body.append(t(xs - 76, cy + 4, name, 11.5, 400, SLATE, "end"))
+        body.append(hit(xs - 10, cy - 10, 20, 20, L("20 octobre · ", "October 20 · ") + f"{v} — {name}"))
     for k, (d, v, name, _) in enumerate(rel[7:]):
         cx = x0 + d * sx
         cy = y - 40 - k * 50
         body.append(f'<circle cx="{cx:.1f}" cy="{y}" r="7" fill="{ORANGE7}" stroke="{SHELL}" stroke-width="2"/>')
+        body.append(hit(cx - 10, y - 10, 20, 20, L(f"{d - 10} octobre · ", f"October {d - 10} · ") + f"{v} — {name}"))
         body.append(line(cx, y - 8, cx, cy + 4, MUTED, 1, "3 3"))
         body.append(line(cx, cy + 4, cx + 10, cy + 4, MUTED, 1, "3 3"))
         body.append(t(cx + 14, cy, v, 12.5, 700, INK))
@@ -639,6 +682,8 @@ def calix_espace():
             body.append(t(x + 55, by + 4 + cap * s / 2, L("légende", "caption"), 11, 500, SLATE, "middle"))
             body.append(t(x + 55, by + 18 + cap * s / 2, "260 px", 11, 700, INK, "middle"))
         body.append(r(x + 4, by + bh - 4 - max(cat * s, 2), 102, max(cat * s, 2), ORANGE7, 3))
+        body.append(hit(x, by, 110, bh, f"{lab} · " + L("liste des paquets : ", "package list: ") + n(cat, 1) + " px"
+                        + (L(" · légende : 260 px", " · caption: 260 px") if cap else "") + L(" · bande de 372 px, journal ouvert", " · 372 px band, log open")))
         body.append(t(x + 55, by + bh - 10 - cat * s - 6, (n(cat, 1) + " px"), 13, 700, INK, "middle"))
         body.append(t(x + 55, by + bh + 22, lab, 12, 600, INK, "middle"))
     body.append(t(110, by + bh + 46, L("orange : la liste des paquets", "orange: the package list"), 11.5, 500, SLATE))
@@ -653,6 +698,7 @@ def calix_espace():
     x = rx
     for v, lab, col in parts:
         body.append(r(x, ry, v * sc - 2, 34, col, 4))
+        body.append(hit(x, ry, v * sc - 2, 34, f"{v} px — {lab}"))
         x += v * sc
     x = rx
     for k, (v, lab, col) in enumerate(parts):
@@ -695,6 +741,7 @@ def calix_inventaire():
         body.append(t(48, y + 32, gloss, 11, 400, SLATE))
         if v:
             body.append(r(x0, y + 4, max(v * sx, 3), 22, BLUE, 4))
+            body.append(hit(48, y, x0 + max(v * sx, 3) + 60 - 48, 34, f"{name} · {gloss} : {n(v)} " + L("paquets", "packages")))
             body.append(t(x0 + max(v * sx, 3) + 8, y + 20, n(v), 12.5, 700, INK))
         else:
             body.append(t(x0, y + 20, L("0 — rien de cette source sur cette machine", "0 — nothing from this source on this machine"), 12, 500, MUTED))
@@ -741,6 +788,7 @@ def ingnu6_endurance():
     for c, k in ENDURANCE_BINS:
         h = max(k * sy, 1.5)
         body.append(r(X(c) - bw / 2, base - h, bw, h, BLUE, 2))
+        body.append(hit(X(c) - bw / 2 - 1, top, bw + 2, base - top, f"{n(c - 0.02, 2)}–{n(c + 0.02, 2)} ms : {n(k)} " + L("intervalles", "intervals")))
     for v in (13.0, 13.2, 13.4, 13.6, 13.8):
         body.append(line(X(v), base, X(v), base + 5, HAIR))
         body.append(t(X(v), base + 20, n(v, 1) + " ms", 11, 500, SLATE, "middle"))
@@ -755,6 +803,7 @@ def ingnu6_endurance():
     body.append(line(930, base, 960, base, HAIR, 1, "3 3"))
     body.append(t(945, base + 20, "//", 12, 700, MUTED, "middle"))
     body.append(r(ox - 6, base - 12, 12, 12, ORANGE7, 2))
+    body.append(hit(ox - 40, base - 60, 80, 90, L("1 intervalle de 26,65 ms : le tout premier, au démarrage", "1 interval of 26.65 ms: the very first, at start-up")))
     body.append(t(ox, base + 20, "26,65 ms" if LANG == "fr" else "26.65 ms", 11, 700, ORANGE7, "middle"))
     body.append(t(ox, base - 44, L("1 intervalle", "1 interval"), 12, 700, INK, "middle"))
     body.append(t(ox, base - 28, L("le tout premier, au démarrage", "the very first, at start-up"), 11, 400, SLATE, "middle"))
@@ -782,6 +831,7 @@ def ingnu6_histoire():
     for d, c in enumerate(commits):
         x = x0 + d * step
         body.append(r(x - 16, base - c * per, 32, c * per, BLUE, 4))
+        body.append(hit(x - 20, base - c * per - 4, 40, c * per + 4, L(f"{6 + d} octobre · {c} commits", f"October {6 + d} · {c} commits")))
         body.append(t(x + 24, base - c * per + 12, str(c), 12, 700, INK))
         body.append(t(x, base + 22, L(f"{6 + d} oct.", f"Oct {6 + d}"), 11.5, 500, SLATE, "middle"))
 
@@ -849,12 +899,19 @@ def chronologie():
         3: [(16.5, L("16 jalons ratifiés", "16 milestones ratified"), 0), (18.5, "GPU-05", 1), (20, L("CUDA-05F · public", "CUDA-05F · public"), 0)],
     }
     ranges = {2: [(30, 32)], 3: [(16, 17), (18, 19)]}
+    def date_of(d):
+        special = {16.5: L("6–7 oct.", "Oct 6–7"), 18.5: L("8–9 oct.", "Oct 8–9")}
+        if d in special:
+            return special[d]
+        return L(f"{20 + d} sept.", f"Sep {20 + d}") if d < 11 else L(f"{int(d) - 10} oct.", f"Oct {int(d) - 10}")
     for i, items in ev.items():
         y = top + i * lh + 30
+        g = []
         for a, b in ranges.get(i, []):
-            body.append(r(X(a) - 5, y - 5, X(b) - X(a) + 10, 10, BLUE, 5))
+            g.append(r(X(a) - 5, y - 5, X(b) - X(a) + 10, 10, BLUE, 5))
         for d, lab, up in items:
-            body.append(f'<circle cx="{X(d):.1f}" cy="{y}" r="6" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
+            g.append(f'<circle cx="{X(d):.1f}" cy="{y}" r="6" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
+            g.append(hit(X(d) - 10, y - 10, 20, 20, f"{date_of(d)} · {lanes[i][0]} — {lab}"))
             ty = y - 14 if up == 0 else y + 24
             anchor = "end" if d > 34 else ("start" if d < 4 else "middle")
             dx = 0
@@ -862,7 +919,8 @@ def chronologie():
                 anchor, dx = "end", -12
             if i == 3 and d == 20:
                 anchor, dx = "start", 10
-            body.append(t(X(d) + dx, ty, lab, 11.5, 600, INK, anchor))
+            g.append(t(X(d) + dx, ty, lab, 11.5, 600, INK, anchor))
+        body += group(f"lane{i}", g)
     xs = X(39)
     body.append(line(xs, top - 24, xs, top + len(lanes) * lh - 8, ORANGE7, 2, "5 4"))
     body.append(t(xs, top - 30, L("instantané", "snapshot"), 11.5, 700, ORANGE7, "end"))
@@ -877,7 +935,8 @@ def chronologie():
                    "Four repositories move in parallel; a few days hold most of it."),
                  body,
                  L("Sources : historiques Git, journaux de quêtes et pages de versions des quatre dépôts, aux commits de l'instantané.",
-                   "Sources: Git histories, quest logs and release pages of the four repositories, at the snapshot commits."))
+                   "Sources: Git histories, quest logs and release pages of the four repositories, at the snapshot commits."),
+                 toggles=[{"key": f"lane{i}", "label": nm, "on": True} for i, (nm, _) in enumerate(lanes)])
 
 
 CHARTS = {

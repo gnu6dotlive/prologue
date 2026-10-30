@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
 <script src="assets/nav.js" defer></script>
+<script src="assets/charts.js" defer></script>
 </head>
 <body class="has-toc">
 
@@ -169,7 +170,78 @@
       <p>Un « 2,12× » est une médiane. Derrière, il y a douze réponses mesurées : trois processus sans correctif et trois avec, chacun interrogé avec une réponse de 128 puis de 512 jetons. Les deux nuages ne se touchent jamais : la plus lente des réponses corrigées (19,48 jetons/s) reste deux fois plus rapide que la plus rapide des autres (10,12).</p>
     </div>
     <figure>
-      <img src="assets/diagrams/gnostral-dispersion.svg" alt="Nuage de points : sans correctif, les réponses vont de 8,49 à 10,12 jetons par seconde ; avec correctif, de 19,48 à 22,02 ; médianes 8,90 et 21,93 à 128 jetons, 9,51 et 20,18 à 512 jetons.">
+      <!-- chart:gnostral-dispersion -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" class="chart" data-chart="gnostral-dispersion" width="1200" height="620" role="img" aria-labelledby="gnostral-dispersion-t gnostral-dispersion-d" data-toggles="[{&quot;key&quot;: &quot;b128&quot;, &quot;label&quot;: &quot;Réponses de 128 jetons&quot;, &quot;on&quot;: true}, {&quot;key&quot;: &quot;b512&quot;, &quot;label&quot;: &quot;Réponses de 512 jetons&quot;, &quot;on&quot;: true}]">
+<title id="gnostral-dispersion-t">Les douze réponses mesurées de Q-010</title>
+<desc id="gnostral-dispersion-d">Nuage de points : sans correctif de 8,49 à 10,12 jetons par seconde, avec correctif de 19,48 à 22,02, pour des réponses de 128 et 512 jetons.</desc>
+<defs><pattern id="gnostral-dispersion-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="620.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSTRAL.RS · Q-010 · DISPERSION</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Douze réponses, pas une moyenne</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Trois processus par condition, deux longueurs de réponse. Les textes produits sont identiques octet pour octet dans les six paires.</text>
+<line x1="110.0" y1="470.0" x2="1150.0" y2="470.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="474.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">0</text>
+<line x1="110.0" y1="408.0" x2="1150.0" y2="408.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="412.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">5</text>
+<line x1="110.0" y1="346.0" x2="1150.0" y2="346.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="350.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">10</text>
+<line x1="110.0" y1="284.0" x2="1150.0" y2="284.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="288.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">15</text>
+<line x1="110.0" y1="222.0" x2="1150.0" y2="222.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="226.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">20</text>
+<line x1="110.0" y1="160.0" x2="1150.0" y2="160.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">25</text>
+<text x="110.0" y="146.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="start">jetons par seconde, chaque point est une réponse</text>
+<g data-series="b128">
+<text x="330.0" y="500.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="middle" letter-spacing="1.4">RÉPONSE DE 128 JETONS</text>
+<line x1="174.0" y1="359.7" x2="266.0" y2="359.7" stroke="#111418" stroke-width="2"/>
+<circle cx="198.0" cy="359.7" r="7" fill="#A1A6AD" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="189.0" y="350.7" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Sans correctif · réponse de 128 jetons · processus 1 : 8,90 jetons/s"/>
+<circle cx="220.0" cy="364.7" r="7" fill="#A1A6AD" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="211.0" y="355.7" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Sans correctif · réponse de 128 jetons · processus 2 : 8,49 jetons/s"/>
+<circle cx="242.0" cy="347.5" r="7" fill="#A1A6AD" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="233.0" y="338.5" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Sans correctif · réponse de 128 jetons · processus 3 : 9,88 jetons/s"/>
+<text x="274.0" y="363.7" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">médiane 8,90</text>
+<text x="220.0" y="482.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">sans correctif</text>
+<line x1="394.0" y1="198.0" x2="486.0" y2="198.0" stroke="#111418" stroke-width="2"/>
+<circle cx="418.0" cy="202.8" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="409.0" y="193.8" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Avec correctif · réponse de 128 jetons · processus 1 : 21,55 jetons/s"/>
+<circle cx="440.0" cy="198.0" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="431.0" y="189.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Avec correctif · réponse de 128 jetons · processus 2 : 21,93 jetons/s"/>
+<circle cx="462.0" cy="197.0" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="453.0" y="188.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Avec correctif · réponse de 128 jetons · processus 3 : 22,02 jetons/s"/>
+<text x="494.0" y="202.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">médiane 21,93</text>
+<text x="440.0" y="482.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">avec correctif</text>
+</g>
+<g data-series="b512">
+<text x="830.0" y="500.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="middle" letter-spacing="1.4">RÉPONSE DE 512 JETONS</text>
+<line x1="674.0" y1="352.1" x2="766.0" y2="352.1" stroke="#111418" stroke-width="2"/>
+<circle cx="698.0" cy="344.5" r="7" fill="#A1A6AD" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="689.0" y="335.5" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Sans correctif · réponse de 512 jetons · processus 1 : 10,12 jetons/s"/>
+<circle cx="720.0" cy="352.1" r="7" fill="#A1A6AD" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="711.0" y="343.1" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Sans correctif · réponse de 512 jetons · processus 2 : 9,51 jetons/s"/>
+<circle cx="742.0" cy="352.1" r="7" fill="#A1A6AD" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="733.0" y="343.1" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Sans correctif · réponse de 512 jetons · processus 3 : 9,51 jetons/s"/>
+<text x="774.0" y="356.1" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">médiane 9,51</text>
+<text x="720.0" y="482.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">sans correctif</text>
+<line x1="894.0" y1="219.8" x2="986.0" y2="219.8" stroke="#111418" stroke-width="2"/>
+<circle cx="918.0" cy="219.8" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="909.0" y="210.8" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Avec correctif · réponse de 512 jetons · processus 1 : 20,18 jetons/s"/>
+<circle cx="940.0" cy="219.4" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="931.0" y="210.4" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Avec correctif · réponse de 512 jetons · processus 2 : 20,21 jetons/s"/>
+<circle cx="962.0" cy="228.4" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="953.0" y="219.4" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Avec correctif · réponse de 512 jetons · processus 3 : 19,48 jetons/s"/>
+<text x="994.0" y="223.8" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">médiane 20,18</text>
+<text x="940.0" y="482.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">avec correctif</text>
+</g>
+<rect x="110.0" y="546.0" width="12.0" height="12.0" rx="3" fill="#A1A6AD"/>
+<text x="128.0" y="556.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">sans correctif</text>
+<rect x="260.0" y="546.0" width="12.0" height="12.0" rx="3" fill="#C95400"/>
+<text x="278.0" y="556.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">avec correctif</text>
+<text x="430.0" y="556.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">Les deux nuages ne se touchent pas : l'écart ne tient pas à une seule réponse chanceuse.</text>
+<text x="48.0" y="598.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Données : gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json, champ per_request, au commit 38c4134.</text>
+</svg>
+      <!-- /chart:gnostral-dispersion -->
       <figcaption><b>L'écart ne tient pas à une réponse chanceuse.</b> Les textes produits sont identiques octet pour octet dans les six paires : le correctif accélère sans rien changer à ce qui est écrit.</figcaption>
     </figure>
     <details class="deep">
@@ -195,7 +267,76 @@
       <p>Le graphique montre surtout <strong>où chaque modèle pose ses poids</strong>. Le MoE de 30 milliards de paramètres occupe 2,4 Go sur la carte et 19 Go en mémoire centrale : c'est l'astuce du dossier, mesurée. Le premier essai, compilé sans la fonction de résidence d'experts, montait à 6,8 Go sur la carte et a dépassé son délai ; il reste au dossier, et un garde refuse désormais un binaire qui l'oublie.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/gnostral-familles.svg" alt="Barres par famille : dense 5 025 Mio sur la carte et 3 556 côté hôte ; embeddings 2 783 et 1 533 ; MoE 2 427 sur la carte et 19 282 côté hôte, avec le premier essai à 6 772 Mio sur la carte.">
+      <!-- chart:gnostral-familles -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" class="chart" data-chart="gnostral-familles" width="1200" height="620" role="img" aria-labelledby="gnostral-familles-t gnostral-familles-d" data-toggles="[{&quot;key&quot;: &quot;gpu&quot;, &quot;label&quot;: &quot;Carte graphique&quot;, &quot;on&quot;: true}, {&quot;key&quot;: &quot;host&quot;, &quot;label&quot;: &quot;Mémoire hôte&quot;, &quot;on&quot;: true}]">
+<title id="gnostral-familles-t">Où vit chaque famille de modèle (Q-012)</title>
+<desc id="gnostral-familles-d">Barres par famille : dense 5 025 Mio sur la carte et 3 556 Mio côté hôte ; embeddings 2 783 et 1 533 ; MoE 2 427 sur la carte et 19 282 côté hôte. Premier essai MoE : 6 772 Mio sur la carte.</desc>
+<defs><pattern id="gnostral-familles-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="620.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSTRAL.RS · Q-012 · TROIS FAMILLES</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Un exécutable, trois familles, deux mémoires</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Le même binaire sert les trois, l'un après l'autre. Ce qui change, c'est où chaque modèle pose ses poids.</text>
+<line x1="300.0" y1="170.0" x2="300.0" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="300.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">0</text>
+<line x1="495.0" y1="170.0" x2="495.0" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="495.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">5 000</text>
+<line x1="690.0" y1="170.0" x2="690.0" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="690.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">10 000</text>
+<line x1="885.0" y1="170.0" x2="885.0" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="885.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">15 000</text>
+<line x1="1080.0" y1="170.0" x2="1080.0" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="1080.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">20 000</text>
+<text x="48.0" y="202.0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#111418" text-anchor="start">Dense</text>
+<text x="48.0" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">Qwen2.5-Coder-1.5B</text>
+<text x="48.0" y="240.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#455F3D" text-anchor="start" letter-spacing="0.8">PASS_FUNCTIONAL</text>
+<g data-series="gpu">
+<rect x="300.0" y="186.0" width="196.0" height="22.0" rx="4" fill="#4169E1"/>
+<text x="504.0" y="202.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">5 025 Mio</text>
+<rect class="hit" x="300.0" y="184.0" width="266.0" height="26.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Dense · Qwen2.5-Coder-1.5B · carte graphique au pic : 5 025 Mio"/>
+</g>
+<g data-series="host">
+<rect x="300.0" y="214.0" width="138.7" height="22.0" rx="4" fill="#C95400"/>
+<text x="446.7" y="230.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">3 556 Mio</text>
+<rect class="hit" x="300.0" y="212.0" width="208.7" height="26.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Dense · Qwen2.5-Coder-1.5B · processus hôte au pic : 3 556 Mio"/>
+</g>
+<text x="48.0" y="306.0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#111418" text-anchor="start">Embeddings</text>
+<text x="48.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">Qwen3-Embedding-0.6B</text>
+<text x="48.0" y="344.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#455F3D" text-anchor="start" letter-spacing="0.8">PASS_FUNCTIONAL</text>
+<g data-series="gpu">
+<rect x="300.0" y="290.0" width="108.5" height="22.0" rx="4" fill="#4169E1"/>
+<text x="416.5" y="306.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">2 783 Mio</text>
+<rect class="hit" x="300.0" y="288.0" width="178.5" height="26.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Embeddings · Qwen3-Embedding-0.6B · carte graphique au pic : 2 783 Mio"/>
+</g>
+<g data-series="host">
+<rect x="300.0" y="318.0" width="59.8" height="22.0" rx="4" fill="#C95400"/>
+<text x="367.8" y="334.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">1 533 Mio</text>
+<rect class="hit" x="300.0" y="316.0" width="129.8" height="26.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Embeddings · Qwen3-Embedding-0.6B · processus hôte au pic : 1 533 Mio"/>
+</g>
+<text x="48.0" y="410.0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#111418" text-anchor="start">MoE quantifié</text>
+<text x="48.0" y="430.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">Qwen3-30B-A3B Q2_K</text>
+<text x="48.0" y="448.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#455F3D" text-anchor="start" letter-spacing="0.8">PASS_FUNCTIONAL</text>
+<g data-series="gpu">
+<rect x="300.0" y="394.0" width="94.7" height="22.0" rx="4" fill="#4169E1"/>
+<text x="402.7" y="410.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">2 427 Mio</text>
+<rect class="hit" x="300.0" y="392.0" width="164.7" height="26.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="MoE quantifié · Qwen3-30B-A3B Q2_K · carte graphique au pic : 2 427 Mio"/>
+</g>
+<g data-series="host">
+<rect x="300.0" y="422.0" width="752.0" height="22.0" rx="4" fill="#C95400"/>
+<text x="1060.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">19 282 Mio</text>
+<rect class="hit" x="300.0" y="420.0" width="822.0" height="26.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="MoE quantifié · Qwen3-30B-A3B Q2_K · processus hôte au pic : 19 282 Mio"/>
+</g>
+<g data-series="gpu">
+<rect x="300.0" y="394.0" width="264.1" height="22.0" rx="4" fill="none" stroke="#2446A8" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="572.1" y="408.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#2446A8" text-anchor="start">6 772 Mio au premier essai, sans la fonction de résidence</text>
+</g>
+<rect x="48.0" y="510.0" width="12.0" height="12.0" rx="3" fill="#4169E1"/>
+<text x="66.0" y="520.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">carte graphique, au pic (toute la carte, bureau compris)</text>
+<rect x="560.0" y="510.0" width="12.0" height="12.0" rx="3" fill="#C95400"/>
+<text x="578.0" y="520.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">processus serveur côté hôte (RSS), au pic</text>
+<text x="48.0" y="552.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Le MoE vit surtout en mémoire centrale : 19 Go côté hôte pour 2,4 Go sur la carte. C'est l'astuce, mesurée.</text>
+<text x="48.0" y="598.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Données : gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json, au commit 38c4134. Une sonde fonctionnelle par famille.</text>
+</svg>
+      <!-- /chart:gnostral-familles -->
       <figcaption><b>Deux mémoires, deux usages.</b> La mémoire de la carte est mesurée pour la carte entière, bureau compris ; la mémoire hôte est celle du seul processus serveur. Une sonde fonctionnelle par famille : ce n'est pas un banc de qualité.</figcaption>
     </figure>
     <div class="box note">
@@ -264,7 +405,68 @@
       <p>La sixième étape de la boucle — l'arrêt et la récupération — est celle qui fait échouer le plus d'essais. Après chaque arrêt, on mesure ce qui reste occupé sur la carte graphique. La porte est fixée <em>avant</em> l'essai : <strong>±128 Mio</strong>. Un essai rapide qui laisse de la mémoire derrière lui est refusé.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/gnostral-reclaim.svg" alt="Points par processus : tous les essais retenus restent entre −82 et +26 Mio, dans la porte de ±128 Mio ; le premier essai avec correctif de Q-010, à +196 Mio, échoue et reste au dossier.">
+      <!-- chart:gnostral-reclaim -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="gnostral-reclaim" width="1200" height="600" role="img" aria-labelledby="gnostral-reclaim-t gnostral-reclaim-d" data-toggles="[{&quot;key&quot;: &quot;fail&quot;, &quot;label&quot;: &quot;Montrer l&#x27;essai raté&quot;, &quot;on&quot;: true}]">
+<title id="gnostral-reclaim-t">La mémoire graphique revient-elle après l'arrêt ?</title>
+<desc id="gnostral-reclaim-d">Points par processus : tous les essais retenus restent entre −82 et +26 Mio, dans la porte de ±128 Mio ; le premier essai de Q-010 à +196 Mio échoue et reste au dossier.</desc>
+<defs><pattern id="gnostral-reclaim-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSTRAL.RS · RÉCUPÉRATION</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">La mémoire revient-elle ?</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Après chaque arrêt, on mesure ce qui reste occupé sur la carte. Au-delà de 128 Mio, l'essai est refusé — même s'il était rapide.</text>
+<rect x="401.8" y="154.0" width="486.4" height="298.0" rx="6" fill="#E8EFE5"/>
+<text x="645.0" y="146.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="700" fill="#455F3D" text-anchor="middle">porte : ±128 Mio</text>
+<line x1="401.8" y1="154.0" x2="401.8" y2="452.0" stroke="#D7DADF" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="645.0" y1="154.0" x2="645.0" y2="452.0" stroke="#A1A6AD" stroke-width="1"/>
+<line x1="888.2" y1="154.0" x2="888.2" y2="452.0" stroke="#D7DADF" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="1017.4" y1="154.0" x2="1017.4" y2="452.0" stroke="#D7DADF" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="455.0" y="474.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">-100</text>
+<text x="645.0" y="474.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">0</text>
+<text x="835.0" y="474.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">+100</text>
+<text x="1025.0" y="474.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">+200</text>
+<text x="48.0" y="190.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Q-010</text>
+<text x="124.0" y="190.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="400" fill="#667085" text-anchor="start">sans correctif, 3 processus</text>
+<circle cx="614.6" cy="186.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="605.6" y="177.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · sans correctif, 3 processus : -16 Mio après l&#x27;arrêt — dans la porte"/>
+<circle cx="489.2" cy="186.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="480.2" y="177.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · sans correctif, 3 processus : -82 Mio après l&#x27;arrêt — dans la porte"/>
+<circle cx="694.4" cy="186.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="685.4" y="177.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · sans correctif, 3 processus : +26 Mio après l&#x27;arrêt — dans la porte"/>
+<text x="48.0" y="248.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Q-010</text>
+<text x="124.0" y="248.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="400" fill="#667085" text-anchor="start">avec correctif, 3 processus</text>
+<circle cx="667.8" cy="244.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="658.8" y="235.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · avec correctif, 3 processus : +12 Mio après l&#x27;arrêt — dans la porte"/>
+<circle cx="692.5" cy="244.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="683.5" y="235.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · avec correctif, 3 processus : +25 Mio après l&#x27;arrêt — dans la porte"/>
+<circle cx="622.2" cy="244.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="613.2" y="235.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · avec correctif, 3 processus : -12 Mio après l&#x27;arrêt — dans la porte"/>
+<text x="48.0" y="306.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Q-010</text>
+<text x="124.0" y="306.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="400" fill="#667085" text-anchor="start">premier essai avec correctif</text>
+<g data-series="fail">
+<path d="M1010.4 295.0 L1024.4 309.0 M1024.4 295.0 L1010.4 309.0" stroke="#C95400" stroke-width="3" stroke-linecap="round"/>
+<text x="1003.4" y="290.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="700" fill="#C95400" text-anchor="end">+196 Mio · NOT QUALIFIED, conservé</text>
+<rect class="hit" x="1008.4" y="293.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-010 · premier essai avec correctif : +196 Mio après l&#x27;arrêt — hors porte, non qualifié, conservé au dossier"/>
+</g>
+<text x="48.0" y="364.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Q-012</text>
+<text x="124.0" y="364.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="400" fill="#667085" text-anchor="start">dense · embeddings · MoE</text>
+<circle cx="565.2" cy="360.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="556.2" y="351.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-012 · dense · embeddings · MoE : -42 Mio après l&#x27;arrêt — dans la porte"/>
+<circle cx="641.2" cy="360.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="632.2" y="351.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-012 · dense · embeddings · MoE : -2 Mio après l&#x27;arrêt — dans la porte"/>
+<circle cx="645.0" cy="360.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="636.0" y="351.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-012 · dense · embeddings · MoE : 0 Mio après l&#x27;arrêt — dans la porte"/>
+<text x="48.0" y="422.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Q-013-C</text>
+<text x="124.0" y="422.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="400" fill="#667085" text-anchor="start">vrai serveur dense</text>
+<circle cx="660.2" cy="418.0" r="7" fill="#5F7F52" stroke="#FFFFFF" stroke-width="2"/>
+<rect class="hit" x="651.2" y="409.0" width="18.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Q-013-C · vrai serveur dense : +8 Mio après l&#x27;arrêt — dans la porte"/>
+<text x="48.0" y="512.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">écart de mémoire graphique ambiante après l'arrêt, en Mio (négatif : il en reste moins qu'avant)</text>
+<circle cx="54" cy="538" r="6" fill="#5F7F52"/>
+<text x="66.0" y="542.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">dans la porte : la mémoire est revenue</text>
+<path d="M374 532 L386 544 M386 532 L374 544" stroke="#C95400" stroke-width="3" stroke-linecap="round"/>
+<text x="394.0" y="542.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">hors porte : l'essai échoue et reste au dossier ; un nouvel essai complet a été refait</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Données : reçus Q-010 (audit et premier essai), Q-012 et Q-013-C dans gnostral.rs/evidence/runs/, au commit 38c4134.</text>
+</svg>
+      <!-- /chart:gnostral-reclaim -->
       <figcaption><b>Un échec visible au milieu des réussites.</b> Le premier essai corrigé de <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a> laissait 196 Mio sur la carte — cause non déterminée, peut-être le trafic du bureau. Il est marqué NOT QUALIFIED et conservé ; la mesure publiée vient d'une nouvelle session complète, aux mêmes seuils.</figcaption>
     </figure>
   </section>
@@ -298,7 +500,85 @@
       <p>gnostral.rs avance par <strong>quêtes</strong> : chacune ouvre une question précise et se ferme par une décision écrite, y compris quand la décision est « non qualifié ». Le journal public en compte quinze entre le 7 et le 21 octobre 2026.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/gnostral-histoire.svg" alt="Commits publics par jour : 20 le 7 octobre, 8 le 10, 2 le 21 ; huit quêtes fondatrices et huit versions le 7, la piste partielle Q-009 le 9, la chaîne Q-010 à Q-013-C le 10, une veille amont le 21.">
+      <!-- chart:gnostral-histoire -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="gnostral-histoire" width="1200" height="600" role="img" aria-labelledby="gnostral-histoire-t gnostral-histoire-d">
+<title id="gnostral-histoire-t">Historique de gnostral.rs, du 7 au 21 octobre 2026</title>
+<desc id="gnostral-histoire-d">Huit quêtes fondatrices et huit versions le 7 octobre, la piste Q-009 le 9, la chaîne de preuve Q-010 à Q-013-C le 10, une veille amont le 21.</desc>
+<defs><pattern id="gnostral-histoire-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSTRAL.RS · HISTORIQUE</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Quinze quêtes en quinze jours</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Chaque quête ouvre une question et la ferme par une décision écrite — y compris « non qualifié ».</text>
+<line x1="70.0" y1="470.0" x2="1130.0" y2="470.0" stroke="#D7DADF" stroke-width="1"/>
+<rect x="86.0" y="330.0" width="28.0" height="140.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="82.0" y="326.0" width="36.0" height="144.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="7 octobre · 20 commits publics"/>
+<text x="122.0" y="342.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">20</text>
+<rect x="300.3" y="414.0" width="28.0" height="56.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="296.3" y="410.0" width="36.0" height="60.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="10 octobre · 8 commits publics"/>
+<text x="336.3" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">8</text>
+<rect x="1086.0" y="456.0" width="28.0" height="14.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="1082.0" y="452.0" width="36.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="21 octobre · 2 commits publics"/>
+<text x="1122.0" y="468.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">2</text>
+<line x1="100.0" y1="470.0" x2="100.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="171.4" y1="470.0" x2="171.4" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="242.9" y1="470.0" x2="242.9" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="314.3" y1="470.0" x2="314.3" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="385.7" y1="470.0" x2="385.7" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="457.1" y1="470.0" x2="457.1" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="528.6" y1="470.0" x2="528.6" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="600.0" y1="470.0" x2="600.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="671.4" y1="470.0" x2="671.4" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="742.9" y1="470.0" x2="742.9" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="814.3" y1="470.0" x2="814.3" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="885.7" y1="470.0" x2="885.7" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="957.1" y1="470.0" x2="957.1" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="1028.6" y1="470.0" x2="1028.6" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<line x1="1100.0" y1="470.0" x2="1100.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="100.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">7 oct.</text>
+<text x="242.9" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">9 oct.</text>
+<text x="314.3" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">10 oct.</text>
+<text x="1100.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">21 oct.</text>
+<rect x="76.0" y="150.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="98.5" y="165.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-001</text>
+<rect x="76.0" y="176.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="98.5" y="191.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-002</text>
+<rect x="76.0" y="202.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="98.5" y="217.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-003</text>
+<rect x="76.0" y="228.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="98.5" y="243.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-004</text>
+<rect x="134.0" y="150.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="156.5" y="165.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-005</text>
+<rect x="134.0" y="176.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="156.5" y="191.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-006</text>
+<rect x="134.0" y="202.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="156.5" y="217.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-007</text>
+<rect x="134.0" y="228.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="156.5" y="243.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-008</text>
+<text x="76.0" y="272.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="600" fill="#111418" text-anchor="start">v0.1 → v0.8 le même jour</text>
+<text x="76.0" y="288.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">recherche fondatrice, donneurs</text>
+<rect x="248.9" y="330.0" width="45.0" height="22.0" rx="6" fill="#FFE5D2"/>
+<text x="271.4" y="345.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#C95400" text-anchor="middle">Q-009</text>
+<text x="248.9" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">piste partielle, datée</text>
+<rect x="376.3" y="150.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="398.8" y="165.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-010</text>
+<rect x="376.3" y="176.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="398.8" y="191.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-011</text>
+<rect x="376.3" y="202.0" width="45.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="398.8" y="217.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-012</text>
+<rect x="434.3" y="150.0" width="59.4" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="464.0" y="165.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-013-A</text>
+<rect x="434.3" y="176.0" width="59.4" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="464.0" y="191.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-013-B</text>
+<rect x="434.3" y="202.0" width="59.4" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="464.0" y="217.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">Q-013-C</text>
+<text x="376.3" y="246.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="600" fill="#111418" text-anchor="start">chaîne de preuve native</text>
+<text x="376.3" y="262.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">A/B, placement, 3 familles, superviseur</text>
+<rect x="984.0" y="330.0" width="95.4" height="22.0" rx="6" fill="#E8EDFF"/>
+<text x="1031.7" y="345.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="middle">veille amont</text>
+<text x="1100.0" y="540.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="end">30 commits publics · barres : commits par jour · pastilles : quêtes closes (vert), partielle (orange)</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source : QUESTLOG.md, CHANGELOG.md et historique Git de gnu6dotlive/gnostral.rs au commit 38c4134.</text>
+</svg>
+      <!-- /chart:gnostral-histoire -->
       <figcaption><b>Deux journées font l'essentiel.</b> Le 7 octobre ferme la recherche fondatrice et publie les versions 0.1 à 0.8 ; le 10, la chaîne de preuve native, de l'A/B jusqu'au vrai serveur supervisé.</figcaption>
     </figure>
 
@@ -333,7 +613,106 @@
       <p>La cible est écrite en une phrase : un plan de contrôle d'inférence <strong>locale</strong>, inspectable et écrit d'abord en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, pour du matériel contraint — choisir le bon moteur pour chaque modèle, borner les ressources, prouver qu'il est prêt, l'arrêter proprement, rendre compte de sa performance. Les noyaux de calcul et le placement des experts restent l'affaire de chaque moteur.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/gnostral-feuille-de-route.svg" alt="Six jalons : M0 socle prouvé, clos ; M1 identité pendant le service, suivant ; M2 séquence A vers B vers A, M3 admission des ressources, M4 qualité de service, proposés ; M5 service multi-modèle, conditionnel ; cinq pistes de recherche en dessous.">
+      <!-- chart:gnostral-feuille-de-route -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="gnostral-feuille-de-route" width="1200" height="600" role="img" aria-labelledby="gnostral-feuille-de-route-t gnostral-feuille-de-route-d">
+<title id="gnostral-feuille-de-route-t">Feuille de route de gnostral.rs, de M0 à M5</title>
+<desc id="gnostral-feuille-de-route-d">Six jalons : M0 clos, M1 Q-013-D suivant, M2 à M4 proposés, M5 conditionnel ; en dessous, cinq pistes de recherche reliées en pointillé aux jalons qu'elles pourraient nourrir.</desc>
+<defs><pattern id="gnostral-feuille-de-route-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSTRAL.RS · PROJECTIONS</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Un séquencement technique, pas un calendrier</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Chaque jalon a une condition de sortie écrite. Le suivant ne commence pas sur une promesse.</text>
+<text x="48.0" y="152.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4">VOIE A — DURCIR LE SERVICE LOCAL</text>
+<rect x="48.0" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#5F7F52" stroke-width="2"/>
+<rect class="hit" x="48.0" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M0 · Socle prouvé · Q-010 → Q-013-C · CLOSED"/>
+<text x="62.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#455F3D" text-anchor="start">M0</text>
+<rect x="148.0" y="178.0" width="52.0" height="20.0" rx="5" fill="#E8EFE5"/>
+<text x="174.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#455F3D" text-anchor="middle">CLOSED</text>
+<text x="62.0" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Socle prouvé</text>
+<text x="62.0" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">Q-010 → Q-013-C</text>
+<rect x="235.6" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#C95400" stroke-width="2"/>
+<rect class="hit" x="235.6" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M1 · Identité pendant le service · Q-013-D · NEXT"/>
+<text x="249.6" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#C95400" text-anchor="start">M1</text>
+<rect x="349.6" y="178.0" width="38.0" height="20.0" rx="5" fill="#FFE5D2"/>
+<text x="368.6" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#C95400" text-anchor="middle">NEXT</text>
+<text x="249.6" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Identité pendant</text>
+<text x="249.6" y="240.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">le service</text>
+<text x="249.6" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">Q-013-D</text>
+<line x1="217.0" y1="222.0" x2="229.6" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
+<path d="M226.6 217 L232.6 222 L226.6 227 Z" fill="#A1A6AD"/>
+<rect x="423.2" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect class="hit" x="423.2" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M2 · Séquence A → B → A · Q-014 · PROPOSED"/>
+<text x="437.2" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M2</text>
+<rect x="509.2" y="178.0" width="66.0" height="20.0" rx="5" fill="#E6E8EB"/>
+<text x="542.2" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">PROPOSED</text>
+<text x="437.2" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Séquence A → B → A</text>
+<text x="437.2" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">Q-014</text>
+<line x1="404.6" y1="222.0" x2="417.2" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
+<path d="M414.2 217 L420.2 222 L414.2 227 Z" fill="#A1A6AD"/>
+<rect x="610.8" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect class="hit" x="610.8" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M3 · Admission des ressources · Q-015 · PROPOSED"/>
+<text x="624.8" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M3</text>
+<rect x="696.8" y="178.0" width="66.0" height="20.0" rx="5" fill="#E6E8EB"/>
+<text x="729.8" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">PROPOSED</text>
+<text x="624.8" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Admission des</text>
+<text x="624.8" y="240.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">ressources</text>
+<text x="624.8" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">Q-015</text>
+<line x1="592.2" y1="222.0" x2="604.8" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
+<path d="M601.8 217 L607.8 222 L601.8 227 Z" fill="#A1A6AD"/>
+<rect x="798.4" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect class="hit" x="798.4" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M4 · Qualité de service · Q-016 · PROPOSED"/>
+<text x="812.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M4</text>
+<rect x="884.4" y="178.0" width="66.0" height="20.0" rx="5" fill="#E6E8EB"/>
+<text x="917.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">PROPOSED</text>
+<text x="812.4" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Qualité de service</text>
+<text x="812.4" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">Q-016</text>
+<line x1="779.8" y1="222.0" x2="792.4" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
+<path d="M789.4 217 L795.4 222 L789.4 227 Z" fill="#A1A6AD"/>
+<rect x="986.0" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="5 4"/>
+<rect class="hit" x="986.0" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M5 · Service multi-modèle · conditionnel · FUTURE"/>
+<text x="1000.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M5</text>
+<rect x="1086.0" y="178.0" width="52.0" height="20.0" rx="5" fill="#E6E8EB"/>
+<text x="1112.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">FUTURE</text>
+<text x="1000.0" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Service multi-modèle</text>
+<text x="1000.0" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">conditionnel</text>
+<line x1="967.4" y1="222.0" x2="980.0" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
+<path d="M977.0 217 L983.0 222 L977.0 227 Z" fill="#A1A6AD"/>
+<rect x="48.0" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="48.0" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P1 · Burn Remote — tenseurs quantifiés · piste de recherche, pas une dépendance"/>
+<text x="62.0" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P1</text>
+<text x="62.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Burn Remote</text>
+<text x="62.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">tenseurs quantifiés</text>
+<path d="M131.0 360 C 131.0 320, 693.8 320, 693.8 282" fill="none" stroke="#4169E1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="235.6" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="235.6" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P2 · WakeKV — cache KV réversible · piste de recherche, pas une dépendance"/>
+<text x="249.6" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P2</text>
+<text x="249.6" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">WakeKV</text>
+<text x="249.6" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">cache KV réversible</text>
+<path d="M318.6 360 C 318.6 320, 506.2 320, 506.2 282" fill="none" stroke="#4169E1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="423.2" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="423.2" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P2 · Ferrum SLO — métriques de latence client · piste de recherche, pas une dépendance"/>
+<text x="437.2" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P2</text>
+<text x="437.2" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Ferrum SLO</text>
+<text x="437.2" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">métriques de latence client</text>
+<path d="M506.2 360 C 506.2 320, 881.4 320, 881.4 282" fill="none" stroke="#4169E1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="610.8" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="610.8" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P3 · CubeCL — plusieurs GPU — absent · piste de recherche, pas une dépendance"/>
+<text x="624.8" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P3</text>
+<text x="624.8" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">CubeCL</text>
+<text x="624.8" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">plusieurs GPU — absent</text>
+<rect x="798.4" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="798.4" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="continu · Bonsai PTQ1 — noyaux basse précision · piste de recherche, pas une dépendance"/>
+<text x="812.4" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">continu</text>
+<text x="812.4" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Bonsai PTQ1</text>
+<text x="812.4" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">noyaux basse précision</text>
+<rect x="44.0" y="331.0" width="356.6" height="18.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="344.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4">VOIE B — RECHERCHE DE POINTE, PAS ADOPTION</text>
+<text x="48.0" y="466.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#667085" text-anchor="start">Les liens en pointillé sont des entrées candidates, pas des dépendances ni des intégrations.</text>
+<rect x="48.0" y="488.0" width="1104.0" height="54.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<text x="68.0" y="520.0" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="600" fill="#111418" text-anchor="start">« Définition du progrès : une frontière de plus, auditée indépendamment — pas une fonctionnalité de plus sur une feuille de route. »</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source : gnostral.rs/docs/ROADMAP.md (état au 10 octobre 2026) au commit 38c4134.</text>
+</svg>
+      <!-- /chart:gnostral-feuille-de-route -->
       <figcaption><b>Une condition de sortie par jalon.</b> M1 doit prouver qu'on parle bien au bon processus pendant tout le service ; M2, qu'on peut charger un modèle, le décharger, en charger un autre et revenir sans fuite de mémoire. Le service multi-modèle n'arrive qu'au bout, et seulement si tout le reste tient.</figcaption>
     </figure>
     <div class="grid two">

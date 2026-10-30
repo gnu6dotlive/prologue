@@ -9,12 +9,14 @@
 <text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Chaque jalon a une condition de sortie écrite. Le suivant ne commence pas sur une promesse.</text>
 <text x="48.0" y="152.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4">VOIE A — DURCIR LE SERVICE LOCAL</text>
 <rect x="48.0" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#5F7F52" stroke-width="2"/>
+<rect class="hit" x="48.0" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M0 · Socle prouvé · Q-010 → Q-013-C · CLOSED"/>
 <text x="62.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#455F3D" text-anchor="start">M0</text>
 <rect x="148.0" y="178.0" width="52.0" height="20.0" rx="5" fill="#E8EFE5"/>
 <text x="174.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#455F3D" text-anchor="middle">CLOSED</text>
 <text x="62.0" y="222.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Socle prouvé</text>
 <text x="62.0" y="264.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">Q-010 → Q-013-C</text>
 <rect x="235.6" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#C95400" stroke-width="2"/>
+<rect class="hit" x="235.6" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M1 · Identité pendant le service · Q-013-D · NEXT"/>
 <text x="249.6" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#C95400" text-anchor="start">M1</text>
 <rect x="349.6" y="178.0" width="38.0" height="20.0" rx="5" fill="#FFE5D2"/>
 <text x="368.6" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#C95400" text-anchor="middle">NEXT</text>
@@ -24,6 +26,7 @@
 <line x1="217.0" y1="222.0" x2="229.6" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
 <path d="M226.6 217 L232.6 222 L226.6 227 Z" fill="#A1A6AD"/>
 <rect x="423.2" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect class="hit" x="423.2" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M2 · Séquence A → B → A · Q-014 · PROPOSED"/>
 <text x="437.2" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M2</text>
 <rect x="509.2" y="178.0" width="66.0" height="20.0" rx="5" fill="#E6E8EB"/>
 <text x="542.2" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">PROPOSED</text>
@@ -32,6 +35,7 @@
 <line x1="404.6" y1="222.0" x2="417.2" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
 <path d="M414.2 217 L420.2 222 L414.2 227 Z" fill="#A1A6AD"/>
 <rect x="610.8" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect class="hit" x="610.8" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M3 · Admission des ressources · Q-015 · PROPOSED"/>
 <text x="624.8" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M3</text>
 <rect x="696.8" y="178.0" width="66.0" height="20.0" rx="5" fill="#E6E8EB"/>
 <text x="729.8" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">PROPOSED</text>
@@ -41,6 +45,7 @@
 <line x1="592.2" y1="222.0" x2="604.8" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
 <path d="M601.8 217 L607.8 222 L601.8 227 Z" fill="#A1A6AD"/>
 <rect x="798.4" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect class="hit" x="798.4" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M4 · Qualité de service · Q-016 · PROPOSED"/>
 <text x="812.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M4</text>
 <rect x="884.4" y="178.0" width="66.0" height="20.0" rx="5" fill="#E6E8EB"/>
 <text x="917.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">PROPOSED</text>
@@ -49,6 +54,7 @@
 <line x1="779.8" y1="222.0" x2="792.4" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
 <path d="M789.4 217 L795.4 222 L789.4 227 Z" fill="#A1A6AD"/>
 <rect x="986.0" y="166.0" width="166.0" height="112.0" rx="10" fill="#FFFFFF" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="5 4"/>
+<rect class="hit" x="986.0" y="166.0" width="166.0" height="112.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="M5 · Service multi-modèle · conditionnel · FUTURE"/>
 <text x="1000.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#667085" text-anchor="start">M5</text>
 <rect x="1086.0" y="178.0" width="52.0" height="20.0" rx="5" fill="#E6E8EB"/>
 <text x="1112.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#667085" text-anchor="middle">FUTURE</text>
@@ -57,25 +63,30 @@
 <line x1="967.4" y1="222.0" x2="980.0" y2="222.0" stroke="#A1A6AD" stroke-width="1.5"/>
 <path d="M977.0 217 L983.0 222 L977.0 227 Z" fill="#A1A6AD"/>
 <rect x="48.0" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="48.0" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P1 · Burn Remote — tenseurs quantifiés · piste de recherche, pas une dépendance"/>
 <text x="62.0" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P1</text>
 <text x="62.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Burn Remote</text>
 <text x="62.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">tenseurs quantifiés</text>
 <path d="M131.0 360 C 131.0 320, 693.8 320, 693.8 282" fill="none" stroke="#4169E1" stroke-width="1.5" stroke-dasharray="4 4"/>
 <rect x="235.6" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="235.6" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P2 · WakeKV — cache KV réversible · piste de recherche, pas une dépendance"/>
 <text x="249.6" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P2</text>
 <text x="249.6" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">WakeKV</text>
 <text x="249.6" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">cache KV réversible</text>
 <path d="M318.6 360 C 318.6 320, 506.2 320, 506.2 282" fill="none" stroke="#4169E1" stroke-width="1.5" stroke-dasharray="4 4"/>
 <rect x="423.2" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="423.2" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P2 · Ferrum SLO — métriques de latence client · piste de recherche, pas une dépendance"/>
 <text x="437.2" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P2</text>
 <text x="437.2" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Ferrum SLO</text>
 <text x="437.2" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">métriques de latence client</text>
 <path d="M506.2 360 C 506.2 320, 881.4 320, 881.4 282" fill="none" stroke="#4169E1" stroke-width="1.5" stroke-dasharray="4 4"/>
 <rect x="610.8" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="610.8" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="P3 · CubeCL — plusieurs GPU — absent · piste de recherche, pas une dépendance"/>
 <text x="624.8" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">P3</text>
 <text x="624.8" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">CubeCL</text>
 <text x="624.8" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">plusieurs GPU — absent</text>
 <rect x="798.4" y="360.0" width="166.0" height="78.0" rx="10" fill="#E8EDFF"/>
+<rect class="hit" x="798.4" y="360.0" width="166.0" height="78.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="continu · Bonsai PTQ1 — noyaux basse précision · piste de recherche, pas une dépendance"/>
 <text x="812.4" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="start">continu</text>
 <text x="812.4" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Bonsai PTQ1</text>
 <text x="812.4" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">noyaux basse précision</text>

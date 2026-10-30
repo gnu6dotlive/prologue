@@ -428,6 +428,44 @@ figure.shot img { padding: 0; background: #0E0F12; }
 /* Animations : la version animée à l'écran, son image de repos à l'impression. */
 .motion-still { display: none; }
 
+/* Graphiques insérés dans la page (tools/inline_charts.py, assets/charts.js). */
+figure > svg.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ds-shell-white-2);
+  border: 1px solid var(--ds-hairline);
+  border-radius: var(--ds-radius);
+  padding: .5rem;
+  box-sizing: border-box;
+}
+svg.chart .hit { cursor: help; outline: none; }
+svg.chart .hit:focus-visible { stroke: var(--ds-royal-blue); stroke-width: 2; stroke-opacity: 1; }
+.chart-toggles { display: flex; flex-wrap: wrap; gap: .5rem; margin: 2rem 0 .625rem; }
+.chart-toggles + figure { margin-top: 0; }
+.chart-toggles button {
+  padding: .3rem .75rem;
+  border: 1px solid var(--ds-hairline);
+  border-radius: 999px;
+  background: var(--ds-pure-white);
+  font: 600 .8125rem var(--ds-font);
+  color: var(--ds-slate);
+  cursor: pointer;
+}
+.chart-toggles button[aria-pressed="true"] { border-color: var(--ds-anthracite); color: var(--ds-anthracite); }
+.chart-toggles button[aria-pressed="true"]::before { content: "✓ "; }
+.chart-tip {
+  position: fixed;
+  z-index: 50;
+  max-width: min(22rem, calc(100vw - 24px));
+  padding: .5rem .75rem;
+  background: var(--ds-anthracite);
+  color: var(--ds-pure-white);
+  border-radius: var(--ds-radius-sm);
+  font: 500 .8125rem/1.45 var(--ds-font);
+  pointer-events: none;
+}
+
 /* ---------- Étiquettes de statut (badges du design system) ---------- */
 
 .tag {
@@ -708,7 +746,7 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
   figure, .box, .card, .stat, table, tr, details.deep { page-break-inside: avoid; }
   details.deep { border-color: #D7DADF; }
   .motion-live { display: none; }
-  .src-card, .lang-switch, .toc-side, .toc-top, .pager, h2 .anchor { display: none !important; }
+  .src-card, .lang-switch, .toc-side, .toc-top, .pager, h2 .anchor, .chart-toggles, .chart-tip { display: none !important; }
   a.src { text-decoration-color: #C95400; }
   .motion-still { display: block; }
   a { color: inherit; text-decoration: none; }
@@ -733,11 +771,11 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
   .site-nav a { padding: .4rem .625rem; font-size: .875rem; white-space: nowrap; }
 
   /* Schémas et animations : lisibles à taille utile, on les fait glisser. */
-  figure:has(> img[src$=".svg"]), figure:has(> img.motion-live) {
+  figure:has(> img[src$=".svg"]), figure:has(> img.motion-live), figure:has(> svg.chart) {
     overflow-x: auto;
     overscroll-behavior-x: contain;
   }
-  figure:has(> img[src$=".svg"])::before, figure:has(> img.motion-live)::before {
+  figure:has(> img[src$=".svg"])::before, figure:has(> img.motion-live)::before, figure:has(> svg.chart)::before {
     content: "Faites glisser le schéma →";
     position: sticky;
     left: 0;
@@ -748,10 +786,10 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
     color: var(--ds-slate);
   }
   figure:has(> img.motion-live)::before { content: "Faites glisser l'animation →"; }
-  html[lang="en"] figure:has(> img[src$=".svg"])::before { content: "Swipe to see the whole diagram →"; }
+  html[lang="en"] figure:has(> img[src$=".svg"])::before, html[lang="en"] figure:has(> svg.chart)::before { content: "Swipe to see the whole diagram →"; }
   html[lang="en"] figure:has(> img.motion-live)::before { content: "Swipe to see the whole animation →"; }
-  figure > img[src$=".svg"], figure > img.motion-live { min-width: 760px; }
-  figure:has(> img[src$=".svg"]) figcaption, figure:has(> img.motion-live) figcaption {
+  figure > img[src$=".svg"], figure > img.motion-live, figure > svg.chart { min-width: 760px; }
+  figure:has(> img[src$=".svg"]) figcaption, figure:has(> img.motion-live) figcaption, figure:has(> svg.chart) figcaption {
     position: sticky;
     left: 0;
     width: 100%;

@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
 <script src="assets/nav.js" defer></script>
+<script src="assets/charts.js" defer></script>
 </head>
 <body class="has-toc">
 
@@ -224,7 +225,56 @@
       <p>Le graphique vient d'une capture de Calix sur la station de travail de l'auteur : 1 803 paquets, presque tous des dépôts officiels. C'est à quoi ressemble un <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> ordinaire, vu en une fois.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/calix-inventaire.svg" alt="Barres : 1 773 paquets des dépôts officiels, 20 Cargo, 9 NPM, 1 version suivie ; zéro pour l'AUR, Flatpak et AppImage.">
+      <!-- chart:calix-inventaire -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" class="chart" data-chart="calix-inventaire" width="1200" height="560" role="img" aria-labelledby="calix-inventaire-t calix-inventaire-d">
+<title id="calix-inventaire-t">L'inventaire Calix d'une vraie machine, par écosystème</title>
+<desc id="calix-inventaire-d">Barres : 1 773 paquets des dépôts officiels, 20 Cargo, 9 NPM, 1 version suivie, et zéro pour l'AUR, Flatpak et AppImage.</desc>
+<defs><pattern id="calix-inventaire-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="560.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">CALIX · INVENTAIRE</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Une vraie machine, pas une démonstration</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">La station de travail de l'auteur, vue par Calix le 29 octobre 2026 au matin.</text>
+<line x1="330.0" y1="164.0" x2="330.0" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="330.0" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">0</text>
+<line x1="532.8" y1="164.0" x2="532.8" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="532.8" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">500</text>
+<line x1="735.6" y1="164.0" x2="735.6" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="735.6" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">1 000</text>
+<line x1="938.3" y1="164.0" x2="938.3" y2="474.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="938.3" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">1 500</text>
+<text x="48.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">ALPM</text>
+<text x="48.0" y="208.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">dépôts officiels</text>
+<rect x="330.0" y="180.0" width="719.0" height="22.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="48.0" y="176.0" width="1061.0" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="ALPM · dépôts officiels : 1 773 paquets"/>
+<text x="1057.0" y="196.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">1 773</text>
+<text x="48.0" y="236.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Cargo</text>
+<text x="48.0" y="252.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">bibliothèques Rust</text>
+<rect x="330.0" y="224.0" width="8.1" height="22.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="48.0" y="220.0" width="350.1" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Cargo · bibliothèques Rust : 20 paquets"/>
+<text x="346.1" y="240.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">20</text>
+<text x="48.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">NPM</text>
+<text x="48.0" y="296.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">bibliothèques JavaScript</text>
+<rect x="330.0" y="268.0" width="3.6" height="22.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="48.0" y="264.0" width="345.6" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="NPM · bibliothèques JavaScript : 9 paquets"/>
+<text x="341.6" y="284.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">9</text>
+<text x="48.0" y="324.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Suivies</text>
+<text x="48.0" y="340.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">versions suivies</text>
+<rect x="330.0" y="312.0" width="3.0" height="22.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="48.0" y="308.0" width="345.0" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Suivies · versions suivies : 1 paquets"/>
+<text x="341.0" y="328.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">1</text>
+<text x="48.0" y="368.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">AUR</text>
+<text x="48.0" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">dépôts communautaires</text>
+<text x="330.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#A1A6AD" text-anchor="start">0 — rien de cette source sur cette machine</text>
+<text x="48.0" y="412.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Flatpak</text>
+<text x="48.0" y="428.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">paquets isolés</text>
+<text x="330.0" y="416.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#A1A6AD" text-anchor="start">0 — rien de cette source sur cette machine</text>
+<text x="48.0" y="456.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">AppImage</text>
+<text x="48.0" y="472.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">fichiers autonomes</text>
+<text x="330.0" y="460.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#A1A6AD" text-anchor="start">0 — rien de cette source sur cette machine</text>
+<text x="48.0" y="506.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">1 803 paquets dans un seul tableau. Les zéros sont affichés comme des zéros : l'inventaire ne gonfle rien.</text>
+<text x="48.0" y="538.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source : capture de la vue « Installed » de Calix (version installée r5022), le 29 octobre 2026.</text>
+</svg>
+      <!-- /chart:calix-inventaire -->
       <figcaption><b>Les zéros sont des informations.</b> Ni <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a>, ni <a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a>, ni <a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a> dans l'inventaire ce jour-là ; <a class="src" data-src="cargo" href="https://github.com/rust-lang/cargo" data-title="Cargo" data-desc="Le gestionnaire de paquets et de compilation du langage Rust." data-meta="github.com/rust-lang/cargo">Cargo</a> et <a class="src" data-src="npm" href="https://github.com/npm/cli" data-title="npm" data-desc="Le gestionnaire de paquets de l&#x27;écosystème JavaScript." data-meta="github.com/npm/cli">NPM</a> sont listés sans être interrogés. Un inventaire honnête n'invente pas de diversité.</figcaption>
     </figure>
   </section>
@@ -235,7 +285,53 @@
       <p>Avant la v0.3.0, avec le journal ouvert, la liste des paquets tombait à 6,5 pixels de haut pendant que sa propre légende en gardait 260. La v0.3.0 a écrit qui a droit à l'espace — et l'a mesuré : 170,5 pixels dans la même bande.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/calix-espace.svg" alt="À gauche, la liste des paquets passe de 6,5 à 170,5 pixels dans une bande de 372 pixels. À droite, la largeur minimale additionnée : 495 + 22 + 143 + 56 = 716, arrondie à 720.">
+      <!-- chart:calix-espace -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="calix-espace" width="1200" height="600" role="img" aria-labelledby="calix-espace-t calix-espace-d">
+<title id="calix-espace-t">La version spatiale de Calix : l'espace mesuré</title>
+<desc id="calix-espace-d">À gauche, dans une bande de 372 pixels avec le journal ouvert, la liste des paquets passe de 6,5 à 170,5 pixels. À droite, la largeur minimale additionnée : 495 + 22 + 143 + 56 = 716, arrondie à 720.</desc>
+<defs><pattern id="calix-espace-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">CALIX · v0.3.0</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">La version qui a mesuré l'espace</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">L'essentiel d'abord : la liste des paquets ne doit plus céder la place à sa propre légende.</text>
+<text x="48.0" y="156.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4">UNE BANDE DE 372 PX, JOURNAL OUVERT</text>
+<rect x="110.0" y="170.0" width="110.0" height="300.0" rx="6" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect x="114.0" y="174.0" width="102.0" height="209.7" rx="4" fill="#E6E8EB"/>
+<text x="165.0" y="278.8" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">légende</text>
+<text x="165.0" y="292.8" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#111418" text-anchor="middle">260 px</text>
+<rect x="114.0" y="460.8" width="102.0" height="5.2" rx="3" fill="#C95400"/>
+<rect class="hit" x="110.0" y="170.0" width="110.0" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="avant v0.3.0 · liste des paquets : 6,5 px · légende : 260 px · bande de 372 px, journal ouvert"/>
+<text x="165.0" y="448.8" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">6,5 px</text>
+<text x="165.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="middle">avant v0.3.0</text>
+<rect x="280.0" y="170.0" width="110.0" height="300.0" rx="6" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
+<rect x="284.0" y="328.5" width="102.0" height="137.5" rx="3" fill="#C95400"/>
+<rect class="hit" x="280.0" y="170.0" width="110.0" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="depuis v0.3.0 · liste des paquets : 170,5 px · bande de 372 px, journal ouvert"/>
+<text x="335.0" y="316.5" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">170,5 px</text>
+<text x="335.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="middle">depuis v0.3.0</text>
+<text x="110.0" y="516.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="start">orange : la liste des paquets</text>
+<text x="520.0" y="156.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4">LA FENÊTRE MINIMALE, CALCULÉE</text>
+<rect x="520.0" y="196.0" width="410.5" height="34.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="520.0" y="196.0" width="410.5" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="495 px — cinq colonnes fixes de la ligne"/>
+<rect x="932.5" y="196.0" width="16.3" height="34.0" rx="4" fill="#2446A8"/>
+<rect class="hit" x="932.5" y="196.0" width="16.3" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="22 px — icône"/>
+<rect x="950.8" y="196.0" width="117.2" height="34.0" rx="4" fill="#C95400"/>
+<rect class="hit" x="950.8" y="196.0" width="117.2" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="143 px — le nom, pour 90 % des paquets réels"/>
+<rect x="1070.0" y="196.0" width="44.7" height="34.0" rx="4" fill="#A1A6AD"/>
+<rect class="hit" x="1070.0" y="196.0" width="44.7" height="34.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="56 px — barre de navigation repliée"/>
+<rect x="520.0" y="250.0" width="12.0" height="12.0" rx="3" fill="#4169E1"/>
+<text x="540.0" y="260.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">495 px — cinq colonnes fixes de la ligne</text>
+<rect x="520.0" y="276.0" width="12.0" height="12.0" rx="3" fill="#2446A8"/>
+<text x="540.0" y="286.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">22 px — icône</text>
+<rect x="520.0" y="302.0" width="12.0" height="12.0" rx="3" fill="#C95400"/>
+<text x="540.0" y="312.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">143 px — le nom, pour 90 % des paquets réels</text>
+<rect x="520.0" y="328.0" width="12.0" height="12.0" rx="3" fill="#A1A6AD"/>
+<text x="540.0" y="338.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="500" fill="#111418" text-anchor="start">56 px — barre de navigation repliée</text>
+<text x="520.0" y="382.0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#111418" text-anchor="start">= 716 → 720 px de large</text>
+<text x="520.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="400" fill="#667085" text-anchor="start">Avant : 1024 × 680, un nombre que personne n'avait justifié. Annoncé : 720 × 480.</text>
+<text x="520.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#C95400" text-anchor="start">Mesuré sur la machine de l'auteur le 29 octobre : 720 × 520.</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source : notes de version v0.3.0 de gnu6dotlive/calix et docs/gpui/CONTRACT-01-SPACE-AUDIT.md ; mesure de fenêtre faite le 29 octobre 2026.</text>
+</svg>
+      <!-- /chart:calix-espace -->
       <figcaption><b>L'essentiel d'abord.</b> Trois couches dans l'ordre : la navigation et les actions, puis la liste des paquets, puis les surfaces de contexte. Avant cette version, l'ordre était inversé, et c'était mesurable.</figcaption>
     </figure>
     <div class="prose">
@@ -244,7 +340,70 @@
 
     <h3>Neuf versions, une chose chacune</h3>
     <figure>
-      <img src="assets/diagrams/calix-versions.svg" alt="Frise : v0.1.0 le 20 septembre sous le nom Shelly ; six versions de v0.2.0 à v0.2.5 le 20 octobre ; v0.3.0 le 21 ; v0.3.1 le 22.">
+      <!-- chart:calix-versions -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" class="chart" data-chart="calix-versions" width="1200" height="560" role="img" aria-labelledby="calix-versions-t calix-versions-d">
+<title id="calix-versions-t">Les neuf versions de Calix, du 20 septembre au 22 octobre 2026</title>
+<desc id="calix-versions-d">Frise : v0.1.0 le 20 septembre, six versions de v0.2.0 à v0.2.5 le 20 octobre, v0.3.0 le 21, v0.3.1 le 22, chacune avec son sujet.</desc>
+<defs><pattern id="calix-versions-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="560.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">CALIX · HISTORIQUE</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Neuf versions, une chose chacune</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Chaque version annonce un sujet et le prouve dans ses notes ; les correctifs disent ce qui était cassé.</text>
+<line x1="70.0" y1="470.0" x2="980.0" y2="470.0" stroke="#D7DADF" stroke-width="2"/>
+<line x1="90.0" y1="466.0" x2="90.0" y2="474.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="90.0" y="494.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">20 sept.</text>
+<line x1="371.5" y1="466.0" x2="371.5" y2="474.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="371.5" y="494.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">1er oct.</text>
+<line x1="627.4" y1="466.0" x2="627.4" y2="474.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="627.4" y="494.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">11 oct.</text>
+<line x1="857.6" y1="466.0" x2="857.6" y2="474.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="857.6" y="494.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">20 oct.</text>
+<line x1="908.8" y1="466.0" x2="908.8" y2="474.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="908.8" y="494.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">22 oct.</text>
+<circle cx="90.0" cy="470" r="8" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="80.0" y="460.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 septembre · v0.1.0, première version, sous le nom Shelly"/>
+<text x="104.0" y="454.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">v0.1.0</text>
+<text x="104.0" y="436.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">première version, sous le nom Shelly</text>
+<circle cx="857.6" cy="448.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<text x="841.6" y="452.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.0</text>
+<text x="781.6" y="452.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">renommage en Calix, coupure nette</text>
+<rect class="hit" x="847.6" y="438.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.0 — renommage en Calix, coupure nette"/>
+<circle cx="857.6" cy="414.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<text x="841.6" y="418.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.1</text>
+<text x="781.6" y="418.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">notifications de bureau</text>
+<rect class="hit" x="847.6" y="404.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.1 — notifications de bureau"/>
+<circle cx="857.6" cy="380.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<text x="841.6" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.2</text>
+<text x="781.6" y="384.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">correctifs : utilisable sur un Arch normal</text>
+<rect class="hit" x="847.6" y="370.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.2 — correctifs : utilisable sur un Arch normal"/>
+<circle cx="857.6" cy="346.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<text x="841.6" y="350.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.3</text>
+<text x="781.6" y="350.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">la vue Mises à jour se charge enfin</text>
+<rect class="hit" x="847.6" y="336.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.3 — la vue Mises à jour se charge enfin"/>
+<circle cx="857.6" cy="312.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<text x="841.6" y="316.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.4</text>
+<text x="781.6" y="316.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">la marque et sa couleur</text>
+<rect class="hit" x="847.6" y="302.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.4 — la marque et sa couleur"/>
+<circle cx="857.6" cy="278.0" r="7" fill="#4169E1" stroke="#F7F3ED" stroke-width="2"/>
+<text x="841.6" y="282.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="end">v0.2.5</text>
+<text x="781.6" y="282.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">la navigation dit où l'on est</text>
+<rect class="hit" x="847.6" y="268.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="20 octobre · v0.2.5 — la navigation dit où l&#x27;on est"/>
+<circle cx="883.2" cy="470" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="873.2" y="460.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="21 octobre · v0.3.0 — l&#x27;espace, écrit et mesuré"/>
+<line x1="883.2" y1="462.0" x2="883.2" y2="434.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="883.2" y1="434.0" x2="893.2" y2="434.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="897.2" y="430.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">v0.3.0</text>
+<text x="897.2" y="445.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">l'espace, écrit et mesuré</text>
+<circle cx="908.8" cy="470" r="7" fill="#C95400" stroke="#F7F3ED" stroke-width="2"/>
+<rect class="hit" x="898.8" y="460.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="22 octobre · v0.3.1 — tourne sur la machine"/>
+<line x1="908.8" y1="462.0" x2="908.8" y2="384.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="908.8" y1="384.0" x2="918.8" y2="384.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="922.8" y="380.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="700" fill="#111418" text-anchor="start">v0.3.1</text>
+<text x="922.8" y="395.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">tourne sur la machine</text>
+<text x="857.6" y="240.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#2446A8" text-anchor="middle">six versions le 20 octobre</text>
+<text x="48.0" y="538.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source : pages des versions de gnu6dotlive/calix sur GitHub (v0.1.0 à v0.3.1).</text>
+</svg>
+      <!-- /chart:calix-versions -->
       <figcaption><b>Six versions en un jour.</b> Le 20 octobre, le projet change de nom (de Shelly à Calix, sans couche de compatibilité), puis enchaîne les notifications, deux séries de correctifs, la marque et la navigation. Chaque note dit ce qui était cassé avant.</figcaption>
     </figure>
     <div class="prose">

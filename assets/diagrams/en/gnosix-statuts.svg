@@ -9,12 +9,16 @@
 <text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Each capability carries one level, published surface by surface. None is “finished”: the top step is the author's confirmation.</text>
 <text x="48.0" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="1.6">20 PUBLISHED CAPABILITIES, BY LEVEL OF PROOF</text>
 <rect x="48.0" y="176.0" width="439.6" height="54.0" rx="6" fill="#5F7F52"/>
+<rect class="hit" x="48.0" y="176.0" width="439.6" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="PROVEN · 8 — Notifications, French and English, Tabler icons, Fluidity, Multi-output routing, Profile store, Workspace activation, Session lifecycle"/>
 <text x="62.0" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start">8</text>
 <rect x="489.6" y="176.0" width="494.8" height="54.0" rx="6" fill="#C95400"/>
+<rect class="hit" x="489.6" y="176.0" width="494.8" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="QUALIFIED · 9 — The bar, The deck and the AppStack, Utilities and OSD, Session, Dashboard, Workspaces, Lock screen, Settings, Desktop and modules"/>
 <text x="503.6" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start">9</text>
 <rect x="986.4" y="176.0" width="108.4" height="54.0" rx="6" fill="#4169E1"/>
+<rect class="hit" x="986.4" y="176.0" width="108.4" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="SOURCE-QUALIFIED · 2 — Durable output identity, Accessibility mechanics"/>
 <text x="1000.4" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start">2</text>
 <rect x="1096.8" y="176.0" width="53.2" height="54.0" rx="6" fill="url(#hatch)"/>
+<rect class="hit" x="1096.8" y="176.0" width="53.2" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="EXPERIMENTAL · 1 — gnoshow, the background renderer"/>
 <text x="1123.4" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#111418" text-anchor="middle">1</text>
 <rect x="48.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#5F7F52"/>
 <text x="68.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">PROVEN · 8</text>

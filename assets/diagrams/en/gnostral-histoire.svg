@@ -9,10 +9,13 @@
 <text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Each quest opens a question and closes it with a written decision — including “not qualified”.</text>
 <line x1="70.0" y1="470.0" x2="1130.0" y2="470.0" stroke="#D7DADF" stroke-width="1"/>
 <rect x="86.0" y="330.0" width="28.0" height="140.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="82.0" y="326.0" width="36.0" height="144.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 7 · 20 public commits"/>
 <text x="122.0" y="342.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">20</text>
 <rect x="300.3" y="414.0" width="28.0" height="56.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="296.3" y="410.0" width="36.0" height="60.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 10 · 8 public commits"/>
 <text x="336.3" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">8</text>
 <rect x="1086.0" y="456.0" width="28.0" height="14.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="1082.0" y="452.0" width="36.0" height="18.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 21 · 2 public commits"/>
 <text x="1122.0" y="468.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">2</text>
 <line x1="100.0" y1="470.0" x2="100.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
 <line x1="171.4" y1="470.0" x2="171.4" y2="475.0" stroke="#D7DADF" stroke-width="1"/>

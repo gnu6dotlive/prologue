@@ -17,28 +17,51 @@
 <text x="100.0" y="174.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">3 000</text>
 <text x="110.0" y="152.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="start">nombre d'intervalles, par tranche de 0,04 ms</text>
 <rect x="154.9" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="153.9" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="12,90–12,94 ms : 4 intervalles"/>
 <rect x="184.1" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="183.1" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="12,94–12,98 ms : 3 intervalles"/>
 <rect x="213.4" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="212.4" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="12,98–13,02 ms : 7 intervalles"/>
 <rect x="242.7" y="467.2" width="27.3" height="2.8" rx="2" fill="#4169E1"/>
+<rect class="hit" x="241.7" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,02–13,06 ms : 28 intervalles"/>
 <rect x="271.9" y="464.9" width="27.3" height="5.1" rx="2" fill="#4169E1"/>
+<rect class="hit" x="270.9" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,06–13,10 ms : 51 intervalles"/>
 <rect x="301.2" y="460.0" width="27.3" height="10.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="300.2" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,10–13,14 ms : 100 intervalles"/>
 <rect x="330.4" y="452.5" width="27.3" height="17.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="329.4" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,14–13,18 ms : 175 intervalles"/>
 <rect x="359.7" y="444.7" width="27.3" height="25.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="358.7" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,18–13,22 ms : 253 intervalles"/>
 <rect x="389.0" y="433.0" width="27.3" height="37.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="388.0" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,22–13,26 ms : 370 intervalles"/>
 <rect x="418.2" y="386.2" width="27.3" height="83.8" rx="2" fill="#4169E1"/>
+<rect class="hit" x="417.2" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,26–13,30 ms : 838 intervalles"/>
 <rect x="447.5" y="195.3" width="27.3" height="274.7" rx="2" fill="#4169E1"/>
+<rect class="hit" x="446.5" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,30–13,34 ms : 2 747 intervalles"/>
 <rect x="476.7" y="171.9" width="27.3" height="298.1" rx="2" fill="#4169E1"/>
+<rect class="hit" x="475.7" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,34–13,38 ms : 2 981 intervalles"/>
 <rect x="506.0" y="388.7" width="27.3" height="81.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="505.0" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,38–13,42 ms : 813 intervalles"/>
 <rect x="535.3" y="429.2" width="27.3" height="40.8" rx="2" fill="#4169E1"/>
+<rect class="hit" x="534.3" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,42–13,46 ms : 408 intervalles"/>
 <rect x="564.5" y="447.7" width="27.3" height="22.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="563.5" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,46–13,50 ms : 223 intervalles"/>
 <rect x="593.8" y="452.0" width="27.3" height="18.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="592.8" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,50–13,54 ms : 180 intervalles"/>
 <rect x="623.0" y="460.6" width="27.3" height="9.4" rx="2" fill="#4169E1"/>
+<rect class="hit" x="622.0" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,54–13,58 ms : 94 intervalles"/>
 <rect x="652.3" y="464.0" width="27.3" height="6.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="651.3" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,58–13,62 ms : 60 intervalles"/>
 <rect x="681.6" y="467.7" width="27.3" height="2.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="680.6" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,62–13,66 ms : 23 intervalles"/>
 <rect x="710.8" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="709.8" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,66–13,70 ms : 5 intervalles"/>
 <rect x="740.1" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="739.1" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,70–13,74 ms : 3 intervalles"/>
 <rect x="769.3" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="768.3" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,74–13,78 ms : 1 intervalles"/>
 <rect x="798.6" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="797.6" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13,78–13,82 ms : 1 intervalles"/>
 <line x1="227.0" y1="470.0" x2="227.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
 <text x="227.0" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">13,0 ms</text>
 <line x1="373.3" y1="470.0" x2="373.3" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
@@ -58,6 +81,7 @@
 <line x1="930.0" y1="470.0" x2="960.0" y2="470.0" stroke="#D7DADF" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="945.0" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#A1A6AD" text-anchor="middle">//</text>
 <rect x="1004.0" y="458.0" width="12.0" height="12.0" rx="2" fill="#C95400"/>
+<rect class="hit" x="970.0" y="410.0" width="80.0" height="90.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="1 intervalle de 26,65 ms : le tout premier, au démarrage"/>
 <text x="1010.0" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#C95400" text-anchor="middle">26,65 ms</text>
 <text x="1010.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">1 intervalle</text>
 <text x="1010.0" y="442.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">le tout premier, au démarrage</text>

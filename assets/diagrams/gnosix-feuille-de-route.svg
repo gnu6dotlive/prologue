@@ -30,18 +30,22 @@
 <text x="964.3" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">oct.</text>
 <text x="1110.0" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">déc. 2027</text>
 <circle cx="137.4" cy="232" r="8" fill="#C95400" stroke="#C95400" stroke-width="2.5"/>
+<rect class="hit" x="125.4" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="26.11-rc1 — publiée le 21 oct."/>
 <line x1="137.4" y1="212.0" x2="137.4" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="137.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">26.11-rc1</text>
 <text x="137.4" y="207.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">publiée le 21 oct.</text>
 <circle cx="199.3" cy="232" r="8" fill="#FFFFFF" stroke="#C95400" stroke-width="2.5"/>
+<rect class="hit" x="187.3" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="26.11 « Ardoise » — la version, annoncée"/>
 <line x1="199.3" y1="174.0" x2="199.3" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="199.3" y="154.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">26.11 « Ardoise »</text>
 <text x="199.3" y="169.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">la version, annoncée</text>
 <circle cx="600.0" cy="232" r="8" fill="#FFFFFF" stroke="#4169E1" stroke-width="2.5"/>
+<rect class="hit" x="588.0" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="27.05 — fenêtre de mai"/>
 <line x1="600.0" y1="212.0" x2="600.0" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="600.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">27.05</text>
 <text x="600.0" y="207.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">fenêtre de mai</text>
 <circle cx="1037.1" cy="232" r="8" fill="#FFFFFF" stroke="#4169E1" stroke-width="2.5"/>
+<rect class="hit" x="1025.1" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="27.11 — fenêtre de novembre"/>
 <line x1="1037.1" y1="174.0" x2="1037.1" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
 <text x="1037.1" y="154.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">27.11</text>
 <text x="1037.1" y="169.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">fenêtre de novembre</text>
@@ -49,24 +53,31 @@
 <rect x="48.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
 <text x="64.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Revue de l'auteur</text>
 <text x="64.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">chaque QUALIFIED confirmé ou rouvert</text>
+<rect class="hit" x="48.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Revue de l&#x27;auteur — chaque QUALIFIED confirmé ou rouvert · sans date, avance quand sa preuve est complète"/>
 <rect x="322.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
 <text x="338.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Cartes de modules</text>
 <text x="338.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">un module ne perd jamais sa matière</text>
+<rect class="hit" x="322.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Cartes de modules — un module ne perd jamais sa matière · sans date, avance quand sa preuve est complète"/>
 <rect x="596.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
 <text x="612.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">La scène en couches</text>
 <text x="612.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">une couche par surface, par attention</text>
+<rect class="hit" x="596.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="La scène en couches — une couche par surface, par attention · sans date, avance quand sa preuve est complète"/>
 <rect x="870.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
 <text x="886.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Clavier sur la barre</text>
 <text x="886.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">focus, flèches, Entrée</text>
+<rect class="hit" x="870.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Clavier sur la barre — focus, flèches, Entrée · sans date, avance quand sa preuve est complète"/>
 <rect x="185.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
 <text x="201.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Une seule forme</text>
 <text x="201.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">un champ de distance pour tout le shell</text>
+<rect class="hit" x="185.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Une seule forme — un champ de distance pour tout le shell · sans date, avance quand sa preuve est complète"/>
 <rect x="459.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
 <text x="475.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Modèle de menace</text>
 <text x="475.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">autorités, D-Bus, clavier, verrouillage</text>
+<rect class="hit" x="459.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Modèle de menace — autorités, D-Bus, clavier, verrouillage · sans date, avance quand sa preuve est complète"/>
 <rect x="733.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#C95400" stroke-width="1.5" stroke-dasharray="5 4"/>
 <text x="749.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Mods confinés</text>
 <text x="749.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">après le modèle de menace</text>
+<rect class="hit" x="733.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Mods confinés — après le modèle de menace · sans date, avance quand sa preuve est complète"/>
 <line x1="719.0" y1="445.0" x2="726.0" y2="445.0" stroke="#C95400" stroke-width="1.5"/>
 <path d="M725.0 440.0 L732.0 445.0 L725.0 450.0 Z" fill="#C95400"/>
 <rect x="48.0" y="512.0" width="1104.0" height="66.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>

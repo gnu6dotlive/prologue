@@ -190,7 +190,8 @@ REPO_DESC = {"gnosix": "Environnement de bureau Linux en Rust.",
              "calix": "Gestion de paquets native pour Arch Linux.",
              "in.gnu6": "Moteur de scènes et de topologies."}
 
-SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "title", "script", "style", "nav", "header", "footer", "button", "summary"}
+SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "title", "script", "style", "nav", "header", "footer", "button", "summary",
+             "svg", "text", "desc", "aside"}
 SKIP_CLASSES = {"tag", "label", "kicker", "btn"}
 VOID = {"img", "meta", "link", "br", "hr", "input", "source", "wbr"}
 

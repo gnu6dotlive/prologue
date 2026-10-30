@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/sources.js" defer></script>
 <script src="../assets/nav.js" defer></script>
+<script src="../assets/charts.js" defer></script>
 </head>
 <body class="has-toc">
 
@@ -217,7 +218,97 @@
       <p>9,370 frames presented by the compositor, none discarded. 9,368 intervals fall between 12.9 and 14 ms, around the screen period (13.34 ms). The only one above 20 ms is the very first, at start-up: 26.65 ms.</p>
     </div>
     <figure>
-      <img src="../assets/diagrams/en/ingnu6-endurance.svg" alt="Histogram of the 9,369 intervals between frames: almost all between 13.2 and 13.5 ms, around the screen period; a single isolated interval at 26.65 ms, the first one.">
+      <!-- chart:ingnu6-endurance -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" class="chart" data-chart="ingnu6-endurance" width="1200" height="620" role="img" aria-labelledby="ingnu6-endurance-t ingnu6-endurance-d">
+<title id="ingnu6-endurance-t">125 seconds of in.gnu6 endurance, frame by frame</title>
+<desc id="ingnu6-endurance-d">Histogram of the 9,369 intervals between presented frames: almost all around 13.34 ms, the screen period; a single isolated interval at 26.65 ms, the first one.</desc>
+<defs><pattern id="ingnu6-endurance-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="620.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">IN.GNU6 · GPU05-ENDURANCE-01</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">125 seconds, frame by frame</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Each bar counts the intervals between two frames actually presented by the Wayland compositor.</text>
+<line x1="110.0" y1="470.0" x2="900.0" y2="470.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="474.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">0</text>
+<line x1="110.0" y1="370.0" x2="900.0" y2="370.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="374.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">1,000</text>
+<line x1="110.0" y1="270.0" x2="900.0" y2="270.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="274.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">2,000</text>
+<line x1="110.0" y1="170.0" x2="900.0" y2="170.0" stroke="#E6E8EB" stroke-width="1"/>
+<text x="100.0" y="174.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="end">3,000</text>
+<text x="110.0" y="152.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="start">number of intervals, per 0.04 ms bin</text>
+<rect x="154.9" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="153.9" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="12.90–12.94 ms : 4 intervals"/>
+<rect x="184.1" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="183.1" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="12.94–12.98 ms : 3 intervals"/>
+<rect x="213.4" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="212.4" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="12.98–13.02 ms : 7 intervals"/>
+<rect x="242.7" y="467.2" width="27.3" height="2.8" rx="2" fill="#4169E1"/>
+<rect class="hit" x="241.7" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.02–13.06 ms : 28 intervals"/>
+<rect x="271.9" y="464.9" width="27.3" height="5.1" rx="2" fill="#4169E1"/>
+<rect class="hit" x="270.9" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.06–13.10 ms : 51 intervals"/>
+<rect x="301.2" y="460.0" width="27.3" height="10.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="300.2" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.10–13.14 ms : 100 intervals"/>
+<rect x="330.4" y="452.5" width="27.3" height="17.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="329.4" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.14–13.18 ms : 175 intervals"/>
+<rect x="359.7" y="444.7" width="27.3" height="25.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="358.7" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.18–13.22 ms : 253 intervals"/>
+<rect x="389.0" y="433.0" width="27.3" height="37.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="388.0" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.22–13.26 ms : 370 intervals"/>
+<rect x="418.2" y="386.2" width="27.3" height="83.8" rx="2" fill="#4169E1"/>
+<rect class="hit" x="417.2" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.26–13.30 ms : 838 intervals"/>
+<rect x="447.5" y="195.3" width="27.3" height="274.7" rx="2" fill="#4169E1"/>
+<rect class="hit" x="446.5" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.30–13.34 ms : 2,747 intervals"/>
+<rect x="476.7" y="171.9" width="27.3" height="298.1" rx="2" fill="#4169E1"/>
+<rect class="hit" x="475.7" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.34–13.38 ms : 2,981 intervals"/>
+<rect x="506.0" y="388.7" width="27.3" height="81.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="505.0" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.38–13.42 ms : 813 intervals"/>
+<rect x="535.3" y="429.2" width="27.3" height="40.8" rx="2" fill="#4169E1"/>
+<rect class="hit" x="534.3" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.42–13.46 ms : 408 intervals"/>
+<rect x="564.5" y="447.7" width="27.3" height="22.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="563.5" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.46–13.50 ms : 223 intervals"/>
+<rect x="593.8" y="452.0" width="27.3" height="18.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="592.8" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.50–13.54 ms : 180 intervals"/>
+<rect x="623.0" y="460.6" width="27.3" height="9.4" rx="2" fill="#4169E1"/>
+<rect class="hit" x="622.0" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.54–13.58 ms : 94 intervals"/>
+<rect x="652.3" y="464.0" width="27.3" height="6.0" rx="2" fill="#4169E1"/>
+<rect class="hit" x="651.3" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.58–13.62 ms : 60 intervals"/>
+<rect x="681.6" y="467.7" width="27.3" height="2.3" rx="2" fill="#4169E1"/>
+<rect class="hit" x="680.6" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.62–13.66 ms : 23 intervals"/>
+<rect x="710.8" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="709.8" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.66–13.70 ms : 5 intervals"/>
+<rect x="740.1" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="739.1" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.70–13.74 ms : 3 intervals"/>
+<rect x="769.3" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="768.3" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.74–13.78 ms : 1 intervals"/>
+<rect x="798.6" y="468.5" width="27.3" height="1.5" rx="2" fill="#4169E1"/>
+<rect class="hit" x="797.6" y="170.0" width="29.3" height="300.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="13.78–13.82 ms : 1 intervals"/>
+<line x1="227.0" y1="470.0" x2="227.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="227.0" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">13.0 ms</text>
+<line x1="373.3" y1="470.0" x2="373.3" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="373.3" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">13.2 ms</text>
+<line x1="519.6" y1="470.0" x2="519.6" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="519.6" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">13.4 ms</text>
+<line x1="665.9" y1="470.0" x2="665.9" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="665.9" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">13.6 ms</text>
+<line x1="812.2" y1="470.0" x2="812.2" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
+<text x="812.2" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">13.8 ms</text>
+<line x1="475.5" y1="140.0" x2="475.5" y2="470.0" stroke="#C95400" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="483.5" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">screen period: 13.34 ms (74.96 Hz)</text>
+<line x1="576.7" y1="496.0" x2="576.7" y2="506.0" stroke="#111418" stroke-width="1.5"/>
+<text x="576.7" y="520.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#111418" text-anchor="middle">p95 13.478</text>
+<line x1="651.3" y1="496.0" x2="651.3" y2="506.0" stroke="#111418" stroke-width="1.5"/>
+<text x="651.3" y="520.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#111418" text-anchor="middle">p99 13.58</text>
+<line x1="930.0" y1="470.0" x2="960.0" y2="470.0" stroke="#D7DADF" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="945.0" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#A1A6AD" text-anchor="middle">//</text>
+<rect x="1004.0" y="458.0" width="12.0" height="12.0" rx="2" fill="#C95400"/>
+<rect class="hit" x="970.0" y="410.0" width="80.0" height="90.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="1 interval of 26.65 ms: the very first, at start-up"/>
+<text x="1010.0" y="490.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#C95400" text-anchor="middle">26.65 ms</text>
+<text x="1010.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">1 interval</text>
+<text x="1010.0" y="442.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">the very first, at start-up</text>
+<text x="48.0" y="560.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="600" fill="#111418" text-anchor="start">9,370 frames · 9,368 intervals between 12.9 and 14.0 ms · gates set before the run: p95 ≤ 17 ms, p99 ≤ 20 ms, maximum ≤ 33.4 ms — all passed.</text>
+<text x="48.0" y="598.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Data: presentations.jsonl from the October 10 run (not published), SHA-256 d23020138222…f8f1, fingerprint published in in.gnu6 at commit fec80a7.</text>
+</svg>
+      <!-- /chart:ingnu6-endurance -->
       <figcaption><b>Gates before figures.</b> The thresholds are written before the run. The raw data stays with the author, but its published fingerprint lets anyone check it has not changed. This test does not measure the delay between a click and the frame: that is one reason CP03 remains open.</figcaption>
     </figure>
     <div class="box limit">
@@ -262,7 +353,85 @@
       <p>The repository does not keep a task list: it keeps a quest log. The main questline defines what "complete" means; side quests keep what was learned along the way.</p>
     </div>
     <figure>
-      <img src="../assets/diagrams/en/ingnu6-histoire.svg" alt="Commits per day from October 6 to 10: 27, 28, 20, 17 and 51; ten milestones ratified on the 6th, six on the 7th, GPU-05 research afterwards, the CUDA-05F protocol, the endurance run and publication on the 10th.">
+      <!-- chart:ingnu6-histoire -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="ingnu6-histoire" width="1200" height="600" role="img" aria-labelledby="ingnu6-histoire-t ingnu6-histoire-d">
+<title id="ingnu6-histoire-t">in.gnu6 history, October 6 to 10, 2026</title>
+<desc id="ingnu6-histoire-d">Commits per day: 27, 28, 20, 17 and 51; ten milestones ratified on October 6, six on the 7th, GPU-05 research afterwards, the CUDA-05F protocol and publication on the 10th.</desc>
+<defs><pattern id="ingnu6-histoire-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">IN.GNU6 · HISTORY</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Five days, sixteen milestones, one public repository</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">The main questline is ratified in two days; the next three go to native-rendering research.</text>
+<line x1="80.0" y1="470.0" x2="1120.0" y2="470.0" stroke="#D7DADF" stroke-width="1"/>
+<rect x="124.0" y="378.2" width="32.0" height="91.8" rx="4" fill="#4169E1"/>
+<rect class="hit" x="120.0" y="374.2" width="40.0" height="95.8" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 6 · 27 commits"/>
+<text x="164.0" y="390.2" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">27</text>
+<text x="140.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 6</text>
+<rect x="354.0" y="374.8" width="32.0" height="95.2" rx="4" fill="#4169E1"/>
+<rect class="hit" x="350.0" y="370.8" width="40.0" height="99.2" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 7 · 28 commits"/>
+<text x="394.0" y="386.8" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">28</text>
+<text x="370.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 7</text>
+<rect x="584.0" y="402.0" width="32.0" height="68.0" rx="4" fill="#4169E1"/>
+<rect class="hit" x="580.0" y="398.0" width="40.0" height="72.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 8 · 20 commits"/>
+<text x="624.0" y="414.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">20</text>
+<text x="600.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 8</text>
+<rect x="814.0" y="412.2" width="32.0" height="57.8" rx="4" fill="#4169E1"/>
+<rect class="hit" x="810.0" y="408.2" width="40.0" height="61.8" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 9 · 17 commits"/>
+<text x="854.0" y="424.2" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">17</text>
+<text x="830.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 9</text>
+<rect x="1044.0" y="296.6" width="32.0" height="173.4" rx="4" fill="#4169E1"/>
+<rect class="hit" x="1040.0" y="292.6" width="40.0" height="177.4" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 10 · 51 commits"/>
+<text x="1084.0" y="308.6" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="start">51</text>
+<text x="1060.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 10</text>
+<rect x="80.0" y="148.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="109.0" y="163.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-00</text>
+<rect x="144.0" y="148.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="173.0" y="163.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-02</text>
+<rect x="80.0" y="174.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="109.0" y="189.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-03</text>
+<rect x="144.0" y="174.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="173.0" y="189.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-04</text>
+<rect x="80.0" y="200.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="109.0" y="215.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-06</text>
+<rect x="144.0" y="200.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="173.0" y="215.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-07</text>
+<rect x="80.0" y="226.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="109.0" y="241.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-08</text>
+<rect x="144.0" y="226.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="173.0" y="241.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-09</text>
+<rect x="80.0" y="252.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="109.0" y="267.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-10</text>
+<rect x="144.0" y="252.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="173.0" y="267.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-11</text>
+<rect x="310.0" y="148.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="339.0" y="163.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-01</text>
+<rect x="374.0" y="148.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="403.0" y="163.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-05</text>
+<rect x="310.0" y="174.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="339.0" y="189.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-12</text>
+<rect x="374.0" y="174.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="403.0" y="189.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-13</text>
+<rect x="310.0" y="200.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="339.0" y="215.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-14</text>
+<rect x="374.0" y="200.0" width="58.0" height="22.0" rx="6" fill="#E8EFE5"/>
+<text x="403.0" y="215.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#455F3D" text-anchor="middle">MQ-15</text>
+<text x="80.0" y="292.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="700" fill="#111418" text-anchor="start">10 milestones ratified</text>
+<text x="310.0" y="240.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="700" fill="#111418" text-anchor="start">6 milestones ratified</text>
+<text x="310.0" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">mandate complete on the 7th</text>
+<rect x="540.0" y="200.0" width="58.0" height="22.0" rx="6" fill="#E8EDFF"/>
+<text x="569.0" y="215.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#2446A8" text-anchor="middle">GPU-05</text>
+<text x="540.0" y="244.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">native rendering research</text>
+<rect x="968.0" y="148.0" width="58.0" height="22.0" rx="6" fill="#FFE5D2"/>
+<text x="997.0" y="163.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#C95400" text-anchor="middle">CUDA-05F</text>
+<rect x="968.0" y="174.0" width="58.0" height="22.0" rx="6" fill="#FFE5D2"/>
+<text x="997.0" y="189.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#C95400" text-anchor="middle">public</text>
+<text x="968.0" y="216.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">CUDA-05F: 4 acquisitions</text>
+<text x="968.0" y="232.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">125 s endurance run</text>
+<text x="968.0" y="248.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="start">repository made public</text>
+<text x="1120.0" y="540.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="end">143 commits · bars: commits per day · green chips: milestones ratified that day</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source: QUESTLOG.md (dates of the ratification receipts) and Git history of gnu6dotlive/in.gnu6 at commit fec80a7.</text>
+</svg>
+      <!-- /chart:ingnu6-histoire -->
       <figcaption><b>Five visible days.</b> The log is ratified on October 6; the mandate is complete on the 7th, with its sixteen milestones. On the 10th, the <a class="src" data-src="ms-CUDA-05F" href="https://github.com/gnu6dotlive/in.gnu6/blob/fec80a7ae19de4b5838fe9f84dd271d6924fa753/docs/agent-results/blobin-next-01/CUDA-05F.md" data-title="in.gnu6 · CUDA-05F" data-desc="CUDA-05F report: protocol, gates, negative runs kept, limits." data-meta="github.com/gnu6dotlive/in.gnu6/docs/agent-results/blobin-next-01/CUDA-05F.md · commit fec80a7 · as of October 29, 2026">CUDA-05F</a> protocol, the endurance run and the repository opened to the public.</figcaption>
     </figure>
     <div class="prose">
