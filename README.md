@@ -57,7 +57,11 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 ├── calix.html          dossier 3 : le compagnon
 ├── ingnu6.html         dossier 4 : la scène
 ├── comprendre.html     vocabulaire, open source, échelle de preuve, glossaire
-├── en/                 la version anglaise, page pour page (comprendre → glossary.html)
+├── methode.html       ce qu'un « PASS » veut dire : la méthode de preuve commune
+├── verifier.html      vérifier un chiffre soi-même : le 2,12× jusqu'au reçu brut
+├── chronologie.html   un mois d'atelier ouvert : les quatre dépôts sur une frise
+├── en/                 la version anglaise, page pour page (comprendre → glossary, methode → method,
+│                       verifier → verify, chronologie → timeline)
 ├── assets/
 │   ├── style.css       feuille de style commune (jetons gnosix_DS V3.4.1)
 │   ├── sources.js      fiche de source au survol des liens soulignés
@@ -94,6 +98,7 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   │   ├── calix-inventaire.svg      graphique : 1 803 paquets par écosystème
 │   │   ├── ingnu6-endurance.svg      graphique : 9 369 intervalles d'images, 125 s d'endurance
 │   │   ├── ingnu6-histoire.svg       graphique : cinq jours, seize jalons
+│   │   ├── chronologie.svg           graphique : les quatre dépôts, du 20 septembre au 29 octobre
 │   │   └── en/                       les mêmes schémas en anglais (générés)
 │   ├── gif/            animations (+ image de repos *-still.png pour l'impression)
 │   │   ├── gnosix-appstack.gif       l'AppStack sort du deck, cherche, lance

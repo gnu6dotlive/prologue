@@ -818,6 +818,68 @@ def ingnu6_histoire():
                    "Source: QUESTLOG.md (dates of the ratification receipts) and Git history of gnu6dotlive/in.gnu6 at commit fec80a7."))
 
 
+# ---------------------------------------------------------------- chronologie commune
+
+def chronologie():
+    x0, x1 = 230, 1110
+    days = 39  # 20 sept. → 29 oct.
+    sx = (x1 - x0) / days
+    X = lambda d: x0 + d * sx
+    lanes = [("gnosix", L("le bureau", "the desktop")), ("gnostral.rs", L("le moteur", "the engine")),
+             ("Calix", L("le compagnon", "the companion")), ("in.gnu6", L("la scène", "the scene"))]
+    top, lh = 176, 92
+    body = []
+    for d in (17, 20, 30):  # jours charnières
+        body.append(r(X(d) - sx / 2, top - 20, sx, len(lanes) * lh + 10, QUIET, 3))
+    for d, lab in ((0, L("20 sept.", "Sep 20")), (11, L("1er oct.", "Oct 1")), (17, L("7", "7")), (20, L("10", "10")),
+                   (30, L("20 oct.", "Oct 20")), (39, L("29 oct.", "Oct 29"))):
+        body.append(t(X(d), top + len(lanes) * lh + 10, lab, 11.5, 500, SLATE, "middle"))
+    for i, (name, gloss) in enumerate(lanes):
+        y = top + i * lh + 30
+        body.append(t(48, y + 4, name, 15, 700, INK))
+        body.append(t(48, y + 22, gloss, 11.5, 400, SLATE))
+        body.append(line(x0, y, x1, y, HAIR, 1.5))
+    ev = {
+        0: [(15, L("premier dépôt public", "first public repository"), 0), (20, L("licence MIT", "MIT licence"), 1),
+            (22, L("qualification Wayland", "Wayland qualification"), 0), (31, "26.11-rc1", 1), (37, "CI 38/38", 0)],
+        1: [(17, L("Q-001 → Q-008 · v0.1 → v0.8", "Q-001 → Q-008 · v0.1 → v0.8"), 0), (20, "Q-010 → Q-013-C", 1),
+            (31, L("veille amont", "upstream watch"), 0)],
+        2: [(0, L("v0.1.0, sous le nom Shelly", "v0.1.0, as Shelly"), 0), (31, L("8 versions, v0.2.0 → v0.3.1", "8 releases, v0.2.0 → v0.3.1"), 1),
+            (38, L("dernière preuve", "latest evidence"), 0)],
+        3: [(16.5, L("16 jalons ratifiés", "16 milestones ratified"), 0), (18.5, "GPU-05", 1), (20, L("CUDA-05F · public", "CUDA-05F · public"), 0)],
+    }
+    ranges = {2: [(30, 32)], 3: [(16, 17), (18, 19)]}
+    for i, items in ev.items():
+        y = top + i * lh + 30
+        for a, b in ranges.get(i, []):
+            body.append(r(X(a) - 5, y - 5, X(b) - X(a) + 10, 10, BLUE, 5))
+        for d, lab, up in items:
+            body.append(f'<circle cx="{X(d):.1f}" cy="{y}" r="6" fill="{BLUE}" stroke="{SHELL}" stroke-width="2"/>')
+            ty = y - 14 if up == 0 else y + 24
+            anchor = "end" if d > 34 else ("start" if d < 4 else "middle")
+            dx = 0
+            if i == 3 and d == 16.5:
+                anchor, dx = "end", -12
+            if i == 3 and d == 20:
+                anchor, dx = "start", 10
+            body.append(t(X(d) + dx, ty, lab, 11.5, 600, INK, anchor))
+    xs = X(39)
+    body.append(line(xs, top - 24, xs, top + len(lanes) * lh - 8, ORANGE7, 2, "5 4"))
+    body.append(t(xs, top - 30, L("instantané", "snapshot"), 11.5, 700, ORANGE7, "end"))
+    body.append(t(48, 600, L("Bandes grises : les jours charnières — le 7, le 10 et le 20 octobre.", "Grey bands: the pivotal days — October 7, 10 and 20."), 12, 500, SLATE))
+    return frame(640,
+                 L("Un mois d'atelier ouvert : les quatre dépôts sur une frise", "A month of open workshop: the four repositories on one timeline"),
+                 L("Frise du 20 septembre au 29 octobre 2026, une ligne par dépôt : premiers dépôts publics, quêtes et jalons, versions, jusqu'à l'instantané du 29 octobre.",
+                   "Timeline from September 20 to October 29, 2026, one line per repository: first public repositories, quests and milestones, releases, up to the October 29 snapshot."),
+                 L("PROLOGUE · CHRONOLOGIE", "PROLOGUE · TIMELINE"),
+                 L("Un mois d'atelier ouvert", "A month of open workshop"),
+                 L("Quatre dépôts avancent en parallèle ; quelques jours concentrent l'essentiel.",
+                   "Four repositories move in parallel; a few days hold most of it."),
+                 body,
+                 L("Sources : historiques Git, journaux de quêtes et pages de versions des quatre dépôts, aux commits de l'instantané.",
+                   "Sources: Git histories, quest logs and release pages of the four repositories, at the snapshot commits."))
+
+
 CHARTS = {
     "gnosix-statuts": gnosix_statuts, "gnosix-code": gnosix_code, "gnosix-histoire": gnosix_histoire,
     "gnosix-feuille-de-route": gnosix_feuille, "gnostral-histoire": gnostral_histoire,
@@ -825,6 +887,7 @@ CHARTS = {
     "gnostral-reclaim": gnostral_reclaim, "gnostral-feuille-de-route": gnostral_feuille,
     "calix-versions": calix_versions, "calix-espace": calix_espace, "calix-inventaire": calix_inventaire,
     "ingnu6-endurance": ingnu6_endurance, "ingnu6-histoire": ingnu6_histoire,
+    "chronologie": chronologie,
 }
 
 

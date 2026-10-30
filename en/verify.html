@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify a figure yourself — gnostral.rs's 2.12×</title>
+<meta name="description" content="A five-step walkthrough, with nothing to install: find gnostral.rs's “2.12× faster” in the repository's raw receipt, at the frozen commit.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/verify.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/verifier.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/verify.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/verifier.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="Verify a figure yourself — gnostral.rs&#x27;s 2.12×">
+<meta property="og:description" content="A five-step walkthrough, with nothing to install: find gnostral.rs&#x27;s “2.12× faster” in the repository&#x27;s raw receipt, at the frozen commit.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/verify.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="method.html">Method</a>
+      <a href="verify.html" aria-current="page">Verify</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="glossary.html">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../verifier.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Verify</p>
+    <h1>Verify a figure yourself</h1>
+    <p class="lead">Take the most visible figure on the site: “2.12× faster”. In five steps, without installing anything, you will find it in the repository's raw receipt — and see where it comes from.</p>
+  </div>
+
+  <section>
+    <h2>1. The figure</h2>
+    <div class="prose">
+      <p>At the top of the <a href="gnostral.html">gnostral.rs dossier</a>, the first box says: <strong>“2.12× faster than the previous version of the same engine”</strong>. That is a claim. The question now is what it rests on.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. The milestone</h2>
+    <div class="prose">
+      <p>In the “What was measured” table, the <em>Borrowed experts</em> row carries the label <strong><a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a></strong>. Hovering over it opens a card that leads to the measurement's audit receipt. Every figure in the dossier has a milestone, and every milestone a receipt.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. The receipt, at the frozen commit</h2>
+    <div class="prose">
+      <p>The link opens this file, in the public repository:</p>
+    </div>
+    <pre class="code"><code>github.com/gnu6dotlive/gnostral.rs/blob/<b>38c4134a3a398b5b83d34326826362cf4dcc7336</b>/
+  evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json</code></pre>
+    <div class="prose">
+      <p>The long string of digits and letters is the <strong>commit</strong> fingerprint: it names one exact version of the repository. The file read at this address cannot have changed since October 29, even though the repository has moved on.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. The three fields</h2>
+    <div class="prose">
+      <p>The receipt is long, but three fields are enough. They are keyed by answer length; the site's figure is for 512-token answers:</p>
+    </div>
+    <pre class="code"><code>"aggregate": {
+  "baseline":  { "median_tps": { "512": <b>9.506482</b> } },
+  "candidate": { "median_tps": { "512": <b>20.179588</b> } }
+},
+"candidate_over_baseline_median_tps_ratios": { "512": <b>2.122718793345425</b> }</code></pre>
+    <div class="prose">
+      <p><em>baseline</em> is the engine without the patch, <em>candidate</em> the same engine with it. <em>median_tps</em> is the median throughput, in tokens per second, over three processes.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Redo the arithmetic</h2>
+    <div class="prose">
+      <p>20.179588 ÷ 9.506482 = <strong>2.1227…</strong>, rounded to <strong>2.12</strong>. That is exactly the ratio the receipt itself writes. You can go one step further: the <em>per_request</em> field lists the twelve answers one by one, and the medians can be found by hand (9.51 among 10.12 · 9.51 · 9.51; 20.18 among 20.18 · 20.21 · 19.48).</p>
+    </div>
+    <details class="deep">
+      <summary>The same check, in one terminal line</summary>
+      <pre class="code"><code>curl -s https://raw.githubusercontent.com/gnu6dotlive/gnostral.rs/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json \
+  | python3 -c "import json,sys; print(json.load(sys.stdin)['candidate_over_baseline_median_tps_ratios'])"
+# {'128': 2.465204824553318, '512': 2.122718793345425}</code></pre>
+    </details>
+  </section>
+
+  <section>
+    <h2>What you just proved — and what you did not</h2>
+    <div class="grid two">
+      <div class="card">
+        <h4>Proved</h4>
+        <p style="margin-bottom:0">The site's figure is the receipt's, at a dated commit. The receipt is consistent with itself: the ratio follows from the medians, and the medians from the twelve answers.</p>
+      </div>
+      <div class="card">
+        <h4>Not proved</h4>
+        <p style="margin-bottom:0">That the measurement happened as described. That would take the machine and the protocol. The receipt gives what you need to rebuild them — fingerprints of the model and binary, thresholds declared in advance, the failed first run — but that is another job.</p>
+      </div>
+    </div>
+    <div class="dossier-links">
+      <a class="btn" href="method.html">What a “PASS” means</a>
+      <a class="btn ghost" href="gnostral.html">Back to the gnostral.rs dossier</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Receipt followed: gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json at commit 38c4134.</span>
+  </div>
+</footer>
+
+</body>
+</html>

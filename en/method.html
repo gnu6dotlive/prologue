@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a “PASS” means — the method</title>
+<meta name="description" content="The method of evidence shared by the four repositories: a gate written before the run, a receipt after, a fingerprint, and failures kept.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/en/method.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/methode.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/method.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/methode.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="What a “PASS” means — the method">
+<meta property="og:description" content="The method of evidence shared by the four repositories: a gate written before the run, a receipt after, a fingerprint, and failures kept.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/en/method.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="method.html" aria-current="page">Method</a>
+      <a href="verify.html">Verify</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="glossary.html">Glossary</a>
+    </nav>
+    <a class="lang-switch" href="../methode.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Method</p>
+    <h1>What a “PASS” means</h1>
+    <p class="lead">In these repositories, a PASS says only one thing: the precise test, written before the run, passed. It says nothing about stability, security or your machine. This page explains how that modesty is built.</p>
+  </div>
+
+  <section>
+    <h2>Four gestures, in all four repositories</h2>
+    <div class="prose">
+      <p>The four projects share neither a language nor a trade. Yet they repeat the same four gestures, each in its own way: <strong>write the gate before the run</strong>, <strong>keep a receipt after</strong>, <strong>take a fingerprint</strong> of what was measured, and <strong>keep the failure</strong> when the run fails.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Gesture</th><th>gnosix</th><th>gnostral.rs</th><th>Calix</th><th>in.gnu6</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Gesture"><strong>A gate written before</strong></td><td data-label="gnosix">The CI contract, to pass before any publication.</td><td data-label="gnostral.rs">Thresholds declared in advance: at least ×1.1, and ±128 MiB of memory after shutdown.</td><td data-label="Calix">The navigation contract, published before its implementation (v0.2.5).</td><td data-label="in.gnu6">The CUDA-05F protocol, pre-registered before the runs.</td></tr>
+          <tr><td data-label="Gesture"><strong>A receipt after</strong></td><td data-label="gnosix">A level of proof published for each surface.</td><td data-label="gnostral.rs">One JSON receipt per quest, answer by answer.</td><td data-label="Calix">Release notes and an audit of space, figures included.</td><td data-label="in.gnu6">A ratification receipt for each of the sixteen milestones.</td></tr>
+          <tr><td data-label="Gesture"><strong>A fingerprint</strong></td><td data-label="gnosix">A SHA-256 manifest of each public projection.</td><td data-label="gnostral.rs">The exact fingerprints of the measured model and binary.</td><td data-label="Calix">An archive and its SHA-256 fingerprint for each release.</td><td data-label="in.gnu6">The published fingerprint of the raw endurance file.</td></tr>
+          <tr><td data-label="Gesture"><strong>A failure kept</strong></td><td data-label="gnosix">The remaining <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> blockers, written down on October 12.</td><td data-label="gnostral.rs">The first Q-010 run, at +196 MiB, marked not qualified.</td><td data-label="Calix">The case that fails at 560 pixels, kept in the tests.</td><td data-label="in.gnu6">Three failed CUDA-05F acquisitions, archived without reinterpretation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>One ladder, several vocabularies</h2>
+    <div class="prose">
+      <p>Each repository names its levels of proof its own way: PROVEN and QUALIFIED for gnosix, BOUNDED PASS and SINGLE-SERVER PASS for gnostral.rs, fifteen quest states for in.gnu6, a status table that “overrides any more optimistic document” for Calix. Under the words, the same question: <strong>how far does the evidence go?</strong></p>
+    </div>
+    <figure>
+      <img src="../assets/diagrams/en/echelle-preuve.svg" alt="A five-level ladder, from a project on paper to a product usable by a third party, with the translation of gnosix's and gnostral.rs's vocabulary.">
+      <figcaption><b>None of the four skips a step.</b> Write, check in source, test narrowly, observe on real hardware, and only then serve someone else: the repositories refuse to jump from the first level to the last.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>What no PASS says</h2>
+    <div class="box limit">
+      <span class="label">The limits of a PASS</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Duration.</strong> A 125-second run says nothing about a week of use.</li>
+        <li><strong>The adversary.</strong> A functional test does not prove an attacker will not get through.</li>
+        <li><strong>Your machine.</strong> The figures come from one precise configuration; they do not travel.</li>
+        <li><strong>The product.</strong> A series of PASSes does not make software ready for others; that is a separate gate, still closed for all four.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>The right to say “unknown”</h2>
+    <div class="prose">
+      <p>The last gesture is the rarest: <strong>refusing to guess</strong>. gnosix refuses an action when the desktop's state is unknown or stale. gnostral.rs writes “unknown” rather than a plausible value. Calix refuses a document whose version it does not know, instead of showing half of it. in.gnu6 leaves the priority of side quests to the human operator, instead of deciding it alone.</p>
+      <p>To see the method at work on a real figure, follow <a href="verify.html">Verify a figure yourself</a>; to see it over time, the month's <a href="timeline.html">timeline</a>.</p>
+    </div>
+    <div class="dossier-links">
+      <a class="btn" href="verify.html">Verify a figure yourself</a>
+      <a class="btn ghost" href="timeline.html">The month's timeline</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Plain-language dossier · snapshot of October 29, 2026 · CC BY 4.0.</span>
+    <span>Facts drawn from the four repositories, at the snapshot commits.</span>
+  </div>
+</footer>
+
+</body>
+</html>

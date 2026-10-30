@@ -24,7 +24,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ["index.html", "gnosix.html", "gnostral.html", "calix.html", "ingnu6.html", "comprendre.html",
-         "en/index.html", "en/gnosix.html", "en/gnostral.html", "en/calix.html", "en/ingnu6.html", "en/glossary.html"]
+         "en/index.html", "en/gnosix.html", "en/gnostral.html", "en/calix.html", "en/ingnu6.html", "en/glossary.html",
+         "methode.html", "verifier.html", "chronologie.html", "en/method.html", "en/verify.html", "en/timeline.html"]
 
 DATE = {"fr": "29 octobre 2026", "en": "October 29, 2026"}
 LANG = "fr"
@@ -113,6 +114,9 @@ MILESTONES = {
         ("Q-011", "evidence/runs/q011-rtx3070-placement-observation-20261010.json", "Reçu Q-011 : placement des couches sous pression mémoire."),
         ("Q-012", "evidence/runs/gnostral-q012-native-three-families-20261010.json", "Reçu Q-012 : un moteur, trois familles de modèles."),
         ("Q-013-C", "evidence/runs/gnostral-q013c-real-dense-single-server-20261010.json", "Reçu Q-013-C : le cycle de vie d'un vrai processus dense."),
+    ]),
+    "verifier.html": ("gnostral.rs", [
+        ("Q-010", "evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json", "Reçu d'audit Q-010 : la mesure A/B appariée, réponse par réponse."),
     ]),
     "ingnu6.html": ("in.gnu6", [
         ("CUDA-05F", "docs/agent-results/blobin-next-01/CUDA-05F.md", "Rapport CUDA-05F : protocole, portes, essais négatifs conservés, limites."),
@@ -337,6 +341,8 @@ def main():
         p = ROOT / page
         LANG = "en" if page.startswith("en/") else "fr"
         key = page.removeprefix("en/")
+        key = {"glossary.html": "comprendre.html", "method.html": "methode.html",
+               "verify.html": "verifier.html", "timeline.html": "chronologie.html"}.get(key, key)
         s = p.read_text(encoding="utf-8")
         s = ensure_script(link_page(s, key), "../" if LANG == "en" else "")
         p.write_text(s, encoding="utf-8")

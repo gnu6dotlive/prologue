@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ce qu'un « PASS » veut dire — la méthode</title>
+<meta name="description" content="La méthode de preuve commune aux quatre dépôts : une porte écrite avant l'essai, un reçu après, une empreinte, et des échecs conservés.">
+<!-- i18n:start -->
+<link rel="canonical" href="https://gnu6dotlive.github.io/prologue/methode.html">
+<link rel="alternate" hreflang="fr" href="https://gnu6dotlive.github.io/prologue/methode.html">
+<link rel="alternate" hreflang="en" href="https://gnu6dotlive.github.io/prologue/en/method.html">
+<link rel="alternate" hreflang="x-default" href="https://gnu6dotlive.github.io/prologue/methode.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="prologue · gnu6dotlive">
+<meta property="og:title" content="Ce qu&#x27;un « PASS » veut dire — la méthode">
+<meta property="og:description" content="La méthode de preuve commune aux quatre dépôts : une porte écrite avant l&#x27;essai, un reçu après, une empreinte, et des échecs conservés.">
+<meta property="og:url" content="https://gnu6dotlive.github.io/prologue/methode.html">
+<meta property="og:image" content="https://gnu6dotlive.github.io/prologue/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<!-- i18n:end -->
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/sources.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">gnu6dotlive<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="gnosix.html">gnosix</a>
+      <a href="gnostral.html">gnostral.rs</a>
+      <a href="calix.html">Calix</a>
+      <a href="ingnu6.html">in.gnu6</a>
+      <a href="methode.html" aria-current="page">Méthode</a>
+      <a href="verifier.html">Vérifier</a>
+      <a href="chronologie.html">Chronologie</a>
+      <a href="comprendre.html">Comprendre</a>
+    </nav>
+    <a class="lang-switch" href="en/method.html" hreflang="en" lang="en" title="English version">EN</a>
+  </div>
+</header>
+
+<main>
+  <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
+
+  <div class="hero prose">
+    <p class="kicker">Méthode</p>
+    <h1>Ce qu'un « PASS » veut dire</h1>
+    <p class="lead">Dans ces dépôts, un PASS ne dit qu'une chose : le test précis, écrit avant l'essai, a réussi. Il ne dit rien de la stabilité, de la sécurité ou de votre machine. Cette page explique comment se construit cette modestie.</p>
+  </div>
+
+  <section>
+    <h2>Quatre gestes, dans les quatre dépôts</h2>
+    <div class="prose">
+      <p>Les quatre projets n'ont ni le même langage, ni le même métier. Ils répètent pourtant les mêmes quatre gestes, chacun à sa manière : <strong>écrire la porte avant l'essai</strong>, <strong>garder un reçu après</strong>, <strong>prendre une empreinte</strong> de ce qui a été mesuré, et <strong>conserver l'échec</strong> quand l'essai rate.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Geste</th><th>gnosix</th><th>gnostral.rs</th><th>Calix</th><th>in.gnu6</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Geste"><strong>Une porte écrite avant</strong></td><td data-label="gnosix">Le contrat CI, à passer avant toute publication.</td><td data-label="gnostral.rs">Des seuils déclarés d'avance : au moins ×1,1, et ±128 Mio de mémoire après l'arrêt.</td><td data-label="Calix">Le contrat de navigation, publié avant son implémentation (v0.2.5).</td><td data-label="in.gnu6">Le protocole CUDA-05F, pré-enregistré avant les essais.</td></tr>
+          <tr><td data-label="Geste"><strong>Un reçu après</strong></td><td data-label="gnosix">Un niveau de preuve publié pour chaque surface.</td><td data-label="gnostral.rs">Un reçu JSON par quête, réponse par réponse.</td><td data-label="Calix">Des notes de version et un audit de l'espace, chiffres compris.</td><td data-label="in.gnu6">Un reçu de ratification pour chacun des seize jalons.</td></tr>
+          <tr><td data-label="Geste"><strong>Une empreinte</strong></td><td data-label="gnosix">Un manifeste SHA-256 de chaque projection publique.</td><td data-label="gnostral.rs">Les empreintes exactes du modèle et du binaire mesurés.</td><td data-label="Calix">Une archive et son empreinte SHA-256 pour chaque version.</td><td data-label="in.gnu6">L'empreinte publiée du fichier brut d'endurance.</td></tr>
+          <tr><td data-label="Geste"><strong>Un échec conservé</strong></td><td data-label="gnosix">Les blocages <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> restants, écrits le 12 octobre.</td><td data-label="gnostral.rs">Le premier essai de Q-010, à +196 Mio, marqué non qualifié.</td><td data-label="Calix">Le cas qui échoue à 560 pixels, gardé dans les tests.</td><td data-label="in.gnu6">Trois acquisitions CUDA-05F ratées, archivées sans réinterprétation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Une échelle, plusieurs vocabulaires</h2>
+    <div class="prose">
+      <p>Chaque dépôt nomme ses niveaux de preuve à sa façon : PROVEN et QUALIFIED pour gnosix, BOUNDED PASS et SINGLE-SERVER PASS pour gnostral.rs, quinze états de quête pour in.gnu6, un tableau d'état « qui prime sur tout document plus optimiste » pour Calix. Sous les mots, la même question : <strong>jusqu'où la preuve va-t-elle ?</strong></p>
+    </div>
+    <figure>
+      <img src="assets/diagrams/echelle-preuve.svg" alt="Échelle à cinq niveaux, du simple projet sur le papier au produit utilisable par un tiers, avec la traduction du vocabulaire de gnosix et de gnostral.rs.">
+      <figcaption><b>Aucun des quatre ne saute de marche.</b> Écrire, vérifier en source, tester étroitement, observer sur du vrai matériel, puis seulement servir à quelqu'un d'autre : les dépôts refusent de passer du premier niveau au dernier.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Ce qu'aucun PASS ne dit</h2>
+    <div class="box limit">
+      <span class="label">Les limites d'un PASS</span>
+      <ul style="margin-bottom:0">
+        <li><strong>La durée.</strong> Un essai de 125 secondes ne dit rien d'une semaine d'usage.</li>
+        <li><strong>L'adversaire.</strong> Un test fonctionnel ne prouve pas qu'un attaquant ne passera pas.</li>
+        <li><strong>Votre machine.</strong> Les chiffres viennent d'une configuration précise ; ils ne voyagent pas.</li>
+        <li><strong>Le produit.</strong> Une suite de PASS ne fait pas un logiciel prêt pour autrui ; c'est une porte à part, encore fermée pour les quatre.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le droit de dire « inconnu »</h2>
+    <div class="prose">
+      <p>Le dernier geste est le plus rare : <strong>refuser de deviner</strong>. gnosix refuse une action quand l'état du bureau est inconnu ou périmé. gnostral.rs écrit « inconnu » plutôt qu'une valeur plausible. Calix refuse un document dont il ne connaît pas la version, au lieu d'en afficher la moitié. in.gnu6 laisse la priorité des quêtes annexes à l'opérateur humain, au lieu de la décider seul.</p>
+      <p>Pour voir la méthode à l'œuvre sur un vrai chiffre, suivez le parcours de <a href="verifier.html">Vérifier un chiffre soi-même</a> ; pour la voir dans le temps, la <a href="chronologie.html">chronologie</a> du mois.</p>
+    </div>
+    <div class="dossier-links">
+      <a class="btn" href="verifier.html">Vérifier un chiffre soi-même</a>
+      <a class="btn ghost" href="chronologie.html">La chronologie du mois</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Document de vulgarisation · instantané du 29 octobre 2026 · CC BY 4.0.</span>
+    <span>Faits issus des quatre dépôts, aux commits de l'instantané.</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -18,7 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://gnu6dotlive.github.io/prologue/"
 PAIRS = [("index.html", "en/index.html"), ("gnosix.html", "en/gnosix.html"),
          ("gnostral.html", "en/gnostral.html"), ("calix.html", "en/calix.html"),
-         ("ingnu6.html", "en/ingnu6.html"), ("comprendre.html", "en/glossary.html")]
+         ("ingnu6.html", "en/ingnu6.html"), ("comprendre.html", "en/glossary.html"),
+         ("methode.html", "en/method.html"), ("verifier.html", "en/verify.html"), ("chronologie.html", "en/timeline.html")]
 
 
 def url(page: str) -> str:

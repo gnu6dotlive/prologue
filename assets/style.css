@@ -515,6 +515,22 @@ figure.shot img { padding: 0; background: #0E0F12; }
 }
 .lang-switch:hover, .lang-switch:focus-visible { border-color: var(--ds-signal-orange-700); color: var(--ds-signal-orange-700); }
 
+/* ---------- Blocs de code (page « Vérifier ») ---------- */
+
+pre.code {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.125rem;
+  overflow-x: auto;
+  background: var(--ds-anthracite);
+  color: #E6E8EB;
+  border-radius: var(--ds-radius);
+  font-family: var(--ds-mono);
+  font-size: .8125rem;
+  line-height: 1.6;
+}
+pre.code b { color: #FFB27A; font-weight: 700; }
+pre.code code { background: none; padding: 0; color: inherit; font-size: inherit; }
+
 /* ---------- Bandeau d'instantané daté ---------- */
 
 .snapshot {
