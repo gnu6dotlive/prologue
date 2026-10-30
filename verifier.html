@@ -24,6 +24,7 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
 <body>
 
@@ -55,21 +56,21 @@
   </div>
 
   <section>
-    <h2>1. Le chiffre</h2>
+    <h2 id="1-le-chiffre">1. Le chiffre <a class="anchor" href="#1-le-chiffre" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>En haut du <a href="gnostral.html">dossier gnostral.rs</a>, la première case dit : <strong>« 2,12× plus vite que la version précédente du même moteur »</strong>. C'est une affirmation. Il s'agit maintenant de savoir sur quoi elle repose.</p>
     </div>
   </section>
 
   <section>
-    <h2>2. Le jalon</h2>
+    <h2 id="2-le-jalon">2. Le jalon <a class="anchor" href="#2-le-jalon" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Dans le tableau « Ce qui a été mesuré », la ligne <em>Experts empruntés</em> porte l'étiquette <strong><a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a></strong>. Au survol, cette étiquette ouvre une fiche : elle mène au reçu d'audit de la mesure. Tout chiffre du dossier a ainsi un jalon, et chaque jalon un reçu.</p>
     </div>
   </section>
 
   <section>
-    <h2>3. Le reçu, au commit figé</h2>
+    <h2 id="3-le-recu-au-commit-fige">3. Le reçu, au commit figé <a class="anchor" href="#3-le-recu-au-commit-fige" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le lien ouvre ce fichier, dans le dépôt public :</p>
     </div>
@@ -81,7 +82,7 @@
   </section>
 
   <section>
-    <h2>4. Les trois champs</h2>
+    <h2 id="4-les-trois-champs">4. Les trois champs <a class="anchor" href="#4-les-trois-champs" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le reçu est long, mais trois champs suffisent. Ils sont rangés par longueur de réponse ; le chiffre du site correspond aux réponses de 512 jetons :</p>
     </div>
@@ -96,7 +97,7 @@
   </section>
 
   <section>
-    <h2>5. Refaire le calcul</h2>
+    <h2 id="5-refaire-le-calcul">5. Refaire le calcul <a class="anchor" href="#5-refaire-le-calcul" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>20,179588 ÷ 9,506482 = <strong>2,1227…</strong>, arrondi à <strong>2,12</strong>. C'est exactement le rapport que le reçu écrit lui-même. Vous pouvez aller un cran plus loin : le champ <em>per_request</em> liste les douze réponses une à une, et les médianes se retrouvent à la main (9,51 parmi 10,12 · 9,51 · 9,51 ; 20,18 parmi 20,18 · 20,21 · 19,48).</p>
     </div>
@@ -109,7 +110,7 @@
   </section>
 
   <section>
-    <h2>Ce que vous venez de prouver — et ce que non</h2>
+    <h2 id="ce-que-vous-venez-de-prouver-et-ce-que-non">Ce que vous venez de prouver — et ce que non <a class="anchor" href="#ce-que-vous-venez-de-prouver-et-ce-que-non" aria-label="Lien vers cette section">#</a></h2>
     <div class="grid two">
       <div class="card">
         <h4>Prouvé</h4>
@@ -126,6 +127,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="ingnu6.html"><span>← Précédent</span><b>in.gnu6</b></a>
+    <a class="pager-next" href="chronologie.html"><span>Suivant →</span><b>Un mois d&#x27;atelier ouvert</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

@@ -24,6 +24,7 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
 <body>
 
@@ -55,7 +56,7 @@
   </div>
 
   <section>
-    <h2>Quatre gestes, dans les quatre dépôts</h2>
+    <h2 id="quatre-gestes-dans-les-quatre-depots">Quatre gestes, dans les quatre dépôts <a class="anchor" href="#quatre-gestes-dans-les-quatre-depots" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Les quatre projets n'ont ni le même langage, ni le même métier. Ils répètent pourtant les mêmes quatre gestes, chacun à sa manière : <strong>écrire la porte avant l'essai</strong>, <strong>garder un reçu après</strong>, <strong>prendre une empreinte</strong> de ce qui a été mesuré, et <strong>conserver l'échec</strong> quand l'essai rate.</p>
     </div>
@@ -73,7 +74,7 @@
   </section>
 
   <section>
-    <h2>Une échelle, plusieurs vocabulaires</h2>
+    <h2 id="une-echelle-plusieurs-vocabulaires">Une échelle, plusieurs vocabulaires <a class="anchor" href="#une-echelle-plusieurs-vocabulaires" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Chaque dépôt nomme ses niveaux de preuve à sa façon : PROVEN et QUALIFIED pour gnosix, BOUNDED PASS et SINGLE-SERVER PASS pour gnostral.rs, quinze états de quête pour in.gnu6, un tableau d'état « qui prime sur tout document plus optimiste » pour Calix. Sous les mots, la même question : <strong>jusqu'où la preuve va-t-elle ?</strong></p>
     </div>
@@ -84,7 +85,7 @@
   </section>
 
   <section>
-    <h2>Ce qu'aucun PASS ne dit</h2>
+    <h2 id="ce-qu-aucun-pass-ne-dit">Ce qu'aucun PASS ne dit <a class="anchor" href="#ce-qu-aucun-pass-ne-dit" aria-label="Lien vers cette section">#</a></h2>
     <div class="box limit">
       <span class="label">Les limites d'un PASS</span>
       <ul style="margin-bottom:0">
@@ -97,7 +98,7 @@
   </section>
 
   <section>
-    <h2>Le droit de dire « inconnu »</h2>
+    <h2 id="le-droit-de-dire-inconnu">Le droit de dire « inconnu » <a class="anchor" href="#le-droit-de-dire-inconnu" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le dernier geste est le plus rare : <strong>refuser de deviner</strong>. gnosix refuse une action quand l'état du bureau est inconnu ou périmé. gnostral.rs écrit « inconnu » plutôt qu'une valeur plausible. Calix refuse un document dont il ne connaît pas la version, au lieu d'en afficher la moitié. in.gnu6 laisse la priorité des quêtes annexes à l'opérateur humain, au lieu de la décider seul.</p>
       <p>Pour voir la méthode à l'œuvre sur un vrai chiffre, suivez le parcours de <a href="verifier.html">Vérifier un chiffre soi-même</a> ; pour la voir dans le temps, la <a href="chronologie.html">chronologie</a> du mois.</p>
@@ -108,6 +109,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="index.html"><span>← Précédent</span><b>Ce qui est construit ici, et comment c&#x27;est prouvé</b></a>
+    <a class="pager-next" href="gnosix.html"><span>Suivant →</span><b>gnosix</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

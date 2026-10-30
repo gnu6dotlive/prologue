@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/sources.js" defer></script>
+<script src="../assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,28 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="On this page">
+    <nav>
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#in-one-picture">In one picture</a></li>
+        <li><a href="#the-principle">The principle</a></li>
+        <li><a href="#what-the-engine-owns-and-what-it-ignores">What the engine owns — and what it ignores</a></li>
+        <li><a href="#two-products-to-try-to-break-the-engine">Two products to try to break the engine</a></li>
+        <li><a href="#three-surfaces-three-levels-of-truth">Three surfaces, three levels of truth</a></li>
+        <li><a href="#the-figures-and-what-they-do-not-prove">The figures, and what they do not prove</a></li>
+        <li><a href="#what-the-licence-does-not-say">What the licence does not say</a></li>
+        <li><a href="#why-it-is-a-programme-of-evidence">Why it is a programme of evidence</a></li>
+        <li><a href="#history-a-quest-log-not-a-task-list">History: a quest log, not a task list</a></li>
+        <li><a href="#projections-from-research-to-product">Projections: from research to product</a></li>
+        <li><a href="#what-it-changes-depending-on-who-you-are">What it changes, depending on who you are</a></li>
+        <li><a href="#going-further">Going further</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
 
   <div class="hero prose">
@@ -54,6 +76,25 @@
     <p class="lead">An engine that decides what exists in a scene — positions, relations, time, constraints — and lets each display decide only <em>how</em> to show it.</p>
     <p><span class="tag partial">Research</span> <span class="tag">2026.10.0-research</span> <span class="tag no">No OSS licence</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>On this page</summary>
+    <ol>
+        <li><a href="#in-one-picture">In one picture</a></li>
+        <li><a href="#the-principle">The principle</a></li>
+        <li><a href="#what-the-engine-owns-and-what-it-ignores">What the engine owns — and what it ignores</a></li>
+        <li><a href="#two-products-to-try-to-break-the-engine">Two products to try to break the engine</a></li>
+        <li><a href="#three-surfaces-three-levels-of-truth">Three surfaces, three levels of truth</a></li>
+        <li><a href="#the-figures-and-what-they-do-not-prove">The figures, and what they do not prove</a></li>
+        <li><a href="#what-the-licence-does-not-say">What the licence does not say</a></li>
+        <li><a href="#why-it-is-a-programme-of-evidence">Why it is a programme of evidence</a></li>
+        <li><a href="#history-a-quest-log-not-a-task-list">History: a quest log, not a task list</a></li>
+        <li><a href="#projections-from-research-to-product">Projections: from research to product</a></li>
+        <li><a href="#what-it-changes-depending-on-who-you-are">What it changes, depending on who you are</a></li>
+        <li><a href="#going-further">Going further</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">16</span><span class="caption">ratified milestones, MQ-00 to MQ-15, for the documented mandate</span></div>
@@ -63,7 +104,7 @@
   </div>
 
   <section>
-    <h2>In one picture</h2>
+    <h2 id="in-one-picture">In one picture <a class="anchor" href="#in-one-picture" aria-label="Link to this section">#</a></h2>
     <div class="box analogy">
       <span class="label">The analogy</span>
       <p>Think of a theatre. The <strong>stage</strong> knows where the actors, the sets and the passages are: it decides what exists and what is possible. The <strong>projectors</strong> light that stage with their own technique — one projects an image, another lights it at a grazing angle.</p>
@@ -72,7 +113,7 @@
   </section>
 
   <section>
-    <h2>The principle</h2>
+    <h2 id="the-principle">The principle <a class="anchor" href="#the-principle" aria-label="Link to this section">#</a></h2>
     <figure>
       <img src="../assets/diagrams/en/gnu6-scene.svg" alt="The scene holds identities, relations, time and constraints. Three different projectors show it without being able to redefine it.">
       <figcaption><b>A single semantic authority.</b> A renderer may observe and draw the scene; it may not rename, move or invent what exists. That is the central rule of the repository's contract.</figcaption>
@@ -89,7 +130,7 @@
   </section>
 
   <section>
-    <h2>What the engine owns — and what it ignores</h2>
+    <h2 id="what-the-engine-owns-and-what-it-ignores">What the engine owns — and what it ignores <a class="anchor" href="#what-the-engine-owns-and-what-it-ignores" aria-label="Link to this section">#</a></h2>
     <div class="grid two">
       <div class="card">
         <h4>It owns</h4>
@@ -116,7 +157,7 @@
   </section>
 
   <section>
-    <h2>Two products to try to break the engine</h2>
+    <h2 id="two-products-to-try-to-break-the-engine">Two products to try to break the engine <a class="anchor" href="#two-products-to-try-to-break-the-engine" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>Docklab, a dock of nested cards, and a harness for a jewellery shop, a fan of tarot cards: two trades with nothing in common. They must run on the same core, without either one forking its laws.</p>
       <p>This is milestone MQ-10. The two products share a single test scene, with one clock, one space and one topology registry. They are allowed only adapters and configuration: no product name, no special branch in the engine's code.</p>
@@ -135,7 +176,7 @@
   </section>
 
   <section>
-    <h2>Three surfaces, three levels of truth</h2>
+    <h2 id="three-surfaces-three-levels-of-truth">Three surfaces, three levels of truth <a class="anchor" href="#three-surfaces-three-levels-of-truth" aria-label="Link to this section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Surface</th><th>What it is</th><th>Evidence currently admissible</th></tr></thead>
@@ -165,7 +206,7 @@
   </section>
 
   <section>
-    <h2>The figures, and what they do not prove</h2>
+    <h2 id="the-figures-and-what-they-do-not-prove">The figures, and what they do not prove <a class="anchor" href="#the-figures-and-what-they-do-not-prove" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>Two observations recur in the repository's documents, and they are interesting precisely because they are bounded.</p>
       <p><strong>Endurance:</strong> 9,370 frames presented in 124.994 seconds, without a single discarded frame — about 75 frames per second on average, with a p95 of 13.478 ms. Measured locally, through the <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> compositor's presentation timestamps.</p>
@@ -191,7 +232,7 @@
   </section>
 
   <section>
-    <h2>What the licence does not say</h2>
+    <h2 id="what-the-licence-does-not-say">What the licence does not say <a class="anchor" href="#what-the-licence-does-not-say" aria-label="Link to this section">#</a></h2>
     <div class="box limit">
       <span class="label">Good to know before reusing</span>
       <p>The repository has been public since October 10, 2026, but <strong>its licence has not been decided</strong>. The package file explicitly declares "UNLICENSED". A visible repository therefore does not grant a general right to copy or modify the code.</p>
@@ -200,7 +241,7 @@
   </section>
 
   <section>
-    <h2>Why it is a programme of evidence</h2>
+    <h2 id="why-it-is-a-programme-of-evidence">Why it is a programme of evidence <a class="anchor" href="#why-it-is-a-programme-of-evidence" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The repository does not present a list of features: it presents a list of <strong>milestones to ratify</strong>. Each must rest on a law, a falsification test, an execution observation — or remain explicitly open. A milestone can be rejected by a failing test, and the rejection stays written down.</p>
       <p>A side experiment in the repository shows the method at work. A <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> supervisor hands a graphics computation to a separate process, under a distinct system account, and eleven gates are written <em>before</em> the run. Three acquisitions failed; they are kept. The fourth passes the ten lab gates — and the eleventh, the authorisation to publish, remains refused for lack of an independent human review.</p>
@@ -216,7 +257,7 @@
   </section>
 
   <section>
-    <h2>History: a quest log, not a task list</h2>
+    <h2 id="history-a-quest-log-not-a-task-list">History: a quest log, not a task list <a class="anchor" href="#history-a-quest-log-not-a-task-list" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The repository does not keep a task list: it keeps a quest log. The main questline defines what "complete" means; side quests keep what was learned along the way.</p>
     </div>
@@ -230,7 +271,7 @@
   </section>
 
   <section>
-    <h2>Projections: from research to product</h2>
+    <h2 id="projections-from-research-to-product">Projections: from research to product <a class="anchor" href="#projections-from-research-to-product" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>in.gnu6 is a programme of evidence. To become a dependency you install, it needs an accepted native renderer, a licence, a stable API and a publication — four things it does not claim today.</p>
     </div>
@@ -247,7 +288,7 @@
   </section>
 
   <section>
-    <h2>What it changes, depending on who you are</h2>
+    <h2 id="what-it-changes-depending-on-who-you-are">What it changes, depending on who you are <a class="anchor" href="#what-it-changes-depending-on-who-you-are" aria-label="Link to this section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Curious</h4>
@@ -265,7 +306,7 @@
   </section>
 
   <section>
-    <h2>Going further</h2>
+    <h2 id="going-further">Going further <a class="anchor" href="#going-further" aria-label="Link to this section">#</a></h2>
     <details class="deep">
       <summary>Technical — the repository's words</summary>
       <p><strong>Scene:</strong> the set of objects, relations, positions and constraints the engine holds to be true. <strong>Projection:</strong> the translation of that scene into pixels, done by a renderer. <strong>Renderer:</strong> the program that draws — browser, <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="An open graphics and compute API, maintained by the Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a>, or any other to come. <strong>Topology:</strong> the map of places and links, including when it changes. <strong><a class="src" data-src="wppresentation" href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time" data-title="wp_presentation" data-desc="A Wayland protocol that tells when a frame was actually presented on screen." data-meta="gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time">wp_presentation</a>:</strong> the <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Linux&#x27;s modern display protocol, between applications and the compositor." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> mechanism that tells when a frame was actually presented on screen.</p>
@@ -283,6 +324,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Previous / Next">
+    <a class="pager-prev" href="calix.html"><span>← Previous</span><b>Calix</b></a>
+    <a class="pager-next" href="verify.html"><span>Next →</span><b>Verify a figure yourself</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

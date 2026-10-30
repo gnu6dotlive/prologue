@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,28 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="Sur cette page">
+    <nav>
+      <p class="toc-title">Sur cette page</p>
+      <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#le-principe">Le principe</a></li>
+        <li><a href="#ce-que-le-moteur-possede-et-ce-qu-il-ignore">Ce que le moteur possède — et ce qu&#x27;il ignore</a></li>
+        <li><a href="#deux-produits-pour-essayer-de-casser-le-moteur">Deux produits pour essayer de casser le moteur</a></li>
+        <li><a href="#trois-surfaces-trois-statuts-de-verite">Trois surfaces, trois statuts de vérité</a></li>
+        <li><a href="#les-chiffres-et-ce-qu-ils-ne-prouvent-pas">Les chiffres, et ce qu&#x27;ils ne prouvent pas</a></li>
+        <li><a href="#ce-que-la-licence-ne-dit-pas">Ce que la licence ne dit pas</a></li>
+        <li><a href="#pourquoi-c-est-un-programme-de-preuve">Pourquoi c&#x27;est un programme de preuve</a></li>
+        <li><a href="#historique-un-journal-de-quetes-pas-une-liste-de-taches">Historique : un journal de quêtes, pas une liste de tâches</a></li>
+        <li><a href="#projections-de-la-recherche-au-produit">Projections : de la recherche au produit</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
 
   <div class="hero prose">
@@ -54,6 +76,25 @@
     <p class="lead">Un moteur qui décide de ce qui existe dans une scène — positions, relations, temps, contraintes — et laisse chaque affichage décider seulement <em>comment</em> le montrer.</p>
     <p><span class="tag partial">Recherche</span> <span class="tag">2026.10.0-research</span> <span class="tag no">Pas de licence OSS</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>Sur cette page</summary>
+    <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#le-principe">Le principe</a></li>
+        <li><a href="#ce-que-le-moteur-possede-et-ce-qu-il-ignore">Ce que le moteur possède — et ce qu&#x27;il ignore</a></li>
+        <li><a href="#deux-produits-pour-essayer-de-casser-le-moteur">Deux produits pour essayer de casser le moteur</a></li>
+        <li><a href="#trois-surfaces-trois-statuts-de-verite">Trois surfaces, trois statuts de vérité</a></li>
+        <li><a href="#les-chiffres-et-ce-qu-ils-ne-prouvent-pas">Les chiffres, et ce qu&#x27;ils ne prouvent pas</a></li>
+        <li><a href="#ce-que-la-licence-ne-dit-pas">Ce que la licence ne dit pas</a></li>
+        <li><a href="#pourquoi-c-est-un-programme-de-preuve">Pourquoi c&#x27;est un programme de preuve</a></li>
+        <li><a href="#historique-un-journal-de-quetes-pas-une-liste-de-taches">Historique : un journal de quêtes, pas une liste de tâches</a></li>
+        <li><a href="#projections-de-la-recherche-au-produit">Projections : de la recherche au produit</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">16</span><span class="caption">jalons ratifiés, de MQ-00 à MQ-15, pour le mandat documenté</span></div>
@@ -63,7 +104,7 @@
   </div>
 
   <section>
-    <h2>En une image</h2>
+    <h2 id="en-une-image">En une image <a class="anchor" href="#en-une-image" aria-label="Lien vers cette section">#</a></h2>
     <div class="box analogy">
       <span class="label">L'analogie</span>
       <p>Pensez à un théâtre. La <strong>scène</strong> sait où sont les acteurs, les décors et les passages : c'est elle qui décide de ce qui existe et de ce qui est possible. Les <strong>projecteurs</strong> éclairent cette scène selon leur propre technique — l'un projette une image, l'autre éclaire en lumière rasante.</p>
@@ -72,7 +113,7 @@
   </section>
 
   <section>
-    <h2>Le principe</h2>
+    <h2 id="le-principe">Le principe <a class="anchor" href="#le-principe" aria-label="Lien vers cette section">#</a></h2>
     <figure>
       <img src="assets/diagrams/gnu6-scene.svg" alt="La scène détient les identités, relations, temps et contraintes. Trois projecteurs différents la montrent sans pouvoir la redéfinir.">
       <figcaption><b>Une seule autorité sémantique.</b> Un renderer peut observer et dessiner la scène ; il ne peut ni renommer, ni déplacer, ni inventer ce qui existe. C'est la règle centrale du contrat du dépôt.</figcaption>
@@ -89,7 +130,7 @@
   </section>
 
   <section>
-    <h2>Ce que le moteur possède — et ce qu'il ignore</h2>
+    <h2 id="ce-que-le-moteur-possede-et-ce-qu-il-ignore">Ce que le moteur possède — et ce qu'il ignore <a class="anchor" href="#ce-que-le-moteur-possede-et-ce-qu-il-ignore" aria-label="Lien vers cette section">#</a></h2>
     <div class="grid two">
       <div class="card">
         <h4>Il possède</h4>
@@ -116,7 +157,7 @@
   </section>
 
   <section>
-    <h2>Deux produits pour essayer de casser le moteur</h2>
+    <h2 id="deux-produits-pour-essayer-de-casser-le-moteur">Deux produits pour essayer de casser le moteur <a class="anchor" href="#deux-produits-pour-essayer-de-casser-le-moteur" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Docklab, un dock aux cartes imbriquées, et un harnais pour une bijouterie, un éventail de cartes de tarot : deux métiers que tout oppose. Ils doivent tourner sur le même noyau, sans qu'aucun ne fasse bifurquer ses lois.</p>
       <p>C'est le jalon MQ-10. Les deux produits cohabitent dans une seule scène de test, avec une seule horloge, un seul espace et un seul registre des topologies. Ils n'ont droit qu'à des adaptateurs et à de la configuration : aucun nom de produit, aucune branche particulière dans le code du moteur.</p>
@@ -135,7 +176,7 @@
   </section>
 
   <section>
-    <h2>Trois surfaces, trois statuts de vérité</h2>
+    <h2 id="trois-surfaces-trois-statuts-de-verite">Trois surfaces, trois statuts de vérité <a class="anchor" href="#trois-surfaces-trois-statuts-de-verite" aria-label="Lien vers cette section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Surface</th><th>Ce que c'est</th><th>Preuve actuellement admissible</th></tr></thead>
@@ -165,7 +206,7 @@
   </section>
 
   <section>
-    <h2>Les chiffres, et ce qu'ils ne prouvent pas</h2>
+    <h2 id="les-chiffres-et-ce-qu-ils-ne-prouvent-pas">Les chiffres, et ce qu'ils ne prouvent pas <a class="anchor" href="#les-chiffres-et-ce-qu-ils-ne-prouvent-pas" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Deux observations reviennent dans les documents du dépôt, et elles sont intéressantes précisément parce qu'elles sont bornées.</p>
       <p><strong>Endurance :</strong> 9 370 images présentées en 124,994 secondes, sans une seule image écartée, soit environ 75 images par seconde en moyenne, avec un p95 de 13,478 ms. Mesuré localement, via l'horodatage de présentation du compositeur <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a>.</p>
@@ -191,7 +232,7 @@
   </section>
 
   <section>
-    <h2>Ce que la licence ne dit pas</h2>
+    <h2 id="ce-que-la-licence-ne-dit-pas">Ce que la licence ne dit pas <a class="anchor" href="#ce-que-la-licence-ne-dit-pas" aria-label="Lien vers cette section">#</a></h2>
     <div class="box limit">
       <span class="label">À savoir avant de réutiliser</span>
       <p>Le dépôt est public depuis le 10 octobre 2026, mais <strong>la licence n'est pas décidée</strong>. Le fichier de paquet déclare explicitement « UNLICENSED ». Un dépôt visible n'accorde donc pas le droit général de copier ou de modifier le code.</p>
@@ -200,7 +241,7 @@
   </section>
 
   <section>
-    <h2>Pourquoi c'est un programme de preuve</h2>
+    <h2 id="pourquoi-c-est-un-programme-de-preuve">Pourquoi c'est un programme de preuve <a class="anchor" href="#pourquoi-c-est-un-programme-de-preuve" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le dépôt ne présente pas une liste de fonctionnalités : il présente une liste de <strong>jalons à ratifier</strong>. Chacun doit être adossé à une loi, un test de falsification, une observation d'exécution — ou rester explicitement ouvert. Un jalon peut être refusé par un test qui échoue, et le refus reste écrit.</p>
       <p>Une expérience annexe du dépôt montre la méthode à l'œuvre. Un superviseur <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> confie un calcul graphique à un processus séparé, sous un compte système distinct, et onze portes sont écrites <em>avant</em> l'essai. Trois acquisitions ont échoué ; elles sont conservées. La quatrième passe les dix portes de laboratoire — et la onzième, l'autorisation de publier, reste refusée faute de revue humaine indépendante.</p>
@@ -216,7 +257,7 @@
   </section>
 
   <section>
-    <h2>Historique : un journal de quêtes, pas une liste de tâches</h2>
+    <h2 id="historique-un-journal-de-quetes-pas-une-liste-de-taches">Historique : un journal de quêtes, pas une liste de tâches <a class="anchor" href="#historique-un-journal-de-quetes-pas-une-liste-de-taches" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le dépôt ne tient pas un carnet de tâches : il tient un journal de quêtes. La quête principale définit ce que « complet » veut dire ; les quêtes annexes gardent ce qu'on a appris en chemin.</p>
     </div>
@@ -230,7 +271,7 @@
   </section>
 
   <section>
-    <h2>Projections : de la recherche au produit</h2>
+    <h2 id="projections-de-la-recherche-au-produit">Projections : de la recherche au produit <a class="anchor" href="#projections-de-la-recherche-au-produit" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>in.gnu6 est un programme de preuve. Pour devenir une dépendance qu'on installe, il lui faut un rendu natif accepté, une licence, une API stable et une publication — quatre choses qu'il ne revendique pas aujourd'hui.</p>
     </div>
@@ -247,7 +288,7 @@
   </section>
 
   <section>
-    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <h2 id="ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes <a class="anchor" href="#ce-que-ca-change-selon-qui-vous-etes" aria-label="Lien vers cette section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Curieux</h4>
@@ -265,7 +306,7 @@
   </section>
 
   <section>
-    <h2>Pour aller plus loin</h2>
+    <h2 id="pour-aller-plus-loin">Pour aller plus loin <a class="anchor" href="#pour-aller-plus-loin" aria-label="Lien vers cette section">#</a></h2>
     <details class="deep">
       <summary>Technique — les mots du dépôt</summary>
       <p><strong>Scène :</strong> l'ensemble des objets, relations, positions et contraintes que le moteur considère comme vrais. <strong>Projection :</strong> la traduction de cette scène en pixels, faite par un renderer. <strong>Renderer :</strong> le programme qui dessine — navigateur, <a class="src" data-src="vulkan" href="https://github.com/KhronosGroup/Vulkan-Docs" data-title="Vulkan" data-desc="API graphique et de calcul ouverte, maintenue par le Khronos Group." data-meta="github.com/KhronosGroup/Vulkan-Docs">Vulkan</a>, ou tout autre à venir. <strong>Topologie :</strong> la carte des places et des liens, y compris quand elle change. <strong><a class="src" data-src="wppresentation" href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time" data-title="wp_presentation" data-desc="Protocole Wayland qui indique quand une image a réellement été présentée à l&#x27;écran." data-meta="gitlab.freedesktop.org/wayland/wayland-protocols/-/tree/main/stable/presentation-time">wp_presentation</a> :</strong> le mécanisme <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> qui indique quand une image a réellement été présentée à l'écran.</p>
@@ -283,6 +324,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="calix.html"><span>← Précédent</span><b>Calix</b></a>
+    <a class="pager-next" href="verifier.html"><span>Suivant →</span><b>Vérifier un chiffre soi-même</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,27 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="Sur cette page">
+    <nav>
+      <p class="toc-title">Sur cette page</p>
+      <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#le-probleme-puis-l-astuce">Le problème, puis l&#x27;astuce</a></li>
+        <li><a href="#ce-qui-a-ete-mesure-et-dans-quel-cadre">Ce qui a été mesuré — et dans quel cadre</a></li>
+        <li><a href="#par-rapport-a-quoi-exactement">Par rapport à quoi, exactement ?</a></li>
+        <li><a href="#comment-une-mesure-devient-une-preuve">Comment une mesure devient une preuve</a></li>
+        <li><a href="#ce-que-ce-n-est-pas">Ce que ce n&#x27;est pas</a></li>
+        <li><a href="#pourquoi-les-echecs-sont-publics">Pourquoi les échecs sont publics</a></li>
+        <li><a href="#historique-quinze-quetes-en-quinze-jours">Historique : quinze quêtes en quinze jours</a></li>
+        <li><a href="#projections-la-feuille-de-route">Projections : la feuille de route</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
 
   <div class="hero prose">
@@ -54,6 +75,24 @@
     <p class="lead">Un laboratoire ouvert qui cherche à faire tourner de gros modèles d'intelligence artificielle sur une carte graphique modeste — et qui publie ses mesures, y compris celles qui déçoivent.</p>
     <p><span class="tag partial">Recherche</span> <span class="tag">v0.8.0</span> <span class="tag">Licence MIT</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>Sur cette page</summary>
+    <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#le-probleme-puis-l-astuce">Le problème, puis l&#x27;astuce</a></li>
+        <li><a href="#ce-qui-a-ete-mesure-et-dans-quel-cadre">Ce qui a été mesuré — et dans quel cadre</a></li>
+        <li><a href="#par-rapport-a-quoi-exactement">Par rapport à quoi, exactement ?</a></li>
+        <li><a href="#comment-une-mesure-devient-une-preuve">Comment une mesure devient une preuve</a></li>
+        <li><a href="#ce-que-ce-n-est-pas">Ce que ce n&#x27;est pas</a></li>
+        <li><a href="#pourquoi-les-echecs-sont-publics">Pourquoi les échecs sont publics</a></li>
+        <li><a href="#historique-quinze-quetes-en-quinze-jours">Historique : quinze quêtes en quinze jours</a></li>
+        <li><a href="#projections-la-feuille-de-route">Projections : la feuille de route</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">2,12<span class="unit">×</span></span><span class="caption">plus vite que la version précédente du <b>même moteur</b></span></div>
@@ -63,7 +102,7 @@
   </div>
 
   <section>
-    <h2>En une image</h2>
+    <h2 id="en-une-image">En une image <a class="anchor" href="#en-une-image" aria-label="Lien vers cette section">#</a></h2>
     <div class="box analogy">
       <span class="label">L'analogie</span>
       <p>Imaginez un entrepôt et un petit comptoir. Le <strong>comptoir</strong>, c'est la carte graphique : étroit, mais très rapide. L'<strong>entrepôt</strong>, c'est la mémoire centrale : immense, mais lent à desservir.</p>
@@ -72,7 +111,7 @@
   </section>
 
   <section>
-    <h2>Le problème, puis l'astuce</h2>
+    <h2 id="le-probleme-puis-l-astuce">Le problème, puis l'astuce <a class="anchor" href="#le-probleme-puis-l-astuce" aria-label="Lien vers cette section">#</a></h2>
     <figure>
       <img src="assets/diagrams/gnostral-probleme.svg" alt="À gauche, un modèle de 30 milliards de paramètres ne rentre pas dans 8 Go de mémoire graphique. À droite, seuls trois experts restent sur la carte, les autres attendent en mémoire centrale.">
       <figcaption><b>Un problème de rangement.</b> Un modèle « mixture of experts » n'active qu'une petite partie de ses réseaux pour chaque mot. Ce déséquilibre rend le découpage possible.</figcaption>
@@ -89,7 +128,7 @@
   </section>
 
   <section>
-    <h2>Ce qui a été mesuré — et dans quel cadre</h2>
+    <h2 id="ce-qui-a-ete-mesure-et-dans-quel-cadre">Ce qui a été mesuré — et dans quel cadre <a class="anchor" href="#ce-qui-a-ete-mesure-et-dans-quel-cadre" aria-label="Lien vers cette section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Jalon</th><th>Résultat</th><th>Ce que cela ne dit pas</th></tr></thead>
@@ -166,7 +205,7 @@
   </section>
 
   <section>
-    <h2>Par rapport à quoi, exactement ?</h2>
+    <h2 id="par-rapport-a-quoi-exactement">Par rapport à quoi, exactement ? <a class="anchor" href="#par-rapport-a-quoi-exactement" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Un « 2,12× plus vite » ne veut rien dire sans son point de comparaison. Ici, la référence n'est pas un autre logiciel : c'est <strong>le même moteur, une version plus tôt</strong>.</p>
     </div>
@@ -193,7 +232,7 @@
   </section>
 
   <section>
-    <h2>Comment une mesure devient une preuve</h2>
+    <h2 id="comment-une-mesure-devient-une-preuve">Comment une mesure devient une preuve <a class="anchor" href="#comment-une-mesure-devient-une-preuve" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>La contribution la plus solide du projet n'est peut-être pas le gain de vitesse, mais la <strong>méthode</strong>. Six étapes, toujours les mêmes, et aucune ne peut être sautée.</p>
     </div>
@@ -231,7 +270,7 @@
   </section>
 
   <section>
-    <h2>Ce que ce n'est pas</h2>
+    <h2 id="ce-que-ce-n-est-pas">Ce que ce n'est pas <a class="anchor" href="#ce-que-ce-n-est-pas" aria-label="Lien vers cette section">#</a></h2>
     <div class="box limit">
       <span class="label">Les limites, sans détour</span>
       <ul style="margin-bottom:0">
@@ -245,7 +284,7 @@
   </section>
 
   <section>
-    <h2>Pourquoi les échecs sont publics</h2>
+    <h2 id="pourquoi-les-echecs-sont-publics">Pourquoi les échecs sont publics <a class="anchor" href="#pourquoi-les-echecs-sont-publics" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le premier essai de <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Reçu d&#x27;audit Q-010 : la mesure A/B appariée, réponse par réponse." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-010</a> a échoué : la mémoire graphique n'était pas revenue dans la marge attendue (+196 Mio contre une tolérance de ±128 Mio). Le premier essai de <a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Reçu Q-012 : un moteur, trois familles de modèles." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · état au 29 octobre 2026">Q-012</a> a échoué aussi : une fonctionnalité de compilation manquait, et le modèle MoE a dépassé le délai.</p>
       <p>Les deux échecs sont toujours dans le dossier. C'est un choix méthodologique, pas une coquetterie : un résultat dont on ne connaît pas les ratés n'est pas réutilisable. Et un chiffre qui ne peut pas être contredit n'est pas une mesure, c'est une affirmation.</p>
@@ -254,7 +293,7 @@
   </section>
 
   <section>
-    <h2>Historique : quinze quêtes en quinze jours</h2>
+    <h2 id="historique-quinze-quetes-en-quinze-jours">Historique : quinze quêtes en quinze jours <a class="anchor" href="#historique-quinze-quetes-en-quinze-jours" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>gnostral.rs avance par <strong>quêtes</strong> : chacune ouvre une question précise et se ferme par une décision écrite, y compris quand la décision est « non qualifié ». Le journal public en compte quinze entre le 7 et le 21 octobre 2026.</p>
     </div>
@@ -289,7 +328,7 @@
   </section>
 
   <section>
-    <h2>Projections : la feuille de route</h2>
+    <h2 id="projections-la-feuille-de-route">Projections : la feuille de route <a class="anchor" href="#projections-la-feuille-de-route" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>La cible est écrite en une phrase : un plan de contrôle d'inférence <strong>locale</strong>, inspectable et écrit d'abord en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, pour du matériel contraint — choisir le bon moteur pour chaque modèle, borner les ressources, prouver qu'il est prêt, l'arrêter proprement, rendre compte de sa performance. Les noyaux de calcul et le placement des experts restent l'affaire de chaque moteur.</p>
     </div>
@@ -310,7 +349,7 @@
   </section>
 
   <section>
-    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <h2 id="ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes <a class="anchor" href="#ce-que-ca-change-selon-qui-vous-etes" aria-label="Lien vers cette section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Curieux de l'IA locale</h4>
@@ -328,7 +367,7 @@
   </section>
 
   <section>
-    <h2>Pour aller plus loin</h2>
+    <h2 id="pour-aller-plus-loin">Pour aller plus loin <a class="anchor" href="#pour-aller-plus-loin" aria-label="Lien vers cette section">#</a></h2>
     <details class="deep">
       <summary>Technique — les mots du dépôt</summary>
       <p><strong>MoE (« mixture of experts ») :</strong> une architecture où chaque jeton n'active qu'un sous-ensemble des réseaux. <strong>Quantisation Q2_K / Q3_K :</strong> une compression des poids sur 2 à 3 bits, qui réduit fortement la mémoire au prix d'un peu de qualité. <strong>Jeton :</strong> un fragment de mot ; les débits se mesurent en jetons par seconde. <strong>Résidence :</strong> l'endroit où un morceau de modèle est réellement chargé.</p>
@@ -345,6 +384,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="gnosix.html"><span>← Précédent</span><b>gnosix</b></a>
+    <a class="pager-next" href="calix.html"><span>Suivant →</span><b>Calix</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

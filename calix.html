@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,27 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="Sur cette page">
+    <nav>
+      <p class="toc-title">Sur cette page</p>
+      <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#le-probleme-puis-la-reponse">Le problème, puis la réponse</a></li>
+        <li><a href="#ce-qui-marche-ce-qui-reste-ouvert">Ce qui marche, ce qui reste ouvert</a></li>
+        <li><a href="#la-frontiere-de-privilege">La frontière de privilège</a></li>
+        <li><a href="#pourquoi-la-provenance-est-le-vrai-sujet">Pourquoi la provenance est le vrai sujet</a></li>
+        <li><a href="#une-vraie-machine-pas-une-demonstration">Une vraie machine, pas une démonstration</a></li>
+        <li><a href="#historique-la-version-qui-a-mesure-l-espace">Historique : la version qui a mesuré l&#x27;espace</a></li>
+        <li><a href="#projections-une-porte-encore-plus-etroite">Projections : une porte encore plus étroite</a></li>
+        <li><a href="#ce-que-ce-n-est-pas">Ce que ce n&#x27;est pas</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
 
   <div class="hero prose">
@@ -54,6 +75,24 @@
     <p class="lead">Une seule fenêtre pour installer, mettre à jour et inventorier les logiciels d'un <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> — sans jamais cacher d'où vient chaque paquet.</p>
     <p><span class="tag partial">Pre-1.0</span> <span class="tag">v0.3.1</span> <span class="tag">Licence GPL-3.0</span> <span class="tag info">Arch Linux x86_64</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>Sur cette page</summary>
+    <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#le-probleme-puis-la-reponse">Le problème, puis la réponse</a></li>
+        <li><a href="#ce-qui-marche-ce-qui-reste-ouvert">Ce qui marche, ce qui reste ouvert</a></li>
+        <li><a href="#la-frontiere-de-privilege">La frontière de privilège</a></li>
+        <li><a href="#pourquoi-la-provenance-est-le-vrai-sujet">Pourquoi la provenance est le vrai sujet</a></li>
+        <li><a href="#une-vraie-machine-pas-une-demonstration">Une vraie machine, pas une démonstration</a></li>
+        <li><a href="#historique-la-version-qui-a-mesure-l-espace">Historique : la version qui a mesuré l&#x27;espace</a></li>
+        <li><a href="#projections-une-porte-encore-plus-etroite">Projections : une porte encore plus étroite</a></li>
+        <li><a href="#ce-que-ce-n-est-pas">Ce que ce n&#x27;est pas</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">6</span><span class="caption">écosystèmes de paquets réunis dans une seule liste</span></div>
@@ -63,7 +102,7 @@
   </div>
 
   <section>
-    <h2>En une image</h2>
+    <h2 id="en-une-image">En une image <a class="anchor" href="#en-une-image" aria-label="Lien vers cette section">#</a></h2>
     <div class="box analogy">
       <span class="label">L'analogie</span>
       <p>Imaginez un guichet unique qui accepte les colis de six transporteurs différents. Vous n'avez plus qu'un seul comptoir, un seul suivi, une seule file d'attente.</p>
@@ -72,7 +111,7 @@
   </section>
 
   <section>
-    <h2>Le problème, puis la réponse</h2>
+    <h2 id="le-probleme-puis-la-reponse">Le problème, puis la réponse <a class="anchor" href="#le-probleme-puis-la-reponse" aria-label="Lien vers cette section">#</a></h2>
     <figure>
       <img src="assets/diagrams/calix-flux.svg" alt="Six sources de logiciels à gauche, un inventaire versionné au centre, et à droite des lignes qui gardent la provenance de chaque logiciel.">
       <figcaption><b>Ranger n'est pas confondre.</b> Calix réunit six écosystèmes dans un même document, mais chaque entrée dit d'où elle vient. Un lecteur qui ne comprend pas la version du document le refuse, au lieu de l'afficher à moitié.</figcaption>
@@ -93,7 +132,7 @@
   </section>
 
   <section>
-    <h2>Ce qui marche, ce qui reste ouvert</h2>
+    <h2 id="ce-qui-marche-ce-qui-reste-ouvert">Ce qui marche, ce qui reste ouvert <a class="anchor" href="#ce-qui-marche-ce-qui-reste-ouvert" aria-label="Lien vers cette section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Domaine</th><th>État publié par le dépôt</th><th>Ce que cela ne dit pas</th></tr></thead>
@@ -152,7 +191,7 @@
   </section>
 
   <section>
-    <h2>La frontière de privilège</h2>
+    <h2 id="la-frontiere-de-privilege">La frontière de privilège <a class="anchor" href="#la-frontiere-de-privilege" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>C'est le point le plus intéressant pour qui finance ou évalue le projet. Un gestionnaire de paquets a besoin des droits d'administrateur : il modifie le système. La question n'est pas « faut-il ces droits ? » mais « combien de code les reçoit ? ».</p>
       <p>Chez Calix, l'interface, le service d'inventaire et le pont de notifications tournent <strong>sans privilège</strong>. L'élévation passe par <strong>un seul chemin étroit, explicite, via <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a></strong>. Le projet interdit explicitement <code>sudo</code>, <code>su</code> et <code>doas</code> — y compris dans sa documentation d'installation.</p>
@@ -168,7 +207,7 @@
   </section>
 
   <section>
-    <h2>Pourquoi la provenance est le vrai sujet</h2>
+    <h2 id="pourquoi-la-provenance-est-le-vrai-sujet">Pourquoi la provenance est le vrai sujet <a class="anchor" href="#pourquoi-la-provenance-est-le-vrai-sujet" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le fil rouge de ces quatre dépôts, c'est la <strong>topologie</strong> : rendre explicite où se trouve chaque chose, et ce que cette position autorise. Calix en donne une version très concrète.</p>
       <p>Un logiciel installé depuis les dépôts officiels et le même nom venu de l'<a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a> ne sont pas le même objet. L'un est signé par la distribution, l'autre par un mainteneur communautaire. Les confondre dans une liste sans étiquette serait une faute, pas une simplification. Calix garde donc l'étiquette, et va jusqu'à versionner le format du document : un consommateur qui ne connaît pas la version refuse de lire.</p>
@@ -180,7 +219,7 @@
   </section>
 
   <section>
-    <h2>Une vraie machine, pas une démonstration</h2>
+    <h2 id="une-vraie-machine-pas-une-demonstration">Une vraie machine, pas une démonstration <a class="anchor" href="#une-vraie-machine-pas-une-demonstration" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le graphique vient d'une capture de Calix sur la station de travail de l'auteur : 1 803 paquets, presque tous des dépôts officiels. C'est à quoi ressemble un <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a> ordinaire, vu en une fois.</p>
     </div>
@@ -191,7 +230,7 @@
   </section>
 
   <section>
-    <h2>Historique : la version qui a mesuré l'espace</h2>
+    <h2 id="historique-la-version-qui-a-mesure-l-espace">Historique : la version qui a mesuré l'espace <a class="anchor" href="#historique-la-version-qui-a-mesure-l-espace" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Avant la v0.3.0, avec le journal ouvert, la liste des paquets tombait à 6,5 pixels de haut pendant que sa propre légende en gardait 260. La v0.3.0 a écrit qui a droit à l'espace — et l'a mesuré : 170,5 pixels dans la même bande.</p>
     </div>
@@ -223,7 +262,7 @@
   </section>
 
   <section>
-    <h2>Projections : une porte encore plus étroite</h2>
+    <h2 id="projections-une-porte-encore-plus-etroite">Projections : une porte encore plus étroite <a class="anchor" href="#projections-une-porte-encore-plus-etroite" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le chantier le plus parlant touche au privilège : un assistant root dédié et des actions <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a> plus fines, pour que l'interface demande exactement l'opération dont elle a besoin — et rien de plus.</p>
       <p>Le dépôt classe cinq chantiers par valeur, sans date :</p>
@@ -238,7 +277,7 @@
   </section>
 
   <section>
-    <h2>Ce que ce n'est pas</h2>
+    <h2 id="ce-que-ce-n-est-pas">Ce que ce n'est pas <a class="anchor" href="#ce-que-ce-n-est-pas" aria-label="Lien vers cette section">#</a></h2>
     <div class="box limit">
       <span class="label">Les limites, sans détour</span>
       <ul style="margin-bottom:0">
@@ -253,7 +292,7 @@
   </section>
 
   <section>
-    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <h2 id="ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes <a class="anchor" href="#ce-que-ca-change-selon-qui-vous-etes" aria-label="Lien vers cette section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Utilisateur d'Arch Linux</h4>
@@ -271,7 +310,7 @@
   </section>
 
   <section>
-    <h2>Pour aller plus loin</h2>
+    <h2 id="pour-aller-plus-loin">Pour aller plus loin <a class="anchor" href="#pour-aller-plus-loin" aria-label="Lien vers cette section">#</a></h2>
     <details class="deep">
       <summary>Technique — les mots du dépôt</summary>
       <p><strong><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Le gestionnaire de paquets d&#x27;Arch Linux et sa bibliothèque (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a> :</strong> la bibliothèque derrière <code>pacman</code>, le gestionnaire de paquets d'Arch. <strong><a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository : des recettes de paquets écrites par la communauté, compilées chez soi." data-meta="aur.archlinux.org">AUR</a> :</strong> les dépôts communautaires d'Arch, où les paquets sont des recettes compilées localement. <strong><a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="Format d&#x27;application isolée du système, distribuée avec ses dépendances." data-meta="github.com/flatpak/flatpak">Flatpak</a> :</strong> des applications empaquetées avec leurs dépendances, isolées du système. <strong><a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="Une application entière dans un seul fichier exécutable, sans installation." data-meta="github.com/AppImage">AppImage</a> :</strong> un fichier exécutable autonome. <strong><a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Le système d&#x27;autorisations de Linux : il décide qui peut faire quelle action privilégiée." data-meta="github.com/polkit-org/polkit">polkit</a> :</strong> le mécanisme qui demande l'autorisation à l'utilisateur, au moment de l'action, pour une opération précise.</p>
@@ -289,6 +328,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="gnostral.html"><span>← Précédent</span><b>gnostral.rs</b></a>
+    <a class="pager-next" href="ingnu6.html"><span>Suivant →</span><b>in.gnu6</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

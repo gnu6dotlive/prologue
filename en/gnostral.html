@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/sources.js" defer></script>
+<script src="../assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,27 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="On this page">
+    <nav>
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#in-one-picture">In one picture</a></li>
+        <li><a href="#the-problem-then-the-trick">The problem, then the trick</a></li>
+        <li><a href="#what-was-measured-and-within-what-frame">What was measured — and within what frame</a></li>
+        <li><a href="#compared-with-what-exactly">Compared with what, exactly?</a></li>
+        <li><a href="#how-a-measurement-becomes-evidence">How a measurement becomes evidence</a></li>
+        <li><a href="#what-it-is-not">What it is not</a></li>
+        <li><a href="#why-the-failures-are-public">Why the failures are public</a></li>
+        <li><a href="#history-fifteen-quests-in-fifteen-days">History: fifteen quests in fifteen days</a></li>
+        <li><a href="#projections-the-roadmap">Projections: the roadmap</a></li>
+        <li><a href="#what-it-changes-depending-on-who-you-are">What it changes, depending on who you are</a></li>
+        <li><a href="#going-further">Going further</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
 
   <div class="hero prose">
@@ -54,6 +75,24 @@
     <p class="lead">An open lab trying to run large artificial-intelligence models on a modest graphics card — and publishing its measurements, including the disappointing ones.</p>
     <p><span class="tag partial">Research</span> <span class="tag">v0.8.0</span> <span class="tag">MIT licence</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>On this page</summary>
+    <ol>
+        <li><a href="#in-one-picture">In one picture</a></li>
+        <li><a href="#the-problem-then-the-trick">The problem, then the trick</a></li>
+        <li><a href="#what-was-measured-and-within-what-frame">What was measured — and within what frame</a></li>
+        <li><a href="#compared-with-what-exactly">Compared with what, exactly?</a></li>
+        <li><a href="#how-a-measurement-becomes-evidence">How a measurement becomes evidence</a></li>
+        <li><a href="#what-it-is-not">What it is not</a></li>
+        <li><a href="#why-the-failures-are-public">Why the failures are public</a></li>
+        <li><a href="#history-fifteen-quests-in-fifteen-days">History: fifteen quests in fifteen days</a></li>
+        <li><a href="#projections-the-roadmap">Projections: the roadmap</a></li>
+        <li><a href="#what-it-changes-depending-on-who-you-are">What it changes, depending on who you are</a></li>
+        <li><a href="#going-further">Going further</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">2.12<span class="unit">×</span></span><span class="caption">faster than the previous version of the <b>same engine</b></span></div>
@@ -63,7 +102,7 @@
   </div>
 
   <section>
-    <h2>In one picture</h2>
+    <h2 id="in-one-picture">In one picture <a class="anchor" href="#in-one-picture" aria-label="Link to this section">#</a></h2>
     <div class="box analogy">
       <span class="label">The analogy</span>
       <p>Picture a warehouse and a small counter. The <strong>counter</strong> is the graphics card: narrow, but very fast. The <strong>warehouse</strong> is main memory: huge, but slow to serve from.</p>
@@ -72,7 +111,7 @@
   </section>
 
   <section>
-    <h2>The problem, then the trick</h2>
+    <h2 id="the-problem-then-the-trick">The problem, then the trick <a class="anchor" href="#the-problem-then-the-trick" aria-label="Link to this section">#</a></h2>
     <figure>
       <img src="../assets/diagrams/en/gnostral-probleme.svg" alt="On the left, a 30-billion-parameter model does not fit in 8 GB of graphics memory. On the right, only three experts stay on the card; the others wait in main memory.">
       <figcaption><b>A storage problem.</b> A "mixture of experts" model activates only a small part of its networks for each word. That imbalance is what makes splitting it possible.</figcaption>
@@ -89,7 +128,7 @@
   </section>
 
   <section>
-    <h2>What was measured — and within what frame</h2>
+    <h2 id="what-was-measured-and-within-what-frame">What was measured — and within what frame <a class="anchor" href="#what-was-measured-and-within-what-frame" aria-label="Link to this section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Milestone</th><th>Result</th><th>What it does not say</th></tr></thead>
@@ -166,7 +205,7 @@
   </section>
 
   <section>
-    <h2>Compared with what, exactly?</h2>
+    <h2 id="compared-with-what-exactly">Compared with what, exactly? <a class="anchor" href="#compared-with-what-exactly" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>A "2.12× faster" means nothing without its point of comparison. Here, the reference is not another piece of software: it is <strong>the same engine, one version earlier</strong>.</p>
     </div>
@@ -193,7 +232,7 @@
   </section>
 
   <section>
-    <h2>How a measurement becomes evidence</h2>
+    <h2 id="how-a-measurement-becomes-evidence">How a measurement becomes evidence <a class="anchor" href="#how-a-measurement-becomes-evidence" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The project's most solid contribution may not be the speed gain, but the <strong>method</strong>. Six steps, always the same, and none can be skipped.</p>
     </div>
@@ -231,7 +270,7 @@
   </section>
 
   <section>
-    <h2>What it is not</h2>
+    <h2 id="what-it-is-not">What it is not <a class="anchor" href="#what-it-is-not" aria-label="Link to this section">#</a></h2>
     <div class="box limit">
       <span class="label">The limits, plainly</span>
       <ul style="margin-bottom:0">
@@ -245,7 +284,7 @@
   </section>
 
   <section>
-    <h2>Why the failures are public</h2>
+    <h2 id="why-the-failures-are-public">Why the failures are public <a class="anchor" href="#why-the-failures-are-public" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The first <a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a> run failed: graphics memory did not come back within the expected margin (+196 MiB against a ±128 MiB tolerance). The first <a class="src" data-src="ms-Q-012" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/gnostral-q012-native-three-families-20261010.json" data-title="gnostral.rs · Q-012" data-desc="Q-012 receipt: one engine, three model families." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/gnostral-q012-native-three-families-20261010.json · commit 38c4134 · as of October 29, 2026">Q-012</a> run failed too: a compile-time feature was missing, and the MoE model timed out.</p>
       <p>Both failures are still on the record. It is a methodological choice, not an affectation: a result whose misses you do not know is not reusable. And a figure that cannot be contradicted is not a measurement; it is a claim.</p>
@@ -254,7 +293,7 @@
   </section>
 
   <section>
-    <h2>History: fifteen quests in fifteen days</h2>
+    <h2 id="history-fifteen-quests-in-fifteen-days">History: fifteen quests in fifteen days <a class="anchor" href="#history-fifteen-quests-in-fifteen-days" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>gnostral.rs moves forward by <strong>quests</strong>: each opens a precise question and closes with a written decision, including when the decision is "not qualified". The public log counts fifteen between October 7 and 21, 2026.</p>
     </div>
@@ -289,7 +328,7 @@
   </section>
 
   <section>
-    <h2>Projections: the roadmap</h2>
+    <h2 id="projections-the-roadmap">Projections: the roadmap <a class="anchor" href="#projections-the-roadmap" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The target fits in one sentence: an inspectable, Rust-first, <strong>local</strong> inference control plane for constrained hardware — choosing the right engine for each model, bounding resources, proving readiness, stopping cleanly, accounting for performance. Compute kernels and expert placement stay the business of each engine.</p>
     </div>
@@ -310,7 +349,7 @@
   </section>
 
   <section>
-    <h2>What it changes, depending on who you are</h2>
+    <h2 id="what-it-changes-depending-on-who-you-are">What it changes, depending on who you are <a class="anchor" href="#what-it-changes-depending-on-who-you-are" aria-label="Link to this section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Curious about local AI</h4>
@@ -328,7 +367,7 @@
   </section>
 
   <section>
-    <h2>Going further</h2>
+    <h2 id="going-further">Going further <a class="anchor" href="#going-further" aria-label="Link to this section">#</a></h2>
     <details class="deep">
       <summary>Technical — the repository's words</summary>
       <p><strong>MoE ("mixture of experts"):</strong> an architecture where each token activates only a subset of the networks. <strong>Q2_K / Q3_K quantisation:</strong> compressing the weights to 2–3 bits, which cuts memory sharply at the cost of a little quality. <strong>Token:</strong> a fragment of a word; throughput is measured in tokens per second. <strong>Residency:</strong> where a piece of the model is actually loaded.</p>
@@ -345,6 +384,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Previous / Next">
+    <a class="pager-prev" href="gnosix.html"><span>← Previous</span><b>gnosix</b></a>
+    <a class="pager-next" href="calix.html"><span>Next →</span><b>Calix</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

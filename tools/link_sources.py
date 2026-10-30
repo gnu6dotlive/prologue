@@ -267,7 +267,7 @@ def link_code(segment, page, done):
 def link_page(src: str, page: str) -> str:
     # retirer les liens posés par une passe précédente
     src = re.sub(r'<a class="src"[^>]*>(.*?)</a>', r"\1", src, flags=re.S)
-    a, b = src.index("<main>"), src.index("</main>")
+    a, b = re.search(r"<main[^>]*>", src).start(), src.index("</main>")
     body = src[a:b]
     rules = build_rules(page)
     out, stack, done = [], [], set()

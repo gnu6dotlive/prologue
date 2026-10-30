@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/sources.js" defer></script>
+<script src="../assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,27 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="On this page">
+    <nav>
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#in-one-picture">In one picture</a></li>
+        <li><a href="#the-problem-then-the-answer">The problem, then the answer</a></li>
+        <li><a href="#what-works-what-is-still-open">What works, what is still open</a></li>
+        <li><a href="#the-privilege-boundary">The privilege boundary</a></li>
+        <li><a href="#why-provenance-is-the-real-subject">Why provenance is the real subject</a></li>
+        <li><a href="#a-real-machine-not-a-demo">A real machine, not a demo</a></li>
+        <li><a href="#history-the-release-that-measured-space">History: the release that measured space</a></li>
+        <li><a href="#projections-an-even-narrower-door">Projections: an even narrower door</a></li>
+        <li><a href="#what-it-is-not">What it is not</a></li>
+        <li><a href="#what-it-changes-depending-on-who-you-are">What it changes, depending on who you are</a></li>
+        <li><a href="#going-further">Going further</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Snapshot of October 29, 2026.</b> This dossier describes the four repositories as they stood that day; the projects have moved on since, and the repositories are the authority. Underlined links lead to the sources, frozen at their state of that day.</p>
 
   <div class="hero prose">
@@ -54,6 +75,24 @@
     <p class="lead">A single window to install, update and inventory the software of an <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a> system — without ever hiding where each package comes from.</p>
     <p><span class="tag partial">Pre-1.0</span> <span class="tag">v0.3.1</span> <span class="tag">GPL-3.0 licence</span> <span class="tag info">Arch Linux x86_64</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>On this page</summary>
+    <ol>
+        <li><a href="#in-one-picture">In one picture</a></li>
+        <li><a href="#the-problem-then-the-answer">The problem, then the answer</a></li>
+        <li><a href="#what-works-what-is-still-open">What works, what is still open</a></li>
+        <li><a href="#the-privilege-boundary">The privilege boundary</a></li>
+        <li><a href="#why-provenance-is-the-real-subject">Why provenance is the real subject</a></li>
+        <li><a href="#a-real-machine-not-a-demo">A real machine, not a demo</a></li>
+        <li><a href="#history-the-release-that-measured-space">History: the release that measured space</a></li>
+        <li><a href="#projections-an-even-narrower-door">Projections: an even narrower door</a></li>
+        <li><a href="#what-it-is-not">What it is not</a></li>
+        <li><a href="#what-it-changes-depending-on-who-you-are">What it changes, depending on who you are</a></li>
+        <li><a href="#going-further">Going further</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">6</span><span class="caption">package ecosystems brought together in a single list</span></div>
@@ -63,7 +102,7 @@
   </div>
 
   <section>
-    <h2>In one picture</h2>
+    <h2 id="in-one-picture">In one picture <a class="anchor" href="#in-one-picture" aria-label="Link to this section">#</a></h2>
     <div class="box analogy">
       <span class="label">The analogy</span>
       <p>Imagine a single counter that accepts parcels from six different carriers. You now have one desk, one tracking number, one queue.</p>
@@ -72,7 +111,7 @@
   </section>
 
   <section>
-    <h2>The problem, then the answer</h2>
+    <h2 id="the-problem-then-the-answer">The problem, then the answer <a class="anchor" href="#the-problem-then-the-answer" aria-label="Link to this section">#</a></h2>
     <figure>
       <img src="../assets/diagrams/en/calix-flux.svg" alt="Six software sources on the left, a versioned inventory in the middle, and on the right rows that keep each package's origin.">
       <figcaption><b>Tidying is not mixing up.</b> Calix brings six ecosystems together in one document, but every entry says where it comes from. A reader that does not understand the document's version refuses it, instead of showing half of it.</figcaption>
@@ -93,7 +132,7 @@
   </section>
 
   <section>
-    <h2>What works, what is still open</h2>
+    <h2 id="what-works-what-is-still-open">What works, what is still open <a class="anchor" href="#what-works-what-is-still-open" aria-label="Link to this section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Area</th><th>State published by the repository</th><th>What it does not say</th></tr></thead>
@@ -152,7 +191,7 @@
   </section>
 
   <section>
-    <h2>The privilege boundary</h2>
+    <h2 id="the-privilege-boundary">The privilege boundary <a class="anchor" href="#the-privilege-boundary" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>This is the most interesting point for anyone funding or evaluating the project. A package manager needs administrator rights: it changes the system. The question is not "are those rights needed?" but "how much code receives them?".</p>
       <p>In Calix, the interface, the inventory service and the notification bridge run <strong>without privilege</strong>. Elevation goes through <strong>a single narrow, explicit path, via <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a></strong>. The project explicitly forbids <code>sudo</code>, <code>su</code> and <code>doas</code> — including in its installation documentation.</p>
@@ -168,7 +207,7 @@
   </section>
 
   <section>
-    <h2>Why provenance is the real subject</h2>
+    <h2 id="why-provenance-is-the-real-subject">Why provenance is the real subject <a class="anchor" href="#why-provenance-is-the-real-subject" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The common thread of these four repositories is <strong>topology</strong>: making explicit where each thing is, and what that position allows. Calix offers a very concrete version of it.</p>
       <p>A package installed from the official repositories and the same name coming from the <a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a> are not the same object. One is signed by the distribution, the other by a community maintainer. Mixing them in an unlabelled list would be a mistake, not a simplification. So Calix keeps the label, and even versions the document format: a consumer that does not know the version refuses to read it.</p>
@@ -180,7 +219,7 @@
   </section>
 
   <section>
-    <h2>A real machine, not a demo</h2>
+    <h2 id="a-real-machine-not-a-demo">A real machine, not a demo <a class="anchor" href="#a-real-machine-not-a-demo" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The chart comes from a screenshot of Calix on the author's workstation: 1,803 packages, almost all from the official repositories. This is what an ordinary <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="A minimalist, rolling-release Linux distribution." data-meta="archlinux.org">Arch Linux</a> system looks like, seen all at once.</p>
     </div>
@@ -191,7 +230,7 @@
   </section>
 
   <section>
-    <h2>History: the release that measured space</h2>
+    <h2 id="history-the-release-that-measured-space">History: the release that measured space <a class="anchor" href="#history-the-release-that-measured-space" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>Before v0.3.0, with the log open, the package list shrank to 6.5 pixels high while its own caption kept 260. v0.3.0 wrote down who is entitled to space — and measured it: 170.5 pixels in the same band.</p>
     </div>
@@ -223,7 +262,7 @@
   </section>
 
   <section>
-    <h2>Projections: an even narrower door</h2>
+    <h2 id="projections-an-even-narrower-door">Projections: an even narrower door <a class="anchor" href="#projections-an-even-narrower-door" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The most telling work item concerns privilege: a dedicated root helper and finer <a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a> actions, so the interface asks for exactly the operation it needs — and nothing more.</p>
       <p>The repository ranks five work items by value, with no dates:</p>
@@ -238,7 +277,7 @@
   </section>
 
   <section>
-    <h2>What it is not</h2>
+    <h2 id="what-it-is-not">What it is not <a class="anchor" href="#what-it-is-not" aria-label="Link to this section">#</a></h2>
     <div class="box limit">
       <span class="label">The limits, plainly</span>
       <ul style="margin-bottom:0">
@@ -253,7 +292,7 @@
   </section>
 
   <section>
-    <h2>What it changes, depending on who you are</h2>
+    <h2 id="what-it-changes-depending-on-who-you-are">What it changes, depending on who you are <a class="anchor" href="#what-it-changes-depending-on-who-you-are" aria-label="Link to this section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Arch Linux user</h4>
@@ -271,7 +310,7 @@
   </section>
 
   <section>
-    <h2>Going further</h2>
+    <h2 id="going-further">Going further <a class="anchor" href="#going-further" aria-label="Link to this section">#</a></h2>
     <details class="deep">
       <summary>Technical — the repository's words</summary>
       <p><strong><a class="src" data-src="libalpm" href="https://gitlab.archlinux.org/pacman/pacman" data-title="pacman · libalpm" data-desc="Arch Linux&#x27;s package manager and its library (ALPM)." data-meta="gitlab.archlinux.org/pacman/pacman">ALPM</a>:</strong> the library behind <code>pacman</code>, Arch's package manager. <strong><a class="src" data-src="aur" href="https://aur.archlinux.org" data-title="AUR" data-desc="Arch User Repository: package recipes written by the community, built on your own machine." data-meta="aur.archlinux.org">AUR</a>:</strong> Arch's community repositories, where packages are recipes built locally. <strong><a class="src" data-src="flatpak" href="https://github.com/flatpak/flatpak" data-title="Flatpak" data-desc="An application format sandboxed from the system, shipped with its dependencies." data-meta="github.com/flatpak/flatpak">Flatpak</a>:</strong> applications packaged with their dependencies, isolated from the system. <strong><a class="src" data-src="appimage" href="https://github.com/AppImage" data-title="AppImage" data-desc="A whole application in a single executable file, with no installation." data-meta="github.com/AppImage">AppImage</a>:</strong> a self-contained executable file. <strong><a class="src" data-src="polkit" href="https://github.com/polkit-org/polkit" data-title="polkit" data-desc="Linux&#x27;s authorisation system: it decides who may perform which privileged action." data-meta="github.com/polkit-org/polkit">polkit</a>:</strong> the mechanism that asks the user for authorisation, at the moment of the action, for one precise operation.</p>
@@ -289,6 +328,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Previous / Next">
+    <a class="pager-prev" href="gnostral.html"><span>← Previous</span><b>gnostral.rs</b></a>
+    <a class="pager-next" href="ingnu6.html"><span>Next →</span><b>in.gnu6</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

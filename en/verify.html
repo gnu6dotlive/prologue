@@ -24,6 +24,7 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/sources.js" defer></script>
+<script src="../assets/nav.js" defer></script>
 </head>
 <body>
 
@@ -55,21 +56,21 @@
   </div>
 
   <section>
-    <h2>1. The figure</h2>
+    <h2 id="1-the-figure">1. The figure <a class="anchor" href="#1-the-figure" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>At the top of the <a href="gnostral.html">gnostral.rs dossier</a>, the first box says: <strong>“2.12× faster than the previous version of the same engine”</strong>. That is a claim. The question now is what it rests on.</p>
     </div>
   </section>
 
   <section>
-    <h2>2. The milestone</h2>
+    <h2 id="2-the-milestone">2. The milestone <a class="anchor" href="#2-the-milestone" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>In the “What was measured” table, the <em>Borrowed experts</em> row carries the label <strong><a class="src" data-src="ms-Q-010" href="https://github.com/gnu6dotlive/gnostral.rs/blob/38c4134a3a398b5b83d34326826362cf4dcc7336/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json" data-title="gnostral.rs · Q-010" data-desc="Q-010 audit receipt: the paired A/B measurement, answer by answer." data-meta="github.com/gnu6dotlive/gnostral.rs/evidence/runs/q010-hotpath-ssd-ab-audit-20261010.json · commit 38c4134 · as of October 29, 2026">Q-010</a></strong>. Hovering over it opens a card that leads to the measurement's audit receipt. Every figure in the dossier has a milestone, and every milestone a receipt.</p>
     </div>
   </section>
 
   <section>
-    <h2>3. The receipt, at the frozen commit</h2>
+    <h2 id="3-the-receipt-at-the-frozen-commit">3. The receipt, at the frozen commit <a class="anchor" href="#3-the-receipt-at-the-frozen-commit" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The link opens this file, in the public repository:</p>
     </div>
@@ -81,7 +82,7 @@
   </section>
 
   <section>
-    <h2>4. The three fields</h2>
+    <h2 id="4-the-three-fields">4. The three fields <a class="anchor" href="#4-the-three-fields" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>The receipt is long, but three fields are enough. They are keyed by answer length; the site's figure is for 512-token answers:</p>
     </div>
@@ -96,7 +97,7 @@
   </section>
 
   <section>
-    <h2>5. Redo the arithmetic</h2>
+    <h2 id="5-redo-the-arithmetic">5. Redo the arithmetic <a class="anchor" href="#5-redo-the-arithmetic" aria-label="Link to this section">#</a></h2>
     <div class="prose">
       <p>20.179588 ÷ 9.506482 = <strong>2.1227…</strong>, rounded to <strong>2.12</strong>. That is exactly the ratio the receipt itself writes. You can go one step further: the <em>per_request</em> field lists the twelve answers one by one, and the medians can be found by hand (9.51 among 10.12 · 9.51 · 9.51; 20.18 among 20.18 · 20.21 · 19.48).</p>
     </div>
@@ -109,7 +110,7 @@
   </section>
 
   <section>
-    <h2>What you just proved — and what you did not</h2>
+    <h2 id="what-you-just-proved-and-what-you-did-not">What you just proved — and what you did not <a class="anchor" href="#what-you-just-proved-and-what-you-did-not" aria-label="Link to this section">#</a></h2>
     <div class="grid two">
       <div class="card">
         <h4>Proved</h4>
@@ -126,6 +127,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Previous / Next">
+    <a class="pager-prev" href="ingnu6.html"><span>← Previous</span><b>in.gnu6</b></a>
+    <a class="pager-next" href="timeline.html"><span>Next →</span><b>A month of open workshop</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

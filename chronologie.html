@@ -24,6 +24,7 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
 <body>
 
@@ -55,7 +56,7 @@
   </div>
 
   <section>
-    <h2>Le mois sur une frise</h2>
+    <h2 id="le-mois-sur-une-frise">Le mois sur une frise <a class="anchor" href="#le-mois-sur-une-frise" aria-label="Lien vers cette section">#</a></h2>
     <figure>
       <img src="assets/diagrams/chronologie.svg" alt="Frise du 20 septembre au 29 octobre 2026 avec une ligne par dépôt : gnosix, gnostral.rs, Calix et in.gnu6, leurs jalons et versions, et l'instantané du 29 octobre.">
       <figcaption><b>Trois jours charnières.</b> Le 7 octobre, gnostral.rs ferme sa recherche fondatrice et in.gnu6 complète son mandat. Le 10, trois dépôts bougent en même temps. Le 20, Calix publie six versions.</figcaption>
@@ -63,7 +64,7 @@
   </section>
 
   <section>
-    <h2>Jour par jour</h2>
+    <h2 id="jour-par-jour">Jour par jour <a class="anchor" href="#jour-par-jour" aria-label="Lien vers cette section">#</a></h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Date</th><th>Dépôt</th><th>Ce qui se passe</th></tr></thead>
@@ -96,6 +97,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="verifier.html"><span>← Précédent</span><b>Vérifier un chiffre soi-même</b></a>
+    <a class="pager-next" href="comprendre.html"><span>Suivant →</span><b>Trois mots à désarmer</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

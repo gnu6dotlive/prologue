@@ -24,8 +24,9 @@
 <!-- i18n:end -->
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
-<body>
+<body class="has-toc">
 
 <header class="site-header">
   <div class="inner">
@@ -45,7 +46,25 @@
   </div>
 </header>
 
-<main>
+<main class="has-toc">
+<!-- nav:side -->
+  <aside class="toc-side" aria-label="Sur cette page">
+    <nav>
+      <p class="toc-title">Sur cette page</p>
+      <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#ce-que-ca-fait-concretement">Ce que ça fait, concrètement</a></li>
+        <li><a href="#sous-le-capot-quatre-plans">Sous le capot : quatre plans</a></li>
+        <li><a href="#ce-que-prouve-veut-dire-ici">Ce que « prouvé » veut dire ici</a></li>
+        <li><a href="#historique-trois-semaines-de-depot-public">Historique : trois semaines de dépôt public</a></li>
+        <li><a href="#projections-ce-qui-vient-apres-ardoise">Projections : ce qui vient après « Ardoise »</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#ce-qui-reste-ouvert">Ce qui reste ouvert</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+      </ol>
+    </nav>
+  </aside>
+<!-- /nav:side -->
   <p class="snapshot"><b>Instantané du 29 octobre 2026.</b> Ce dossier décrit les quatre dépôts tels qu'ils étaient ce jour-là ; les projets ont continué d'avancer depuis, et les dépôts font foi. Les liens soulignés mènent aux sources, figées à leur état de ce jour.</p>
 
   <div class="hero prose">
@@ -54,6 +73,22 @@
     <p class="lead">Un environnement de bureau pour Linux, écrit en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, qui dessine lui-même tout ce que vous voyez : la barre, le deck et son AppStack, les fenêtres, les réglages, l'écran de verrouillage.</p>
     <p><span class="tag partial">Expérimental</span> <span class="tag">26.11-rc1 « Ardoise »</span> <span class="tag">Licence MIT</span></p>
   </div>
+<!-- nav:top -->
+  <details class="toc-top">
+    <summary>Sur cette page</summary>
+    <ol>
+        <li><a href="#en-une-image">En une image</a></li>
+        <li><a href="#ce-que-ca-fait-concretement">Ce que ça fait, concrètement</a></li>
+        <li><a href="#sous-le-capot-quatre-plans">Sous le capot : quatre plans</a></li>
+        <li><a href="#ce-que-prouve-veut-dire-ici">Ce que « prouvé » veut dire ici</a></li>
+        <li><a href="#historique-trois-semaines-de-depot-public">Historique : trois semaines de dépôt public</a></li>
+        <li><a href="#projections-ce-qui-vient-apres-ardoise">Projections : ce qui vient après « Ardoise »</a></li>
+        <li><a href="#ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes</a></li>
+        <li><a href="#ce-qui-reste-ouvert">Ce qui reste ouvert</a></li>
+        <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+    </ol>
+  </details>
+<!-- /nav:top -->
 
   <div class="grid four" style="margin-top:36px">
     <div class="stat"><span class="value">8</span><span class="caption">surfaces <b>prouvées</b> dans la session réelle de l'auteur</span></div>
@@ -63,7 +98,7 @@
   </div>
 
   <section>
-    <h2>En une image</h2>
+    <h2 id="en-une-image">En une image <a class="anchor" href="#en-une-image" aria-label="Lien vers cette section">#</a></h2>
     <div class="box analogy">
       <span class="label">L'analogie</span>
       <p>Pensez à un atelier bien rangé. Il y a le <strong>plan de travail</strong> sur lequel on agit, les <strong>tiroirs</strong> où l'on range ce qui doit survivre à la nuit, l'<strong>étagère</strong> où sont posés les outils, et le <strong>règlement</strong> qui dit qui a le droit d'ouvrir quoi.</p>
@@ -72,7 +107,7 @@
   </section>
 
   <section>
-    <h2>Ce que ça fait, concrètement</h2>
+    <h2 id="ce-que-ca-fait-concretement">Ce que ça fait, concrètement <a class="anchor" href="#ce-que-ca-fait-concretement" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Une fois lancé, gnosix remplace l'habillage graphique de la session. Il ne s'agit pas d'une décoration posée sur un bureau existant : c'est le bureau lui-même, dessiné en <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et affiché nativement.</p>
     </div>
@@ -152,7 +187,7 @@
   </section>
 
   <section>
-    <h2>Sous le capot : quatre plans</h2>
+    <h2 id="sous-le-capot-quatre-plans">Sous le capot : quatre plans <a class="anchor" href="#sous-le-capot-quatre-plans" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>C'est la décision d'architecture la plus importante du projet, et la plus facile à expliquer : <strong>observer, se souvenir, montrer et agir sont quatre métiers différents</strong>. gnosix leur donne quatre plans distincts.</p>
     </div>
@@ -194,7 +229,7 @@
   </section>
 
   <section>
-    <h2>Ce que « prouvé » veut dire ici</h2>
+    <h2 id="ce-que-prouve-veut-dire-ici">Ce que « prouvé » veut dire ici <a class="anchor" href="#ce-que-prouve-veut-dire-ici" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le dépôt distingue cinq états, et les publie surface par surface. Ce n'est pas de la rhétorique : c'est ce qui empêche une démonstration réussie de devenir une promesse générale.</p>
     </div>
@@ -217,7 +252,7 @@
   </section>
 
   <section>
-    <h2>Historique : trois semaines de dépôt public</h2>
+    <h2 id="historique-trois-semaines-de-depot-public">Historique : trois semaines de dépôt public <a class="anchor" href="#historique-trois-semaines-de-depot-public" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>Le dépôt public de gnosix ne raconte pas toute l'histoire, et le dit. Le développement a lieu dans un dépôt privé ; le dépôt public en reçoit des <strong>projections</strong> à chaque version. Ce qui est visible commence le 5 octobre 2026.</p>
     </div>
@@ -247,7 +282,7 @@
   </section>
 
   <section>
-    <h2>Projections : ce qui vient après « Ardoise »</h2>
+    <h2 id="projections-ce-qui-vient-apres-ardoise">Projections : ce qui vient après « Ardoise » <a class="anchor" href="#projections-ce-qui-vient-apres-ardoise" aria-label="Lien vers cette section">#</a></h2>
     <div class="prose">
       <p>La feuille de route de gnosix est <strong>pilotée par les preuves</strong> : un chantier avance quand ses preuves sont complètes et, si nécessaire, acceptées par l'auteur. Les versions, elles, ont des dates fixes — deux par an, en mai et en novembre — et emportent ce qui est prêt.</p>
     </div>
@@ -268,7 +303,7 @@
   </section>
 
   <section>
-    <h2>Ce que ça change, selon qui vous êtes</h2>
+    <h2 id="ce-que-ca-change-selon-qui-vous-etes">Ce que ça change, selon qui vous êtes <a class="anchor" href="#ce-que-ca-change-selon-qui-vous-etes" aria-label="Lien vers cette section">#</a></h2>
     <div class="grid three">
       <div class="card">
         <h4>Utilisateur Linux curieux</h4>
@@ -286,7 +321,7 @@
   </section>
 
   <section>
-    <h2>Ce qui reste ouvert</h2>
+    <h2 id="ce-qui-reste-ouvert">Ce qui reste ouvert <a class="anchor" href="#ce-qui-reste-ouvert" aria-label="Lien vers cette section">#</a></h2>
     <div class="box limit">
       <span class="label">Les limites, sans détour</span>
       <ul style="margin-bottom:0">
@@ -300,7 +335,7 @@
   </section>
 
   <section>
-    <h2>Pour aller plus loin</h2>
+    <h2 id="pour-aller-plus-loin">Pour aller plus loin <a class="anchor" href="#pour-aller-plus-loin" aria-label="Lien vers cette section">#</a></h2>
     <details class="deep">
       <summary>Technique — langages, briques, licence</summary>
       <p><strong>Langage :</strong> <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a>, avec une chaîne d'outils épinglée dans le dépôt. <strong>Affichage :</strong> <a class="src" data-src="wayland" href="https://gitlab.freedesktop.org/wayland/wayland" data-title="Wayland" data-desc="Le protocole d&#x27;affichage moderne de Linux, entre les applications et le compositeur." data-meta="gitlab.freedesktop.org/wayland/wayland">Wayland</a> et <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a> ; le compositeur visé est <a class="src" data-src="hyprland" href="https://github.com/hyprwm/Hyprland" data-title="Hyprland" data-desc="Compositeur Wayland, celui sur lequel gnosix dessine son bureau." data-meta="github.com/hyprwm/Hyprland">Hyprland</a>. <strong>Taille :</strong> une quarantaine de paquets internes, séparés par domaine (modèle de bureau, intégration Hyprland, présentation, autorités système).</p>
@@ -317,6 +352,12 @@
     </div>
   </section>
 
+<!-- nav:pager -->
+  <nav class="pager" aria-label="Précédent / Suivant">
+    <a class="pager-prev" href="methode.html"><span>← Précédent</span><b>Ce qu&#x27;un « PASS » veut dire</b></a>
+    <a class="pager-next" href="gnostral.html"><span>Suivant →</span><b>gnostral.rs</b></a>
+  </nav>
+<!-- /nav:pager -->
 </main>
 
 <footer class="site-footer">

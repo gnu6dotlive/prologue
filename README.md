@@ -65,6 +65,7 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 ├── assets/
 │   ├── style.css       feuille de style commune (jetons gnosix_DS V3.4.1)
 │   ├── sources.js      fiche de source au survol des liens soulignés
+│   ├── nav.js          sommaire : marque la section en cours
 │   ├── fonts/          Space Grotesk (OFL-1.1), embarquée pour l'hors-ligne
 │   ├── og.png, og-en.png  images d'aperçu de partage (FR, EN)
 │   ├── diagrams/
@@ -117,7 +118,8 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   ├── table_labels.py intitulés de colonnes recopiés sur les cellules (fiches sur mobile)
 │   ├── translate_svgs.py schémas anglais, depuis une table de traduction par schéma
 │   ├── make_charts.py  les graphiques de données, FR et EN, depuis les reçus et versions publiés
-│   └── i18n_head.py    sélecteur FR · EN, hreflang, aperçu de partage par langue
+│   ├── i18n_head.py    sélecteur FR · EN, hreflang, aperçu de partage par langue
+│   └── navigation.py   ancres des sections, sommaires des dossiers, précédent / suivant
 ├── exports/            les mêmes pages en PDF (exports/en/ pour l'anglais)
 ├── LICENSE             CC BY 4.0 (contenu) ; la fonte garde sa licence OFL-1.1
 └── README.md
@@ -184,6 +186,7 @@ python3 tools/make_gifs.py        # animations FR et EN
 python3 tools/link_sources.py     # liens de sources et fiches, dans la langue de la page
 python3 tools/table_labels.py     # intitulés de tableaux pour le mobile
 python3 tools/i18n_head.py        # sélecteur de langue et balises de partage
+python3 tools/navigation.py       # ancres, sommaires, précédent / suivant
 ```
 
 ## Sur téléphone
