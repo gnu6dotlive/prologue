@@ -93,7 +93,8 @@ body {
   white-space: nowrap;
 }
 
-.brand span { color: var(--ds-signal-orange); }
+.brand span, .brand b { color: var(--ds-signal-orange); }
+.brand b { font-weight: inherit; }
 
 .site-nav {
   display: flex;
@@ -224,12 +225,26 @@ hr { border: 0; border-top: 1px solid var(--ds-hairline); margin: 3rem 0; }
 
 /* ---------- Encadrés de vulgarisation ---------- */
 
+/* Le « chip » : une rangée de triangles égaux, jointifs, pointant vers le contenu.
+   La couleur vient de --chip ; le masque répartit des triangles entiers sur la hauteur. */
+.box, .snapshot { position: relative; }
+.box::before, .snapshot::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 6px;
+  width: 8px;
+  background: var(--chip, var(--ds-slate));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='10'%3E%3Cpath d='M0 0L8 5L0 10Z'/%3E%3C/svg%3E") no-repeat space top left / 8px 10px;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='10'%3E%3Cpath d='M0 0L8 5L0 10Z'/%3E%3C/svg%3E") no-repeat space top left / 8px 10px;
+}
+
 .box {
   border-radius: var(--ds-radius);
-  padding: 1.375rem 1.5rem;
+  padding: 1.375rem 1.5rem 1.375rem calc(1.5rem + 8px);
   margin: 1.75rem 0;
   border: 1px solid var(--ds-hairline);
-  border-left: 3px solid var(--ds-slate);
   background: var(--ds-pure-white);
 }
 
@@ -250,16 +265,16 @@ hr { border: 0; border-top: 1px solid var(--ds-hairline); margin: 3rem 0; }
 }
 
 /* Analogie : neutre. Le design system n'a pas de violet, donc pas de violet. */
-.box.analogy { background: var(--ds-shell-white-2); border-left-color: var(--ds-anthracite); }
+.box.analogy { background: var(--ds-shell-white-2); --chip: var(--ds-anthracite); }
 .box.analogy .label { background: var(--ds-anthracite); color: var(--ds-pure-white); }
 
-.box.change { background: var(--ds-beret-green-100); border-left-color: var(--ds-beret-green); }
+.box.change { background: var(--ds-beret-green-100); --chip: var(--ds-beret-green); }
 .box.change .label { background: var(--ds-beret-green-700); color: var(--ds-pure-white); }
 
-.box.limit { background: var(--ds-signal-orange-100); border-left-color: var(--ds-signal-orange); }
+.box.limit { background: var(--ds-signal-orange-100); --chip: var(--ds-signal-orange); }
 .box.limit .label { background: var(--ds-signal-orange-700); color: var(--ds-pure-white); }
 
-.box.note { background: var(--ds-royal-blue-100); border-left-color: var(--ds-royal-blue); }
+.box.note { background: var(--ds-royal-blue-100); --chip: var(--ds-royal-blue); }
 .box.note .label { background: var(--ds-royal-blue-700); color: var(--ds-pure-white); }
 
 /* ---------- Bloc « pour aller plus loin » repliable ---------- */
@@ -534,17 +549,18 @@ pre.code code { background: none; padding: 0; color: inherit; font-size: inherit
 /* ---------- Bandeau d'instantané daté ---------- */
 
 .snapshot {
+  --chip: var(--ds-anthracite);
   margin: 1.5rem 0 0;
-  padding: .625rem .875rem;
+  padding: .625rem .875rem .625rem calc(.875rem + 12px);
   max-width: none;
   font-size: .8125rem;
   line-height: 1.5;
   color: var(--ds-slate);
   background: var(--ds-shell-white-2);
   border: 1px solid var(--ds-hairline);
-  border-left: 3px solid var(--ds-anthracite);
   border-radius: var(--ds-radius-sm);
 }
+.snapshot::before { top: 8px; bottom: 8px; }
 .snapshot b { color: var(--ds-anthracite); }
 
 /* ---------- Sources : lien souligné et fiche au survol ---------- */
@@ -607,7 +623,8 @@ a.src:focus-visible { outline: 2px solid var(--ds-royal-blue); outline-offset: 2
   .site-header .inner { padding: .75rem 1.125rem; gap: .75rem; }
   .lang-switch { order: 2; margin-left: auto; }
   .site-nav { order: 3; }
-  .card, .box { padding: 1.25rem; }
+  .card { padding: 1.25rem; }
+  .box { padding: 1.25rem 1.25rem 1.25rem calc(1.25rem + 8px); }
   .hero { padding-top: 2.75rem; }
   .site-nav {
     margin-left: 0;
