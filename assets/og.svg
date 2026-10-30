@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <rect width="1200" height="630" fill="#F7F3ED"/>
   <text x="72" y="96" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="18" letter-spacing="3.6" fill="#C95400">GNU6DOTLIVE · PROLOGUE</text>
-  <text x="72" y="172" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="60" fill="#111418">Quatre projets,</text>
-  <text x="72" y="240" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="60" fill="#111418">expliqués sans jargon</text>
+  <text x="72" y="172" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="60" fill="#111418">Ce qui est construit ici,</text>
+  <text x="72" y="240" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="60" fill="#111418">et comment c'est prouvé</text>
   <text x="72" y="292" font-family="'Space Grotesk', sans-serif" font-size="24" fill="#667085">Ce qui existe, ce qui est prouvé, et ce qui reste ouvert.</text>
   <g font-family="'Space Grotesk', sans-serif">
     <rect x="72" y="346" width="252" height="150" rx="14" fill="#FFFFFF" stroke="#D7DADF"/>

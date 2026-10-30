@@ -232,6 +232,6 @@ divergence, les dépôts font foi.
 ## Licence
 
 Textes, schémas, animations et captures : [CC BY 4.0](LICENSE) — réutilisation libre en
-créditant « gnu6dotlive, prologue ». La fonte Space Grotesk est sous OFL-1.1
+créditant « tension-atoi, gnu6dotlive/prologue ». La fonte Space Grotesk est sous OFL-1.1
 ([`assets/fonts/`](assets/fonts/)). Les projets décrits gardent leurs propres licences ;
 in.gnu6 n'en a pas encore, et ce dossier ne lui en prête aucune.
