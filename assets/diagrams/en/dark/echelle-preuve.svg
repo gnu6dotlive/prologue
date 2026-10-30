@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" role="img" aria-labelledby="t d">
+  <title id="t">The evidence ladder shared by both projects</title>
+  <desc id="d">Five levels, from a project on paper to a product usable by a third party, with the vocabulary gnosix and gnostral.rs use at each level.</desc>
+
+  <rect width="1200" height="660" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">GLOSSARY · THE VOCABULARY</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">“It works” means nothing on its own</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">The two projects use different words for the same ladder. Here is the translation.</text>
+
+  
+  <text x="124" y="156" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#ADB7C1">WHAT IT MEANS</text>
+  <text x="444" y="156" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#FF8E40">GNOSIX SAYS</text>
+  <text x="804" y="156" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#87A0F4">GNOSTRAL.RS SAYS</text>
+
+  
+  <g>
+    <rect x="48" y="170" width="1104" height="76" rx="12" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="170" width="5" height="76" rx="2.5" fill="#8DA982" />
+    <text x="70" y="214" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="26" fill="#8DA982">5</text>
+    <text x="124" y="202" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F7F3ED">A third party can use it</text>
+    <text x="124" y="224" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">Shipped, documented, supported for others.</text>
+    <rect x="444" y="188" width="300" height="40" rx="8" fill="#14181C" />
+    <text x="460" y="205" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">Not reached</text>
+    <text x="460" y="221" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">“not yet a desktop for others”</text>
+    <rect x="804" y="188" width="316" height="40" rx="8" fill="#14181C" />
+    <text x="820" y="205" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">Not reached</text>
+    <text x="820" y="221" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">“not a server ready to deploy”</text>
+  </g>
+
+  
+  <g>
+    <rect x="48" y="258" width="1104" height="76" rx="12" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="258" width="5" height="76" rx="2.5" fill="#8DA982" />
+    <text x="70" y="302" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="26" fill="#8DA982">4</text>
+    <text x="124" y="290" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F7F3ED">Observed in real life</text>
+    <text x="124" y="312" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">It runs on real hardware, witnessed.</text>
+    <rect x="444" y="276" width="300" height="40" rx="8" fill="#1A1F24" />
+    <text x="460" y="293" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#8DA982">PROVEN</text>
+    <text x="460" y="309" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8DA982">seen in the author's session</text>
+    <rect x="804" y="276" width="316" height="40" rx="8" fill="#1A1F24" />
+    <text x="820" y="293" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#87A0F4">SINGLE-SERVER PASS</text>
+    <text x="820" y="309" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#87A0F4">a real server, a real answer</text>
+  </g>
+
+  
+  <g>
+    <rect x="48" y="346" width="1104" height="76" rx="12" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="346" width="5" height="76" rx="2.5" fill="#C95400" />
+    <text x="70" y="390" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="26" fill="#FF8E40">3</text>
+    <text x="124" y="378" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F7F3ED">Tested, but narrowly</text>
+    <text x="124" y="400" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">A precise test passed, in isolation.</text>
+    <rect x="444" y="364" width="300" height="40" rx="8" fill="#1A1F24" />
+    <text x="460" y="381" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#FF8E40">QUALIFIED</text>
+    <text x="460" y="397" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#FF8E40">qualified in an isolated session</text>
+    <rect x="804" y="364" width="316" height="40" rx="8" fill="#1A1F24" />
+    <text x="820" y="381" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#87A0F4">BOUNDED PASS</text>
+    <text x="820" y="397" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#87A0F4">a bounded experiment passed</text>
+  </g>
+
+  
+  <g>
+    <rect x="48" y="434" width="1104" height="76" rx="12" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="434" width="5" height="76" rx="2.5" fill="#4169E1" />
+    <text x="70" y="478" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="26" fill="#87A0F4">2</text>
+    <text x="124" y="466" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F7F3ED">Written and checked in source</text>
+    <text x="124" y="488" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">The code compiles, the contracts hold.</text>
+    <rect x="444" y="452" width="300" height="40" rx="8" fill="#1A1F24" />
+    <text x="460" y="469" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#87A0F4">SOURCE-QUALIFIED</text>
+    <text x="460" y="485" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#87A0F4">the invariants hold in source</text>
+    <rect x="804" y="452" width="316" height="40" rx="8" fill="#1A1F24" />
+    <text x="820" y="469" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#87A0F4">CONTRACT TESTED</text>
+    <text x="820" y="485" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#87A0F4">the typed contract is tested</text>
+  </g>
+
+  
+  <g>
+    <rect x="48" y="522" width="1104" height="76" rx="12" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="522" width="5" height="76" rx="2.5" fill="#8D99A6" />
+    <text x="70" y="566" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="26" fill="#8D99A6">1</text>
+    <text x="124" y="554" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" fill="#F7F3ED">Only planned</text>
+    <text x="124" y="576" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">A document describes it; nothing is proven.</text>
+    <rect x="444" y="540" width="300" height="40" rx="8" fill="#14181C" />
+    <text x="460" y="557" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#ADB7C1">OPEN / EXPERIMENTAL</text>
+    <text x="460" y="573" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#ADB7C1">a named obligation, not yet met</text>
+    <rect x="804" y="540" width="316" height="40" rx="8" fill="#14181C" />
+    <text x="820" y="557" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" fill="#ADB7C1">DESIGN / CONTRACT-ONLY</text>
+    <text x="820" y="573" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#ADB7C1">designed, never run</text>
+  </g>
+
+  <text x="48" y="634" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Both projects refuse to jump from level 1 to level 5. That is why their evidence records exist.</text>
+</svg>

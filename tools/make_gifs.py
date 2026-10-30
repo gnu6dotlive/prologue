@@ -19,7 +19,13 @@ une seule forme.
 Deux langues : les GIF français dans assets/gif/, les anglais dans assets/gif/en/.
 Tout texte passe par text(), qui le traduit via EN quand LANG vaut « en ».
 
-Usage : python3 tools/make_gifs.py            (dépend de rsvg-convert et ffmpeg)
+Deux thèmes : chaque image passe aussi par darken() (tools/dark_theme.py) pour la
+version sombre, dans un sous-dossier dark/. Un écran ou une scène dessinés gardent
+leurs couleurs (data-keep="1") : on montre le produit tel qu'il est. L'image de repos
+ne sert qu'à l'impression, qui reste claire : elle n'existe qu'en clair.
+
+Usage : python3 tools/make_gifs.py [fr|en …] [--theme light|dark]
+        (dépend de rsvg-convert et ffmpeg)
 """
 
 from __future__ import annotations
@@ -30,11 +36,15 @@ import sys
 import tempfile
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dark_theme import darken  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "gif"
 
 W, H = 1200, 675
 LANG = "fr"
+THEME = "light"
 
 EN = {
     # gnosix
@@ -256,7 +266,8 @@ def gnosix_frame(t: float) -> str:
     p = header("GNOSIX · LE DECK ET SON APPSTACK",
                "L'AppStack sort du deck — il ne se pose pas dessus", step)
 
-    # --- écran et barre (bords immobiles)
+    # --- écran et barre (bords immobiles) : le produit, dans ses couleurs, quel que soit le thème
+    p.append('<g data-keep="1">')
     p.append(f'<clipPath id="scr"><rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="16"/></clipPath>')
     p.append(rect(sx, sy, sw, sh, QUIET, 16, HAIRLINE))
     p.append(f'<g clip-path="url(#scr)">')
@@ -369,6 +380,7 @@ def gnosix_frame(t: float) -> str:
         q = ease(seg(t, 5.4, 6.2))
         cx_, cy_ = lerp(ax, hx, q), lerp(ay, hy, q)
     p.append(cursor(cx_, cy_, pressed=0.9 <= t < 1.05))
+    p.append("</g>")
 
     p.append(text(48, H - 14, "Animation de principe, d'après gnosix/docs/status/STATUS.md (« The Deck and the AppStack », QUALIFIED). "
                   "Ni capture, ni durées réelles.", 11, 400, MUTED))
@@ -481,9 +493,10 @@ def gnu6_frame(t: float) -> str:
                "La scène change, les projections suivent — jamais l'inverse")
     pos, end, move, swap = scene_state(t)
 
-    # -- la scène
+    # -- la scène : un objet sombre, dans ses couleurs, quel que soit le thème
+    p.append('<g data-keep="1">')
     X, Y, Wd, Hd = 48, 116, 400, 474
-    p.append(rect(X, Y, Wd, Hd, INK, 14))
+    p.append(rect(X, Y, Wd, Hd, INK, 14, extra=' data-dark-stroke="#323A40"'))
     p.append(text(X + 24, Y + 34, "LA SCÈNE · CE QUI EXISTE", 11, 600, MUTED, spacing=1.8))
     ix, iy, iw, ih = X + 40, Y + 70, Wd - 80, Hd - 170
 
@@ -515,6 +528,8 @@ def gnu6_frame(t: float) -> str:
     p.append(rect(X + 20, Y + Hd - 76, Wd - 40, 56, "#22262C", 10))
     p.append(text(X + 36, Y + Hd - 52, "DERNIER FAIT", 10, 600, MUTED, spacing=1.6))
     p.append(text(X + 36, Y + Hd - 32, log, 13, 500, col))
+
+    p.append("</g>")
 
     # -- les deux projections
     def projection(px, color, tint, title, sub, style):
@@ -589,8 +604,9 @@ def render(name, frame_fn, duration, fps, still_t):
     work = Path(tempfile.mkdtemp(prefix=f"gif-{name}-"))
     try:
         n = round(duration * fps)
+        paint = darken if THEME == "dark" else (lambda s: s)
         for i in range(n):
-            (work / f"f{i:04d}.svg").write_text(frame_fn(i / fps), encoding="utf-8")
+            (work / f"f{i:04d}.svg").write_text(paint(frame_fn(i / fps)), encoding="utf-8")
         # rsvg-convert en lot : une image PNG par SVG
         svgs = sorted(work.glob("f*.svg"))
         for s in svgs:
@@ -599,23 +615,32 @@ def render(name, frame_fn, duration, fps, still_t):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(fps), "-i", str(work / "f%04d.png"),
                         "-vf", "palettegen=max_colors=128:stats_mode=full", str(palette)], check=True)
         out = OUT / "en" if LANG == "en" else OUT
+        if THEME == "dark":
+            out = out / "dark"
         out.mkdir(parents=True, exist_ok=True)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(fps), "-i", str(work / "f%04d.png"),
                         "-i", str(palette), "-lavfi", "paletteuse=dither=none", "-loop", "0",
                         str(out / f"{name}.gif")], check=True)
-        still = work / "still.svg"
-        still.write_text(frame_fn(still_t), encoding="utf-8")
-        subprocess.run(["rsvg-convert", "-w", str(W), "-o", str(out / f"{name}-still.png"), str(still)], check=True)
+        if THEME == "light":
+            still = work / "still.svg"
+            still.write_text(frame_fn(still_t), encoding="utf-8")
+            subprocess.run(["rsvg-convert", "-w", str(W), "-o", str(out / f"{name}-still.png"), str(still)], check=True)
         size = (out / f"{name}.gif").stat().st_size
-        print(f"{LANG}/{name}.gif  {n} images à {fps} i/s  {size / 1024:.0f} Kio")
+        print(f"{LANG}/{THEME}/{name}.gif  {n} images à {fps} i/s  {size / 1024:.0f} Kio")
     finally:
         shutil.rmtree(work)
 
 
 def main():
-    global LANG
-    langs = sys.argv[1:] or ["fr", "en"]
-    for LANG in langs:
+    global LANG, THEME
+    args = sys.argv[1:]
+    themes = ["light", "dark"]
+    if "--theme" in args:
+        k = args.index("--theme")
+        themes = [args[k + 1]]
+        del args[k:k + 2]
+    langs = args or ["fr", "en"]
+    for LANG, THEME in [(lang, theme) for lang in langs for theme in themes]:
         render("gnosix-appstack", gnosix_frame, 6.4, 25, still_t=2.8)
         render("gnostral-course", gnostral_frame, GN_TOTAL, 20, still_t=GN_END + 1.0)
         render("gnu6-scene-projection", gnu6_frame, 8.4, 25, still_t=4.3)

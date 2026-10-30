@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Six package sources and four possible actions</title>
+  <desc id="d">Availability table: ALPM, AUR and Flatpak are complete; AppImage is partial; Cargo and NPM are inventory-only.</desc>
+  <rect width="1200" height="560" fill="#111418" />
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">CALIX · WHAT IS POSSIBLE, SOURCE BY SOURCE</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Six sources, four actions — not four times the same thing</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">The inventory is unified. The actions are not yet — and the repository's status table says so.</text>
+  <text x="420" y="166" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.2" fill="#ADB7C1" text-anchor="middle">INVENTORY</text>
+  <text x="620" y="166" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.2" fill="#ADB7C1" text-anchor="middle">SEARCH</text>
+  <text x="820" y="166" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.2" fill="#ADB7C1" text-anchor="middle">INSTALL / REMOVE</text>
+  <text x="1020" y="166" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.2" fill="#ADB7C1" text-anchor="middle">UPDATE</text>
+  <line x1="48" y1="180" x2="1152" y2="180" stroke="#323A40" />
+  <text x="48" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" fill="#F7F3ED">ALPM</text>
+  <text x="48" y="236" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">official repositories</text>
+  <circle cx="420" cy="210" r="7" fill="#8DA982" />
+  <circle cx="620" cy="210" r="7" fill="#8DA982" />
+  <circle cx="820" cy="210" r="7" fill="#8DA982" />
+  <circle cx="1020" cy="210" r="7" fill="#8DA982" />
+  <line x1="48" y1="250" x2="1152" y2="250" stroke="#2B3138" />
+  <text x="48" y="266" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" fill="#F7F3ED">AUR</text>
+  <text x="48" y="284" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">community repositories</text>
+  <circle cx="420" cy="258" r="7" fill="#8DA982" />
+  <circle cx="620" cy="258" r="7" fill="#8DA982" />
+  <circle cx="820" cy="258" r="7" fill="#8DA982" />
+  <circle cx="1020" cy="258" r="7" fill="#8DA982" />
+  <line x1="48" y1="298" x2="1152" y2="298" stroke="#2B3138" />
+  <text x="48" y="314" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" fill="#F7F3ED">Flatpak</text>
+  <text x="48" y="332" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">sandboxed packages</text>
+  <circle cx="420" cy="306" r="7" fill="#8DA982" />
+  <circle cx="620" cy="306" r="7" fill="#8DA982" />
+  <circle cx="820" cy="306" r="7" fill="#8DA982" />
+  <circle cx="1020" cy="306" r="7" fill="#8DA982" />
+  <line x1="48" y1="346" x2="1152" y2="346" stroke="#2B3138" />
+  <text x="48" y="362" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" fill="#F7F3ED">AppImage</text>
+  <text x="48" y="380" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">self-contained files</text>
+  <circle cx="420" cy="354" r="7" fill="#8DA982" />
+  <path d="M620 347 a7 7 0 0 1 0 14 z" fill="#C95400" />
+  <circle cx="620" cy="354" r="7" fill="none" stroke="#C95400" stroke-width="1.2" />
+  <path d="M820 347 a7 7 0 0 1 0 14 z" fill="#C95400" />
+  <circle cx="820" cy="354" r="7" fill="none" stroke="#C95400" stroke-width="1.2" />
+  <path d="M1020 347 a7 7 0 0 1 0 14 z" fill="#C95400" />
+  <circle cx="1020" cy="354" r="7" fill="none" stroke="#C95400" stroke-width="1.2" />
+  <line x1="48" y1="394" x2="1152" y2="394" stroke="#2B3138" />
+  <text x="48" y="410" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" fill="#F7F3ED">Cargo</text>
+  <text x="48" y="428" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">Rust libraries</text>
+  <circle cx="420" cy="402" r="7" fill="#8DA982" />
+  <circle cx="620" cy="402" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <circle cx="820" cy="402" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <circle cx="1020" cy="402" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <line x1="48" y1="442" x2="1152" y2="442" stroke="#2B3138" />
+  <text x="48" y="458" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" fill="#F7F3ED">NPM</text>
+  <text x="48" y="476" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">JavaScript libraries</text>
+  <circle cx="420" cy="450" r="7" fill="#8DA982" />
+  <circle cx="620" cy="450" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <circle cx="820" cy="450" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <circle cx="1020" cy="450" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <line x1="48" y1="490" x2="1152" y2="490" stroke="#2B3138" />
+  <circle cx="56" cy="496" r="7" fill="#8DA982" />
+  <text x="72" y="500" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#F7F3ED">from the interface</text>
+  <path d="M236 489 a7 7 0 0 1 0 14 z" fill="#C95400" />
+  <circle cx="236" cy="496" r="7" fill="none" stroke="#C95400" stroke-width="1.2" />
+  <text x="252" y="500" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#F7F3ED">partial, or backend only</text>
+  <circle cx="508" cy="496" r="7" fill="none" stroke="#323A40" stroke-width="1.4" />
+  <text x="524" y="500" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#F7F3ED">absent from this surface</text>
+  <rect x="48" y="524" width="1104" height="0" fill="none" />
+  <text x="48" y="548" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">Source: calix/README.md, “Project status” section — the repository states that this table overrides any more optimistic document. AppImage: search limited to already-installed applications.</text>
+</svg>

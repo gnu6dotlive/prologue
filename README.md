@@ -120,6 +120,7 @@ pour les fiches de sources). Il fonctionne depuis le disque, hors ligne, et s'im
 │   ├── make_charts.py  les graphiques de données, FR et EN, depuis les reçus et versions publiés
 │   ├── inline_charts.py les insère dans les pages, en SVG : fiche au survol, bascules (assets/charts.js)
 │   ├── i18n_head.py    sélecteur FR · EN, hreflang, aperçu de partage par langue
+│   ├── dark_theme.py   thème sombre : bloc CSS, schémas sombres (diagrams/dark/), <picture> dans les pages
 │   └── navigation.py   ancres des sections, sommaires des dossiers, précédent / suivant
 ├── exports/            les mêmes pages en PDF (exports/en/ pour l'anglais)
 ├── LICENSE             CC BY 4.0 (contenu) ; la fonte garde sa licence OFL-1.1
@@ -184,10 +185,11 @@ mêmes commits et les mêmes sources. Après une modification :
 python3 tools/make_charts.py      # graphiques de données des quatre dossiers, FR et EN
 python3 tools/inline_charts.py    # les insère dans les pages (fiches au survol, bascules)
 python3 tools/translate_svgs.py   # schémas anglais (échoue si un texte n'est pas traduit)
-python3 tools/make_gifs.py        # animations FR et EN
+python3 tools/make_gifs.py        # animations FR et EN, claires et sombres (--theme light|dark)
 python3 tools/link_sources.py     # liens de sources et fiches, dans la langue de la page
 python3 tools/table_labels.py     # intitulés de tableaux pour le mobile
 python3 tools/i18n_head.py        # sélecteur de langue et balises de partage
+python3 tools/dark_theme.py       # thème sombre : feuille de style, schémas, images à deux thèmes
 python3 tools/navigation.py       # ancres, sommaires, précédent / suivant
 ```
 
@@ -197,6 +199,16 @@ Sous 640 px, le menu passe sur deux lignes, chaque ligne de tableau devient une 
 (intitulés posés par `python3 tools/table_labels.py`), les schémas et animations gardent une
 taille lisible et se font glisser, et la fiche de source s'ouvre au premier toucher — le second
 suit le lien.
+
+## Thème sombre
+
+Le site suit le réglage clair / sombre du système. Le bouton à côté de FR · EN fait défiler
+système → clair → sombre ; le navigateur retient le choix. Les couleurs sombres sont les rôles
+sombres de gnosix_DS, sans teinte inventée ; les deux séries des graphiques restent les mêmes,
+validées sur fond sombre. Schémas et animations ont chacun leur version sombre (dossiers
+`dark/`), choisie par un `<picture>`. Sur un fond devenu clair, un texte prend l'encre prévue
+pour le fond clair. L'écran de gnosix et la scène d'in.gnu6 gardent leurs couleurs dans les
+animations : ils montrent le produit tel qu'il est. Le PDF reste clair.
 
 ## Régénérer les animations
 

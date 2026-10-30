@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="t d">
+  <title id="t">Le problème de la mémoire, et l'astuce des experts</title>
+  <desc id="d">À gauche, un gros modèle ne rentre pas dans une petite carte graphique. À droite, seuls les experts utiles restent sur la carte, les autres attendent en mémoire centrale.</desc>
+
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4169E1" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">GNOSTRAL.RS · LE PROBLÈME</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Un gros modèle, une petite carte graphique</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">Tout l'enjeu tient dans une question de rangement.</text>
+
+  
+  <g>
+    <rect x="48" y="146" width="522" height="356" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="76" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.8" fill="#FF8E40">SANS L'ASTUCE</text>
+    <text x="76" y="212" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#F7F3ED">Tout faire tenir</text>
+
+    
+    <rect x="96" y="238" width="150" height="112" rx="10" fill="#14181C" stroke="#8D99A6" stroke-dasharray="5 4" />
+    <text x="112" y="266" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" fill="#ADB7C1">CARTE GRAPHIQUE</text>
+    <text x="112" y="288" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="19" fill="#F7F3ED">8 Go</text>
+
+    
+    <rect x="286" y="206" width="246" height="170" rx="10" fill="#1A1F24" stroke="#C95400" />
+    <text x="304" y="236" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" fill="#FF8E40">MODÈLE</text>
+    <text x="304" y="264" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#FF8E40">30 milliards</text>
+    <text x="304" y="288" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#FF8E40">de paramètres</text>
+    <text x="304" y="320" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#FF8E40">≈ 60 Go en pleine précision</text>
+    <text x="304" y="340" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#FF8E40">≈ 11 Go même compressé</text>
+
+    
+    <circle cx="206" cy="322" r="17" fill="#C95400" />
+    <path d="M200 316 L212 328 M212 316 L200 328" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+
+    <text x="96" y="404" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">Le modèle déborde de la carte. Le faire tenir</text>
+    <text x="96" y="424" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">de force revient à tout ralentir, ou à échouer.</text>
+    <text x="96" y="456" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">C'est la situation de départ de la plupart</text>
+    <text x="96" y="474" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">des stations de travail personnelles.</text>
+  </g>
+
+  
+  <g>
+    <rect x="630" y="146" width="522" height="356" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="658" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.8" fill="#87A0F4">AVEC L'ASTUCE</text>
+    <text x="658" y="212" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#F7F3ED">Ne ranger que l'utile</text>
+
+    
+    <rect x="668" y="238" width="150" height="150" rx="10" fill="#1A1F24" stroke="#4169E1" />
+    <text x="682" y="264" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#87A0F4">SUR LA CARTE</text>
+    <g fill="#4169E1">
+      <rect x="680" y="280" width="34" height="34" rx="7" />
+      <rect x="718" y="280" width="34" height="34" rx="7" />
+      <rect x="756" y="280" width="34" height="34" rx="7" />
+    </g>
+    <text x="682" y="340" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#87A0F4">3 experts actifs</text>
+    <text x="682" y="360" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#87A0F4">pour ce mot-ci</text>
+
+    
+    <rect x="906" y="238" width="218" height="150" rx="10" fill="#14181C" stroke="#8D99A6" />
+    <text x="920" y="264" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="9.5" fill="#ADB7C1">EN MÉMOIRE CENTRALE</text>
+    <g fill="#8D99A6">
+      <rect x="920" y="280" width="26" height="26" rx="5" /><rect x="952" y="280" width="26" height="26" rx="5" />
+      <rect x="984" y="280" width="26" height="26" rx="5" /><rect x="1016" y="280" width="26" height="26" rx="5" />
+      <rect x="1048" y="280" width="26" height="26" rx="5" /><rect x="1080" y="280" width="26" height="26" rx="5" />
+      <rect x="920" y="312" width="26" height="26" rx="5" /><rect x="952" y="312" width="26" height="26" rx="5" />
+      <rect x="984" y="312" width="26" height="26" rx="5" /><rect x="1016" y="312" width="26" height="26" rx="5" />
+      <rect x="1048" y="312" width="26" height="26" rx="5" /><rect x="1080" y="312" width="26" height="26" rx="5" />
+    </g>
+    <text x="920" y="364" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">les experts au repos</text>
+
+    
+    <line x1="900" y1="322" x2="826" y2="322" stroke="#4169E1" stroke-width="2" marker-end="url(#ar2)" />
+    <text x="863" y="308" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#87A0F4" text-anchor="middle">à la demande</text>
+
+    <text x="658" y="432" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">Un modèle « mixture of experts » n'active qu'une</text>
+    <text x="658" y="452" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">petite partie de ses réseaux pour chaque mot.</text>
+    <text x="658" y="478" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">30 milliards de paramètres, 3 milliards sollicités</text>
+    <text x="658" y="496" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">à la fois : c'est ce déséquilibre qui rend l'astuce possible.</text>
+  </g>
+
+  
+  <g>
+    <rect x="48" y="526" width="1104" height="58" rx="12" fill="#F7F3ED" />
+    <text x="76" y="552" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#667085">RÉSULTAT MESURÉ · Q-010</text>
+    <text x="76" y="574" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#111418">9,51 → 20,18 jetons par seconde, soit 2,12× plus vite, sur une RTX 3070 de 8 Go — mesure locale, trois répétitions par condition.</text>
+  </g>
+</svg>

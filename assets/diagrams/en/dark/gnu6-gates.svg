@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="t d">
+  <title id="t">Ten lab gates passed, release authorisation not qualified</title>
+  <desc id="d">Grid of protocol CUDA-05F: the ten operational lab gates pass; release authority, which requires independent human approval, remains not qualified.</desc>
+  <rect width="1200" height="640" fill="#111418" />
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">IN.GNU6 · PROTOCOL CUDA-05F</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Ten lab gates passed, publication refused</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">Each gate is a test written before the run. None declares itself passed: observation closes it or leaves it open.</text>
+  <g>
+    <rect x="48" y="172" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="172" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="66" y="198" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">authorized_host_peer</text>
+    <rect x="232" y="184" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="265.0" y="198" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="66" y="224" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">An authorised peer is accepted, and its</text>
+    <text x="66" y="241" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">host identity is verified.</text>
+  </g>
+  <g>
+    <rect x="328" y="172" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="328" y="172" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="346" y="198" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">host_service_uid</text>
+    <rect x="512" y="184" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="545.0" y="198" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="346" y="224" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">The service runs under a host UID</text>
+    <text x="346" y="241" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">distinct from the client's.</text>
+  </g>
+  <g>
+    <rect x="608" y="172" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="608" y="172" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="626" y="198" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">dac_rejected_peer</text>
+    <rect x="792" y="184" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="825.0" y="198" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="626" y="224" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">A peer outside the authorised group is</text>
+    <text x="626" y="241" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">refused by the kernel.</text>
+  </g>
+  <g>
+    <rect x="888" y="172" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="888" y="172" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="906" y="198" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">rejected_connected_peer</text>
+    <rect x="1072" y="184" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="1105.0" y="198" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="906" y="224" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">A peer that manages to connect without</text>
+    <text x="906" y="241" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">authorisation is refused by the service.</text>
+  </g>
+  <g>
+    <rect x="48" y="286" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="286" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="66" y="312" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">provider_integrity</text>
+    <rect x="232" y="298" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="265.0" y="312" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="66" y="338" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">A tampered CUDA provider makes the</text>
+    <text x="66" y="355" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">worker fail: grant revoked, then restored.</text>
+  </g>
+  <g>
+    <rect x="328" y="286" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="328" y="286" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="346" y="312" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">worker_binary_integrity</text>
+    <rect x="512" y="298" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="545.0" y="312" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="346" y="338" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">A tampered worker binary is detected</text>
+    <text x="346" y="355" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">before launch.</text>
+  </g>
+  <g>
+    <rect x="608" y="286" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="608" y="286" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="626" y="312" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">cuda_gpu_parity</text>
+    <rect x="792" y="298" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="825.0" y="312" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="626" y="338" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">The CUDA computation reproduces the</text>
+    <text x="626" y="355" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">CPU oracle's result.</text>
+  </g>
+  <g>
+    <rect x="888" y="286" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="888" y="286" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="906" y="312" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">vulkan_gpu_parity</text>
+    <rect x="1072" y="298" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="1105.0" y="312" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="906" y="338" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">The Vulkan computation reproduces the</text>
+    <text x="906" y="355" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">CPU oracle's result.</text>
+  </g>
+  <g>
+    <rect x="48" y="400" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="400" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="66" y="426" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">worker_crash_recovery</text>
+    <rect x="232" y="412" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="265.0" y="426" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="66" y="452" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">A crashing worker is recovered without</text>
+    <text x="66" y="469" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">losing the service.</text>
+  </g>
+  <g>
+    <rect x="328" y="400" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="328" y="400" width="4" height="100" rx="2" fill="#8DA982" />
+    <text x="346" y="426" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">worker_timeout_recovery</text>
+    <rect x="512" y="412" width="66" height="20" rx="4" fill="#1A1F24" />
+    <text x="545.0" y="426" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#8DA982" text-anchor="middle">PASS</text>
+    <text x="346" y="452" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">A timed-out worker is recovered without</text>
+    <text x="346" y="469" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">blocking the queue.</text>
+  </g>
+  <g>
+    <rect x="608" y="400" width="264" height="100" rx="10" fill="#1D2228" stroke="#323A40" />
+    <rect x="608" y="400" width="4" height="100" rx="2" fill="#C95400" />
+    <text x="626" y="426" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#ADB7C1">release_authority</text>
+    <rect x="760" y="412" width="98" height="20" rx="4" fill="#1A1F24" />
+    <text x="809.0" y="426" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.6" fill="#FF8E40" text-anchor="middle">NOT QUALIFIED</text>
+    <text x="626" y="452" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">Missing: an independent human</text>
+    <text x="626" y="469" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">approval and a signed attestation.</text>
+  </g>
+  <g>
+    <rect x="888" y="400" width="264" height="100" rx="10" fill="#F7F3ED" />
+    <text x="906" y="426" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" letter-spacing="1.1" fill="#667085">SUMMARY OF THE RETAINED RUN</text>
+    <text x="906" y="466" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="30" fill="#111418">10 / 10</text>
+    <text x="1018" y="466" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#667085">lab gates</text>
+    <text x="906" y="486" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#667085">Production: refused.</text>
+  </g>
+  <rect x="48" y="512" width="1104" height="60" rx="10" fill="#1A1F24" stroke="#C95400" />
+  <text x="72" y="538" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12.5" fill="#FF8E40">WHAT THIS SUMMARY DOES NOT SAY</text>
+  <text x="72" y="558" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">A single qualifying run — the fourth, after three failed runs that were kept — on a single machine. No external reproduction, no human security review.</text>
+  <text x="48" y="612" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">Source: in.gnu6, docs/agent-results/blobin-next-01/CUDA-05F.md — pre-registered protocol; the negative runs stay archived, not reinterpreted.</text>
+</svg>

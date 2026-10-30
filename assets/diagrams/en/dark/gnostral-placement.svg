@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+  <title id="t">How the model's 48 layers are split between graphics card and processor</title>
+  <desc id="d">In the control run, 22 layers fit on the card and 26 on the processor. Under memory pressure, 13 layers stay on the card and 35 move to the processor, for almost the same throughput.</desc>
+
+  <rect width="1200" height="560" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">GNOSTRAL.RS · PLACEMENT UNDER PRESSURE</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">When memory fills up, the model falls back</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">The engine puts each layer on the card or on the processor, depending on the memory left to it.</text>
+
+  
+  <rect x="48" y="146" width="728" height="250" rx="12" fill="#1D2228" stroke="#323A40" />
+
+  <text x="76" y="180" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.6" fill="#ADB7C1">48 LAYERS · CONTROL</text>
+  <g>
+    <rect x="76" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="87" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="98" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="109" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="120" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="131" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="142" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="153" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="164" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="175" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="186" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="197" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="208" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="219" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="230" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="241" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="252" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="263" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="274" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="285" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="296" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="307" y="194" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="318" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="329" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="340" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="351" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="362" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="373" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="384" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="395" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="406" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="417" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="428" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="439" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="450" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="461" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="472" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="483" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="494" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="505" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="516" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="527" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="538" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="549" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="560" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="571" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="582" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="593" y="194" width="9" height="26" rx="2" fill="#2B3138" />
+  </g>
+  <text x="620" y="213" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#FF8E40">22 on the card</text>
+  <text x="620" y="234" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">26 on the processor</text>
+
+  <text x="76" y="282" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.6" fill="#ADB7C1">48 LAYERS · UNDER MEMORY PRESSURE</text>
+  <g>
+    <rect x="76" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="87" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="98" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="109" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="120" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="131" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="142" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="153" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="164" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="175" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="186" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="197" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="208" y="296" width="9" height="26" rx="2" fill="#C95400" />
+    <rect x="219" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="230" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="241" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="252" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="263" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="274" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="285" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="296" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="307" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="318" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="329" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="340" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="351" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="362" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="373" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="384" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="395" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="406" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="417" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="428" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="439" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="450" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="461" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="472" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="483" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="494" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="505" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="516" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="527" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="538" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="549" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="560" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="571" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="582" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+    <rect x="593" y="296" width="9" height="26" rx="2" fill="#2B3138" />
+  </g>
+  <text x="620" y="315" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#FF8E40">13 on the card</text>
+  <text x="620" y="336" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">35 on the processor</text>
+
+  <text x="76" y="372" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">Decode throughput: <tspan font-weight="700" fill="#F7F3ED">20.88</tspan> → <tspan font-weight="700" fill="#F7F3ED">20.15</tspan> tokens/s (−3.5%)</text>
+
+  
+  <rect x="800" y="146" width="352" height="250" rx="12" fill="#1D2228" stroke="#323A40" />
+  <text x="824" y="180" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.6" fill="#ADB7C1">TOTAL GPU MEMORY, AT PEAK</text>
+
+  <text x="824" y="212" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Control</text>
+  <rect x="960" y="201" width="75" height="14" rx="3" fill="#8D99A6" />
+  <text x="1045" y="213" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#F7F3ED">2,346</text>
+
+  <text x="824" y="246" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Reserved (requested)</text>
+  <rect x="960" y="235" width="66" height="14" rx="3" fill="#4169E1" />
+  <text x="1036" y="247" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#87A0F4">2,048</text>
+
+  <text x="824" y="280" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Reserved (observed)</text>
+  <rect x="960" y="269" width="69" height="14" rx="3" fill="#4169E1" />
+  <text x="1039" y="281" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#87A0F4">2,162</text>
+
+  <text x="824" y="314" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Under pressure</text>
+  <rect x="960" y="303" width="142" height="14" rx="3" fill="#C95400" />
+  <text x="1112" y="315" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#FF8E40">4,436</text>
+
+  <text x="824" y="348" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">MiB · scale 0 – 5,000</text>
+  <text x="824" y="374" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">“Total” memory includes the desktop.</text>
+
+  
+  <rect x="48" y="428" width="1104" height="88" rx="10" fill="#1A1F24" stroke="#4169E1" />
+  <text x="72" y="456" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13" fill="#87A0F4">WHAT IS QUALIFIED — AND WHAT IS NOT</text>
+  <text x="72" y="478" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">Initial placement according to available memory is observed. Rebalancing while</text>
+  <text x="72" y="498" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">running remains unqualified: the engine does not move layers after start-up.</text>
+
+  <text x="48" y="540" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">Data: gnostral.rs/evidence/runs/q011-rtx3070-placement-observation-20261010.json — 3 repetitions per condition, RTX 3070 8 GiB.</text>
+</svg>

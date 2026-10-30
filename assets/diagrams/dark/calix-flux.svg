@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="t d">
+  <title id="t">Six sources de logiciels, une seule liste</title>
+  <desc id="d">À gauche, six écosystèmes de paquets. Au centre, un inventaire versionné. À droite, des lignes qui gardent la provenance de chaque logiciel.</desc>
+
+  <rect width="1200" height="540" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">CALIX · LE PROBLÈME</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Six sources, une seule liste</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">Chaque logiciel vient d'un dépôt différent. La personne devant l'écran, elle, n'a qu'une fenêtre.</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#8D99A6" />
+    </marker>
+  </defs>
+
+  
+  <text x="48" y="156" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#ADB7C1">LES SOURCES</text>
+
+  <g font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="600" fill="#F7F3ED">
+    <rect x="48" y="172" width="250" height="34" rx="8" fill="#1D2228" stroke="#323A40" />
+    <text x="64" y="194" fill="#F7F3ED">ALPM · dépôts officiels</text>
+
+    <rect x="48" y="214" width="250" height="34" rx="8" fill="#1D2228" stroke="#323A40" />
+    <text x="64" y="236" fill="#F7F3ED">AUR · dépôts communautaires</text>
+
+    <rect x="48" y="256" width="250" height="34" rx="8" fill="#1D2228" stroke="#323A40" />
+    <text x="64" y="278" fill="#F7F3ED">Flatpak · paquets isolés</text>
+
+    <rect x="48" y="298" width="250" height="34" rx="8" fill="#1D2228" stroke="#323A40" />
+    <text x="64" y="320" fill="#F7F3ED">AppImage · fichiers autonomes</text>
+
+    <rect x="48" y="340" width="250" height="34" rx="8" fill="#1D2228" stroke="#323A40" />
+    <text x="64" y="362" fill="#F7F3ED">Cargo · bibliothèques Rust</text>
+
+    <rect x="48" y="382" width="250" height="34" rx="8" fill="#1D2228" stroke="#323A40" />
+    <text x="64" y="404" fill="#F7F3ED">NPM · bibliothèques JavaScript</text>
+  </g>
+
+  <line x1="306" y1="294" x2="352" y2="294" stroke="#8D99A6" stroke-width="1.5" marker-end="url(#a)" />
+
+  
+  <g>
+    <rect x="364" y="172" width="322" height="244" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="364" y="172" width="6" height="244" rx="3" fill="#C95400" />
+    <text x="392" y="204" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.8" fill="#FF8E40">L'INVENTAIRE</text>
+    <text x="392" y="240" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="23" fill="#F7F3ED">Un document</text>
+    <text x="392" y="268" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="23" fill="#F7F3ED">versionné</text>
+    <text x="392" y="302" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">Une seule liste, un format daté.</text>
+    <text x="392" y="322" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">Un lecteur qui ne comprend pas</text>
+    <text x="392" y="342" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">la version refuse le document</text>
+    <text x="392" y="362" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">au lieu de l'afficher à moitié.</text>
+    <text x="392" y="392" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">Un seul service écrit cet état.</text>
+  </g>
+
+  <line x1="694" y1="294" x2="740" y2="294" stroke="#8D99A6" stroke-width="1.5" marker-end="url(#a)" />
+
+  
+  <g>
+    <rect x="752" y="172" width="400" height="244" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="776" y="204" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.8" fill="#ADB7C1">CE QUE CHAQUE LIGNE DIT</text>
+
+    <text x="776" y="242" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="14" fill="#F7F3ED">ripgrep</text>
+    <rect x="1076" y="226" width="52" height="22" rx="4" fill="#1A1F24" />
+    <text x="1086" y="241" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#FF8E40">AUR</text>
+
+    <text x="776" y="284" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="14" fill="#F7F3ED">org.gnome.Builder</text>
+    <rect x="1046" y="268" width="82" height="22" rx="4" fill="#1A1F24" />
+    <text x="1056" y="283" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#87A0F4">FLATPAK</text>
+
+    <text x="776" y="326" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="14" fill="#F7F3ED">cargo-watch</text>
+    <rect x="1056" y="310" width="72" height="22" rx="4" fill="#1A1F24" />
+    <text x="1066" y="325" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#8DA982">CARGO</text>
+
+    <text x="776" y="366" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">La provenance n'est pas décorative : elle décide</text>
+    <text x="776" y="386" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">qui installe, qui met à jour, et avec quel droit.</text>
+  </g>
+
+  
+  <rect x="48" y="448" width="1104" height="48" rx="10" fill="#1A1F24" stroke="#C95400" />
+  <text x="72" y="478" font-family="'Space Grotesk', sans-serif" font-size="14" fill="#F7F3ED">Six écosystèmes ne deviennent pas un septième. Calix range les sources côte à côte ; il ne les fait pas passer pour équivalentes.</text>
+
+  <text x="48" y="524" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">Schéma de vulgarisation. D'après README.md et docs/calix-architecture.md du dépôt calix.</text>
+</svg>

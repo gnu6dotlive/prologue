@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="t d">
+  <title id="t">Wireframe des surfaces du bureau gnosix</title>
+  <desc id="d">Croquis d'un écran : barre en haut, deux fenêtres, deck en bas, notification à droite et affichage à l'écran. Cinq repères numérotés renvoient à la légende.</desc>
+
+  <rect width="1200" height="620" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">GNOSIX · WIREFRAME</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Un bureau, cinq surfaces</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">Où chaque chose se trouve — et ce que sa position autorise. Croquis de principe, pas une capture d'écran.</text>
+
+  
+  <rect x="48" y="150" width="764" height="398" rx="12" fill="#1D2228" stroke="#F7F3ED" stroke-width="1.4" />
+  <text x="64" y="176" font-family="'Space Grotesk', sans-serif" font-size="10" letter-spacing="1.2" fill="#8D99A6">ÉCRAN 1 · 2560 × 1440</text>
+
+  
+  <rect x="64" y="184" width="732" height="34" rx="6" fill="#111418" stroke="#323A40" />
+  <g fill="#1D2228" stroke="#8D99A6">
+    <rect x="76" y="193" width="46" height="16" rx="3" />
+    <rect x="128" y="193" width="38" height="16" rx="3" />
+    <rect x="172" y="193" width="52" height="16" rx="3" />
+    <rect x="230" y="193" width="40" height="16" rx="3" />
+    <rect x="330" y="193" width="64" height="16" rx="3" />
+    <rect x="640" y="193" width="34" height="16" rx="3" />
+    <rect x="680" y="193" width="34" height="16" rx="3" />
+    <rect x="720" y="193" width="34" height="16" rx="3" />
+    <rect x="760" y="193" width="24" height="16" rx="3" />
+  </g>
+
+  
+  <rect x="84" y="240" width="330" height="186" rx="8" fill="#1D2228" stroke="#F7F3ED" stroke-width="1.2" />
+  <rect x="84" y="240" width="330" height="26" rx="8" fill="#111418" />
+  <rect x="84" y="258" width="330" height="8" fill="#111418" />
+  <circle cx="98" cy="253" r="4" fill="#323A40" />
+  <circle cx="112" cy="253" r="4" fill="#323A40" />
+  <text x="128" y="257" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#ADB7C1">fenêtre · application</text>
+  <g stroke="#2B3138">
+    <line x1="100" y1="292" x2="398" y2="292" />
+    <line x1="100" y1="316" x2="398" y2="316" />
+    <line x1="100" y1="340" x2="398" y2="340" />
+    <line x1="100" y1="364" x2="398" y2="364" />
+    <line x1="100" y1="388" x2="398" y2="388" />
+  </g>
+  <rect x="100" y="280" width="120" height="10" rx="3" fill="#2B3138" />
+  <rect x="100" y="304" width="210" height="10" rx="3" fill="#2B3138" />
+  <rect x="100" y="328" width="170" height="10" rx="3" fill="#2B3138" />
+
+  
+  <rect x="432" y="240" width="190" height="118" rx="8" fill="#1D2228" stroke="#F7F3ED" stroke-width="1.2" />
+  <rect x="432" y="240" width="190" height="24" rx="8" fill="#111418" />
+  <rect x="432" y="256" width="190" height="8" fill="#111418" />
+  <circle cx="446" cy="252" r="3.5" fill="#323A40" />
+  <g stroke="#2B3138">
+    <line x1="446" y1="288" x2="608" y2="288" />
+    <line x1="446" y1="310" x2="608" y2="310" />
+    <line x1="446" y1="332" x2="608" y2="332" />
+  </g>
+  <rect x="446" y="278" width="96" height="8" rx="3" fill="#2B3138" />
+
+  
+  <rect x="630" y="240" width="158" height="74" rx="8" fill="#1D2228" stroke="#F7F3ED" stroke-width="1.2" />
+  <circle cx="648" cy="258" r="6" fill="#1A1F24" stroke="#C95400" />
+  <text x="662" y="262" font-family="'Space Grotesk', sans-serif" font-size="9.5" fill="#ADB7C1">notification</text>
+  <rect x="644" y="274" width="112" height="7" rx="3" fill="#2B3138" />
+  <rect x="644" y="288" width="84" height="7" rx="3" fill="#2B3138" />
+
+  
+  <rect x="660" y="436" width="128" height="42" rx="8" fill="#1D2228" stroke="#F7F3ED" stroke-width="1.2" />
+  <text x="674" y="452" font-family="'Space Grotesk', sans-serif" font-size="9" fill="#ADB7C1">volume</text>
+  <rect x="674" y="458" width="86" height="7" rx="3.5" fill="#2B3138" />
+  <rect x="674" y="458" width="54" height="7" rx="3.5" fill="#C95400" />
+
+  
+  <rect x="264" y="468" width="296" height="54" rx="12" fill="#111418" stroke="#323A40" />
+  <g fill="#1D2228" stroke="#8D99A6">
+    <rect x="280" y="478" width="34" height="34" rx="7" />
+    <rect x="322" y="478" width="34" height="34" rx="7" />
+    <rect x="364" y="478" width="34" height="34" rx="7" />
+    <rect x="406" y="478" width="34" height="34" rx="7" />
+    <rect x="448" y="478" width="34" height="34" rx="7" />
+    <rect x="490" y="478" width="34" height="34" rx="7" />
+  </g>
+  <circle cx="341" cy="495" r="4" fill="#C95400" />
+  <circle cx="425" cy="495" r="4" fill="#C95400" />
+
+  
+  <g font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="10" text-anchor="middle">
+    <circle cx="58" cy="201" r="9" fill="#F7F3ED" /><text x="58" y="204.5" fill="#111418">1</text>
+    <circle cx="66" cy="252" r="9" fill="#F7F3ED" /><text x="66" y="255.5" fill="#111418">2</text>
+    <circle cx="246" cy="495" r="9" fill="#F7F3ED" /><text x="246" y="498.5" fill="#111418">3</text>
+    <circle cx="648" cy="228" r="9" fill="#F7F3ED" /><text x="648" y="231.5" fill="#111418">4</text>
+    <circle cx="644" cy="450" r="9" fill="#F7F3ED" /><text x="644" y="453.5" fill="#111418">5</text>
+  </g>
+
+  
+  <g font-family="'Space Grotesk', sans-serif">
+    <circle cx="866" cy="196" r="11" fill="#F7F3ED" /><text x="866" y="200" font-weight="700" font-size="10" fill="#111418" text-anchor="middle">1</text>
+    <text x="890" y="194" font-weight="700" font-size="14" fill="#F7F3ED">La barre</text>
+    <text x="890" y="212" font-size="11.5" fill="#ADB7C1">Modules, bords, densité, épaisseur.</text>
+
+    <circle cx="866" cy="256" r="11" fill="#F7F3ED" /><text x="866" y="260" font-weight="700" font-size="10" fill="#111418" text-anchor="middle">2</text>
+    <text x="890" y="254" font-weight="700" font-size="14" fill="#F7F3ED">Les fenêtres</text>
+    <text x="890" y="272" font-size="11.5" fill="#ADB7C1">Le bureau et son espace de travail.</text>
+
+    <circle cx="866" cy="316" r="11" fill="#F7F3ED" /><text x="866" y="320" font-weight="700" font-size="10" fill="#111418" text-anchor="middle">3</text>
+    <text x="890" y="314" font-weight="700" font-size="14" fill="#F7F3ED">Le deck</text>
+    <text x="890" y="332" font-size="11.5" fill="#ADB7C1">Épingles et applications ouvertes.</text>
+
+    <circle cx="866" cy="376" r="11" fill="#F7F3ED" /><text x="866" y="380" font-weight="700" font-size="10" fill="#111418" text-anchor="middle">4</text>
+    <text x="890" y="374" font-weight="700" font-size="14" fill="#F7F3ED">La notification</text>
+    <text x="890" y="392" font-size="11.5" fill="#ADB7C1">Gnosix est le service de la session.</text>
+
+    <circle cx="866" cy="436" r="11" fill="#F7F3ED" /><text x="866" y="440" font-weight="700" font-size="10" fill="#111418" text-anchor="middle">5</text>
+    <text x="890" y="434" font-weight="700" font-size="14" fill="#F7F3ED">L'affichage à l'écran</text>
+    <text x="890" y="452" font-size="11.5" fill="#ADB7C1">Volume, luminosité, veille.</text>
+  </g>
+
+  <text x="48" y="586" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">Croquis de principe. D'après gnosix/docs/diagrams/02-surface-anatomy.svg et docs/status/STATUS.md.</text>
+  <text x="48" y="604" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#8D99A6">Les formes suggèrent la disposition ; elles ne représentent aucune version livrée à l'identique.</text>
+</svg>

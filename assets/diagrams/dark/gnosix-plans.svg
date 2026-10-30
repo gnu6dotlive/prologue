@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="t d">
+  <title id="t">Les quatre plans de gnosix</title>
+  <desc id="d">gnosix sépare l'observation du bureau, l'état durable, l'affichage et le droit d'agir. Les données circulent entre les plans, mais l'autorité ne suit pas automatiquement.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8D99A6" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">GNOSIX · ARCHITECTURE</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Quatre plans, quatre responsabilités</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">Chaque plan fait une chose. Aucun ne possède les trois autres.</text>
+
+  
+  <g>
+    <rect x="48" y="152" width="250" height="214" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="152" width="250" height="5" rx="2.5" fill="#4169E1" />
+    <text x="72" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#87A0F4">PLAN 1</text>
+    <text x="72" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#F7F3ED">Observer</text>
+    <text x="72" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">Le compositeur décrit ce qui</text>
+    <text x="72" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">existe : écrans, fenêtres,</text>
+    <text x="72" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">bureaux, focus.</text>
+    <text x="72" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">Traduit en faits typés,</text>
+    <text x="72" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">jamais en suppositions.</text>
+  </g>
+
+  
+  <g>
+    <rect x="328" y="152" width="250" height="214" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="328" y="152" width="250" height="5" rx="2.5" fill="#8DA982" />
+    <text x="352" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#8DA982">PLAN 2</text>
+    <text x="352" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#F7F3ED">Se souvenir</text>
+    <text x="352" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">Identités durables, profils,</text>
+    <text x="352" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">réglages. Ce qui survit à</text>
+    <text x="352" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">une extinction.</text>
+    <text x="352" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">Un écran branché n'est pas</text>
+    <text x="352" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">un écran « connu ».</text>
+  </g>
+
+  
+  <g>
+    <rect x="608" y="152" width="250" height="214" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="608" y="152" width="250" height="5" rx="2.5" fill="#C95400" />
+    <text x="632" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#FF8E40">PLAN 3</text>
+    <text x="632" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#F7F3ED">Montrer</text>
+    <text x="632" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">Barre, deck, fenêtres :</text>
+    <text x="632" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">la géométrie est une donnée</text>
+    <text x="632" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">du produit, pas un décor.</text>
+    <text x="632" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">Le même calcul sert</text>
+    <text x="632" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">l'affichage et les clics.</text>
+  </g>
+
+  
+  <g>
+    <rect x="888" y="152" width="250" height="214" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="888" y="152" width="250" height="5" rx="2.5" fill="#F7F3ED" />
+    <text x="912" y="188" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#F7F3ED">PLAN 4</text>
+    <text x="912" y="218" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#F7F3ED">Agir</text>
+    <text x="912" y="248" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">Verrouiller, lancer, changer</text>
+    <text x="912" y="267" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">de bureau : des gestes</text>
+    <text x="912" y="286" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">rares et encadrés.</text>
+    <text x="912" y="316" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">Chaque demande est</text>
+    <text x="912" y="333" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">vérifiée, puis tracée.</text>
+  </g>
+
+  
+  <line x1="302" y1="258" x2="324" y2="258" stroke="#8D99A6" stroke-width="1.5" marker-end="url(#ar)" />
+  <line x1="582" y1="258" x2="604" y2="258" stroke="#8D99A6" stroke-width="1.5" marker-end="url(#ar)" />
+  <line x1="862" y1="258" x2="884" y2="258" stroke="#8D99A6" stroke-width="1.5" marker-end="url(#ar)" />
+
+  
+  <g>
+    <rect x="48" y="406" width="545" height="140" rx="14" fill="#1A1F24" stroke="#8DA982" />
+    <text x="74" y="438" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#8DA982">CE QUI CIRCULE</text>
+    <text x="74" y="470" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#8DA982">Des faits, des identités, des intentions.</text>
+    <text x="74" y="494" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#8DA982">Un plan peut lire le travail d'un autre</text>
+    <text x="74" y="518" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#8DA982">sans hériter de son pouvoir d'agir.</text>
+  </g>
+
+  <g>
+    <rect x="613" y="406" width="525" height="140" rx="14" fill="#1A1F24" stroke="#C95400" />
+    <text x="639" y="438" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#FF8E40">CE QUI NE CIRCULE PAS</text>
+    <text x="639" y="470" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#FF8E40">Le droit de modifier le bureau.</text>
+    <text x="639" y="494" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#FF8E40">Un nom, un chemin, un processus qui tourne</text>
+    <text x="639" y="518" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#FF8E40">ne prouvent jamais une permission.</text>
+  </g>
+
+  <text x="48" y="590" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">Si l'état est inconnu ou périmé, gnosix refuse l'action plutôt que d'inventer un comportement normal.</text>
+</svg>

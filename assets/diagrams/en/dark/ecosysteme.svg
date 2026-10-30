@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 690" width="1200" height="690" role="img" aria-labelledby="t d">
+  <title id="t">Map of the four public repositories</title>
+  <desc id="d">gnosix and gnostral.rs are in the foreground. Calix and in.gnu6 light up the context. A common thread links the four projects: topology.</desc>
+
+  <rect width="1200" height="690" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">PUBLIC ECOSYSTEM — GITHUB.COM/GNU6DOTLIVE</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Four repositories, four trades</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">Four projects, four dossiers. Two links connect them: an interface foundation and one shared question.</text>
+
+  
+  <g>
+    <rect x="48" y="146" width="536" height="238" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="146" width="6" height="238" rx="3" fill="#C95400" />
+    <text x="80" y="180" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#FF8E40">PROJECT 1 · THE DESKTOP</text>
+    <text x="80" y="222" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="34" fill="#F7F3ED">gnosix</text>
+    <text x="80" y="258" font-family="'Space Grotesk', sans-serif" font-size="15" fill="#F7F3ED">A complete desktop environment for Linux,</text>
+    <text x="80" y="281" font-family="'Space Grotesk', sans-serif" font-size="15" fill="#F7F3ED">written in Rust and drawn natively on screen.</text>
+    <rect x="80" y="308" width="306" height="26" rx="13" fill="#1A1F24" />
+    <text x="94" y="326" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#FF8E40">26.11-rc1 « Ardoise » · public pre-release</text>
+    <text x="80" y="360" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">Bar, deck, windows, settings, lock screen.</text>
+  </g>
+
+  
+  <g>
+    <rect x="616" y="146" width="536" height="238" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="616" y="146" width="6" height="238" rx="3" fill="#4169E1" />
+    <text x="648" y="180" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#87A0F4">PROJECT 2 · THE ENGINE</text>
+    <text x="648" y="222" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="34" fill="#F7F3ED">gnostral.rs</text>
+    <text x="648" y="258" font-family="'Space Grotesk', sans-serif" font-size="15" fill="#F7F3ED">An open lab for running AI models</text>
+    <text x="648" y="281" font-family="'Space Grotesk', sans-serif" font-size="15" fill="#F7F3ED">on a modest GPU, in Rust.</text>
+    <rect x="648" y="308" width="296" height="26" rx="13" fill="#1A1F24" />
+    <text x="662" y="326" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#87A0F4">v0.8.0 · research, not a finished product</text>
+    <text x="648" y="360" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#ADB7C1">Measurements, typed contracts, replayable evidence.</text>
+  </g>
+
+  
+  <line x1="300" y1="386" x2="300" y2="424" stroke="#8D99A6" stroke-width="1.5" stroke-dasharray="4 4" />
+  <circle cx="300" cy="386" r="3" fill="#8D99A6" />
+  <circle cx="300" cy="424" r="3" fill="#8D99A6" />
+  <text x="314" y="410" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#ADB7C1">same interface foundation: Rust + GPUI</text>
+
+  
+  <g>
+    <rect x="48" y="426" width="336" height="190" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="74" y="458" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#ADB7C1">PROJECT 3 · THE COMPANION</text>
+    <text x="74" y="494" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="25" fill="#F7F3ED">Calix</text>
+    <text x="74" y="524" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">Install and update software</text>
+    <text x="74" y="544" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">from a single window, on Arch Linux.</text>
+    <text x="74" y="578" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#ADB7C1">Rust + Zig · GPL-3.0</text>
+    <text x="74" y="598" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">The graphical interface of a package manager</text>
+  </g>
+
+  
+  <g>
+    <rect x="408" y="426" width="336" height="190" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="434" y="458" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#ADB7C1">PROJECT 4 · THE SCENE</text>
+    <text x="434" y="494" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="25" fill="#F7F3ED">in.gnu6</text>
+    <text x="434" y="524" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">A scene and topology engine,</text>
+    <text x="434" y="544" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#F7F3ED">without imposing a graphical interface.</text>
+    <text x="434" y="578" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" fill="#ADB7C1">2026.10 · research</text>
+    <text x="434" y="598" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">The scene engine the idea of topology comes from</text>
+  </g>
+
+  
+  <g>
+    <rect x="768" y="426" width="384" height="190" rx="14" fill="#2B3138" stroke="#323A40" />
+    <text x="794" y="458" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#F7F3ED">THE COMMON THREAD</text>
+    <text x="794" y="494" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="25" fill="#F7F3ED">Topology</text>
+    <text x="794" y="524" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#ADB7C1">Where things are — and what</text>
+    <text x="794" y="544" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#ADB7C1">their position allows — is a problem</text>
+    <text x="794" y="564" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#ADB7C1">shared by all four projects.</text>
+    <text x="794" y="598" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#F7F3ED">Desktop, packages, scene, memory: one question.</text>
+  </g>
+
+  <text x="48" y="660" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">Plain-language diagram. gnosix, gnostral.rs and Calix are under free licences; in.gnu6 is public with no OSS licence decided. The states shown are those of their status documents.</text>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="t d">
+  <title id="t">The memory problem, and the experts trick</title>
+  <desc id="d">On the left, a large model does not fit in a small graphics card. On the right, only the useful experts stay on the card; the others wait in main memory.</desc>
+
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4169E1" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">GNOSTRAL.RS · THE PROBLEM</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">A large model, a small graphics card</text>
+  <text x="48" y="114" font-family="'Space Grotesk', sans-serif" font-size="14.5" fill="#ADB7C1">It all comes down to a storage question.</text>
+
+  
+  <g>
+    <rect x="48" y="146" width="522" height="356" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="76" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.8" fill="#FF8E40">WITHOUT THE TRICK</text>
+    <text x="76" y="212" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#F7F3ED">Fit everything</text>
+
+    
+    <rect x="96" y="238" width="150" height="112" rx="10" fill="#14181C" stroke="#8D99A6" stroke-dasharray="5 4" />
+    <text x="112" y="266" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" fill="#ADB7C1">GRAPHICS CARD</text>
+    <text x="112" y="288" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="19" fill="#F7F3ED">8 GB</text>
+
+    
+    <rect x="286" y="206" width="246" height="170" rx="10" fill="#1A1F24" stroke="#C95400" />
+    <text x="304" y="236" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" fill="#FF8E40">MODEL</text>
+    <text x="304" y="264" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="21" fill="#FF8E40">30 billion</text>
+    <text x="304" y="288" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#FF8E40">parameters</text>
+    <text x="304" y="320" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#FF8E40">≈ 60 GB at full precision</text>
+    <text x="304" y="340" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#FF8E40">≈ 11 GB even compressed</text>
+
+    
+    <circle cx="206" cy="322" r="17" fill="#C95400" />
+    <path d="M200 316 L212 328 M212 316 L200 328" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+
+    <text x="96" y="404" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">The model overflows the card. Forcing it</text>
+    <text x="96" y="424" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">to fit means slowing everything, or failing.</text>
+    <text x="96" y="456" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">It is the starting point of most</text>
+    <text x="96" y="474" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">personal workstations.</text>
+  </g>
+
+  
+  <g>
+    <rect x="630" y="146" width="522" height="356" rx="14" fill="#1D2228" stroke="#323A40" />
+    <text x="658" y="182" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="11" letter-spacing="1.8" fill="#87A0F4">WITH THE TRICK</text>
+    <text x="658" y="212" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#F7F3ED">Store only what is useful</text>
+
+    
+    <rect x="668" y="238" width="150" height="150" rx="10" fill="#1A1F24" stroke="#4169E1" />
+    <text x="682" y="264" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10" fill="#87A0F4">ON THE CARD</text>
+    <g fill="#4169E1">
+      <rect x="680" y="280" width="34" height="34" rx="7" />
+      <rect x="718" y="280" width="34" height="34" rx="7" />
+      <rect x="756" y="280" width="34" height="34" rx="7" />
+    </g>
+    <text x="682" y="340" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#87A0F4">3 active experts</text>
+    <text x="682" y="360" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#87A0F4">for this word</text>
+
+    
+    <rect x="906" y="238" width="218" height="150" rx="10" fill="#14181C" stroke="#8D99A6" />
+    <text x="920" y="264" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="9.5" fill="#ADB7C1">IN MAIN MEMORY</text>
+    <g fill="#8D99A6">
+      <rect x="920" y="280" width="26" height="26" rx="5" /><rect x="952" y="280" width="26" height="26" rx="5" />
+      <rect x="984" y="280" width="26" height="26" rx="5" /><rect x="1016" y="280" width="26" height="26" rx="5" />
+      <rect x="1048" y="280" width="26" height="26" rx="5" /><rect x="1080" y="280" width="26" height="26" rx="5" />
+      <rect x="920" y="312" width="26" height="26" rx="5" /><rect x="952" y="312" width="26" height="26" rx="5" />
+      <rect x="984" y="312" width="26" height="26" rx="5" /><rect x="1016" y="312" width="26" height="26" rx="5" />
+      <rect x="1048" y="312" width="26" height="26" rx="5" /><rect x="1080" y="312" width="26" height="26" rx="5" />
+    </g>
+    <text x="920" y="364" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">the idle experts</text>
+
+    
+    <line x1="900" y1="322" x2="826" y2="322" stroke="#4169E1" stroke-width="2" marker-end="url(#ar2)" />
+    <text x="863" y="308" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#87A0F4" text-anchor="middle">on demand</text>
+
+    <text x="658" y="432" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">A “mixture of experts” model activates only</text>
+    <text x="658" y="452" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#F7F3ED">a small part of its networks for each word.</text>
+    <text x="658" y="478" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">30 billion parameters, 3 billion in use</text>
+    <text x="658" y="496" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">at once: that imbalance is what makes the trick possible.</text>
+  </g>
+
+  
+  <g>
+    <rect x="48" y="526" width="1104" height="58" rx="12" fill="#F7F3ED" />
+    <text x="76" y="552" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="#667085">MEASURED RESULT · Q-010</text>
+    <text x="76" y="574" font-family="'Space Grotesk', sans-serif" font-size="13.5" fill="#111418">9.51 → 20.18 tokens per second, or 2.12× faster, on an 8 GB RTX 3070 — local measurement, three repetitions per condition.</text>
+  </g>
+</svg>

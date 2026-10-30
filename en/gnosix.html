@@ -22,6 +22,7 @@
 <meta property="og:locale:alternate" content="fr_CA">
 <meta name="twitter:card" content="summary_large_image">
 <!-- i18n:end -->
+<script src="../assets/theme.js"></script>
 <link rel="stylesheet" href="../assets/style.css">
 <script src="../assets/sources.js" defer></script>
 <script src="../assets/nav.js" defer></script>
@@ -113,11 +114,11 @@
       <p>Once started, gnosix replaces the session's graphical shell. It is not a decoration laid over an existing desktop: it is the desktop itself, drawn in <a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="A memory-safe systems language — that of gnosix, gnostral.rs and Calix." data-meta="github.com/rust-lang/rust">Rust</a> and displayed natively.</p>
     </div>
     <figure>
-      <img src="../assets/diagrams/en/gnosix-surfaces.svg" alt="Diagram of a gnosix screen: bar at the top, windows in the middle, the AppStack open above the deck, the deck at the bottom, with annotations.">
+      <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../assets/diagrams/en/dark/gnosix-surfaces.svg"><img src="../assets/diagrams/en/gnosix-surfaces.svg" alt="Diagram of a gnosix screen: bar at the top, windows in the middle, the AppStack open above the deck, the deck at the bottom, with annotations."></picture>
       <figcaption><b>The four main surfaces.</b> The bar can travel from one edge to another; the deck gathers the applications; the AppStack, housed in the deck, is for searching and opening; the desktop carries the windows and modules.</figcaption>
     </figure>
     <figure>
-      <img src="../assets/diagrams/en/gnosix-wireframe.svg" alt="Sketch of a gnosix screen: bar at the top, two windows, deck at the bottom, a notification and an on-screen display on the right.">
+      <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../assets/diagrams/en/dark/gnosix-wireframe.svg"><img src="../assets/diagrams/en/gnosix-wireframe.svg" alt="Sketch of a gnosix screen: bar at the top, two windows, deck at the bottom, a notification and an on-screen display on the right."></picture>
       <figcaption><b>A sketch of the principle.</b> The numbered markers (1 to 5) name the surfaces: bar, windows, deck, notification, on-screen display. It is a proposed layout, not a screenshot — the shapes suggest, they do not reproduce.</figcaption>
     </figure>
 
@@ -165,7 +166,7 @@
     </div>
 
     <figure>
-      <img class="motion-live" src="../assets/gif/en/gnosix-appstack.gif" alt="Animation: the AppStack card in the deck is pressed; the deck stretches upward into a single panel, “cali” is typed, Calix comes up, Enter; the panel folds back, the bar shows “launch authority granted” and Calix joins the deck.">
+      <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../assets/gif/en/dark/gnosix-appstack.gif"><img class="motion-live" src="../assets/gif/en/gnosix-appstack.gif" alt="Animation: the AppStack card in the deck is pressed; the deck stretches upward into a single panel, “cali” is typed, Calix comes up, Enter; the panel folds back, the bar shows “launch authority granted” and Calix joins the deck."></picture>
       <img class="motion-still" src="../assets/gif/en/gnosix-appstack-still.png" alt="">
       <figcaption><b>The AppStack comes out of the deck.</b> A single shape stretches out of the deck, instead of a window laid on top; the search lives inside it, then everything folds back. Launching goes through the launch authority, which grants or refuses. An illustration of the principle: neither a screen capture nor real timings.</figcaption>
     </figure>
@@ -193,7 +194,7 @@
       <p>It is the project's most important architectural decision, and the easiest to explain: <strong>observing, remembering, showing and acting are four different trades</strong>. gnosix gives them four distinct planes.</p>
     </div>
     <figure>
-      <img src="../assets/diagrams/en/gnosix-plans.svg" alt="Four planes: observe, remember, show, act. Data flows between them, but the right to act does not follow.">
+      <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../assets/diagrams/en/dark/gnosix-plans.svg"><img src="../assets/diagrams/en/gnosix-plans.svg" alt="Four planes: observe, remember, show, act. Data flows between them, but the right to act does not follow."></picture>
       <figcaption><b>The central rule.</b> Passing data from one plane to another never transfers the right to act. A name, a path or a running process does not prove a permission.</figcaption>
     </figure>
     <div class="prose">
@@ -228,82 +229,82 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" class="chart" data-chart="gnosix-code" width="1200" height="680" role="img" aria-labelledby="gnosix-code-t gnosix-code-d" data-toggles="[{&quot;key&quot;: &quot;vendor&quot;, &quot;label&quot;: &quot;Show vendored GPUI&quot;, &quot;on&quot;: true}]">
 <title id="gnosix-code-t">Where gnosix's code lives</title>
 <desc id="gnosix-code-d">Lines of Rust per crate: gnos-ux-gpui holds 105,902, 58% of first-party Rust; vendored GPUI is 111,519 upstream lines.</desc>
-<defs><pattern id="gnosix-code-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
-<rect x="0.0" y="0.0" width="1200.0" height="680.0" rx="0" fill="#F7F3ED"/>
-<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSIX · THE CODE</text>
-<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Where the code lives</text>
-<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Lines of Rust per crate, at the snapshot commit. Presentation outweighs everything else combined.</text>
-<line x1="360.0" y1="156.0" x2="360.0" y2="582.0" stroke="#E6E8EB" stroke-width="1"/>
-<text x="360.0" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">0</text>
-<line x1="507.8" y1="156.0" x2="507.8" y2="582.0" stroke="#E6E8EB" stroke-width="1"/>
-<text x="507.8" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">25,000</text>
-<line x1="655.7" y1="156.0" x2="655.7" y2="582.0" stroke="#E6E8EB" stroke-width="1"/>
-<text x="655.7" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">50,000</text>
-<line x1="803.5" y1="156.0" x2="803.5" y2="582.0" stroke="#E6E8EB" stroke-width="1"/>
-<text x="803.5" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">75,000</text>
-<line x1="951.3" y1="156.0" x2="951.3" y2="582.0" stroke="#E6E8EB" stroke-width="1"/>
-<text x="951.3" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle">100,000</text>
-<text x="48.0" y="183.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">gnos-ux-gpui</text>
-<text x="48.0" y="197.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">presentation: bar, deck, panels</text>
-<rect x="360.0" y="172.0" width="626.2" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="170.0" width="1008.2" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-ux-gpui · 105,902 lines of Rust — presentation: bar, deck, panels"/>
-<text x="994.2" y="187.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">105,902</text>
-<text x="48.0" y="217.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">gnos-ux-surface</text>
-<text x="48.0" y="231.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">surfaces and geometry</text>
-<rect x="360.0" y="206.0" width="104.5" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="204.0" width="486.5" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-ux-surface · 17,670 lines of Rust — surfaces and geometry"/>
-<text x="472.5" y="221.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">17,670</text>
-<text x="48.0" y="251.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">gnosix-hyprland</text>
-<text x="48.0" y="265.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">compositor observation</text>
-<rect x="360.0" y="240.0" width="37.9" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="238.0" width="419.9" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnosix-hyprland · 6,407 lines of Rust — compositor observation"/>
-<text x="405.9" y="255.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">6,407</text>
-<text x="48.0" y="285.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">xtask</text>
-<text x="48.0" y="299.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">tooling: CI contract, checks</text>
-<rect x="360.0" y="274.0" width="35.1" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="272.0" width="417.1" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="xtask · 5,944 lines of Rust — tooling: CI contract, checks"/>
-<text x="403.1" y="289.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">5,944</text>
-<text x="48.0" y="319.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">in-gnu-os-desktop-profiles</text>
-<text x="48.0" y="333.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">durable profiles</text>
-<rect x="360.0" y="308.0" width="31.9" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="306.0" width="413.9" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="in-gnu-os-desktop-profiles · 5,394 lines of Rust — durable profiles"/>
-<text x="399.9" y="323.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">5,394</text>
-<text x="48.0" y="353.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">in-gnu-os-output-identity</text>
-<text x="48.0" y="367.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">output identity</text>
-<rect x="360.0" y="342.0" width="21.6" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="340.0" width="403.6" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="in-gnu-os-output-identity · 3,651 lines of Rust — output identity"/>
-<text x="389.6" y="357.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">3,651</text>
-<text x="48.0" y="387.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">gnos-network</text>
-<text x="48.0" y="401.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">network</text>
-<rect x="360.0" y="376.0" width="20.4" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="374.0" width="402.4" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-network · 3,444 lines of Rust — network"/>
-<text x="388.4" y="391.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">3,444</text>
-<text x="48.0" y="421.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">gnos-audio</text>
-<text x="48.0" y="435.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">audio</text>
-<rect x="360.0" y="410.0" width="15.2" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="408.0" width="397.2" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-audio · 2,574 lines of Rust — audio"/>
-<text x="383.2" y="425.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">2,574</text>
-<text x="48.0" y="455.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">gnosix-desktop-model</text>
-<text x="48.0" y="469.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">typed desktop model</text>
-<rect x="360.0" y="444.0" width="14.2" height="20.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="48.0" y="442.0" width="396.2" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnosix-desktop-model · 2,398 lines of Rust — typed desktop model"/>
-<text x="382.2" y="459.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">2,398</text>
-<text x="48.0" y="489.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">30 other crates</text>
-<text x="48.0" y="503.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">lock, notifications, launch, icons…</text>
-<rect x="360.0" y="478.0" width="171.1" height="20.0" rx="4" fill="#A1A6AD"/>
-<rect class="hit" x="48.0" y="476.0" width="553.1" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="30 other crates · 28,941 lines of Rust — lock, notifications, launch, icons…"/>
-<text x="539.1" y="493.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">28,941</text>
-<text x="978.2" y="187.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="end">58% of first-party Rust</text>
-<line x1="48.0" y1="522.0" x2="1152.0" y2="522.0" stroke="#D7DADF" stroke-width="1"/>
+<defs><pattern id="gnosix-code-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB" /><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3" /></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="680.0" rx="0" fill="#F7F3ED" />
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4" data-dark-fill="#ADB7C1">GNOSIX · THE CODE</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Where the code lives</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">Lines of Rust per crate, at the snapshot commit. Presentation outweighs everything else combined.</text>
+<line x1="360.0" y1="156.0" x2="360.0" y2="582.0" stroke="#E6E8EB" stroke-width="1" />
+<text x="360.0" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle" data-dark-fill="#8D99A6">0</text>
+<line x1="507.8" y1="156.0" x2="507.8" y2="582.0" stroke="#E6E8EB" stroke-width="1" />
+<text x="507.8" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle" data-dark-fill="#8D99A6">25,000</text>
+<line x1="655.7" y1="156.0" x2="655.7" y2="582.0" stroke="#E6E8EB" stroke-width="1" />
+<text x="655.7" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle" data-dark-fill="#8D99A6">50,000</text>
+<line x1="803.5" y1="156.0" x2="803.5" y2="582.0" stroke="#E6E8EB" stroke-width="1" />
+<text x="803.5" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle" data-dark-fill="#8D99A6">75,000</text>
+<line x1="951.3" y1="156.0" x2="951.3" y2="582.0" stroke="#E6E8EB" stroke-width="1" />
+<text x="951.3" y="150.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#A1A6AD" text-anchor="middle" data-dark-fill="#8D99A6">100,000</text>
+<text x="48.0" y="183.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnos-ux-gpui</text>
+<text x="48.0" y="197.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">presentation: bar, deck, panels</text>
+<rect x="360.0" y="172.0" width="626.2" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="170.0" width="1008.2" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-ux-gpui · 105,902 lines of Rust — presentation: bar, deck, panels" />
+<text x="994.2" y="187.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">105,902</text>
+<text x="48.0" y="217.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnos-ux-surface</text>
+<text x="48.0" y="231.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">surfaces and geometry</text>
+<rect x="360.0" y="206.0" width="104.5" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="204.0" width="486.5" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-ux-surface · 17,670 lines of Rust — surfaces and geometry" />
+<text x="472.5" y="221.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">17,670</text>
+<text x="48.0" y="251.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnosix-hyprland</text>
+<text x="48.0" y="265.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">compositor observation</text>
+<rect x="360.0" y="240.0" width="37.9" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="238.0" width="419.9" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnosix-hyprland · 6,407 lines of Rust — compositor observation" />
+<text x="405.9" y="255.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">6,407</text>
+<text x="48.0" y="285.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">xtask</text>
+<text x="48.0" y="299.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">tooling: CI contract, checks</text>
+<rect x="360.0" y="274.0" width="35.1" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="272.0" width="417.1" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="xtask · 5,944 lines of Rust — tooling: CI contract, checks" />
+<text x="403.1" y="289.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">5,944</text>
+<text x="48.0" y="319.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">in-gnu-os-desktop-profiles</text>
+<text x="48.0" y="333.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">durable profiles</text>
+<rect x="360.0" y="308.0" width="31.9" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="306.0" width="413.9" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="in-gnu-os-desktop-profiles · 5,394 lines of Rust — durable profiles" />
+<text x="399.9" y="323.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">5,394</text>
+<text x="48.0" y="353.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">in-gnu-os-output-identity</text>
+<text x="48.0" y="367.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">output identity</text>
+<rect x="360.0" y="342.0" width="21.6" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="340.0" width="403.6" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="in-gnu-os-output-identity · 3,651 lines of Rust — output identity" />
+<text x="389.6" y="357.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">3,651</text>
+<text x="48.0" y="387.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnos-network</text>
+<text x="48.0" y="401.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">network</text>
+<rect x="360.0" y="376.0" width="20.4" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="374.0" width="402.4" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-network · 3,444 lines of Rust — network" />
+<text x="388.4" y="391.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">3,444</text>
+<text x="48.0" y="421.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnos-audio</text>
+<text x="48.0" y="435.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">audio</text>
+<rect x="360.0" y="410.0" width="15.2" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="408.0" width="397.2" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnos-audio · 2,574 lines of Rust — audio" />
+<text x="383.2" y="425.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">2,574</text>
+<text x="48.0" y="455.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnosix-desktop-model</text>
+<text x="48.0" y="469.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">typed desktop model</text>
+<rect x="360.0" y="444.0" width="14.2" height="20.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="48.0" y="442.0" width="396.2" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="gnosix-desktop-model · 2,398 lines of Rust — typed desktop model" />
+<text x="382.2" y="459.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">2,398</text>
+<text x="48.0" y="489.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">30 other crates</text>
+<text x="48.0" y="503.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">lock, notifications, launch, icons…</text>
+<rect x="360.0" y="478.0" width="171.1" height="20.0" rx="4" fill="#A1A6AD" />
+<rect class="hit" x="48.0" y="476.0" width="553.1" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="30 other crates · 28,941 lines of Rust — lock, notifications, launch, icons…" />
+<text x="539.1" y="493.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">28,941</text>
+<text x="978.2" y="187.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="end" data-dark-fill="#F7F3ED">58% of first-party Rust</text>
+<line x1="48.0" y1="522.0" x2="1152.0" y2="522.0" stroke="#D7DADF" stroke-width="1" />
 <g data-series="vendor">
-<text x="48.0" y="543.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start">Vendored GPUI</text>
-<text x="48.0" y="557.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start">vendor/ — upstream code, not written by the project</text>
-<rect x="360.0" y="532.0" width="659.4" height="20.0" rx="4" fill="url(#gnosix-code-hatch)"/>
-<text x="1027.4" y="547.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start">111,519</text>
-<rect class="hit" x="48.0" y="530.0" width="1019.4" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Vendored GPUI · 111,519 lines of upstream code, not counted as the project&#x27;s work"/>
+<text x="48.0" y="543.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Vendored GPUI</text>
+<text x="48.0" y="557.0" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">vendor/ — upstream code, not written by the project</text>
+<rect x="360.0" y="532.0" width="659.4" height="20.0" rx="4" fill="url(#gnosix-code-hatch)" />
+<text x="1027.4" y="547.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">111,519</text>
+<rect class="hit" x="48.0" y="530.0" width="1019.4" height="32.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Vendored GPUI · 111,519 lines of upstream code, not counted as the project's work" />
 </g>
-<text x="48.0" y="610.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="500" fill="#111418" text-anchor="start">First-party Rust: 182,325 lines in 38 crates and xtask · Python 9,295 · HTML 5,825 · evidence JSON 30,478 · 325 SVG icons</text>
-<text x="48.0" y="658.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Line count (comments and blanks included) on gnosix at commit 66d801b. A line is not a measure of quality.</text>
+<text x="48.0" y="610.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="500" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">First-party Rust: 182,325 lines in 38 crates and xtask · Python 9,295 · HTML 5,825 · evidence JSON 30,478 · 325 SVG icons</text>
+<text x="48.0" y="658.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start" data-dark-fill="#8D99A6">Line count (comments and blanks included) on gnosix at commit 66d801b. A line is not a measure of quality.</text>
 </svg>
       <!-- /chart:gnosix-code -->
       <figcaption><b>Presentation outweighs everything else.</b> The other planes — observe, remember, act — fit in narrow crates of a few thousand lines each. <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="A GPU-accelerated interface library from the Zed editor. The shared foundation of gnosix and Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a>, vendored as is, is upstream code: it is not counted as the project's work.</figcaption>
@@ -332,59 +333,59 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="gnosix-statuts" width="1200" height="600" role="img" aria-labelledby="gnosix-statuts-t gnosix-statuts-d">
 <title id="gnosix-statuts-t">gnosix's 20 published capabilities, by level of proof</title>
 <desc id="gnosix-statuts-d">Stacked bar: 8 PROVEN, 9 QUALIFIED, 2 SOURCE-QUALIFIED, 1 EXPERIMENTAL, with the list of capabilities at each level.</desc>
-<defs><pattern id="gnosix-statuts-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
-<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
-<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSIX · PUBLISHED STATUS</text>
-<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">What is proven, what awaits review</text>
-<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Each capability carries one level, published surface by surface. None is “finished”: the top step is the author's confirmation.</text>
-<text x="48.0" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="1.6">20 PUBLISHED CAPABILITIES, BY LEVEL OF PROOF</text>
-<rect x="48.0" y="176.0" width="439.6" height="54.0" rx="6" fill="#5F7F52"/>
-<rect class="hit" x="48.0" y="176.0" width="439.6" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="PROVEN · 8 — Notifications, French and English, Tabler icons, Fluidity, Multi-output routing, Profile store, Workspace activation, Session lifecycle"/>
-<text x="62.0" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start">8</text>
-<rect x="489.6" y="176.0" width="494.8" height="54.0" rx="6" fill="#C95400"/>
-<rect class="hit" x="489.6" y="176.0" width="494.8" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="QUALIFIED · 9 — The bar, The deck and the AppStack, Utilities and OSD, Session, Dashboard, Workspaces, Lock screen, Settings, Desktop and modules"/>
-<text x="503.6" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start">9</text>
-<rect x="986.4" y="176.0" width="108.4" height="54.0" rx="6" fill="#4169E1"/>
-<rect class="hit" x="986.4" y="176.0" width="108.4" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="SOURCE-QUALIFIED · 2 — Durable output identity, Accessibility mechanics"/>
-<text x="1000.4" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start">2</text>
-<rect x="1096.8" y="176.0" width="53.2" height="54.0" rx="6" fill="url(#gnosix-statuts-hatch)"/>
-<rect class="hit" x="1096.8" y="176.0" width="53.2" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="EXPERIMENTAL · 1 — gnoshow, the background renderer"/>
-<text x="1123.4" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#111418" text-anchor="middle">1</text>
-<rect x="48.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#5F7F52"/>
-<text x="68.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">PROVEN · 8</text>
-<text x="68.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">seen in the real session, confirmed</text>
-<text x="68.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Notifications</text>
-<text x="68.0" y="346.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">French and English</text>
-<text x="68.0" y="366.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Tabler icons</text>
-<text x="68.0" y="386.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Fluidity</text>
-<text x="68.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Multi-output routing</text>
-<text x="68.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Profile store</text>
-<text x="68.0" y="446.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Workspace activation</text>
-<text x="68.0" y="466.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Session lifecycle</text>
-<rect x="324.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#C95400"/>
-<text x="344.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">QUALIFIED · 9</text>
-<text x="344.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">qualified in an isolated session</text>
-<text x="344.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">The bar</text>
-<text x="344.0" y="346.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">The deck and the AppStack</text>
-<text x="344.0" y="366.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Utilities and OSD</text>
-<text x="344.0" y="386.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Session</text>
-<text x="344.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Dashboard</text>
-<text x="344.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Workspaces</text>
-<text x="344.0" y="446.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Lock screen</text>
-<text x="344.0" y="466.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Settings</text>
-<text x="344.0" y="486.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Desktop and modules</text>
-<rect x="600.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#4169E1"/>
-<text x="620.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">SOURCE-QUALIFIED · 2</text>
-<text x="620.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">verified in source</text>
-<text x="620.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Durable output identity</text>
-<text x="620.0" y="346.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">Accessibility mechanics</text>
-<rect x="876.0" y="270.0" width="12.0" height="12.0" rx="3" fill="url(#gnosix-statuts-hatch)"/>
-<text x="896.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">EXPERIMENTAL · 1</text>
-<text x="896.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">limited claim</text>
-<text x="896.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start">gnoshow, the background renderer</text>
-<rect x="48.0" y="500.0" width="1104.0" height="44.0" rx="10" fill="#FFE5D2" stroke="#C95400" stroke-width="1"/>
-<text x="68.0" y="527.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="400" fill="#111418" text-anchor="start">And 5 obligations remain OPEN: whole-product acceptance, the author's review, the screen reader, keyboard on the bar, mods.</text>
-<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source: gnosix/docs/status/STATUS.md at commit 66d801b (October 29, 2026).</text>
+<defs><pattern id="gnosix-statuts-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB" /><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3" /></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED" />
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4" data-dark-fill="#ADB7C1">GNOSIX · PUBLISHED STATUS</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">What is proven, what awaits review</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">Each capability carries one level, published surface by surface. None is “finished”: the top step is the author's confirmation.</text>
+<text x="48.0" y="158.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="1.6" data-dark-fill="#ADB7C1">20 PUBLISHED CAPABILITIES, BY LEVEL OF PROOF</text>
+<rect x="48.0" y="176.0" width="439.6" height="54.0" rx="6" fill="#5F7F52" />
+<rect class="hit" x="48.0" y="176.0" width="439.6" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="PROVEN · 8 — Notifications, French and English, Tabler icons, Fluidity, Multi-output routing, Profile store, Workspace activation, Session lifecycle" />
+<text x="62.0" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start" data-dark-fill="#111418">8</text>
+<rect x="489.6" y="176.0" width="494.8" height="54.0" rx="6" fill="#C95400" />
+<rect class="hit" x="489.6" y="176.0" width="494.8" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="QUALIFIED · 9 — The bar, The deck and the AppStack, Utilities and OSD, Session, Dashboard, Workspaces, Lock screen, Settings, Desktop and modules" />
+<text x="503.6" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start" data-dark-fill="#F7F3ED">9</text>
+<rect x="986.4" y="176.0" width="108.4" height="54.0" rx="6" fill="#4169E1" />
+<rect class="hit" x="986.4" y="176.0" width="108.4" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="SOURCE-QUALIFIED · 2 — Durable output identity, Accessibility mechanics" />
+<text x="1000.4" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="start" data-dark-fill="#F7F3ED">2</text>
+<rect x="1096.8" y="176.0" width="53.2" height="54.0" rx="6" fill="url(#gnosix-statuts-hatch)" />
+<rect class="hit" x="1096.8" y="176.0" width="53.2" height="54.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="EXPERIMENTAL · 1 — gnoshow, the background renderer" />
+<text x="1123.4" y="211.0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">1</text>
+<rect x="48.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#5F7F52" />
+<text x="68.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">PROVEN · 8</text>
+<text x="68.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">seen in the real session, confirmed</text>
+<text x="68.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Notifications</text>
+<text x="68.0" y="346.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">French and English</text>
+<text x="68.0" y="366.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Tabler icons</text>
+<text x="68.0" y="386.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Fluidity</text>
+<text x="68.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Multi-output routing</text>
+<text x="68.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Profile store</text>
+<text x="68.0" y="446.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Workspace activation</text>
+<text x="68.0" y="466.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Session lifecycle</text>
+<rect x="324.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#C95400" />
+<text x="344.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">QUALIFIED · 9</text>
+<text x="344.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">qualified in an isolated session</text>
+<text x="344.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">The bar</text>
+<text x="344.0" y="346.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">The deck and the AppStack</text>
+<text x="344.0" y="366.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Utilities and OSD</text>
+<text x="344.0" y="386.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Session</text>
+<text x="344.0" y="406.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Dashboard</text>
+<text x="344.0" y="426.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Workspaces</text>
+<text x="344.0" y="446.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Lock screen</text>
+<text x="344.0" y="466.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Settings</text>
+<text x="344.0" y="486.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Desktop and modules</text>
+<rect x="600.0" y="270.0" width="12.0" height="12.0" rx="3" fill="#4169E1" />
+<text x="620.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">SOURCE-QUALIFIED · 2</text>
+<text x="620.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">verified in source</text>
+<text x="620.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Durable output identity</text>
+<text x="620.0" y="346.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Accessibility mechanics</text>
+<rect x="876.0" y="270.0" width="12.0" height="12.0" rx="3" fill="url(#gnosix-statuts-hatch)" />
+<text x="896.0" y="280.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">EXPERIMENTAL · 1</text>
+<text x="896.0" y="298.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">limited claim</text>
+<text x="896.0" y="326.0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">gnoshow, the background renderer</text>
+<rect x="48.0" y="500.0" width="1104.0" height="44.0" rx="10" fill="#FFE5D2" stroke="#C95400" stroke-width="1" />
+<text x="68.0" y="527.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">And 5 obligations remain OPEN: whole-product acceptance, the author's review, the screen reader, keyboard on the bar, mods.</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start" data-dark-fill="#8D99A6">Source: gnosix/docs/status/STATUS.md at commit 66d801b (October 29, 2026).</text>
 </svg>
       <!-- /chart:gnosix-statuts -->
       <figcaption><b>The picture on October 29.</b> Nine capabilities wait for the same thing: the author's review, which will move them to PROVEN or reopen them. None is declared "finished" without it.</figcaption>
@@ -401,85 +402,85 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="chart" data-chart="gnosix-histoire" width="1200" height="600" role="img" aria-labelledby="gnosix-histoire-t gnosix-histoire-d">
 <title id="gnosix-histoire-t">gnosix's public history, October 5 to 27, 2026</title>
 <desc id="gnosix-histoire-d">Public commits per day and milestones: first source cut on October 5, MIT licence on the 10th, Wayland qualification on the 12th, 26.11-rc1 pre-release on the 21st, CI 38/38 on the 27th.</desc>
-<defs><pattern id="gnosix-histoire-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
-<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED"/>
-<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSIX · HISTORY</text>
-<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">Three weeks of public repository</text>
-<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">The work lives in a private repository; the public one receives projections of it. Here is what is visible.</text>
-<line x1="70.0" y1="470.0" x2="1130.0" y2="470.0" stroke="#D7DADF" stroke-width="1"/>
-<rect x="78.0" y="437.0" width="24.0" height="33.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="74.0" y="417.0" width="32.0" height="53.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 5 · 3 public commits"/>
-<text x="90.0" y="429.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">3</text>
-<rect x="217.1" y="459.0" width="24.0" height="11.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="213.1" y="439.0" width="32.0" height="31.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 8 · 1 public commit"/>
-<text x="229.1" y="451.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">1</text>
-<rect x="309.8" y="294.0" width="24.0" height="176.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="305.8" y="274.0" width="32.0" height="196.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 10 · 16 public commits"/>
-<text x="321.8" y="286.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">16</text>
-<rect x="402.5" y="404.0" width="24.0" height="66.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="398.5" y="384.0" width="32.0" height="86.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 12 · 6 public commits"/>
-<text x="414.5" y="396.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">6</text>
-<rect x="819.8" y="437.0" width="24.0" height="33.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="815.8" y="417.0" width="32.0" height="53.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 21 · 3 public commits"/>
-<text x="831.8" y="429.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">3</text>
-<rect x="1098.0" y="426.0" width="24.0" height="44.0" rx="4" fill="#4169E1"/>
-<rect class="hit" x="1094.0" y="406.0" width="32.0" height="64.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 27 · 4 public commits"/>
-<text x="1110.0" y="418.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle">4</text>
-<line x1="90.0" y1="470.0" x2="90.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="136.4" y1="470.0" x2="136.4" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="182.7" y1="470.0" x2="182.7" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="229.1" y1="470.0" x2="229.1" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="275.5" y1="470.0" x2="275.5" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="321.8" y1="470.0" x2="321.8" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="368.2" y1="470.0" x2="368.2" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="414.5" y1="470.0" x2="414.5" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="460.9" y1="470.0" x2="460.9" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="507.3" y1="470.0" x2="507.3" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="553.6" y1="470.0" x2="553.6" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="600.0" y1="470.0" x2="600.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="646.4" y1="470.0" x2="646.4" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="692.7" y1="470.0" x2="692.7" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="739.1" y1="470.0" x2="739.1" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="785.5" y1="470.0" x2="785.5" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="831.8" y1="470.0" x2="831.8" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="878.2" y1="470.0" x2="878.2" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="924.5" y1="470.0" x2="924.5" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="970.9" y1="470.0" x2="970.9" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="1017.3" y1="470.0" x2="1017.3" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="1063.6" y1="470.0" x2="1063.6" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="1110.0" y1="470.0" x2="1110.0" y2="475.0" stroke="#D7DADF" stroke-width="1"/>
-<text x="90.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 5</text>
-<text x="321.8" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 10</text>
-<text x="553.6" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 15</text>
-<text x="831.8" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 21</text>
-<text x="1110.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle">Oct 27</text>
-<line x1="90.0" y1="168.0" x2="90.0" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<circle cx="90.0" cy="168.0" r="4" fill="#C95400"/>
-<text x="98.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">First public source cut</text>
-<text x="98.0" y="181.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">code arrives by projection</text>
-<rect class="hit" x="80.0" y="160.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 5 · First public source cut — code arrives by projection"/>
-<line x1="321.8" y1="222.0" x2="321.8" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<circle cx="321.8" cy="222.0" r="4" fill="#C95400"/>
-<text x="329.8" y="218.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Relicensed to MIT</text>
-<text x="329.8" y="235.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">“everyone's property”</text>
-<rect class="hit" x="311.8" y="214.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 10 · Relicensed to MIT — “everyone&#x27;s property”"/>
-<line x1="414.5" y1="168.0" x2="414.5" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<circle cx="414.5" cy="168.0" r="4" fill="#C95400"/>
-<text x="422.5" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">Wayland qualification</text>
-<text x="422.5" y="181.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">click, dual output, drag and drop</text>
-<rect class="hit" x="404.5" y="160.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 12 · Wayland qualification — click, dual output, drag and drop"/>
-<line x1="831.8" y1="222.0" x2="831.8" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<circle cx="831.8" cy="222.0" r="4" fill="#C95400"/>
-<text x="839.8" y="218.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start">v26.11-rc1 « Ardoise »</text>
-<text x="839.8" y="235.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">first public pre-release</text>
-<rect class="hit" x="821.8" y="214.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 21 · v26.11-rc1 « Ardoise » — first public pre-release"/>
-<line x1="1110.0" y1="168.0" x2="1110.0" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<circle cx="1110.0" cy="168.0" r="4" fill="#C95400"/>
-<text x="1102.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="end">CI 38/38 · default profile</text>
-<text x="1102.0" y="181.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end">after merging the pre-release</text>
-<rect class="hit" x="1100.0" y="160.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 27 · CI 38/38 · default profile — after merging the pre-release"/>
-<text x="1130.0" y="540.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="end">33 public commits · bars: commits per day</text>
-<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source: Git history of gnu6dotlive/gnosix up to commit 66d801b; docs/reference/RELEASE-POLICY.md.</text>
+<defs><pattern id="gnosix-histoire-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB" /><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3" /></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="600.0" rx="0" fill="#F7F3ED" />
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4" data-dark-fill="#ADB7C1">GNOSIX · HISTORY</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Three weeks of public repository</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">The work lives in a private repository; the public one receives projections of it. Here is what is visible.</text>
+<line x1="70.0" y1="470.0" x2="1130.0" y2="470.0" stroke="#D7DADF" stroke-width="1" />
+<rect x="78.0" y="437.0" width="24.0" height="33.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="74.0" y="417.0" width="32.0" height="53.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 5 · 3 public commits" />
+<text x="90.0" y="429.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">3</text>
+<rect x="217.1" y="459.0" width="24.0" height="11.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="213.1" y="439.0" width="32.0" height="31.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 8 · 1 public commit" />
+<text x="229.1" y="451.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">1</text>
+<rect x="309.8" y="294.0" width="24.0" height="176.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="305.8" y="274.0" width="32.0" height="196.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 10 · 16 public commits" />
+<text x="321.8" y="286.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">16</text>
+<rect x="402.5" y="404.0" width="24.0" height="66.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="398.5" y="384.0" width="32.0" height="86.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 12 · 6 public commits" />
+<text x="414.5" y="396.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">6</text>
+<rect x="819.8" y="437.0" width="24.0" height="33.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="815.8" y="417.0" width="32.0" height="53.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 21 · 3 public commits" />
+<text x="831.8" y="429.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">3</text>
+<rect x="1098.0" y="426.0" width="24.0" height="44.0" rx="4" fill="#4169E1" />
+<rect class="hit" x="1094.0" y="406.0" width="32.0" height="64.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 27 · 4 public commits" />
+<text x="1110.0" y="418.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">4</text>
+<line x1="90.0" y1="470.0" x2="90.0" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="136.4" y1="470.0" x2="136.4" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="182.7" y1="470.0" x2="182.7" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="229.1" y1="470.0" x2="229.1" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="275.5" y1="470.0" x2="275.5" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="321.8" y1="470.0" x2="321.8" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="368.2" y1="470.0" x2="368.2" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="414.5" y1="470.0" x2="414.5" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="460.9" y1="470.0" x2="460.9" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="507.3" y1="470.0" x2="507.3" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="553.6" y1="470.0" x2="553.6" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="600.0" y1="470.0" x2="600.0" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="646.4" y1="470.0" x2="646.4" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="692.7" y1="470.0" x2="692.7" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="739.1" y1="470.0" x2="739.1" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="785.5" y1="470.0" x2="785.5" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="831.8" y1="470.0" x2="831.8" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="878.2" y1="470.0" x2="878.2" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="924.5" y1="470.0" x2="924.5" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="970.9" y1="470.0" x2="970.9" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="1017.3" y1="470.0" x2="1017.3" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="1063.6" y1="470.0" x2="1063.6" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="1110.0" y1="470.0" x2="1110.0" y2="475.0" stroke="#D7DADF" stroke-width="1" />
+<text x="90.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct 5</text>
+<text x="321.8" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct 10</text>
+<text x="553.6" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct 15</text>
+<text x="831.8" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct 21</text>
+<text x="1110.0" y="492.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct 27</text>
+<line x1="90.0" y1="168.0" x2="90.0" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<circle cx="90.0" cy="168.0" r="4" fill="#C95400" />
+<text x="98.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">First public source cut</text>
+<text x="98.0" y="181.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">code arrives by projection</text>
+<rect class="hit" x="80.0" y="160.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 5 · First public source cut — code arrives by projection" />
+<line x1="321.8" y1="222.0" x2="321.8" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<circle cx="321.8" cy="222.0" r="4" fill="#C95400" />
+<text x="329.8" y="218.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Relicensed to MIT</text>
+<text x="329.8" y="235.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">“everyone's property”</text>
+<rect class="hit" x="311.8" y="214.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 10 · Relicensed to MIT — “everyone's property”" />
+<line x1="414.5" y1="168.0" x2="414.5" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<circle cx="414.5" cy="168.0" r="4" fill="#C95400" />
+<text x="422.5" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Wayland qualification</text>
+<text x="422.5" y="181.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">click, dual output, drag and drop</text>
+<rect class="hit" x="404.5" y="160.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 12 · Wayland qualification — click, dual output, drag and drop" />
+<line x1="831.8" y1="222.0" x2="831.8" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<circle cx="831.8" cy="222.0" r="4" fill="#C95400" />
+<text x="839.8" y="218.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">v26.11-rc1 « Ardoise »</text>
+<text x="839.8" y="235.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">first public pre-release</text>
+<rect class="hit" x="821.8" y="214.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 21 · v26.11-rc1 « Ardoise » — first public pre-release" />
+<line x1="1110.0" y1="168.0" x2="1110.0" y2="468.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<circle cx="1110.0" cy="168.0" r="4" fill="#C95400" />
+<text x="1102.0" y="164.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="end" data-dark-fill="#F7F3ED">CI 38/38 · default profile</text>
+<text x="1102.0" y="181.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="end" data-dark-fill="#ADB7C1">after merging the pre-release</text>
+<rect class="hit" x="1100.0" y="160.0" width="20.0" height="20.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="October 27 · CI 38/38 · default profile — after merging the pre-release" />
+<text x="1130.0" y="540.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="500" fill="#667085" text-anchor="end" data-dark-fill="#ADB7C1">33 public commits · bars: commits per day</text>
+<text x="48.0" y="578.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start" data-dark-fill="#8D99A6">Source: Git history of gnu6dotlive/gnosix up to commit 66d801b; docs/reference/RELEASE-POLICY.md.</text>
 </svg>
       <!-- /chart:gnosix-histoire -->
       <figcaption><b>33 public commits.</b> October 10 holds nearly half of the visible activity, with the switch to the MIT licence. On the 21st, the first public pre-release; on the 27th, its merge and a green CI contract.</figcaption>
@@ -515,88 +516,88 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" class="chart" data-chart="gnosix-feuille-de-route" width="1200" height="640" role="img" aria-labelledby="gnosix-feuille-de-route-t gnosix-feuille-de-route-d">
 <title id="gnosix-feuille-de-route-t">gnosix's roadmap after 26.11</title>
 <desc id="gnosix-feuille-de-route-d">Timeline of release windows (26.11-rc1 published, 26.11, 27.05, 27.11) and seven announced work items without dates, including the threat model that precedes mods.</desc>
-<defs><pattern id="gnosix-feuille-de-route-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB"/><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3"/></pattern></defs>
-<rect x="0.0" y="0.0" width="1200.0" height="640.0" rx="0" fill="#F7F3ED"/>
-<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4">GNOSIX · PROJECTIONS</text>
-<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start">What comes after « Ardoise »</text>
-<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start">Fixed release windows, undated work items: each moves when its evidence is complete.</text>
-<line x1="90.0" y1="232.0" x2="1110.0" y2="232.0" stroke="#D7DADF" stroke-width="2"/>
-<line x1="90.0" y1="228.0" x2="90.0" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="162.9" y1="228.0" x2="162.9" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="235.7" y1="228.0" x2="235.7" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="308.6" y1="228.0" x2="308.6" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="381.4" y1="228.0" x2="381.4" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="454.3" y1="228.0" x2="454.3" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="527.1" y1="228.0" x2="527.1" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="600.0" y1="228.0" x2="600.0" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="672.9" y1="228.0" x2="672.9" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="745.7" y1="228.0" x2="745.7" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="818.6" y1="228.0" x2="818.6" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="891.4" y1="228.0" x2="891.4" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="964.3" y1="228.0" x2="964.3" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="1037.1" y1="228.0" x2="1037.1" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<line x1="1110.0" y1="228.0" x2="1110.0" y2="236.0" stroke="#D7DADF" stroke-width="1"/>
-<text x="90.0" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">Oct 2026</text>
-<text x="308.6" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">Jan 2027</text>
-<text x="527.1" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">Apr</text>
-<text x="745.7" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">Jul</text>
-<text x="964.3" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">Oct</text>
-<text x="1110.0" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle">Dec 2027</text>
-<circle cx="137.4" cy="232" r="8" fill="#C95400" stroke="#C95400" stroke-width="2.5"/>
-<rect class="hit" x="125.4" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="26.11-rc1 — published Oct 21"/>
-<line x1="137.4" y1="212.0" x2="137.4" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<text x="137.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">26.11-rc1</text>
-<text x="137.4" y="207.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">published Oct 21</text>
-<circle cx="199.3" cy="232" r="8" fill="#FFFFFF" stroke="#C95400" stroke-width="2.5"/>
-<rect class="hit" x="187.3" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="26.11 « Ardoise » — the release, announced"/>
-<line x1="199.3" y1="174.0" x2="199.3" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<text x="199.3" y="154.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">26.11 « Ardoise »</text>
-<text x="199.3" y="169.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">the release, announced</text>
-<circle cx="600.0" cy="232" r="8" fill="#FFFFFF" stroke="#4169E1" stroke-width="2.5"/>
-<rect class="hit" x="588.0" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="27.05 — May window"/>
-<line x1="600.0" y1="212.0" x2="600.0" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<text x="600.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">27.05</text>
-<text x="600.0" y="207.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">May window</text>
-<circle cx="1037.1" cy="232" r="8" fill="#FFFFFF" stroke="#4169E1" stroke-width="2.5"/>
-<rect class="hit" x="1025.1" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="27.11 — November window"/>
-<line x1="1037.1" y1="174.0" x2="1037.1" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3"/>
-<text x="1037.1" y="154.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle">27.11</text>
-<text x="1037.1" y="169.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle">November window</text>
-<text x="48.0" y="300.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="1.4">TWO RELEASES A YEAR, IN MAY AND NOVEMBER · WHAT IS READY SHIPS, THE REST WAITS</text>
-<rect x="48.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="64.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">The author's review</text>
-<text x="64.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">each QUALIFIED confirmed or reopened</text>
-<rect class="hit" x="48.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="The author&#x27;s review — each QUALIFIED confirmed or reopened · undated, moves when its evidence is complete"/>
-<rect x="322.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="338.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Module cards</text>
-<text x="338.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">a module never loses its material</text>
-<rect class="hit" x="322.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Module cards — a module never loses its material · undated, moves when its evidence is complete"/>
-<rect x="596.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="612.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">The scene in layers</text>
-<text x="612.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">one layer per surface, by attention</text>
-<rect class="hit" x="596.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="The scene in layers — one layer per surface, by attention · undated, moves when its evidence is complete"/>
-<rect x="870.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="886.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Keyboard on the bar</text>
-<text x="886.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">focus, arrows, Enter</text>
-<rect class="hit" x="870.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Keyboard on the bar — focus, arrows, Enter · undated, moves when its evidence is complete"/>
-<rect x="185.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="201.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">One shape for the shell</text>
-<text x="201.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">one distance field for the whole shell</text>
-<rect class="hit" x="185.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="One shape for the shell — one distance field for the whole shell · undated, moves when its evidence is complete"/>
-<rect x="459.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="475.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">A threat model</text>
-<text x="475.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">authorities, D-Bus, keyboard, lock screen</text>
-<rect class="hit" x="459.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="A threat model — authorities, D-Bus, keyboard, lock screen · undated, moves when its evidence is complete"/>
-<rect x="733.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#C95400" stroke-width="1.5" stroke-dasharray="5 4"/>
-<text x="749.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start">Confined mods</text>
-<text x="749.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start">after the threat model</text>
-<rect class="hit" x="733.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Confined mods — after the threat model · undated, moves when its evidence is complete"/>
-<line x1="719.0" y1="445.0" x2="726.0" y2="445.0" stroke="#C95400" stroke-width="1.5"/>
-<path d="M725.0 440.0 L732.0 445.0 L725.0 450.0 Z" fill="#C95400"/>
-<rect x="48.0" y="512.0" width="1104.0" height="66.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1"/>
-<text x="68.0" y="538.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4">WHAT GNOSIX WILL NOT DO</text>
-<text x="68.0" y="562.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="400" fill="#111418" text-anchor="start">No generic shell-command executor, no monolithic settings daemon, no durable identity guessed from geometry.</text>
-<text x="48.0" y="618.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start">Source: gnosix/docs/status/ROADMAP.md and docs/reference/RELEASE-POLICY.md at commit 66d801b. The 27.05 and 27.11 windows follow from the announced cadence.</text>
+<defs><pattern id="gnosix-feuille-de-route-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E6E8EB" /><line x1="0" y1="0" x2="0" y2="8" stroke="#A1A6AD" stroke-width="3" /></pattern></defs>
+<rect x="0.0" y="0.0" width="1200.0" height="640.0" rx="0" fill="#F7F3ED" />
+<text x="48.0" y="46.0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="2.4" data-dark-fill="#ADB7C1">GNOSIX · PROJECTIONS</text>
+<text x="48.0" y="86.0" font-family="'Space Grotesk', sans-serif" font-size="31" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">What comes after « Ardoise »</text>
+<text x="48.0" y="114.0" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">Fixed release windows, undated work items: each moves when its evidence is complete.</text>
+<line x1="90.0" y1="232.0" x2="1110.0" y2="232.0" stroke="#D7DADF" stroke-width="2" />
+<line x1="90.0" y1="228.0" x2="90.0" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="162.9" y1="228.0" x2="162.9" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="235.7" y1="228.0" x2="235.7" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="308.6" y1="228.0" x2="308.6" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="381.4" y1="228.0" x2="381.4" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="454.3" y1="228.0" x2="454.3" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="527.1" y1="228.0" x2="527.1" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="600.0" y1="228.0" x2="600.0" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="672.9" y1="228.0" x2="672.9" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="745.7" y1="228.0" x2="745.7" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="818.6" y1="228.0" x2="818.6" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="891.4" y1="228.0" x2="891.4" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="964.3" y1="228.0" x2="964.3" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="1037.1" y1="228.0" x2="1037.1" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<line x1="1110.0" y1="228.0" x2="1110.0" y2="236.0" stroke="#D7DADF" stroke-width="1" />
+<text x="90.0" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct 2026</text>
+<text x="308.6" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Jan 2027</text>
+<text x="527.1" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Apr</text>
+<text x="745.7" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Jul</text>
+<text x="964.3" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Oct</text>
+<text x="1110.0" y="256.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">Dec 2027</text>
+<circle cx="137.4" cy="232" r="8" fill="#C95400" stroke="#C95400" stroke-width="2.5" />
+<rect class="hit" x="125.4" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="26.11-rc1 — published Oct 21" />
+<line x1="137.4" y1="212.0" x2="137.4" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<text x="137.4" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">26.11-rc1</text>
+<text x="137.4" y="207.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">published Oct 21</text>
+<circle cx="199.3" cy="232" r="8" fill="#FFFFFF" stroke="#C95400" stroke-width="2.5" />
+<rect class="hit" x="187.3" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="26.11 « Ardoise » — the release, announced" />
+<line x1="199.3" y1="174.0" x2="199.3" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<text x="199.3" y="154.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">26.11 « Ardoise »</text>
+<text x="199.3" y="169.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">the release, announced</text>
+<circle cx="600.0" cy="232" r="8" fill="#FFFFFF" stroke="#4169E1" stroke-width="2.5" />
+<rect class="hit" x="588.0" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="27.05 — May window" />
+<line x1="600.0" y1="212.0" x2="600.0" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<text x="600.0" y="192.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">27.05</text>
+<text x="600.0" y="207.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">May window</text>
+<circle cx="1037.1" cy="232" r="8" fill="#FFFFFF" stroke="#4169E1" stroke-width="2.5" />
+<rect class="hit" x="1025.1" y="220.0" width="24.0" height="24.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="27.11 — November window" />
+<line x1="1037.1" y1="174.0" x2="1037.1" y2="222.0" stroke="#A1A6AD" stroke-width="1" stroke-dasharray="3 3" />
+<text x="1037.1" y="154.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#111418" text-anchor="middle" data-dark-fill="#F7F3ED">27.11</text>
+<text x="1037.1" y="169.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#667085" text-anchor="middle" data-dark-fill="#ADB7C1">November window</text>
+<text x="48.0" y="300.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#667085" text-anchor="start" letter-spacing="1.4" data-dark-fill="#ADB7C1">TWO RELEASES A YEAR, IN MAY AND NOVEMBER · WHAT IS READY SHIPS, THE REST WAITS</text>
+<rect x="48.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="64.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">The author's review</text>
+<text x="64.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">each QUALIFIED confirmed or reopened</text>
+<rect class="hit" x="48.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="The author's review — each QUALIFIED confirmed or reopened · undated, moves when its evidence is complete" />
+<rect x="322.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="338.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Module cards</text>
+<text x="338.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">a module never loses its material</text>
+<rect class="hit" x="322.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Module cards — a module never loses its material · undated, moves when its evidence is complete" />
+<rect x="596.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="612.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">The scene in layers</text>
+<text x="612.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">one layer per surface, by attention</text>
+<rect class="hit" x="596.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="The scene in layers — one layer per surface, by attention · undated, moves when its evidence is complete" />
+<rect x="870.0" y="324.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="886.0" y="352.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Keyboard on the bar</text>
+<text x="886.0" y="372.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">focus, arrows, Enter</text>
+<rect class="hit" x="870.0" y="324.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Keyboard on the bar — focus, arrows, Enter · undated, moves when its evidence is complete" />
+<rect x="185.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="201.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">One shape for the shell</text>
+<text x="201.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">one distance field for the whole shell</text>
+<rect class="hit" x="185.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="One shape for the shell — one distance field for the whole shell · undated, moves when its evidence is complete" />
+<rect x="459.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="475.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">A threat model</text>
+<text x="475.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">authorities, D-Bus, keyboard, lock screen</text>
+<rect class="hit" x="459.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="A threat model — authorities, D-Bus, keyboard, lock screen · undated, moves when its evidence is complete" />
+<rect x="733.0" y="410.0" width="258.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#C95400" stroke-width="1.5" stroke-dasharray="5 4" />
+<text x="749.0" y="438.0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">Confined mods</text>
+<text x="749.0" y="458.0" font-family="'Space Grotesk', sans-serif" font-size="11.5" font-weight="400" fill="#667085" text-anchor="start" data-dark-fill="#ADB7C1">after the threat model</text>
+<rect class="hit" x="733.0" y="410.0" width="258.0" height="70.0" fill="#000" fill-opacity="0" pointer-events="all" tabindex="0" data-tip="Confined mods — after the threat model · undated, moves when its evidence is complete" />
+<line x1="719.0" y1="445.0" x2="726.0" y2="445.0" stroke="#C95400" stroke-width="1.5" />
+<path d="M725.0 440.0 L732.0 445.0 L725.0 450.0 Z" fill="#C95400" />
+<rect x="48.0" y="512.0" width="1104.0" height="66.0" rx="10" fill="#FFFFFF" stroke="#D7DADF" stroke-width="1" />
+<text x="68.0" y="538.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#667085" text-anchor="start" letter-spacing="1.4" data-dark-fill="#ADB7C1">WHAT GNOSIX WILL NOT DO</text>
+<text x="68.0" y="562.0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="400" fill="#111418" text-anchor="start" data-dark-fill="#F7F3ED">No generic shell-command executor, no monolithic settings daemon, no durable identity guessed from geometry.</text>
+<text x="48.0" y="618.0" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="400" fill="#A1A6AD" text-anchor="start" data-dark-fill="#8D99A6">Source: gnosix/docs/status/ROADMAP.md and docs/reference/RELEASE-POLICY.md at commit 66d801b. The 27.05 and 27.11 windows follow from the announced cadence.</text>
 </svg>
       <!-- /chart:gnosix-feuille-de-route -->
       <figcaption><b>Fixed windows, undated work.</b> The 27.05 and 27.11 windows follow from the announced cadence; no work item is promised for them. The threat model comes before mods: the desktop is not opened to third-party modules before writing down what it defends against.</figcaption>

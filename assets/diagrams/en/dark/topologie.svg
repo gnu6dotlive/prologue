@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="t d">
+  <title id="t">The common thread of topology</title>
+  <desc id="d">Four projects, one question: the position of a thing — bar, package, scene object, model expert — decides what it can do.</desc>
+
+  <rect width="1200" height="640" fill="#111418" />
+
+  <text x="48" y="46" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="12" letter-spacing="2.4" fill="#ADB7C1">THE COMMON THREAD</text>
+  <text x="48" y="86" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="31" fill="#F7F3ED">Where things are decides what they can do</text>
+
+  <rect x="48" y="112" width="1104" height="54" rx="10" fill="#2B3138" stroke="#323A40" />
+  <text x="68" y="145" font-family="'Space Grotesk', sans-serif" font-size="14" fill="#F7F3ED">“Topology” here is not a learned word: it is the map of places and links. Four projects, four scales, one question.</text>
+
+  
+  <g>
+    <rect x="48" y="196" width="258" height="318" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="48" y="196" width="258" height="5" rx="2.5" fill="#C95400" />
+    <text x="70" y="230" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.4" fill="#FF8E40">GNOSIX</text>
+    <text x="70" y="258" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#F7F3ED">The bar</text>
+
+    
+    <rect x="70" y="276" width="214" height="86" rx="8" fill="#111418" />
+    <rect x="70" y="276" width="214" height="10" rx="4" fill="#F7F3ED" />
+    <rect x="70" y="352" width="214" height="10" rx="4" fill="#F7F3ED" opacity="0.35" />
+    <path d="M177 292 L177 348" stroke="#C95400" stroke-width="1.5" stroke-dasharray="3 3" />
+    <path d="M171 340 L177 350 L183 340" fill="none" stroke="#C95400" stroke-width="1.5" />
+
+    <text x="70" y="388" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">The bar can live on</text>
+    <text x="70" y="407" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">any edge.</text>
+    <text x="70" y="434" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Changing edge changes the</text>
+    <text x="70" y="452" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">geometry, not the rules.</text>
+    <text x="70" y="484" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">The clickable areas follow</text>
+    <text x="70" y="500" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">the drawing exactly.</text>
+  </g>
+
+  
+  <g>
+    <rect x="330" y="196" width="258" height="318" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="330" y="196" width="258" height="5" rx="2.5" fill="#8DA982" />
+    <text x="352" y="230" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.4" fill="#8DA982">CALIX</text>
+    <text x="352" y="258" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#F7F3ED">Provenance</text>
+
+    <rect x="352" y="276" width="214" height="86" rx="8" fill="#111418" />
+    <g font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="9" fill="#8DA982">
+      <rect x="362" y="288" width="58" height="18" rx="4" fill="#1A1F24" /><text x="368" y="300" fill="#8DA982">repos</text>
+      <rect x="362" y="312" width="58" height="18" rx="4" fill="#1A1F24" /><text x="368" y="324" fill="#8DA982">AUR</text>
+      <rect x="362" y="336" width="58" height="18" rx="4" fill="#1A1F24" /><text x="368" y="348" fill="#8DA982">Flatpak</text>
+    </g>
+    <path d="M424 296 L466 330 M424 320 L466 330 M424 344 L466 330" stroke="#8D99A6" stroke-width="1.2" />
+    <rect x="470" y="318" width="96" height="24" rx="6" fill="#8DA982" />
+    <text x="480" y="334" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#FFF">one single list</text>
+
+    <text x="352" y="388" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">Software can come from</text>
+    <text x="352" y="407" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">several places at once.</text>
+    <text x="352" y="434" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Each result keeps its</text>
+    <text x="352" y="452" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">origin visible.</text>
+    <text x="352" y="484" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">Trust depends on the</text>
+    <text x="352" y="500" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">source, not the name shown.</text>
+  </g>
+
+  
+  <g>
+    <rect x="612" y="196" width="258" height="318" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="612" y="196" width="258" height="5" rx="2.5" fill="#F7F3ED" />
+    <text x="634" y="230" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.4" fill="#F7F3ED">IN.GNU6</text>
+    <text x="634" y="258" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#F7F3ED">The scene</text>
+
+    <rect x="634" y="276" width="214" height="86" rx="8" fill="#111418" />
+    <g stroke="#F7F3ED" stroke-width="1.2" fill="none">
+      <path d="M700 300 L760 310 L750 348 L690 342 Z" />
+      <path d="M760 310 L790 292" />
+    </g>
+    <g fill="#F7F3ED">
+      <circle cx="700" cy="300" r="5" /><circle cx="760" cy="310" r="5" />
+      <circle cx="750" cy="348" r="5" /><circle cx="690" cy="342" r="5" /><circle cx="790" cy="292" r="4" />
+    </g>
+    <text x="640" y="354" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="9" fill="#F7F3ED">objects + relations</text>
+
+    <text x="634" y="388" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">A scene is objects</text>
+    <text x="634" y="407" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">and the links between them.</text>
+    <text x="634" y="434" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">The display observes; it does</text>
+    <text x="634" y="452" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">not decide what exists.</text>
+    <text x="634" y="484" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">Two different renderings,</text>
+    <text x="634" y="500" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">one truth about the scene.</text>
+  </g>
+
+  
+  <g>
+    <rect x="894" y="196" width="258" height="318" rx="14" fill="#1D2228" stroke="#323A40" />
+    <rect x="894" y="196" width="258" height="5" rx="2.5" fill="#4169E1" />
+    <text x="916" y="230" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.4" fill="#87A0F4">GNOSTRAL.RS</text>
+    <text x="916" y="258" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#F7F3ED">Residency</text>
+
+    <rect x="916" y="276" width="214" height="86" rx="8" fill="#111418" />
+    <rect x="926" y="288" width="86" height="62" rx="6" fill="#1A1F24" stroke="#4169E1" />
+    <text x="934" y="304" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="8.5" fill="#87A0F4">CARD</text>
+    <g fill="#4169E1"><rect x="936" y="312" width="18" height="18" rx="3" /><rect x="958" y="312" width="18" height="18" rx="3" /></g>
+    <rect x="1022" y="288" width="98" height="62" rx="6" fill="#14181C" stroke="#8D99A6" />
+    <text x="1030" y="304" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="8.5" fill="#ADB7C1">MEMORY</text>
+    <g fill="#8D99A6"><rect x="1030" y="312" width="18" height="18" rx="3" /><rect x="1052" y="312" width="18" height="18" rx="3" /><rect x="1074" y="312" width="18" height="18" rx="3" /></g>
+
+    <text x="916" y="388" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">An expert on the card is</text>
+    <text x="916" y="407" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">fast; in memory, less so.</text>
+    <text x="916" y="434" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">Where a piece of the model</text>
+    <text x="916" y="452" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#ADB7C1">sits is a measured choice.</text>
+    <text x="916" y="484" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">22 → 13 layers on the card:</text>
+    <text x="916" y="500" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">a placement, not a migration.</text>
+  </g>
+
+  <text x="48" y="562" font-family="'Space Grotesk', sans-serif" font-size="12.5" fill="#F7F3ED">In all four cases, the same discipline: make the position explicit, check it, and refuse to guess.</text>
+  <text x="48" y="592" font-family="'Space Grotesk', sans-serif" font-size="11.5" fill="#8D99A6">This kinship is the author's reading; each repository publishes its own evidence, separately.</text>
+</svg>

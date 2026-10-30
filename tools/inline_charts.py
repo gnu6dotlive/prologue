@@ -6,7 +6,8 @@ dans la page, leurs marques (barres, points, jalons) portent une fiche au survol
 ou au toucher, et leurs bascules montrent ou cachent une série (assets/charts.js).
 Les identifiants internes de chaque SVG sont préfixés par le nom du graphique, pour
 que deux graphiques d'une même page ne se marchent pas dessus. À l'impression, le
-graphique reste tel quel.
+graphique reste tel quel. Chaque texte reçoit aussi sa couleur sombre
+(data-dark-fill, tools/dark_theme.py).
 
 Le script remplace aussi un graphique déjà inséré : il peut être relancé après
 tools/make_charts.py.
@@ -17,7 +18,11 @@ Usage : python3 tools/inline_charts.py
 from __future__ import annotations
 
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dark_theme import annotate  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DIAGRAMS = ROOT / "assets" / "diagrams"
@@ -32,6 +37,7 @@ def inline_svg(name: str, lang: str) -> str:
     path = (DIAGRAMS / "en" if lang == "en" else DIAGRAMS) / f"{name}.svg"
     s = path.read_text(encoding="utf-8").strip()
     s = s.replace(f"<!-- {MARK} -->\n", "")
+    s = annotate(s)  # la couleur sombre de chaque texte, pour le thème sombre
     s = re.sub(r'\bid="([^"]+)"', lambda m: f'id="{name}-{m.group(1)}"', s)
     s = re.sub(r"url\(#([^)]+)\)", lambda m: f"url(#{name}-{m.group(1)})", s)
     s = s.replace('aria-labelledby="t d"', f'aria-labelledby="{name}-t {name}-d"')

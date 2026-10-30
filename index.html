@@ -22,6 +22,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <!-- i18n:end -->
+<script src="assets/theme.js"></script>
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/sources.js" defer></script>
 <script src="assets/nav.js" defer></script>
@@ -94,7 +95,7 @@
       <p>Quatre projets, quatre métiers différents, et un même dossier pour chacun : <strong>gnosix</strong> construit un bureau visible, <strong>gnostral.rs</strong> mène une recherche mesurable, <strong>Calix</strong> range les logiciels d'un <a class="src" data-src="arch" href="https://archlinux.org" data-title="Arch Linux" data-desc="Distribution Linux minimaliste, en publication continue." data-meta="archlinux.org">Arch Linux</a>, <strong>in.gnu6</strong> fournit le moteur de scènes qui sert de socle commun.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/ecosysteme.svg" alt="Carte des quatre dépôts : gnosix, gnostral.rs, Calix et in.gnu6, avec la topologie comme fil rouge.">
+      <picture><source media="screen and (prefers-color-scheme: dark)" srcset="assets/diagrams/dark/ecosysteme.svg"><img src="assets/diagrams/ecosysteme.svg" alt="Carte des quatre dépôts : gnosix, gnostral.rs, Calix et in.gnu6, avec la topologie comme fil rouge."></picture>
       <figcaption><b>Lire la carte.</b> Quatre métiers, deux liens : Calix partage le socle d'interface de gnosix (<a class="src" data-src="rust" href="https://github.com/rust-lang/rust" data-title="Rust" data-desc="Langage système sûr pour la mémoire, celui de gnosix, gnostral.rs et Calix." data-meta="github.com/rust-lang/rust">Rust</a> et <a class="src" data-src="gpui" href="https://github.com/zed-industries/zed/tree/main/crates/gpui" data-title="GPUI" data-desc="Bibliothèque d&#x27;interface accélérée par le GPU, issue de l&#x27;éditeur Zed. Socle commun de gnosix et Calix." data-meta="github.com/zed-industries/zed/tree/main/crates/gpui">GPUI</a>), et in.gnu6 porte la question de fond commune aux quatre — la topologie. Chaque dossier a sa page.</figcaption>
     </figure>
   </section>
@@ -106,7 +107,7 @@
       <p>Dans gnosix, la barre peut vivre sur n'importe quel bord de l'écran ; sa position change la géométrie, pas les règles. Dans Calix, un logiciel peut venir de plusieurs dépôts ; sa provenance reste visible. Dans in.gnu6, une scène est un ensemble d'objets et de relations que l'affichage ne décide pas. Dans gnostral.rs, un morceau de modèle posé sur la carte graphique va plus vite qu'un morceau resté en mémoire.</p>
     </div>
     <figure>
-      <img src="assets/diagrams/topologie.svg" alt="Quatre cartes illustrant la même question de topologie dans gnosix, Calix, in.gnu6 et gnostral.rs.">
+      <picture><source media="screen and (prefers-color-scheme: dark)" srcset="assets/diagrams/dark/topologie.svg"><img src="assets/diagrams/topologie.svg" alt="Quatre cartes illustrant la même question de topologie dans gnosix, Calix, in.gnu6 et gnostral.rs."></picture>
       <figcaption><b>Une même discipline.</b> Rendre la position explicite, la vérifier, et refuser de deviner. Cette parenté est une lecture de l'auteur : chaque dépôt publie ses propres preuves, séparément.</figcaption>
     </figure>
   </section>
